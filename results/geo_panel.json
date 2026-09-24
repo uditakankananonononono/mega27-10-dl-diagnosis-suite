@@ -261,5 +261,41 @@
   "labeling": "field:brain tumor|normal brain",
   "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE66nnn/GSE66354/matrix/GSE66354_series_matrix.txt.gz",
   "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE13507": {
+  "auc": 0.9674796747967479,
+  "n_case": 246,
+  "n_ctrl": 10,
+  "n_probes": 43148,
+  "labeling": "text",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13507/matrix/GSE13507_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE17648": {
+  "auc": 1.0,
+  "n_case": 22,
+  "n_ctrl": 22,
+  "n_probes": 27529,
+  "labeling": "field:adenocarcinoma|adjacent normal",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE17nnn/GSE17648/matrix/GSE17648_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE31547": {
+  "auc": 0.9678571428571429,
+  "n_case": 14,
+  "n_ctrl": 20,
+  "n_probes": 22283,
+  "labeling": "text",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE31nnn/GSE31547/matrix/GSE31547_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE103236": {
+  "auc": 0.9777777777777777,
+  "n_case": 10,
+  "n_ctrl": 9,
+  "n_probes": 45015,
+  "labeling": "field:gastric cancer|gastric normal tissue",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE103nnn/GSE103236/matrix/GSE103236_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
  }
 }
