@@ -1,1 +1,2 @@
 DONE wpbc 106s best=logreg 0.7346
+DONE wisconsin_original 168s best=gcn 0.9955
