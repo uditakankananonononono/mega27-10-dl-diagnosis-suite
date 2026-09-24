@@ -93,3 +93,43 @@ class TensorDataset(Dataset):
 
     def __getitem__(self, i):
         return self.x[i], int(self.y[i])
+
+
+class NpyDataset(Dataset):
+    """RAM-resident tensor dataset built by pretensor.py. The uint8 array is
+    loaded once per prefix and shared across all instances (singleton cache)."""
+
+    _cache: dict = {}
+
+    @classmethod
+    def _shared(cls, prefix: str):
+        if prefix not in cls._cache:
+            cls._cache[prefix] = (np.load(f"{prefix}_x.npy"),
+                                  np.load(f"{prefix}_y.npy"),
+                                  np.load(f"{prefix}_ids.npy"))
+        return cls._cache[prefix]
+
+    def __init__(self, prefix: str, train: bool = False, seed: int = 0):
+        self.x, self.y, self.ids = self._shared(prefix)
+        self.y = np.load(f"{prefix}_y.npy")
+        self.ids = np.load(f"{prefix}_ids.npy")
+        self.train = train
+        self.seed = seed
+
+    def __len__(self):
+        return len(self.y)
+
+    def sample_id(self, i: int) -> str:
+        return str(self.ids[i])
+
+    def __getitem__(self, i: int):
+        arr = np.asarray(self.x[i], dtype=np.float32) / 255.0
+        if self.train:
+            rng = np.random.default_rng(self.seed * 1_000_003 + i)
+            if rng.random() < 0.5:
+                arr = arr[:, :, ::-1]
+            if rng.random() < 0.5:
+                arr = arr[:, ::-1, :]
+            k = int(rng.integers(0, 4))
+            arr = np.rot90(arr, k, axes=(1, 2)).copy()
+        return torch.from_numpy(np.ascontiguousarray(arr)), int(self.y[i])

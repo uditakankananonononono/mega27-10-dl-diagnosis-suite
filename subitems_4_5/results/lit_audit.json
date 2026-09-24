@@ -1,0 +1,1250 @@
+{
+ "source": "NCBI E-utilities esearch+esummary (live)",
+ "n_accessions": 79,
+ "records": [
+  {
+   "pmid": "10583325",
+   "title": "Diagnosis of malaria: a review of alternatives to conventional microscopy.",
+   "journal": "Clinical and laboratory haematology",
+   "date": "1999 Aug",
+   "authors": [
+    "H\u00e4nscheid T"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "29474911",
+   "title": "Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning.",
+   "journal": "Cell",
+   "date": "2018 Feb 22",
+   "authors": [
+    "Kermany DS",
+    "Goldbaum M",
+    "Cai W",
+    "Valentim CCS",
+    "Liang H",
+    "Baxter SL"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "29854165",
+   "title": "Differential Data Augmentation Techniques for Medical Imaging Classification Tasks.",
+   "journal": "AMIA ... Annual Symposium proceedings. AMIA Symposium",
+   "date": "2017",
+   "authors": [
+    "Hussain Z",
+    "Gimenez F",
+    "Yi D",
+    "Rubin D"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "30003400",
+   "title": "A novel fused convolutional neural network for biomedical image classification.",
+   "journal": "Medical & biological engineering & computing",
+   "date": "2019 Jan",
+   "authors": [
+    "Pang S",
+    "Du A",
+    "Orgun MA",
+    "Yu Z"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "30253764",
+   "title": "Automated microscopy for routine malaria diagnosis: a field comparison on Giemsa-stained blood films in Peru.",
+   "journal": "Malaria journal",
+   "date": "2018 Sep 25",
+   "authors": [
+    "Torres K",
+    "Bachman CM",
+    "Delahunt CB",
+    "Alarcon Baldeon J",
+    "Alava F",
+    "Gamboa Vilela D"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "30457988",
+   "title": "Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists.",
+   "journal": "PLoS medicine",
+   "date": "2018 Nov",
+   "authors": [
+    "Rajpurkar P",
+    "Irvin J",
+    "Ball RL",
+    "Zhu K",
+    "Yang B",
+    "Mehta H"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "30670023",
+   "title": "Evaluation of automated malaria diagnosis using the Sysmex XN-30 analyser in a clinical setting.",
+   "journal": "Malaria journal",
+   "date": "2019 Jan 22",
+   "authors": [
+    "Pillay E",
+    "Khodaiji S",
+    "Bezuidenhout BC",
+    "Litshie M",
+    "Coetzer TL"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "30840751",
+   "title": "Fisher encoding of convolutional neural network features for endoscopic image classification.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2018 Jul",
+   "authors": [
+    "Wimmer G",
+    "V\u00e9csei A",
+    "H\u00e4fner M",
+    "Uhl A"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "31137196",
+   "title": "Identifying concepts from medical images via transfer learning and image retrieval.",
+   "journal": "Mathematical biosciences and engineering : MBE",
+   "date": "2019 Mar 8",
+   "authors": [
+    "Wang XW",
+    "Zhang Y",
+    "Guo Z",
+    "Li J"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "31545747",
+   "title": "Deep Learning for Smartphone-Based Malaria Parasite Detection in Thick Blood Smears.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2020 May",
+   "authors": [
+    "Yang F",
+    "Poostchi M",
+    "Yu H",
+    "Zhou Z",
+    "Silamut K",
+    "Yu J"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "32030660",
+   "title": "Deep Learning in Medical Image Analysis.",
+   "journal": "Advances in experimental medicine and biology",
+   "date": "2020",
+   "authors": [
+    "Chan HP",
+    "Samala RK",
+    "Hadjiiski LM",
+    "Zhou C"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "32282969",
+   "title": "Expert-level automated malaria diagnosis on routine blood films with deep neural networks.",
+   "journal": "American journal of hematology",
+   "date": "2020 Aug",
+   "authors": [
+    "Manescu P",
+    "Shaw MJ",
+    "Elmi M",
+    "Neary-Zajiczek L",
+    "Claveau R",
+    "Pawar V"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "32396042",
+   "title": "Preoperative CT-based Deep Learning Model for Predicting Disease-Free Survival in Patients with Lung Adenocarcinomas.",
+   "journal": "Radiology",
+   "date": "2020 Jul",
+   "authors": [
+    "Kim H",
+    "Goo JM",
+    "Lee KH",
+    "Kim YT",
+    "Park CM"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "32443868",
+   "title": "Deep Learning Based Automatic Malaria Parasite Detection from Blood Smear and its Smartphone Based Application.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2020 May 20",
+   "authors": [
+    "Fuhad KMF",
+    "Tuba JF",
+    "Sarker MRA",
+    "Momen S",
+    "Mohammed N",
+    "Rahman T"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "32768045",
+   "title": "Accuracy of deep learning for automated detection of pneumonia using chest X-Ray images: A systematic review and meta-analysis.",
+   "journal": "Computers in biology and medicine",
+   "date": "2020 Aug",
+   "authors": [
+    "Li Y",
+    "Zhang Z",
+    "Dai C",
+    "Dong Q",
+    "Badrigilan S"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "33217973",
+   "title": "A Lightweight Convolutional Neural Network Architecture Applied for Bone Metastasis Classification in Nuclear Medicine: A Case Study on Prostate Cancer Patients.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "date": "2020 Nov 18",
+   "authors": [
+    "Ntakolia C",
+    "Diamantis DE",
+    "Papandrianos N",
+    "Moustakidis S",
+    "Papageorgiou EI"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "33685401",
+   "title": "Malaria parasite detection in thick blood smear microscopic images using modified YOLOV3 and YOLOV4 models.",
+   "journal": "BMC bioinformatics",
+   "date": "2021 Mar 8",
+   "authors": [
+    "Abdurahman F",
+    "Fante KA",
+    "Aliy M"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "33859385",
+   "title": "A deep-learning pipeline for the diagnosis and discrimination of viral, non-viral and COVID-19 pneumonia from chest X-ray images.",
+   "journal": "Nature biomedical engineering",
+   "date": "2021 Jun",
+   "authors": [
+    "Wang G",
+    "Liu X",
+    "Shen J",
+    "Wang C",
+    "Li Z",
+    "Ye L"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "34145766",
+   "title": "A review of medical image data augmentation techniques for deep learning applications.",
+   "journal": "Journal of medical imaging and radiation oncology",
+   "date": "2021 Aug",
+   "authors": [
+    "Chlap P",
+    "Min H",
+    "Vandenberg N",
+    "Dowling J",
+    "Holloway L",
+    "Haworth A"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "34492046",
+   "title": "Pneumonia detection in chest X-ray images using an ensemble of deep learning models.",
+   "journal": "PloS one",
+   "date": "2021",
+   "authors": [
+    "Kundu R",
+    "Das R",
+    "Geem ZW",
+    "Han GT",
+    "Sarkar R"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "34770324",
+   "title": "Medical Augmentation (Med-Aug) for Optimal Data Augmentation in Medical Deep Learning Networks.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2021 Oct 22",
+   "authors": [
+    "Lo J",
+    "Cardinell J",
+    "Costanzo A",
+    "Sussman D"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "35232390",
+   "title": "A novel adaptive momentum method for medical image classification using convolutional neural network.",
+   "journal": "BMC medical imaging",
+   "date": "2022 Mar 1",
+   "authors": [
+    "Ayta\u00e7 UC",
+    "G\u00fcne\u015f A",
+    "Ajlouni N"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "35418051",
+   "title": "Transfer learning for medical image classification: a literature review.",
+   "journal": "BMC medical imaging",
+   "date": "2022 Apr 13",
+   "authors": [
+    "Kim HE",
+    "Cosa-Linan A",
+    "Santhanam N",
+    "Jannesari M",
+    "Maros ME",
+    "Ganslandt T"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "35896763",
+   "title": "Clinically focused multi-cohort benchmarking as a tool for external validation of artificial intelligence algorithm performance in basic chest radiography analysis.",
+   "journal": "Scientific reports",
+   "date": "2022 Jul 27",
+   "authors": [
+    "Rudolph J",
+    "Schachtner B",
+    "Fink N",
+    "Koliogiannis V",
+    "Schwarze V",
+    "Goller S"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "36155474",
+   "title": "Graph Neural Networks in Network Neuroscience.",
+   "journal": "IEEE transactions on pattern analysis and machine intelligence",
+   "date": "2023 May",
+   "authors": [
+    "Bessadok A",
+    "Mahjoub MA",
+    "Rekik I"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "36207090",
+   "title": "Domain generalization in deep learning based mass detection in mammography: A large-scale multi-center study.",
+   "journal": "Artificial intelligence in medicine",
+   "date": "2022 Oct",
+   "authors": [
+    "Garrucho L",
+    "Kushibar K",
+    "Jouide S",
+    "Diaz O",
+    "Igual L",
+    "Lekadir K"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "36240135",
+   "title": "Deploying deep learning models on unseen medical imaging using adversarial domain adaptation.",
+   "journal": "PloS one",
+   "date": "2022",
+   "authors": [
+    "Valliani AA",
+    "Gulamali FF",
+    "Kwon YJ",
+    "Martini ML",
+    "Wang C",
+    "Kondziolka D"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "36417741",
+   "title": "Causality-Inspired Single-Source Domain Generalization for Medical Image Segmentation.",
+   "journal": "IEEE transactions on medical imaging",
+   "date": "2023 Apr",
+   "authors": [
+    "Ouyang C",
+    "Chen C",
+    "Li S",
+    "Li Z",
+    "Qin C",
+    "Bai W"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "36465274",
+   "title": "Deep Learning Models to Predict Fatal Pneumonia Using Chest X-Ray Images.",
+   "journal": "Canadian respiratory journal",
+   "date": "2022",
+   "authors": [
+    "Anai S",
+    "Hisasue J",
+    "Takaki Y",
+    "Hara N"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "36549032",
+   "title": "Data augmentation for medical imaging: A systematic literature review.",
+   "journal": "Computers in biology and medicine",
+   "date": "2023 Jan",
+   "authors": [
+    "Garcea F",
+    "Serra A",
+    "Lamberti F",
+    "Morra L"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "36557348",
+   "title": "Holographic Microwave Image Classification Using a Convolutional Neural Network.",
+   "journal": "Micromachines",
+   "date": "2022 Nov 23",
+   "authors": [
+    "Wang L"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "36772541",
+   "title": "Malaria Detection Using Advanced Deep Learning Architecture.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2023 Jan 29",
+   "authors": [
+    "Si\u0142ka W",
+    "Wieczorek M",
+    "Si\u0142ka J",
+    "Wo\u017aniak M"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "36893708",
+   "title": "Semi-supervised segmentation of coronary DSA using mixed networks and multi-strategies.",
+   "journal": "Computers in biology and medicine",
+   "date": "2023 Apr",
+   "authors": [
+    "Pu Y",
+    "Zhang Q",
+    "Qian C",
+    "Zeng Q",
+    "Li N",
+    "Zhang L"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "36952442",
+   "title": "Domain-guided data augmentation for deep learning on medical imaging.",
+   "journal": "PloS one",
+   "date": "2023",
+   "authors": [
+    "Athalye C",
+    "Arnaout R"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "37032921",
+   "title": "Ensemble graph neural network model for classification of major depressive disorder using whole-brain functional connectivity.",
+   "journal": "Frontiers in psychiatry",
+   "date": "2023",
+   "authors": [
+    "Venkatapathy S",
+    "Votinov M",
+    "Wagels L",
+    "Kim S",
+    "Lee M",
+    "Habel U"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "37087899",
+   "title": "Labeling confidence for uncertainty-aware histology image classification.",
+   "journal": "Computerized medical imaging and graphics : the official journal of the Computerized Medical Imaging Society",
+   "date": "2023 Jul",
+   "authors": [
+    "Del Amor R",
+    "Silva-Rodr\u00edguez J",
+    "Naranjo V"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "37168772",
+   "title": "An automated neural network-based stage-specific malaria detection software using dimension reduction: The malaria microscopy classifier.",
+   "journal": "MethodsX",
+   "date": "2023",
+   "authors": [
+    "Katharina P",
+    "Istv\u00e1n K",
+    "J\u00e1nos T"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "37294647",
+   "title": "Medical Tumor Image Classification Based on Few-Shot Learning.",
+   "journal": "IEEE/ACM transactions on computational biology and bioinformatics",
+   "date": "2024 Jul-Aug",
+   "authors": [
+    "Wang W",
+    "Li Y",
+    "Lu K",
+    "Zhang J",
+    "Chen P",
+    "Yan K"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "37554627",
+   "title": "Two-stage automated diagnosis framework for urogenital schistosomiasis in microscopy images from low-resource settings.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2023 Jul",
+   "authors": [
+    "Oyibo P",
+    "Meulah B",
+    "Bengtson M",
+    "van Lieshout L",
+    "Oyibo W",
+    "Diehl JC"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "37650409",
+   "title": "An automated malaria cells detection from thin blood smear images using deep learning.",
+   "journal": "Tropical biomedicine",
+   "date": "2023 Jun 1",
+   "authors": [
+    "Sukumarran D",
+    "Hasikin K",
+    "Mohd Khairuddin AS",
+    "Ngui R",
+    "Wan Sulaiman WY",
+    "Vythilingam I"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "37697022",
+   "title": "Enhanced brain tumor classification using graph convolutional neural network architecture.",
+   "journal": "Scientific reports",
+   "date": "2023 Sep 11",
+   "authors": [
+    "Ravinder M",
+    "Saluja G",
+    "Allabun S",
+    "Alqahtani MS",
+    "Abbas M",
+    "Othman M"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "37875036",
+   "title": "Self-supervised learning with self-distillation on COVID-19 medical image classification.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2024 Jan",
+   "authors": [
+    "Tan Z",
+    "Yu Y",
+    "Meng J",
+    "Liu S",
+    "Li W"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "38075929",
+   "title": "iMAGING: a novel automated system for malaria diagnosis by using artificial intelligence tools and a universal low-cost robotized microscope.",
+   "journal": "Frontiers in microbiology",
+   "date": "2023",
+   "authors": [
+    "Maturana CR",
+    "de Oliveira AD",
+    "Nadal S",
+    "Serrat FZ",
+    "Sulleiro E",
+    "Ruiz E"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "38401269",
+   "title": "Semi-supervised medical image classification via distance correlation minimization and graph attention regularization.",
+   "journal": "Medical image analysis",
+   "date": "2024 May",
+   "authors": [
+    "Berenguer AD",
+    "Kvasnytsia M",
+    "Bossa MN",
+    "Mukherjee T",
+    "Deligiannis N",
+    "Sahli H"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "38401271",
+   "title": "Mutual learning with reliable pseudo label for semi-supervised medical image segmentation.",
+   "journal": "Medical image analysis",
+   "date": "2024 May",
+   "authors": [
+    "Su J",
+    "Luo Z",
+    "Lian S",
+    "Lin D",
+    "Li S"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "38701636",
+   "title": "Improving multiple sclerosis lesion segmentation across clinical sites: A federated learning approach with noise-resilient training.",
+   "journal": "Artificial intelligence in medicine",
+   "date": "2024 Jun",
+   "authors": [
+    "Bai L",
+    "Wang D",
+    "Wang H",
+    "Barnett M",
+    "Cabezas M",
+    "Cai W"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "38858260",
+   "title": "Contrastive Learning vs. Self-Learning vs. Deformable Data Augmentation in Semantic Segmentation of Medical Images.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2024 Dec",
+   "authors": [
+    "Arabi H",
+    "Zaidi H"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "38858481",
+   "title": "Efficient deep learning-based approach for malaria detection using red blood cell smears.",
+   "journal": "Scientific reports",
+   "date": "2024 Jun 10",
+   "authors": [
+    "Mujahid M",
+    "Rustam F",
+    "Shafique R",
+    "Montero EC",
+    "Alvarado ES",
+    "de la Torre Diez I"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "39079429",
+   "title": "Interpretable medical image Visual Question Answering via multi-modal relationship graph learning.",
+   "journal": "Medical image analysis",
+   "date": "2024 Oct",
+   "authors": [
+    "Hu X",
+    "Gu L",
+    "Kobayashi K",
+    "Liu L",
+    "Zhang M",
+    "Harada T"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "39106672",
+   "title": "Brain-GCN-Net: Graph-Convolutional Neural Network for brain tumor identification.",
+   "journal": "Computers in biology and medicine",
+   "date": "2024 Sep",
+   "authors": [
+    "G\u00fcrsoy E",
+    "Kaya Y"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "39210320",
+   "title": "A deep convolutional neural network approach using medical image classification.",
+   "journal": "BMC medical informatics and decision making",
+   "date": "2024 Aug 29",
+   "authors": [
+    "Mousavi M",
+    "Hosseini S"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "39212565",
+   "title": "Deep Learning-Based System Combining Chest X-Ray and Computerized Tomography Images for COVID-19 Diagnosis.",
+   "journal": "British journal of hospital medicine (London, England : 2005)",
+   "date": "2024 Aug 30",
+   "authors": [
+    "Ding H",
+    "Fan L",
+    "Zhang J",
+    "Gao G"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "39232164",
+   "title": "A pathology foundation model for cancer diagnosis and prognosis prediction.",
+   "journal": "Nature",
+   "date": "2024 Oct",
+   "authors": [
+    "Wang X",
+    "Zhao J",
+    "Marostica E",
+    "Yuan W",
+    "Jin J",
+    "Zhang J"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "39486305",
+   "title": "Effective deep-learning brain MRI super resolution using simulated training data.",
+   "journal": "Computers in biology and medicine",
+   "date": "2024 Dec",
+   "authors": [
+    "Ayaz A",
+    "Boonstoppel R",
+    "Lorenz C",
+    "Weese J",
+    "Pluim J",
+    "Breeuwer M"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "39523267",
+   "title": "Artificial Intelligence in Brain Tumors.",
+   "journal": "Advances in experimental medicine and biology",
+   "date": "2024",
+   "authors": [
+    "Suero Molina E",
+    "Azemi G",
+    "Russo C",
+    "Liu S",
+    "Di Ieva A"
+   ],
+   "roles": [
+    "augmentation-protocol context"
+   ]
+  },
+  {
+   "pmid": "39557737",
+   "title": "Pneumonia Detection from Chest X-Ray Images Using Deep Learning and Transfer Learning for Imbalanced Datasets.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2025 Aug",
+   "authors": [
+    "Alshanketi F",
+    "Alharbi A",
+    "Kuruvilla M",
+    "Mahzoon V",
+    "Siddiqui ST",
+    "Rana N"
+   ],
+   "roles": [
+    "benchmark context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "39631108",
+   "title": "A review of convolutional neural network based methods for medical image classification.",
+   "journal": "Computers in biology and medicine",
+   "date": "2025 Feb",
+   "authors": [
+    "Chen C",
+    "Mat Isa NA",
+    "Liu X"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "39682645",
+   "title": "An Efficient Deep Learning Approach for Malaria Parasite Detection in Microscopic Images.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2024 Dec 5",
+   "authors": [
+    "Boit S",
+    "Patil R"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "40107120",
+   "title": "Deep learning method for malaria parasite evaluation from microscopic blood smear.",
+   "journal": "Artificial intelligence in medicine",
+   "date": "2025 May",
+   "authors": [
+    "Dahiya A",
+    "Raghuvanshi D",
+    "Sharma C",
+    "Joshi K",
+    "Nehra A",
+    "Sharma A"
+   ],
+   "roles": [
+    "benchmark context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "40168942",
+   "title": "Combating Medical Label Noise through more precise partition-correction and progressive hard-enhanced learning.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2025 Jun",
+   "authors": [
+    "Zhang S",
+    "Chu S",
+    "Qiang Y",
+    "Zhao J",
+    "Wang Y",
+    "Wei X"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "40259867",
+   "title": "Enhancing Medical Image Classification through Transfer Learning and CLAHE Optimization.",
+   "journal": "Current medical imaging",
+   "date": "2025",
+   "authors": [
+    "Halloum K",
+    "Ez-Zahraouy H"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "40451513",
+   "title": "SNet: A novel convolutional neural network architecture for advanced endoscopic image classification of gastrointestinal disorders.",
+   "journal": "SLAS technology",
+   "date": "2025 Aug",
+   "authors": [
+    "Siddiqui S",
+    "Khan JA",
+    "Akram T",
+    "Alharbi M",
+    "Cha J",
+    "AlHammadi DA"
+   ],
+   "roles": [
+    "architecture context"
+   ]
+  },
+  {
+   "pmid": "40722435",
+   "title": "Dual-Stage Clean-Sample Selection for Incremental Noisy Label Learning.",
+   "journal": "Bioengineering (Basel, Switzerland)",
+   "date": "2025 Jul 8",
+   "authors": [
+    "Li J",
+    "Ma X",
+    "Shi Y"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "41100040",
+   "title": "Vision Mamba Empowered by Dynamic Domain Generalization for Cross-Modality Medical Segmentation.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2026 Aug",
+   "authors": [
+    "Shi Y",
+    "Guo C",
+    "Xu Z",
+    "Tan L",
+    "Huang K"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "41135780",
+   "title": "Pseudo-labeling and knowledge-guided contrastive learning for radiology report generation.",
+   "journal": "Journal of biomedical informatics",
+   "date": "2025 Dec",
+   "authors": [
+    "Ye F",
+    "Hu X",
+    "Ding Y",
+    "Liu F"
+   ],
+   "roles": [
+    "method lineage of the census"
+   ]
+  },
+  {
+   "pmid": "41231690",
+   "title": "Federated Learning for Medical Image Classification: A Comprehensive Benchmark.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2026 Jun",
+   "authors": [
+    "Zhou Z",
+    "Luo G",
+    "Chen M",
+    "Weng Z",
+    "Zhu Y"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "41335835",
+   "title": "Performance Evaluation of Transfer Learning Based Medical Image Classification Techniques for Disease Detection.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2025 Jul",
+   "authors": [
+    "Ahmad Z",
+    "Bao S",
+    "Chen M"
+   ],
+   "roles": [
+    "training-protocol context"
+   ]
+  },
+  {
+   "pmid": "41402004",
+   "title": "Leveraging transfer learning techniques for automated tuberculosis classification on chest X-rays.",
+   "journal": "The Indian journal of tuberculosis",
+   "date": "2025 Dec",
+   "authors": [
+    "Karule KP",
+    "Sapkal V",
+    "Mirajkar G",
+    "Babajanov M",
+    "Tajne P",
+    "Ahire LK"
+   ],
+   "roles": [
+    "method lineage of the census",
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "41491600",
+   "title": "Automated microscopy for malaria diagnosis in a reference laboratory in nonendemic settings.",
+   "journal": "Parasites & vectors",
+   "date": "2026 Jan 5",
+   "authors": [
+    "Mart\u00edn-Ram\u00edrez A",
+    "Lanza-Su\u00e1rez M",
+    "Berzosa D\u00edaz P",
+    "Benito A",
+    "Ant\u00f3n-Berenguer V",
+    "Rubio JM"
+   ],
+   "roles": [
+    "clinical context for item 10.4"
+   ]
+  },
+  {
+   "pmid": "41969630",
+   "title": "Multimodal Deep Learning for Pulmonary Nodule Detection on Chest Radiography in High-Risk Adults, With Secondary Validation for All-Cause and Cause-Specific Mortality Prediction: A Multicenter Cohort Study.",
+   "journal": "MedComm",
+   "date": "2026 Apr",
+   "authors": [
+    "Li J",
+    "Xing Y",
+    "Gao X",
+    "Liu Y",
+    "Zhang L",
+    "Huang Y"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "42064401",
+   "title": "Diffusion models for medical image reconstruction.",
+   "journal": "BJR artificial intelligence",
+   "date": "2024 Jan",
+   "authors": [
+    "Webber G",
+    "Reader AJ"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "42072852",
+   "title": "An Adaptive Deep Learning Framework for Multi-Label Chest X-Ray Diagnosis Using a Hybrid CNN-Transformer Architecture and Class-Wise Ensemble Fusion.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2026 Apr 20",
+   "authors": [
+    "Hsieh CF",
+    "Peng HH",
+    "Tsai YH",
+    "Chang CC",
+    "Juan CH",
+    "Hsu HH"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "42167674",
+   "title": "A hybrid CNN-GCN framework for interpretable Alzheimer's disease diagnosis from MRI scans.",
+   "journal": "Neuroscience",
+   "date": "2026 Aug 4",
+   "authors": [
+    "Islam J",
+    "Lin FY",
+    "Lin CY"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "42270694",
+   "title": "Federated continual learning for privacy-preserving chest radiograph classification.",
+   "journal": "Scientific reports",
+   "date": "2026 Jun 10",
+   "authors": [
+    "Sinhal A",
+    "Sinhal A",
+    "Sinhal A"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "42292256",
+   "title": "PulmoX-Net: a channel-attention enhanced deep learning model for multi-class pulmonary pathology classification in chest radiography.",
+   "journal": "Frontiers in medicine",
+   "date": "2026",
+   "authors": [
+    "Wu W",
+    "Shi F",
+    "Hu Y",
+    "Shi J",
+    "Yan Z",
+    "Yang J"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "42414708",
+   "title": "Domain Generalization Mitigates Scanner-Induced Domain Shift in Medical Imaging.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2026 Jul 7",
+   "authors": [
+    "Pulido-Arias D",
+    "Cleveland MC",
+    "Patel J",
+    "Wang Z",
+    "Leng Y",
+    "Goncalves TF"
+   ],
+   "roles": [
+    "robustness-panel context"
+   ]
+  },
+  {
+   "pmid": "42425052",
+   "title": "TomoGraphView: 3D medical image classification with omnidirectional slice representations and graph neural networks.",
+   "journal": "Medical image analysis",
+   "date": "2026 Sep",
+   "authors": [
+    "Kiechle J",
+    "Fischer SM",
+    "Lang DM",
+    "Bercea CI",
+    "Nyflot MJ",
+    "Felsner L"
+   ],
+   "roles": [
+    "architecture context for the region-GNN head"
+   ]
+  },
+  {
+   "pmid": "42717246",
+   "title": "Resolution-dependent self-supervised transfer in chest radiograph classification.",
+   "journal": "Communications medicine",
+   "date": "2026 Sep 9",
+   "authors": [
+    "Tayebi Arasteh S",
+    "Shaigan M",
+    "Kuhl C",
+    "Kather JN",
+    "Nebelung S",
+    "Truhn D"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  },
+  {
+   "pmid": "42769732",
+   "title": "Code-Free Classification of Pediatric Pneumonia on Chest Radiographs Using Google Cloud Vertex AI AutoML: A Proof-of-Concept Internal Validation Study.",
+   "journal": "Cureus",
+   "date": "2026 Aug",
+   "authors": [
+    "Bachir MA",
+    "Bachir AS",
+    "Reddy AJ",
+    "Cheema J",
+    "Webster J",
+    "Brahmbhatt T"
+   ],
+   "roles": [
+    "generalisation context for item 10.5"
+   ]
+  }
+ ]
+}

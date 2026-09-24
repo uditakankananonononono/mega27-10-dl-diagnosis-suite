@@ -7,7 +7,7 @@ import torch
 from torch.utils.data import Subset
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from src.common.data import ImageFolderDataset
+from src.common.data import ImageFolderDataset, NpyDataset
 from src.common.models import GlobalCNNClassifier, RegionGCNClassifier, param_count
 from src.common.train import train_model, predict_proba, full_metrics, save_json
 from src.common.label_noise import noise_summary, flag_label_errors
@@ -43,8 +43,8 @@ def oof_probabilities(train_idx, labels_all, *, kind, folds, epochs, seed, batch
         fold_of[pos] = np.arange(len(pos)) % folds
     for f in range(folds):
         tr = sorted_idx[fold_of != f]; va = sorted_idx[fold_of == f]
-        tr_ds = Subset(ImageFolderDataset(DATA, 64, train=True, seed=seed + f), tr)
-        va_ds = Subset(ImageFolderDataset(DATA, 64, train=False), va)
+        tr_ds = Subset(NpyDataset(str(ROOT / 'data' / 'malaria' / 'malaria48'), train=True, seed=seed + f), tr)
+        va_ds = Subset(NpyDataset(str(ROOT / 'data' / 'malaria' / 'malaria48'), train=False), va)
         model = (GlobalCNNClassifier(3) if kind == "cnn" else RegionGCNClassifier(3))
         model, hist, best = train_model(model, tr_ds, va_ds, epochs=epochs,
                                         batch=batch, seed=seed + f, patience=3)
@@ -62,17 +62,17 @@ def main():
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
 
-    eval_ds = ImageFolderDataset(DATA, 64, train=False)
-    labels_all = np.array([y for _, y in eval_ds.samples])
+    eval_ds = NpyDataset(str(ROOT / "data" / "malaria" / "malaria48"), train=False)
+    labels_all = np.asarray(eval_ds.y)
     tr_i, va_i, te_i = stratified_split(labels_all, args.seed)
     save_json({"train": tr_i.tolist(), "val": va_i.tolist(), "test": te_i.tolist(),
-               "seed": args.seed, "classes": eval_ds.classes},
+               "seed": args.seed, "classes": ["Parasitized", "Uninfected"]},
               OUT / "split.json")
 
     if args.phase == "baseline":
         results = {}
-        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", RegionGCNClassifier)]:
-            tr_ds = Subset(ImageFolderDataset(DATA, 64, train=True, seed=args.seed), tr_i)
+        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", lambda in_ch: RegionGCNClassifier(in_ch, grid=3))]:
+            tr_ds = Subset(NpyDataset(str(ROOT / 'data' / 'malaria' / 'malaria48'), train=True, seed=args.seed), tr_i)
             va_ds = Subset(eval_ds, va_i); te_ds = Subset(eval_ds, te_i)
             model = cls(3)
             t0 = time.time()
@@ -108,8 +108,8 @@ def main():
         flagged = set(census["flagged_ids"])
         keep = [i for i in tr_i if eval_ds.sample_id(int(i)) not in flagged]
         results = {}
-        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", RegionGCNClassifier)]:
-            tr_ds = Subset(ImageFolderDataset(DATA, 64, train=True, seed=args.seed), keep)
+        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", lambda in_ch: RegionGCNClassifier(in_ch, grid=3))]:
+            tr_ds = Subset(ImageFolderDataset(DATA, 48, train=True, seed=args.seed), keep)
             va_ds = Subset(eval_ds, va_i); te_ds = Subset(eval_ds, te_i)
             model = cls(3)
             model, hist, best = train_model(model, tr_ds, va_ds,

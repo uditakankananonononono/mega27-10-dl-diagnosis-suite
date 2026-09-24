@@ -1,0 +1,819 @@
+{
+ "source": "Broad Bioimage Benchmark Collection, per-accession fetch",
+ "results": {
+  "BBBC001": {
+   "mean_intensity": 0.1537214070558548,
+   "std_intensity": 0.13999181985855103,
+   "entropy_bits": 2.3889093887744886,
+   "grad_energy": 0.004013002850115299,
+   "accession": "BBBC001",
+   "title": "Human HT29 colon-cancer cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "1 example images",
+   "n_images": 1,
+   "resolutions": [
+    [
+     186,
+     186
+    ]
+   ]
+  },
+  "BBBC002": {
+   "mean_intensity": 0.0247661709630241,
+   "std_intensity": 0.06401655202110608,
+   "entropy_bits": 0.8440765827194823,
+   "grad_energy": 0.00013811370566448508,
+   "accession": "BBBC002",
+   "title": "Drosophila Kc167 cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC002_v1_images.zip (3555066 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     512,
+     512
+    ]
+   ]
+  },
+  "BBBC003": {
+   "mean_intensity": 0.08171034045517445,
+   "std_intensity": 0.27371135850747425,
+   "entropy_bits": 0.4078425686223666,
+   "grad_energy": 0.0025295603166644773,
+   "accession": "BBBC003",
+   "title": "Mouse Embryos | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC003_v1_foreground.zip (22947 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     480,
+     640
+    ],
+    [
+     640,
+     480
+    ]
+   ]
+  },
+  "BBBC004": {
+   "mean_intensity": 0.10334635277589162,
+   "std_intensity": 0.30441007514794666,
+   "entropy_bits": 0.4795132940160443,
+   "grad_energy": 0.02637050999328494,
+   "accession": "BBBC004",
+   "title": "Synthetic cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC004_v1_000_foreground.zip (479591 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     950,
+     950
+    ]
+   ]
+  },
+  "BBBC005": {
+   "mean_intensity": 0.19446240551769733,
+   "std_intensity": 0.3766998661061128,
+   "entropy_bits": 0.6676279449204824,
+   "grad_energy": 0.019725122023373842,
+   "accession": "BBBC005",
+   "title": "Synthetic cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC005_v1_ground_truth.zip (12158428 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     520,
+     696
+    ]
+   ]
+  },
+  "BBBC006": {
+   "mean_intensity": 0.05542067011507849,
+   "std_intensity": 0.17186398121217886,
+   "entropy_bits": 0.9521458214487253,
+   "grad_energy": 0.005902658692017819,
+   "accession": "BBBC006",
+   "title": "Human U2OS cells (out of focus) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC006_v1_labels.zip (10099211 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     520,
+     696
+    ]
+   ]
+  },
+  "BBBC007": {
+   "mean_intensity": 0.10820103343576193,
+   "std_intensity": 0.136135279511412,
+   "entropy_bits": 2.459891907011001,
+   "grad_energy": 0.00121151074320854,
+   "accession": "BBBC007",
+   "title": "Drosophila Kc167 cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC007_v1_images.zip (6435776 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     400,
+     400
+    ]
+   ]
+  },
+  "BBBC008": {
+   "mean_intensity": 0.15912882486979166,
+   "std_intensity": 0.32751256103316945,
+   "entropy_bits": 0.5531094571096317,
+   "grad_energy": 0.03514064297390481,
+   "accession": "BBBC008",
+   "title": "Human HT29 colon-cancer cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC008_v1_foreground.zip (484995 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     512,
+     512
+    ]
+   ]
+  },
+  "BBBC009": {
+   "mean_intensity": 0.6309679746627808,
+   "std_intensity": 0.05149530619382858,
+   "entropy_bits": 2.660602858001762,
+   "grad_energy": 0.00023246841738000512,
+   "accession": "BBBC009",
+   "title": "Human red blood cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC009_v1_images.zip (1169638 bytes, 5 images sampled)",
+   "n_images": 5,
+   "resolutions": [
+    [
+     600,
+     800
+    ]
+   ]
+  },
+  "BBBC010": {
+   "mean_intensity": 0.03993308823555708,
+   "std_intensity": 0.1957265374561151,
+   "entropy_bits": 0.2419002706574429,
+   "grad_energy": 0.012082679197192192,
+   "accession": "BBBC010",
+   "title": "C. elegans live/dead assay | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC010_v1_foreground.zip (1097766 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     520,
+     696
+    ]
+   ]
+  },
+  "BBBC011": {
+   "mean_intensity": 0.9489407589038213,
+   "std_intensity": 0.09912289244433244,
+   "entropy_bits": 1.4945547723514803,
+   "grad_energy": 0.0013818541871539007,
+   "accession": "BBBC011",
+   "title": "C. elegans metabolism assay | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC011_v1_images.zip (39876190 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     770,
+     691
+    ]
+   ]
+  },
+  "BBBC012": {
+   "mean_intensity": 0.14612098038196564,
+   "std_intensity": 0.07240312546491623,
+   "entropy_bits": 1.9128136628206487,
+   "grad_energy": 0.0024659173795953393,
+   "accession": "BBBC012",
+   "title": "C. elegans infection marker | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     153,
+     159
+    ]
+   ]
+  },
+  "BBBC013": {
+   "mean_intensity": 0.3263395130634308,
+   "std_intensity": 0.20386087646087012,
+   "entropy_bits": 3.345013733002569,
+   "grad_energy": 0.053169129183515906,
+   "accession": "BBBC013",
+   "title": "Human U2OS cells cytoplasm\u2013nucleus translocation | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "3 example images",
+   "n_images": 3,
+   "resolutions": [
+    [
+     172,
+     187
+    ],
+    [
+     174,
+     550
+    ]
+   ]
+  },
+  "BBBC014": {
+   "mean_intensity": 0.144133560359478,
+   "std_intensity": 0.19097261130809784,
+   "entropy_bits": 3.2369272118500607,
+   "grad_energy": 0.0015820041880942881,
+   "accession": "BBBC014",
+   "title": "Human MCF7 and A549 cells cytoplasm\u2013nucleus translocation | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     174,
+     181
+    ]
+   ]
+  },
+  "BBBC015": {
+   "mean_intensity": 0.08464226871728897,
+   "std_intensity": 0.061730398486057915,
+   "entropy_bits": 2.4575657247437346,
+   "grad_energy": 0.0024874288549957177,
+   "accession": "BBBC015",
+   "title": "Human U2OS cells transfluor | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC015_v1_images.zip (23955550 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     768,
+     1000
+    ]
+   ]
+  },
+  "BBBC016": {
+   "mean_intensity": 0.3802993595600128,
+   "std_intensity": 0.2260657176375389,
+   "entropy_bits": 2.8360360055245177,
+   "grad_energy": 0.09118718754810591,
+   "accession": "BBBC016",
+   "title": "Human U2OS cells transfluor | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "3 example images",
+   "n_images": 3,
+   "resolutions": [
+    [
+     215,
+     259
+    ],
+    [
+     290,
+     1134
+    ]
+   ]
+  },
+  "BBBC017": {
+   "mean_intensity": 0.1537214070558548,
+   "std_intensity": 0.13999181985855103,
+   "entropy_bits": 2.3889093887744886,
+   "grad_energy": 0.004013002850115299,
+   "accession": "BBBC017",
+   "title": "Human HT29 colon-cancer cells shRNAi screen | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "1 example images",
+   "n_images": 1,
+   "resolutions": [
+    [
+     186,
+     186
+    ]
+   ]
+  },
+  "BBBC018": {
+   "mean_intensity": 0.29274673263231915,
+   "std_intensity": 0.07141309728225072,
+   "entropy_bits": 2.8408602626708563,
+   "grad_energy": 0.0054476674025257426,
+   "accession": "BBBC018",
+   "title": "Human HT29 colon-cancer cells (diverse phenotypes) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "6 example images",
+   "n_images": 6,
+   "resolutions": [
+    [
+     512,
+     512
+    ]
+   ]
+  },
+  "BBBC019": {
+   "mean_intensity": 0.4730510612328847,
+   "std_intensity": 0.1909219343215227,
+   "entropy_bits": 4.282504777208097,
+   "grad_energy": 0.09551479046543439,
+   "accession": "BBBC019",
+   "title": "Collective cell migration | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "HEK293.zip (3150979 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     512,
+     512
+    ]
+   ]
+  },
+  "BBBC020": {
+   "mean_intensity": 0.014217098980831603,
+   "std_intensity": 0.11471395877500375,
+   "entropy_bits": 0.10503180333930534,
+   "grad_energy": 0.0006323753332253546,
+   "accession": "BBBC020",
+   "title": "Murine bone-marrow derived macrophages | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC020_v1_outlines_cells.zip (1746055 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     1040,
+     1388
+    ]
+   ]
+  },
+  "BBBC021": {
+   "mean_intensity": 0.104563108086586,
+   "std_intensity": 0.09834289401769639,
+   "entropy_bits": 2.399921704043062,
+   "grad_energy": 0.0008021684479899704,
+   "accession": "BBBC021",
+   "title": "Human MCF7 cells \u2013 compound-profiling experiment | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "5 example images",
+   "n_images": 5,
+   "resolutions": [
+    [
+     381,
+     512
+    ]
+   ]
+  },
+  "BBBC022": {
+   "mean_intensity": 0.11271588206291198,
+   "std_intensity": 0.08502202033996582,
+   "entropy_bits": 2.5596601656183795,
+   "grad_energy": 0.0010710184928029776,
+   "accession": "BBBC022",
+   "title": "Human U2OS cells \u2013 compound-profiling Cell Painting experiment | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "5 example images",
+   "n_images": 5,
+   "resolutions": [
+    [
+     327,
+     423
+    ]
+   ]
+  },
+  "BBBC024": {
+   "mean_intensity": 0.15018031746149063,
+   "std_intensity": 0.2929130047559738,
+   "entropy_bits": 2.0857313944541716,
+   "grad_energy": 0.007151328958570957,
+   "accession": "BBBC024",
+   "title": "3D HL60 Cell line (synthetic data) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     657,
+     945
+    ],
+    [
+     657,
+     946
+    ]
+   ]
+  },
+  "BBBC025": {
+   "accession": "BBBC025",
+   "title": "Human U2OS cells \u2013 RNAi Cell Painting experiment | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 0,
+   "example_urls": 0
+  },
+  "BBBC026": {
+   "mean_intensity": 0.1770468086004257,
+   "std_intensity": 0.15048838704824447,
+   "entropy_bits": 3.403739528295123,
+   "grad_energy": 0.0005905976402573287,
+   "accession": "BBBC026",
+   "title": "Human Hepatocyte and Murine Fibroblast cells \u2013 Co-culture experiment | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC026_GT_images.zip (4606899 bytes, 5 images sampled)",
+   "n_images": 5,
+   "resolutions": [
+    [
+     1040,
+     1392
+    ]
+   ]
+  },
+  "BBBC027": {
+   "mean_intensity": 0.30758506059646606,
+   "std_intensity": 0.33841609954833984,
+   "entropy_bits": 2.5887148321884483,
+   "grad_energy": 0.04128760378807783,
+   "accession": "BBBC027",
+   "title": "3D Colon Tissue (synthetic data) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     589,
+     724
+    ]
+   ]
+  },
+  "BBBC028": {
+   "mean_intensity": 0.03342813874284426,
+   "std_intensity": 0.13125032341728607,
+   "entropy_bits": 0.5066571124746992,
+   "grad_energy": 0.00015514891917215815,
+   "accession": "BBBC028",
+   "title": "Polymerized structures | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "ground_truth.zip (18987322 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     1032,
+     1376
+    ]
+   ]
+  },
+  "BBBC029": {
+   "mean_intensity": 0.1710378477970759,
+   "std_intensity": 0.32615120336413383,
+   "entropy_bits": 1.3707208595408689,
+   "grad_energy": 0.011673009871932058,
+   "accession": "BBBC029",
+   "title": "Synthetic DIC Images | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "ground_truth.zip (183076 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     100,
+     100
+    ]
+   ]
+  },
+  "BBBC030": {
+   "mean_intensity": 0.0018935019227986534,
+   "std_intensity": 0.042885898146778345,
+   "entropy_bits": 0.01970772225951088,
+   "grad_energy": 0.004201180650852621,
+   "accession": "BBBC030",
+   "title": "Chinese Hamster Ovary Cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "ground_truth.zip (233932 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     1032,
+     1376
+    ]
+   ]
+  },
+  "BBBC031": {
+   "mean_intensity": 0.0432191250535349,
+   "std_intensity": 0.12625160937507948,
+   "entropy_bits": 0.9945582888951899,
+   "grad_energy": 0.002469284343533218,
+   "accession": "BBBC031",
+   "title": "Simulated 24-well plate with synthetic cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC031_v1_dataset.zip (56070155 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     950,
+     950
+    ]
+   ]
+  },
+  "BBBC032": {
+   "mean_intensity": 0.25230302289128304,
+   "std_intensity": 0.1694273054599762,
+   "entropy_bits": 3.5758210503328876,
+   "grad_energy": 0.014895267755491659,
+   "accession": "BBBC032",
+   "title": "Mouse embryo blastocyst cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "4 example images",
+   "n_images": 4,
+   "resolutions": [
+    [
+     1344,
+     1024
+    ]
+   ]
+  },
+  "BBBC033": {
+   "mean_intensity": 0.10342668990294139,
+   "std_intensity": 0.14729832609494528,
+   "entropy_bits": 1.577137590261044,
+   "grad_energy": 0.0007383476865167419,
+   "accession": "BBBC033",
+   "title": "Mouse trophoblast stem cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "3 example images",
+   "n_images": 3,
+   "resolutions": [
+    [
+     1344,
+     1024
+    ]
+   ]
+  },
+  "BBBC034": {
+   "mean_intensity": 0.0,
+   "std_intensity": 0.0,
+   "entropy_bits": 4.5168313703789633e-14,
+   "grad_energy": 0.0,
+   "accession": "BBBC034",
+   "title": "Induced pluripotent human stem cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "BBBC034_v1_DatasetGroundTruth.zip (713766 bytes, 1 images sampled)",
+   "n_images": 1,
+   "resolutions": [
+    [
+     1024,
+     1024
+    ]
+   ]
+  },
+  "BBBC035": {
+   "mean_intensity": 0.3035074844956398,
+   "std_intensity": 0.19577306509017944,
+   "entropy_bits": 2.748363512007737,
+   "grad_energy": 0.02641520439647138,
+   "accession": "BBBC035",
+   "title": "Simulated HL60 cells (from the Cell Tracking Challenge) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     642,
+     652
+    ]
+   ]
+  },
+  "BBBC036": {
+   "accession": "BBBC036",
+   "title": "Human U2OS Cells \u2013 profiling bioactive compounds using Cell Painting | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 0,
+   "example_urls": 0
+  },
+  "BBBC037": {
+   "accession": "BBBC037",
+   "title": "Human U2OS cells \u2013 Gene overexpression profiling experiment | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 0,
+   "example_urls": 0
+  },
+  "BBBC038": {
+   "mean_intensity": 0.452470076084137,
+   "std_intensity": 0.20103963315486909,
+   "entropy_bits": 3.274598635149656,
+   "grad_energy": 0.0017867921851575375,
+   "accession": "BBBC038",
+   "title": "Kaggle 2018 Data Science Bowl | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "5 example images",
+   "n_images": 5,
+   "resolutions": [
+    [
+     256,
+     256
+    ],
+    [
+     256,
+     320
+    ],
+    [
+     360,
+     360
+    ],
+    [
+     520,
+     696
+    ]
+   ]
+  },
+  "BBBC039": {
+   "mean_intensity": 0.08068338502198458,
+   "std_intensity": 0.18111261228720346,
+   "entropy_bits": 0.7151496416722165,
+   "grad_energy": 0.007359114514353375,
+   "accession": "BBBC039",
+   "title": "Nuclei of U2OS cells in a chemical screen | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "masks.zip (2753811 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     520,
+     696
+    ]
+   ]
+  },
+  "BBBC041": {
+   "mean_intensity": 0.6261004507541656,
+   "std_intensity": 0.35624198615550995,
+   "entropy_bits": 3.275404906974274,
+   "grad_energy": 0.012662350200116634,
+   "accession": "BBBC041",
+   "title": "P. vivax (malaria) infected human blood smears | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     469,
+     478
+    ],
+    [
+     470,
+     661
+    ]
+   ]
+  },
+  "BBBC042": {
+   "mean_intensity": 0.8198452293872833,
+   "std_intensity": 0.11111590825021267,
+   "entropy_bits": 3.5401783453371807,
+   "grad_energy": 0.0051134140230715275,
+   "accession": "BBBC042",
+   "title": "Rat astrocyte cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "4 example images",
+   "n_images": 4,
+   "resolutions": [
+    [
+     708,
+     990
+    ]
+   ]
+  },
+  "BBBC044": {
+   "mean_intensity": 0.22646508365869522,
+   "std_intensity": 0.13816221803426743,
+   "entropy_bits": 3.8425304558888644,
+   "grad_energy": 0.009158795699477196,
+   "accession": "BBBC044",
+   "title": "Mouse hippocampal presynaptic terminals (vGlut-1 and vGat) | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "2 example images",
+   "n_images": 2,
+   "resolutions": [
+    [
+     1024,
+     1024
+    ]
+   ]
+  },
+  "BBBC045": {
+   "mean_intensity": 0.2566419243812561,
+   "std_intensity": 0.3250737488269806,
+   "entropy_bits": 1.325652047791297,
+   "grad_energy": 0.0005452233599498868,
+   "accession": "BBBC045",
+   "title": "Human White Blood Cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "1 example images",
+   "n_images": 1,
+   "resolutions": [
+    [
+     1650,
+     1650
+    ]
+   ]
+  },
+  "BBBC046": {
+   "accession": "BBBC046",
+   "title": "FiloData3D - Single A549 cells with filopodia (synthetic image data) | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 9,
+   "example_urls": 0
+  },
+  "BBBC047": {
+   "accession": "BBBC047",
+   "title": "A dataset of images and morphological profiles of 30 000 small-molecule treatments using the Cell Painting assay | Broad",
+   "status": "no_fetchable_images",
+   "zip_urls": 0,
+   "example_urls": 0
+  },
+  "BBBC048": {
+   "mean_intensity": 0.1801347608367602,
+   "std_intensity": 0.09550487870971362,
+   "entropy_bits": 1.5388625679873524,
+   "grad_energy": 0.002596269128844142,
+   "accession": "BBBC048",
+   "title": "Cell Cycle Jurkat Cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "3 example images",
+   "n_images": 3,
+   "resolutions": [
+    [
+     66,
+     66
+    ]
+   ]
+  },
+  "BBBC050": {
+   "mean_intensity": 0.0014108936302363873,
+   "std_intensity": 0.010750994086265564,
+   "entropy_bits": 0.01032015816169509,
+   "grad_energy": 0.0004439989182477196,
+   "accession": "BBBC050",
+   "title": "Nuclei of mouse embryonic cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "GroundTruth.zip (2103460 bytes, 12 images sampled)",
+   "n_images": 12,
+   "resolutions": [
+    [
+     111,
+     116
+    ],
+    [
+     114,
+     112
+    ],
+    [
+     116,
+     113
+    ],
+    [
+     120,
+     118
+    ]
+   ]
+  },
+  "BBBC051": {
+   "mean_intensity": 0.18113795667886734,
+   "std_intensity": 0.18250762671232224,
+   "entropy_bits": 3.7219108507963923,
+   "grad_energy": 0.02036366844549775,
+   "accession": "BBBC051",
+   "title": "Human kidney cortex cells | Broad Bioimage Benchmark Collection",
+   "status": "used",
+   "source": "4 example images",
+   "n_images": 4,
+   "resolutions": [
+    [
+     32,
+     32
+    ]
+   ]
+  },
+  "BBBC052": {
+   "accession": "BBBC052",
+   "title": "Murine Cath.a differentiated (CAD) cells - Actin | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 5,
+   "example_urls": 0
+  },
+  "BBBC053": {
+   "accession": "BBBC053",
+   "title": "Murine Cath.a differentiated (CAD) cells-Mitochondria | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 1,
+   "example_urls": 0
+  },
+  "BBBC054": {
+   "accession": "BBBC054",
+   "title": "LPS activated immortalized mouse migroglia (IMG) | Broad Bioimage Benchmark Collection",
+   "status": "no_fetchable_images",
+   "zip_urls": 3,
+   "example_urls": 0
+  }
+ }
+}

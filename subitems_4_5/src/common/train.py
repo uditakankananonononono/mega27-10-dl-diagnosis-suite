@@ -46,6 +46,7 @@ def train_model(model, train_ds, val_ds, *, epochs: int, batch: int = 64,
         vl = evaluate_loss(model, val_ds, batch, threads)
         history.append({"epoch": ep, "train_loss": running / max(nb, 1),
                         "val_loss": vl, "secs": round(time.time() - t0, 1)})
+        print(f"  epoch {ep}: train_loss={running/max(nb,1):.4f} val_loss={vl:.4f} ({time.time()-t0:.0f}s)", flush=True)
         if vl < best["val_loss"] - 1e-4:
             best = {"val_loss": vl, "epoch": ep,
                     "state": {k: v.clone() for k, v in model.state_dict().items()}}
