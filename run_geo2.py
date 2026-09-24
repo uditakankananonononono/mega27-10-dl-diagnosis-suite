@@ -44,11 +44,13 @@ def esummary_gse(ids):
     for doc in root.iter("DocSum"):
         gse = n = None
         for item in doc.iter("Item"):
-            if item.get("Name") == "Accession": gse = item.text
+            if item.get("Name") == "Accession" and gse is None \
+                    and item.text and item.text.startswith("GSE"):
+                gse = item.text
             if item.get("Name") == "n_samples":
                 try: n = int(item.text)
                 except (TypeError, ValueError): pass
-        if gse and gse.startswith("GSE"): out.append((gse, n))
+        if gse: out.append((gse, n))
     return out
 
 def fetch_matrix(gse):
@@ -118,11 +120,20 @@ if os.path.exists("logs/geo_hung.txt"):
 
 cands = []
 if "--esearch" in sys.argv:
-    ids = esearch('gse[ETYP] AND "Homo sapiens"[Organism] AND '
-                  'tumor[All Fields] AND normal[All Fields]')
-    for gse, n in esummary_gse(ids):
-        if gse not in tried and n and 24 <= n <= 1200:
-            cands.append(gse)
+    term = ('gse[ETYP] AND "Homo sapiens"[Organism] AND '
+            'tumor[All Fields] AND normal[All Fields]')
+    for start in (0, 250, 500, 750):
+        if len(cands) >= 60: break
+        q = urllib.parse.urlencode({"db": "gds", "term": term,
+                                    "retmax": 250, "retstart": start})
+        time.sleep(0.4)
+        u = ("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+             f"esearch.fcgi?{q}")
+        root = ET.fromstring(urllib.request.urlopen(u, timeout=60).read())
+        ids = [e.text for e in root.iter("Id")]
+        for gse, n in esummary_gse(ids):
+            if gse not in tried and gse not in cands and n and 16 <= n <= 1200:
+                cands.append(gse)
 else:
     for a in sys.argv[1:]:
         cands.append(a)
