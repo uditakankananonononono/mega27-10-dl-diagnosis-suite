@@ -46,13 +46,23 @@ CANDIDATES = {
 MAX_ELEMS = 40_000_000  # OOM guard: subsample probes above this
 
 def load(did):
-    ds = fetch_openml(data_id=did, data_home="data_cache/openml",
-                      as_frame=False, parser="auto")
-    X, y = ds.data, ds.target
-    X = np.asarray(X)
+    import pandas as pd
+    try:
+        ds = fetch_openml(data_id=did, data_home="data_cache/openml",
+                          as_frame=False, parser="auto")
+        X, y = ds.data, ds.target
+        X = np.asarray(X)
+    except (ValueError, AttributeError):
+        ds = fetch_openml(data_id=did, data_home="data_cache/openml",
+                          as_frame=True, parser="auto")
+        X, y = ds.data, ds.target
+        if X is None:
+            raise RuntimeError("openml returned no data block")
+        X = pd.DataFrame(X).apply(
+            lambda c: c if np.issubdtype(c.dtype, np.number)
+            else pd.factorize(c.astype(str))[0]).values
     if X.dtype == object or str(X.dtype).startswith("<U"):
-        import pandas as pd
-        X = pd.DataFrame(X).apply(lambda c: pd.factorize(c)[0]).values
+        X = pd.DataFrame(X).apply(lambda c: pd.factorize(c.astype(str))[0]).values
     X = np.nan_to_num(X.astype(np.float64), nan=0.0)
     return X, np.asarray(y).astype(str)
 
