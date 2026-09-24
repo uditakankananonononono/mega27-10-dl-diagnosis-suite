@@ -64,7 +64,9 @@ def run_subset(name, epochs=3, seed=0):
         logits = torch.cat([model(torch.tensor(te_imgs[i:i + 256], dtype=torch.float32).unsqueeze(1) / 255.0)
                             for i in range(0, len(te_imgs), 256)])
     prob = torch.softmax(logits, dim=1).numpy()
-    if n_classes == 2:
+    if task == "multi-label, binary-class":
+        auc = roc_auc_score(yte, prob, average="macro")
+    elif n_classes == 2:
         auc = roc_auc_score(yte, prob[:, 1])
     else:
         yoh = np.eye(n_classes)[yte]
