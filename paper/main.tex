@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage{mathptmx}   % Times text + math
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,hyperref,longtable}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\title{Cross-Disease Graph Diagnosis: A 26-Dataset Benchmark of CNN and GNN
+Architectures and a Falsifiable Test of Cross-Disease Patient Bridges\\
+\large MEGA-27 Item 10 --- Deep-Learning Diagnosis Suite}
+\author{U. Phookan research program (build-fleet lane 10)}
+\date{September 24, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We benchmark MLP, 1D-CNN, GCN and GAT diagnosis models against strong
+classical baselines on 26 real clinical datasets (accession-level, all URLs
+verified), with bootstrap confidence intervals and calibration metrics, and
+we test a falsifiable discovery claim: cross-disease \emph{patient bridges}
+--- edges of a unified patient-similarity graph spanning diseases built on
+disease-agnostic distributional fingerprints --- carry transferable
+diagnostic signal. All claims are reported with seed variance; negative
+results are preserved.
+\end{abstract}
+\section{Introduction}
+% filled after results freeze
+\section{Methods}
+\subsection{Problem setting}
+Each dataset $d$ is a cohort $(X^{(d)}, y^{(d)})$ with $n_d$ patients and
+$p_d$ native features; $y_i^{(d)}\in\{0,1\}$ is the diagnosis.
+\subsection{Models}
+MLP, 1D-CNN over the feature axis, GCN and GAT over a patient $k$NN graph.
+\subsection{Unified cross-disease graph}
+Per-disease encoders $E_d:\mathbb{R}^{p_d}\to\mathbb{R}^{16}$ map patients
+into a shared latent space; the node input is $[E_d(x)\,\|\,\phi(x)]$ where
+$\phi$ is the 10-dimensional distributional fingerprint
+(Eq.~\ref{eq:fingerprint}).
+\subsection{Mathematical formulation}
+Gaussian $k$NN kernel with self-tuned bandwidth:
+\begin{equation}
+A_{ij}=\exp\!\Big(-\tfrac{\lVert x_i-x_j\rVert^2}{2\sigma^2}\Big),
+\qquad \sigma^2=\operatorname{median}_{i,j\in\mathrm{kNN}(i)}\lVert x_i-x_j\rVert^2 .
+\label{eq:kernel}
+\end{equation}
+Symmetric GCN normalization (Kipf \& Welling):
+\begin{equation}
+\hat A = \tilde D^{-1/2}(A+I)\tilde D^{-1/2},\qquad
+\tilde D_{ii}=1+\textstyle\sum_j A_{ij}.
+\label{eq:norm}
+\end{equation}
+GCN layer: $H^{(l+1)}=\tanh(\hat A H^{(l)}W^{(l)})$.
+Distributional fingerprint (disease-agnostic; comparable across diseases):
+\begin{equation}
+\phi(x)=\big(\mu,\sigma,\min,\max,q_{25},q_{50},q_{75},m_3,m_4,\lVert z\rVert_1/d\big),
+\quad m_r=\tfrac1p\textstyle\sum_j z_j^r,\ z_j=(x_j-\mu)/\sigma .
+\label{eq:fingerprint}
+\end{equation}
+Class-weighted BCE with $w_1=n_-/n_+$:
+\begin{equation}
+\mathcal L=-\tfrac1n\textstyle\sum_i w_{y_i}\big[y_i\log\sigma(f_i)+(1-y_i)\log(1-\sigma(f_i))\big].
+\label{eq:bce}
+\end{equation}
+Multi-task transductive objective over diseases $\mathcal D$ and train
+masks $T_d$:
+\begin{equation}
+\mathcal L_{\mathrm{MT}}=\textstyle\sum_{d\in\mathcal D}\mathcal L^{(d)}(T_d),\qquad
+\nabla_\theta\mathcal L_{\mathrm{MT}}=\textstyle\sum_d\nabla_\theta\mathcal L^{(d)} .
+\label{eq:multitask}
+\end{equation}
+Expected calibration error:
+\begin{equation}
+\mathrm{ECE}=\textstyle\sum_{b=1}^{B}\tfrac{|S_b|}{n}\,\big|\mathrm{acc}(S_b)-\mathrm{conf}(S_b)\big|.
+\label{eq:ece}
+\end{equation}
+Percentile bootstrap CI: for $B=1000$ resamples,
+\begin{equation}
+\mathrm{CI}_{95}=[Q_{0.025}(\theta_b^*),\,Q_{0.975}(\theta_b^*)].
+\label{eq:bootstrap}
+\end{equation}
+Bridge ablation effect (paired per seed $s$):
+\begin{equation}
+\Delta^{(d)}=\tfrac1S\textstyle\sum_s\big(\mathrm{AUC}^{(d)}_{s,\mathrm{full}}-\mathrm{AUC}^{(d)}_{s,\mathrm{no\text{-}bridge}}\big).
+\label{eq:delta}
+\end{equation}
+Mann--Whitney form of the AUC:
+\begin{equation}
+\mathrm{AUC}=P(f(x^+)>f(x^-))+\tfrac12P(f(x^+)=f(x^-)).
+\label{eq:mw}
+\end{equation}
+Bridge homophily (label agreement across a bridge):
+\begin{equation}
+h=\frac{|\{(i,j)\in E_{\mathrm{cross}}: y_i^{(d_i)}=y_j^{(d_j)}\}|}{|E_{\mathrm{cross}}|}.
+\label{eq:homophily}
+\end{equation}
+\begin{proposition}[Bridge ablation is a valid falsifier]
+If cross-disease edges carry no diagnostic signal for disease $d$, then
+$\Delta^{(d)}$ in Eq.~\ref{eq:delta} is distributed around $0$ across seeds;
+a paired seed-level sign test on
+$\{\mathrm{AUC}^{(d)}_{s,\mathrm{full}}-\mathrm{AUC}^{(d)}_{s,\mathrm{no\text{-}bridge}}\}$
+rejects the no-signal null at level $\alpha=2^{-S}\sum_{k\ge k_0}\binom{S}{k}$.
+\end{proposition}
+\begin{proof}[Proof sketch]
+Under the null the per-seed differences are symmetric about $0$, so the sign
+of each difference is an independent fair coin; the stated binomial tail is
+the exact $p$-value of the sign test. Exchangeability holds because seeds
+enter only through split and initialization randomness.
+\end{proof}
+\section{Datasets}
+% auto-generated manifest table: 26 datasets with n, p, prevalence, citation, verified URL
+\section{External tools}
+% honest tools table: each tool, version, what it was used for
+\section{Results}
+% benchmark tables per dataset; baseline-vs-deep comparison with CIs
+\section{Discovery experiment: cross-disease bridges}
+% xgraph results, ablation delta, stable bridges, verdict
+\section{Negative results}
+% preserved honest negatives
+\section{Conclusion}
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+\bibitem{kipf} Kipf \& Welling. Semi-supervised classification with graph
+convolutional networks. ICLR 2017.
+\bibitem{zelnik} Zelnik-Manor \& Perona. Self-tuning spectral clustering.
+NeurIPS 2004.
+\bibitem{street} Street, Wolberg \& Mangasarian. Nuclear feature extraction
+for breast tumor diagnosis. IS\&T/SPIE 1993.
+\bibitem{detrano} Detrano et al. International application of a new
+probability algorithm for the diagnosis of coronary artery disease. Am J
+Cardiol 1989.
+\bibitem{uci} Kelly, Longjohn \& Nottingham. UCI Machine Learning Repository.
+\end{thebibliography}
+\end{document}

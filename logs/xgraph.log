@@ -1,3 +1,5 @@
 loaded ['wdbc:(569, 30)', 'cleveland:(303, 13)', 'pima:(768, 8)', 'parkinsons:(195, 22)']
 seed 0 done 77s cross_edges=4425
 seed 1 done 103s cross_edges=4387
+seed 2 done 64s cross_edges=4382
+seed 3 done 36s cross_edges=4402
