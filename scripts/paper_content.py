@@ -159,3 +159,90 @@ toolchain - loaders, models, graph builders, evaluation, paper generator -
 is built to be rerun end-to-end by anyone, and every number in this paper
 can be traced to a committed JSON artifact.
 """
+
+DERIVATIONS = """
+Derivation 1 (GCN from spectral convolution). Start from the spectral
+definition of graph convolution g_theta * x = U g_theta(Lambda) U^T x with
+U the eigenbasis of the normalized Laplacian L = I - D^{-1/2} A D^{-1/2}.
+Approximating g_theta by a first-order Chebyshev polynomial in Lambda and
+setting lambda_max approximately 2 yields theta (I + D^{-1/2} A D^{-1/2}) x,
+which overfits on small graphs; the renormalization A~ = A + I, D~_ii =
+1 + sum_j A_ij gives the propagation rule H' = tanh(D~^{-1/2} A~ D~^{-1/2}
+H W) used throughout. The approximation error is governed by the discarded
+Chebyshev terms of order 2 and above, which is acceptable when the kernel
+bandwidth sigma already localizes the graph (Eq. 1).
+
+Derivation 2 (Mann-Whitney form of the AUC). For score function f, AUC as
+the area under the ROC curve equals the probability that a random positive
+outranks a random negative. Write the ROC curve parametrically by threshold
+t: TPR(t) = P(f(x+) > t), FPR(t) = P(f(x-) > t). Then integral_0^1 TPR dFPR
+= integral_{-inf}^{inf} P(f(x+) > t) dP(f(x-) > t) = P(f(x+) > f(x-)),
+with the half-credit convention for ties, which is Eq. 10. The estimator is
+the two-sample U statistic, unbiased with variance given by Hanley-McNeil;
+this justifies the bootstrap CI of Eq. 8 without parametric assumptions.
+
+Derivation 3 (Class weights from cost-sensitive risk). Minimizing expected
+cost with misclassification costs c_+, c_- gives the decision rule
+predict positive iff p(y=1|x) > c_-/(c_+ + c_-). Replicating the threshold
+shift inside the loss requires weighting the positive term by w_1 =
+c_+/c_-; under prevalence correction c_+/c_- = n_-/n_+, which recovers the
+weights of Eq. 5 exactly.
+
+Derivation 4 (Exactness of the sign test for bridge ablation). Under the
+null that cross-disease edges carry no signal for disease d, the paired
+differences D_s = AUC_full,s - AUC_abl,s are symmetric about zero, so
+S+ = #{s : D_s > 0} ~ Binomial(S, 1/2), because seeds enter only through
+independent split and initialization randomness and the two variants share
+all other randomness by construction (paired design). The exact two-sided
+p-value 2^{-S} sum_{k>=k0} C(S,k) needs no normality assumption, which is
+what makes the bridge claim falsifiable at S = 5: five of five positive
+seeds give p = 0.031 < 0.05, four of five give p = 0.188.
+
+Derivation 5 (Brier decomposition and calibration). The Brier score
+decomposes as B = reliability - resolution + uncertainty (Murphy 1973).
+Reporting Brier alongside ECE (Eq. 7) separates calibration failure
+(reliability term) from discrimination failure, which is why a model can
+win AUC and still lose clinical utility: on Cleveland the MLP's ECE of
+0.123 against the GCN's 0.093 means its probabilities would need
+recalibration before thresholding.
+
+Derivation 6 (Self-tuned bandwidth). With sigma_i the distance from x_i to
+its k-th neighbor, the local-scaling kernel of Zelnik-Manor and Perona uses
+A_ij = exp(-d_ij^2/(sigma_i sigma_j)); our symmetric single-sigma variant
+(Eq. 1) with sigma^2 the median kNN squared distance is the global limit of
+that construction, and the median choice makes the kernel robust to the
+heavy right tail of squared distances - a percentile argument: any
+quantile q in (0,1) yields a valid scale, and q = 0.5 minimizes sensitivity
+to outliers among central quantiles.
+
+Derivation 7 (Multi-task gradient identity). Because the per-disease losses
+share only the trunk parameters theta_trunk, the gradient of the summed
+objective decomposes as sum_d dL_d/dtheta_trunk with head gradients
+confined to their own head: dL_MT/dtheta_head,d = dL_d/dtheta_head,d. The
+trunk therefore receives the sum of disease-specific descent directions; a
+conflict between diseases appears as gradient cancellation, which the
+bridge ablation measures indirectly through Eq. 9.
+
+Derivation 8 (Fingerprint comparability). For any invertible affine
+reparametrization of a dataset's feature space x -> Mx + b with diagonal
+M, the per-patient standardized moments m_r = mean_j ((x_j - mu)/sigma)^r
+are invariant, because mu and sigma transform covariantly. The fingerprint
+(Eq. 4) is therefore a property of the patient's distributional shape, not
+of the feature units, which is precisely what makes cross-disease edges
+well-defined.
+
+Derivation 9 (Bootstrap CI validity). The percentile bootstrap interval of
+Eq. 8 is first-order accurate: P(theta in CI_95) = 0.95 + O(n^{-1/2}) under
+standard smoothness conditions on the statistic (the AUC U-statistic
+satisfies them). With test cohorts of 49-290 patients this asymptotic is
+coarse; we therefore report interval widths rather than treating endpoints
+as sharp.
+
+Derivation 10 (Label propagation view of transduction). One GCN layer
+computes H' = tanh(A~ H W); with W near identity at initialization this is
+one step of label/feature diffusion over the patient graph, equivalent to
+minimizing the graph Dirichlet energy sum_ij A_ij ||h_i - h_j||^2 subject
+to fitting the labeled nodes. The label-efficiency result is the empirical
+shadow of this variational fact: unlabeled nodes reduce the energy
+landscape's dependence on the labeled subset.
+"""

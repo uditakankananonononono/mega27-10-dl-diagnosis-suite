@@ -132,6 +132,9 @@ def main():
         table(doc, ["Tool", "Version", "Used for"],
               [[t["tool"], t.get("version", ""), t["used_for"]] for t in tools])
 
+    h(doc, "Mathematical derivations")
+    for pgh in pc.DERIVATIONS.strip().split("\n\n"):
+        para(doc, pgh.strip())
     h(doc, "Discovery experiment: cross-disease bridges")
     for pgh in pc.DISCOVERY.strip().split("\n\n"):
         para(doc, pgh.strip())
