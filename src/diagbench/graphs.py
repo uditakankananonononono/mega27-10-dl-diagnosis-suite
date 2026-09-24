@@ -14,7 +14,10 @@ def knn_similarity_graph(X: np.ndarray, k: int = 10) -> np.ndarray:
     X = np.asarray(X, dtype=np.float32)
     n = X.shape[0]
     k = max(1, min(k, n - 1))
-    d2 = np.sum((X[:, None, :] - X[None, :, :]) ** 2, axis=-1)
+    # memory-safe pairwise squared distances: |a-b|^2 = |a|^2+|b|^2-2a.b
+    sq = (X ** 2).sum(axis=1)
+    d2 = sq[:, None] + sq[None, :] - 2.0 * (X @ X.T)
+    np.maximum(d2, 0.0, out=d2)
     np.fill_diagonal(d2, np.inf)
     knn_idx = np.argpartition(d2, kth=k - 1, axis=1)[:, :k]
     knn_d2 = np.take_along_axis(d2, knn_idx, axis=1)

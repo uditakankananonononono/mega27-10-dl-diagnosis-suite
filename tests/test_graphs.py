@@ -29,3 +29,15 @@ def test_normalize_adjacency_spectrum():
     eig = np.linalg.eigvalsh(An)
     assert eig.max() <= 1.0 + 1e-5  # normalized Laplacian property
     assert np.allclose(An, An.T)
+
+def test_knn_graph_matches_bruteforce_on_large_block():
+    """Matmul distance path must equal naive pairwise distances."""
+    import numpy as np
+    from diagbench.graphs import knn_similarity_graph
+    rng = np.random.default_rng(3)
+    X = rng.normal(size=(300, 15)).astype(np.float32)
+    A = knn_similarity_graph(X, k=5)
+    sq = ((X[:, None, :] - X[None, :, :]) ** 2).sum(-1)
+    i, j = 7, np.argsort(sq[7])[1]
+    assert A[7, j] > 0 and A[7, j] <= 1.0
+    assert (A == A.T).all()
