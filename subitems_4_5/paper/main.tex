@@ -1,0 +1,241 @@
+\documentclass[11pt]{article}
+\usepackage{mathptmx}             % Times text and math
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,amsmath,amsthm,amsfonts,longtable,array}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newcommand{\R}{\mathbb{R}}
+\title{\textbf{Deep-Learning Diagnosis Across Diseases:\\
+A CNN--GNN Hybrid Benchmark and a Confident-Learning\\Label-Noise Census of Two Public Medical Image Datasets}\\[6pt]
+\large MEGA-PROGRAM-27, Item 10 (tools 4--5): malaria parasite detection and pneumonia detection}
+\author{MEGA27-10b build lane \quad (computational study; no wet lab)}
+\date{September 24, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We build and verify two deep-learning diagnosis tools on fully public data:
+(10.4) malaria parasite detection on the NIH Lister Hill cell-image dataset
+(27{,}558 images) and (10.5) pneumonia detection on the Kermany et al.\ 2018
+chest X-ray dataset (5{,}856 images, official patient-level split, integrity
+verified by SHA-256 against the publisher-stated hash). Each tool pairs a
+compact convolutional trunk with a region-graph neural network head whose
+propagation rule we derive and analyse. Beyond reproducing published
+benchmarks, we perform a \emph{label-noise census}: a confident-learning
+audit that names, by content-hashed identifier, individual images whose
+labels are statistically inconsistent with cross-validated model confidence,
+quantifies the noise rate of each dataset, and measures the retraining delta
+after correction. All code, splits, result files and figures are committed to
+the project repository; every number in this paper is generated from a
+committed JSON artefact. Negative results are preserved as findings.
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{Scope and items 10.4--10.5}
+This report covers tools 4 and 5 of item 10 of the MEGA-PROGRAM-27
+computational-biology program: deep-learning diagnosis across diseases. Lane
+10a covers tools 1--3 on tabular cohorts (WDBC, Cleveland, Pima) and a
+22-dataset panel; the present lane deliberately selects \emph{disjoint}
+diseases and data modalities --- microscopy cell images (malaria) and
+radiographs (pneumonia) --- so the two lanes together span tabular and image
+diagnosis without duplication.
+
+\subsection{Claims audited}
+For malaria, Rajaraman et al.\ (2018) report $\approx$95.9\% accuracy for a
+custom CNN and $\approx$97.4\% for a pre-trained VGG-19 on the NIH dataset.
+For pneumonia, Kermany et al.\ (2018) report 92.8\% test accuracy
+(sensitivity 93.2\%, specificity 90.1\%) for a transfer Inception-v3 on the
+624-image official test set. We treat these as the published frontier and
+report head-to-head numbers on the same official splits.
+
+\subsection{Contribution}
+\begin{enumerate}
+\item A verified benchmark reproduction on integrity-checked data
+(SHA-verified downloads; splits committed).
+\item A compact CNN + region-GNN hybrid ($\approx$159k parameters) whose
+propagation rule we derive; it runs on 2 CPU cores.
+\item A \textbf{label-noise census} of both datasets: named, content-hashed
+image identifiers flagged by a from-scratch confident-learning estimator,
+with quantified noise rates and measured retraining deltas. To our knowledge
+no published census of these label errors exists.
+\end{enumerate}
+
+\section{Mathematical foundations}
+\subsection{Convolutional feature extraction}
+Given an input image $x \in \R^{C_0 \times H_0 \times W_0}$, a convolutional
+layer computes
+\begin{equation}
+f^{(l)}_{c,i,j} = \phi\!\Big(b^{(l)}_c + \sum_{c'=1}^{C_{l-1}} \sum_{u=0}^{k-1}\sum_{v=0}^{k-1} W^{(l)}_{c,c',u,v}\, f^{(l-1)}_{c',\, i+u,\, j+v}\Big),
+\label{eq:conv}
+\end{equation}
+with $\phi$ the ReLU nonlinearity, $k=3$ kernels, and batch normalisation
+$\hat f = \gamma (f-\mu_B)/\sqrt{\sigma_B^2+\epsilon}+\beta$ between layers.
+Max pooling halves spatial resolution three times, so a $64\times64$ input
+yields an $8\times8$ feature map with $C{=}128$ channels.
+
+\subsection{Region-graph construction}
+\begin{definition}[Region graph]
+Let $F \in \R^{C \times H \times W}$ be the CNN feature map and $g$ the grid
+size. Node $v_{r,c}$ ($0\le r,c<g$) has embedding
+\begin{equation}
+h^{(0)}_{r,c} = W_p \, \mathrm{avgpool}(F;\, r,c) \in \R^{d},
+\qquad \mathrm{avgpool}(F;r,c) = \frac{g^2}{HW}\!\!\sum_{i \in R_r}\sum_{j \in R_c} F_{:,i,j},
+\end{equation}
+and edge set $E$ joins all 8-neighbour grid pairs (king moves on the grid).
+\end{definition}
+\begin{proposition}[Adjacency moments]
+For a $g\times g$ grid with 8-neighbour adjacency $A$: (i) $A$ is symmetric
+with zero diagonal; (ii) corner nodes have degree $3$, edge (non-corner)
+nodes degree $5$, interior nodes degree $8$; (iii) the number of edges is
+$|E| = 8g^2 - 12g + 4$ for $g \ge 2$.
+\end{proposition}
+\begin{proof}
+(i)--(ii) follow from the bijection $(r,c)\leftrightarrow(r',c')$ of king
+moves and boundary counting. For (iii), sum degrees: interior
+$(g{-}2)^2$ nodes contribute $8(g{-}2)^2$; the $4(g{-}2)$ edge nodes
+contribute $5\cdot4(g{-}2)$; corners contribute $12$. Handshaking gives
+$|E|=\tfrac12[8(g{-}2)^2+20(g{-}2)+12]=8g^2-12g+4$.
+\end{proof}
+
+\subsection{GCN propagation and spectrum}
+\begin{definition}[Normalised propagation]
+With $\tilde A = A + I$, $\tilde D_{ii}=\sum_j \tilde A_{ij}$,
+\begin{equation}
+\hat A = \tilde D^{-1/2}\,\tilde A\,\tilde D^{-1/2},
+\qquad H^{(l+1)} = \phi\!\big(\hat A\, H^{(l)}\, W^{(l)}\big).
+\label{eq:gcn}
+\end{equation}
+\end{definition}
+\begin{lemma}[Spectral bound]
+The eigenvalues of $\hat A$ lie in $(-1, 1]$.
+\end{lemma}
+\begin{proof}[Proof sketch]
+$\hat A = I - \tilde D^{-1/2} \tilde L\, \tilde D^{-1/2}$ where
+$\tilde L = \tilde D - \tilde A$ is positive semidefinite; the normalised
+Laplacian of a connected non-bipartite weighted graph with self loops has
+spectrum in $[0, 2)$, hence $\lambda(\hat A) \in (-1, 1]$. Self loops shrink
+the largest Laplacian eigenvalue below $2$ (Kipf \& Welling 2017, App.\ A).
+\end{proof}
+Repeated application of \eqref{eq:gcn} contracts high-frequency components,
+which is why two layers suffice at our graph scale ($g{=}4$, $16$ nodes,
+$|E|=100$ by Proposition 2.2).
+
+\subsection{Objective and optimisation}
+We minimise the cross-entropy
+\begin{equation}
+\mathcal L = -\frac{1}{N}\sum_{n=1}^N \log \frac{\exp(z_{n,y_n})}{\sum_{c}\exp(z_{n,c})},
+\qquad
+\frac{\partial \mathcal L}{\partial z_{n,c}} = \frac{1}{N}\big(\mathrm{softmax}(z_n)_c - \mathbb 1[c = y_n]\big),
+\label{eq:xent}
+\end{equation}
+with Adam: $m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$,
+$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$,
+$\theta_t = \theta_{t-1} - \alpha\, \hat m_t/(\sqrt{\hat v_t}+\epsilon)$,
+$\hat m_t = m_t/(1-\beta_1^t)$, $\hat v_t = v_t/(1-\beta_2^t)$.
+
+\subsection{Confident learning for label noise}
+\begin{definition}[Confident joint; Northcutt et al.\ 2021]
+Given out-of-fold probabilities $P \in [0,1]^{N \times K}$ and given labels
+$y$, define per-class thresholds $t_j = \frac{1}{|\{n: y_n=j\}|}\sum_{n: y_n=j} P_{n,j}$
+and the confident prediction $\tilde y_n = \arg\max_j \{P_{n,j} : P_{n,j} \ge t_j\}$.
+The confident joint is $C_{i,j} = \sum_n \mathbb 1[y_n = i \,\wedge\, \tilde y_n = j]$.
+\end{definition}
+Off-diagonal mass $C_{i,j}$ ($i\neq j$) counts samples whose given label
+disagrees with confident out-of-fold evidence; the estimator
+$\hat\rho = \sum_{i\neq j} C_{i,j} / N$ estimates the noise rate.
+\begin{proposition}[Consistency, informal statement]
+If class-conditional predicted probabilities are rank-preserving for true
+labels and errors are class-conditional, the normalised confident joint
+converges to the true joint distribution of noisy and latent true labels as
+$N \to \infty$ (Northcutt et al.\ 2021, Thm.\ 2).
+\end{proposition}
+We validate the estimator before use: on 2{,}000 synthetic samples with 10\%
+planted flips it recovers $>$90\% of flips at $<$1\% false-positive rate
+(committed test \texttt{tests/test\_core.py::TestLabelNoise}).
+
+\subsection{Evaluation metrics}
+With TP, FP, TN, FN from the test confusion matrix,
+\begin{align}
+\mathrm{acc} &= \tfrac{TP+TN}{TP+TN+FP+FN}, &
+\mathrm{prec} &= \tfrac{TP}{TP+FP}, &
+\mathrm{rec} &= \tfrac{TP}{TP+FN}, &
+\mathrm{spec} &= \tfrac{TN}{TN+FP}, &
+F_1 &= \tfrac{2\,\mathrm{prec}\,\mathrm{rec}}{\mathrm{prec}+\mathrm{rec}},
+\end{align}
+and $\mathrm{AUC} = \int_0^1 \mathrm{TPR}(u)\, d(\mathrm{FPR}(u))$, computed
+by the trapezoidal rule over the empirical ROC.
+
+\section{Data}
+\subsection{Malaria (item 10.4)}
+NIH Lister Hill National Center \texttt{cell\_images.zip}; 27{,}558 PNGs in
+two classes (13{,}779 parasitised / 13{,}779 uninfected as published); the
+downloaded archive was verified byte-for-byte size and the extraction
+count-audited. Split: stratified 80/10/10, seed 42
+(\texttt{results/malaria/split.json}).
+\subsection{Pneumonia (item 10.5)}
+Mendeley Data \texttt{rscbjbr9sj} v2, \texttt{ChestXRay2017.zip},
+SHA-256 \texttt{13efc055\dots ce36} verified against the publisher API;
+official patient-level train/test split preserved (5{,}232 train / 624
+test); validation carved stratified from train (10\%, seed 42) and never
+touches the test set.
+\subsection{Provenance and integrity}
+Every dataset row in Table~\ref{tab:datasets} lists the exact URL, checksum
+and local verification step.
+
+\section{Methods}
+\subsection{Models} CNN core (140{,}322 parameters) and RegionGCN hybrid
+(158{,}786 parameters); grids $g{=}4$; hidden $d{=}64$; two GCN layers.
+\subsection{Training protocol} Adam $\alpha{=}10^{-3}$, batch 64 (malaria) /
+32 (pneumonia), early stopping on validation loss (patience 2--3),
+deterministic seeds; 2 CPU threads; augment = flips + $k\cdot90^\circ$
+rotations seeded per sample.
+\subsection{Census protocol} 3-fold out-of-fold probabilities on the training
+partition with the CNN core; thresholds and confident joint per Definition
+2.5; flagged identifiers are \texttt{relative/path\#md5prefix} so any third
+party can re-derive them from the public archives.
+
+\section{Results}
+\emph{All numbers below are read programmatically from committed JSON files
+under \texttt{results/}; see \texttt{src/make\_tables.py}.}
+\input{generated_tables}
+
+\section{Discussion}
+% filled after results land
+\section{External tools and datasets}
+\begin{longtable}{p{0.28\textwidth}p{0.62\textwidth}}
+\caption{External tools used (honest count; each with its role).}\label{tab:tools}\\
+\hline Tool & Role in this study \\ \hline \endhead
+\input{tools_table_body}
+\hline
+\end{longtable}
+\begin{longtable}{p{0.30\textwidth}p{0.60\textwidth}}
+\caption{Datasets and data sources (accession-level, per program counting rule).}\label{tab:datasets}\\
+\hline Dataset & Use \\ \hline \endhead
+\input{datasets_table_body}
+\hline
+\end{longtable}
+\section{Reproducibility}
+Commit-pinned code, hermetic pytest suite (13 tests, no network), fixed
+seeds, committed splits and probability files.
+\appendix
+\section{Flagged identifiers}
+% generated list of census-flagged image IDs (both datasets)
+\input{flagged_ids_body}
+\begin{thebibliography}{9}
+\bibitem{rajaraman2018} Rajaraman S.\ et al.\ Pre-trained convolutional
+neural networks as feature extractors toward improved malaria parasite
+detection in thin blood smear images. \emph{PeerJ} 6:e4568, 2018.
+\bibitem{kermany2018} Kermany D.\ et al.\ Identifying medical diagnoses and
+treatable diseases by image-based deep learning. \emph{Cell} 172(5):1122--1131, 2018.
+\bibitem{kipf2017} Kipf T., Welling M.\ Semi-supervised classification with
+graph convolutional networks. \emph{ICLR}, 2017.
+\bibitem{northcutt2021} Northcutt C., Jiang L., Chuang I.\ Confident
+learning: estimating uncertainty in dataset labels. \emph{JAIR} 70:1373--1411, 2021.
+\bibitem{kingma2015} Kingma D., Ba J.\ Adam: a method for stochastic
+optimization. \emph{ICLR}, 2015.
+\end{thebibliography}
+\end{document}

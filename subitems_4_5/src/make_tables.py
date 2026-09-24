@@ -1,0 +1,127 @@
+"""Generate LaTeX table bodies from committed result JSONs. If a result file
+is missing, the table cell says UNVERIFIED - never a guessed number."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+PAPER = ROOT / "paper"
+
+
+def load(p):
+    p = ROOT / p
+    return json.load(open(p)) if p.exists() else None
+
+
+def pct(x):
+    return f"{100*x:.2f}\\%" if isinstance(x, (int, float)) else "UNVERIFIED"
+
+
+def benchmark_rows():
+    rows = []
+    pub = {"malaria": ("Rajaraman et al. 2018 (custom CNN)", 0.959),
+           "pneumonia": ("Kermany et al. 2018 (Inception-v3 transfer)", 0.928)}
+    for disease in ("malaria", "pneumonia"):
+        res = load(f"results/{disease}/baseline_results.json")
+        ref, refacc = pub[disease]
+        for kind in ("cnn", "gcn"):
+            acc = res[kind]["accuracy"] if res else None
+            auc = res[kind]["roc_auc"] if res else None
+            delta = (acc - refacc) if isinstance(acc, float) else None
+            rows.append(
+                f"{disease} & {kind.upper()} & {pct(acc)} & {pct(auc)} & "
+                f"{ref} ({pct(refacc)}) & " +
+                (f"{100*delta:+.2f} pts" if isinstance(delta, float) else "UNVERIFIED") + " \\\\")
+    return "\\hline\n" + "\n\\hline\n".join(rows) + "\n\\hline\n"
+
+
+def census_rows():
+    rows = []
+    for disease in ("malaria", "pneumonia"):
+        c = load(f"results/{disease}/label_noise_census.json")
+        if c:
+            s = c["summary"]
+            rows.append(f"{disease} & {s['n']} & {s['estimated_label_errors']} & "
+                        f"{pct(s['estimated_noise_rate'])} & {len(c['flagged_ids'])} \\\\")
+        else:
+            rows.append(f"{disease} & UNVERIFIED & UNVERIFIED & UNVERIFIED & UNVERIFIED \\\\")
+    return "\\hline\n" + "\n\\hline\n".join(rows) + "\n\\hline\n"
+
+
+def delta_rows():
+    rows = []
+    for disease in ("malaria", "pneumonia"):
+        b = load(f"results/{disease}/baseline_results.json")
+        c = load(f"results/{disease}/cleaned_results.json")
+        for kind in ("cnn", "gcn"):
+            if b and c:
+                d = c[kind]["accuracy"] - b[kind]["accuracy"]
+                rows.append(f"{disease} & {kind.upper()} & {pct(b[kind]['accuracy'])} & "
+                            f"{pct(c[kind]['accuracy'])} & {100*d:+.2f} pts \\\\")
+            else:
+                rows.append(f"{disease} & {kind.upper()} & UNVERIFIED & UNVERIFIED & UNVERIFIED \\\\")
+    return "\\hline\n" + "\n\\hline\n".join(rows) + "\n\\hline\n"
+
+
+def main():
+    body = []
+    body.append("\\begin{table}[h]\\centering\n\\caption{Head-to-head benchmark on official splits.}\n"
+                "\\begin{tabular}{lllll}\n\\hline\nDisease & Model & Test acc & Test AUC & Published reference & $\\Delta$ \\\\\n"
+                + benchmark_rows() + "\\end{tabular}\\end{table}\n")
+    body.append("\\begin{table}[h]\\centering\n\\caption{Label-noise census summary.}\n"
+                "\\begin{tabular}{lllll}\n\\hline\nDisease & $N$ & Est.\\ label errors & Est.\\ noise rate & IDs published \\\\\n"
+                + census_rows() + "\\end{tabular}\\end{table}\n")
+    body.append("\\begin{table}[h]\\centering\n\\caption{Retraining delta after census-driven cleaning.}\n"
+                "\\begin{tabular}{lllll}\n\\hline\nDisease & Model & Acc (original) & Acc (cleaned) & $\\Delta$ \\\\\n"
+                + delta_rows() + "\\end{tabular}\\end{table}\n")
+    (PAPER / "generated_tables.tex").write_text("\n".join(body))
+
+    tools = [
+        ("NIH Lister Hill NCBI malaria release", "item 10.4 image data (27,558 PNGs)"),
+        ("Mendeley Data rscbjbr9sj v2", "item 10.5 image data (5,856 JPEGs), SHA-256 verified"),
+        ("PyTorch 2.14 (CPU)", "all model code and training"),
+        ("torchvision", "image I/O utilities"),
+        ("scikit-learn", "metrics (ROC-AUC, confusion, F1)"),
+        ("NumPy", "numerical core, splits, estimator"),
+        ("pandas", "manifest tables"),
+        ("Pillow", "image decoding"),
+        ("matplotlib", "all figures"),
+        ("SciPy", "statistical helpers"),
+        ("pytest", "hermetic test suite (13 tests)"),
+        ("GitHub", "artefact repository and commit-pinned provenance"),
+        ("git", "version control"),
+        ("pdflatex (TeX Live)", "this paper, Times typeface"),
+        ("pandoc", "format checks"),
+        ("curl", "dataset download with checksum verification"),
+        ("sha256sum", "integrity verification of archives"),
+        ("Mendeley public API", "file manifest + publisher-stated hashes"),
+    ]
+    (PAPER / "tools_table_body.tex").write_text(
+        "\n".join(f"{a} & {b} \\\\" for a, b in tools) + "\n")
+    dsets = [
+        ("NIH malaria cell_images (Lister Hill, 2018)", "10.4 training/benchmark; 27,558 images, 2 classes"),
+        ("Kermany ChestXRay2017 (Mendeley rscbjbr9sj v2)", "10.5 training/benchmark; 5,232 train / 624 test, patient-level split"),
+    ]
+    (PAPER / "datasets_table_body.tex").write_text(
+        "\n".join(f"{a} & {b} \\\\" for a, b in dsets) + "\n")
+    flagged = []
+    for disease in ("malaria", "pneumonia"):
+        c = load(f"results/{disease}/label_noise_census.json")
+        flagged.append(f"\\subsection*{{{disease}}}")
+        if c:
+            ids = c["flagged_ids"]
+            flagged.append(f"{len(ids)} flagged identifiers:")
+            flagged.append("\\begin{itemize}")
+            flagged += ["\\item \\texttt{" + i.replace("_", "\\_").replace("#", "\\#") + "}"
+                        for i in ids[:500]]
+            if len(ids) > 500:
+                flagged.append(f"\\item \\dots\\ and {len(ids)-500} more in "
+                               f"\\texttt{{results/{disease}/label\\_noise\\_census.json}}")
+            flagged.append("\\end{itemize}")
+        else:
+            flagged.append("UNVERIFIED (census not yet run).")
+    (PAPER / "flagged_ids_body.tex").write_text("\n".join(flagged) + "\n")
+    print("tables generated")
+
+
+if __name__ == "__main__":
+    main()
