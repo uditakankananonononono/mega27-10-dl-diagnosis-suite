@@ -252,5 +252,14 @@
   "labeling": "field:normal colon mucosa|primary tumor resection",
   "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE33nnn/GSE33113/matrix/GSE33113_series_matrix.txt.gz",
   "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE66354": {
+  "auc": 1.0,
+  "n_case": 136,
+  "n_ctrl": 13,
+  "n_probes": 18702,
+  "labeling": "field:brain tumor|normal brain",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE66nnn/GSE66354/matrix/GSE66354_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
  }
 }
