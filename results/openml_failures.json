@@ -1,0 +1,6 @@
+{"1086": {"name": "ovarian-tumour-ge", "status": "failed", "reason": "OpenML server HTTP 500 + download hang (2 attempts, hard timeout)", "url": "https://www.openml.org/d/1086"},
+ "1087": {"name": "hepatitis-c-ge", "status": "failed", "reason": "OpenML download hang (C-level poll, hard timeout after 420s)", "url": "https://www.openml.org/d/1087"},
+ "1088": {"name": "various-cancers", "status": "failed", "reason": "OpenML server HTTP 500 (2 attempts)", "url": "https://www.openml.org/d/1088"},
+ "1245": {"name": "lung-shedden", "status": "skipped", "reason": "332 classes exceeds multiclass guard (>20)", "url": "https://www.openml.org/d/1245"},
+ "171": {"name": "primary-tumor", "status": "skipped", "reason": "21/22 classes exceeds multiclass guard", "url": "https://www.openml.org/d/171"},
+ "224": {"name": "breast-tumor", "status": "skipped", "reason": "23 classes exceeds multiclass guard", "url": "https://www.openml.org/d/224"}}
