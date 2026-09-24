@@ -61,5 +61,41 @@
   "n_test": 3421,
   "auc": 0.9374990621813886,
   "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "tissuemnist": {
+  "subset": "tissuemnist",
+  "task": "multi-class",
+  "n_classes": 8,
+  "n_train": 165466,
+  "n_test": 47280,
+  "auc": 0.8617784297052196,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "organamnist": {
+  "subset": "organamnist",
+  "task": "multi-class",
+  "n_classes": 11,
+  "n_train": 34561,
+  "n_test": 17778,
+  "auc": 0.9781353940364805,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "organcmnist": {
+  "subset": "organcmnist",
+  "task": "multi-class",
+  "n_classes": 11,
+  "n_train": 12975,
+  "n_test": 8216,
+  "auc": 0.9698043218127164,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "organsmnist": {
+  "subset": "organsmnist",
+  "task": "multi-class",
+  "n_classes": 11,
+  "n_train": 13932,
+  "n_test": 8827,
+  "auc": 0.9406126574979158,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
  }
 }
