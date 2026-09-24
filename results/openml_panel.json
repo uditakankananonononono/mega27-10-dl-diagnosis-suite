@@ -1,0 +1,122 @@
+{
+ "8": {
+  "name": "liver-disorders-bupa",
+  "n": 345,
+  "p": 5,
+  "n_classes": 16,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.5456496358434013,
+   "rf": 0.5701090924074957
+  },
+  "best": "rf",
+  "best_auc": 0.5701090924074957,
+  "url": "https://www.openml.org/d/8",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "25": {
+  "name": "colic-horse",
+  "n": 368,
+  "p": 26,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.8492963995943206,
+   "rf": 0.9023358265720082
+  },
+  "best": "rf",
+  "best_auc": 0.9023358265720082,
+  "url": "https://www.openml.org/d/25",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "163": {
+  "name": "lung-cancer-uci",
+  "n": 32,
+  "p": 56,
+  "n_classes": 3,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.6572910943620326,
+   "rf": 0.728161551559721
+  },
+  "best": "rf",
+  "best_auc": 0.728161551559721,
+  "url": "https://www.openml.org/d/163",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "346": {
+  "name": "aids",
+  "n": 50,
+  "p": 4,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 1.0,
+   "rf": 1.0
+  },
+  "best": "logreg",
+  "best_auc": 1.0,
+  "url": "https://www.openml.org/d/346",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "481": {
+  "name": "biomed",
+  "n": 209,
+  "p": 8,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9817910447761194,
+   "rf": 0.9998009950248756
+  },
+  "best": "rf",
+  "best_auc": 0.9998009950248756,
+  "url": "https://www.openml.org/d/481",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "553": {
+  "name": "kidney",
+  "n": 76,
+  "p": 6,
+  "n_classes": 20,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.786572562583592,
+   "rf": 0.9639042548325637
+  },
+  "best": "rf",
+  "best_auc": 0.9639042548325637,
+  "url": "https://www.openml.org/d/553",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1039": {
+  "name": "hiva-agnostic",
+  "n": 4229,
+  "p": 1617,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.7249358468219503,
+   "rf": 0.7942624029477563
+  },
+  "best": "rf",
+  "best_auc": 0.7942624029477563,
+  "url": "https://www.openml.org/d/1039",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1084": {
+  "name": "burkitt-lymphoma",
+  "n": 220,
+  "p": 22283,
+  "n_classes": 3,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.9793746713301087,
+   "rf": 0.9664217762249413
+  },
+  "best": "logreg",
+  "best_auc": 0.9793746713301087,
+  "url": "https://www.openml.org/d/1084",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ }
+}
