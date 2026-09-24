@@ -1,0 +1,17 @@
+  epoch 0: train_loss=0.2106 val_loss=0.1511 (314s)
+  epoch 1: train_loss=0.1372 val_loss=0.2295 (326s)
+  epoch 2: train_loss=0.1317 val_loss=0.1658 (311s)
+  epoch 3: train_loss=0.1224 val_loss=0.1333 (324s)
+[oof fold 0] val_loss=0.1333 (checkpointed)
+  epoch 0: train_loss=0.2270 val_loss=0.3904 (318s)
+  epoch 1: train_loss=0.1387 val_loss=0.1435 (317s)
+  epoch 2: train_loss=0.1261 val_loss=0.1431 (323s)
+  epoch 3: train_loss=0.1214 val_loss=0.1880 (319s)
+[oof fold 1] val_loss=0.1431 (checkpointed)
+  epoch 0: train_loss=0.2341 val_loss=0.1919 (231s)
+  epoch 1: train_loss=0.1498 val_loss=0.1140 (337s)
+  epoch 2: train_loss=0.1382 val_loss=0.1982 (327s)
+  epoch 3: train_loss=0.1321 val_loss=0.1158 (586s)
+[oof fold 2] val_loss=0.1140 (checkpointed)
+[census] noise_rate=0.1144 flagged=249
+CENSUS_DONE
