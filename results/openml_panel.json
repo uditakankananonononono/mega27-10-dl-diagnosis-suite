@@ -448,5 +448,20 @@
   "best_auc": 0.6871670610070965,
   "url": "https://www.openml.org/d/43439",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "43008": {
+  "name": "heart-failure",
+  "n": 299,
+  "p": 12,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.8732553366174056,
+   "rf": 0.8907532840722496
+  },
+  "best": "rf",
+  "best_auc": 0.8907532840722496,
+  "url": "https://www.openml.org/d/43008",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014); ARFF parsed directly, target DEATH_EVENT (OpenML default-target metadata missing)"
  }
 }

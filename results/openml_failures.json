@@ -1,6 +1,68 @@
-{"1086": {"name": "ovarian-tumour-ge", "status": "failed", "reason": "OpenML server HTTP 500 + download hang (2 attempts, hard timeout)", "url": "https://www.openml.org/d/1086"},
- "1087": {"name": "hepatitis-c-ge", "status": "failed", "reason": "OpenML download hang (C-level poll, hard timeout after 420s)", "url": "https://www.openml.org/d/1087"},
- "1088": {"name": "various-cancers", "status": "failed", "reason": "OpenML server HTTP 500 (2 attempts)", "url": "https://www.openml.org/d/1088"},
- "1245": {"name": "lung-shedden", "status": "skipped", "reason": "332 classes exceeds multiclass guard (>20)", "url": "https://www.openml.org/d/1245"},
- "171": {"name": "primary-tumor", "status": "skipped", "reason": "21/22 classes exceeds multiclass guard", "url": "https://www.openml.org/d/171"},
- "224": {"name": "breast-tumor", "status": "skipped", "reason": "23 classes exceeds multiclass guard", "url": "https://www.openml.org/d/224"}}
+{
+ "1086": {
+  "name": "ovarian-tumour-ge",
+  "status": "failed",
+  "reason": "OpenML server HTTP 500 + download hang (2 attempts, hard timeout)",
+  "url": "https://www.openml.org/d/1086"
+ },
+ "1087": {
+  "name": "hepatitis-c-ge",
+  "status": "failed",
+  "reason": "OpenML download hang (C-level poll, hard timeout after 420s)",
+  "url": "https://www.openml.org/d/1087"
+ },
+ "1088": {
+  "name": "various-cancers",
+  "status": "failed",
+  "reason": "OpenML server HTTP 500 (2 attempts)",
+  "url": "https://www.openml.org/d/1088"
+ },
+ "1245": {
+  "name": "lung-shedden",
+  "status": "skipped",
+  "reason": "332 classes exceeds multiclass guard (>20)",
+  "url": "https://www.openml.org/d/1245"
+ },
+ "171": {
+  "name": "primary-tumor",
+  "status": "skipped",
+  "reason": "21/22 classes exceeds multiclass guard",
+  "url": "https://www.openml.org/d/171"
+ },
+ "224": {
+  "name": "breast-tumor",
+  "status": "skipped",
+  "reason": "23 classes exceeds multiclass guard",
+  "url": "https://www.openml.org/d/224"
+ },
+ "43657": {
+  "name": "cumida-brain",
+  "status": "failed",
+  "reason": "ARFF parse hang (liac-arff), 2 hard-timeout attempts",
+  "url": "https://www.openml.org/d/43657"
+ },
+ "43658": {
+  "name": "cumida-breast",
+  "status": "failed",
+  "reason": "ARFF parse hang (liac-arff), 2 hard-timeout attempts",
+  "url": "https://www.openml.org/d/43658"
+ },
+ "43414": {
+  "name": "autism-screening",
+  "status": "failed",
+  "reason": "OpenML default-target metadata missing; target undefined",
+  "url": "https://www.openml.org/d/43414"
+ },
+ "43428": {
+  "name": "mexico-covid19",
+  "status": "failed",
+  "reason": "0-dim data block after frame fallback (malformed ARFF)",
+  "url": "https://www.openml.org/d/43428"
+ },
+ "4531": {
+  "name": "parkinsons-telemonitoring",
+  "status": "failed",
+  "reason": "OpenML default-target metadata missing (regression targets)",
+  "url": "https://www.openml.org/d/4531"
+ }
+}

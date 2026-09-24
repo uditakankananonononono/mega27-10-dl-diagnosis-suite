@@ -69,7 +69,11 @@ def run_subset(name, epochs=3, seed=0):
             "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"}
 
 results = {}
+if os.path.exists("results/medmnist.json"):
+    results = json.load(open("results/medmnist.json"))
 for name in SUBSETS:
+    if name in results:
+        continue
     t0 = time.time()
     try:
         r = run_subset(name)
