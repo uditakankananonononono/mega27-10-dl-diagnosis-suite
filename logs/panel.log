@@ -4,3 +4,4 @@ DONE heart_hungarian 140s best=logreg 0.9184
 DONE heart_switzerland 115s best=logreg 0.8678
 DONE heart_va 76s best=random_forest 0.7190
 DONE hepatitis 92s best=gcn 0.9315
+DONE statlog_heart 152s best=mlp 0.9058
