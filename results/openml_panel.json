@@ -328,5 +328,110 @@
   "best_auc": 0.9568111111111111,
   "url": "https://www.openml.org/d/1523",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "4134": {
+  "name": "bioresponse",
+  "n": 3751,
+  "p": 1776,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.7716747728911361,
+   "rf": 0.8757362461909908
+  },
+  "best": "rf",
+  "best_auc": 0.8757362461909908,
+  "url": "https://www.openml.org/d/4134",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "4541": {
+  "name": "diabetes-130us",
+  "n": 20000,
+  "p": 49,
+  "n_classes": 3,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.6388926956514093,
+   "rf": 0.664405765521258
+  },
+  "best": "rf",
+  "best_auc": 0.664405765521258,
+  "url": "https://www.openml.org/d/4541",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "40474": {
+  "name": "thyroid-allbp",
+  "n": 2800,
+  "p": 26,
+  "n_classes": 5,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.8030791984211252,
+   "rf": 0.8151997245501004
+  },
+  "best": "rf",
+  "best_auc": 0.8151997245501004,
+  "url": "https://www.openml.org/d/40474",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "40477": {
+  "name": "thyroid-allrep",
+  "n": 2800,
+  "p": 26,
+  "n_classes": 5,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.8030791984211252,
+   "rf": 0.8151997245501004
+  },
+  "best": "rf",
+  "best_auc": 0.8151997245501004,
+  "url": "https://www.openml.org/d/40477",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "40966": {
+  "name": "mice-protein",
+  "n": 1080,
+  "p": 77,
+  "n_classes": 8,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.9999301739015001,
+   "rf": 0.9999401572032994
+  },
+  "best": "rf",
+  "best_auc": 0.9999401572032994,
+  "url": "https://www.openml.org/d/40966",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "41430": {
+  "name": "diabetic-mellitus",
+  "n": 281,
+  "p": 97,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9748029748029747,
+   "rf": 0.994033744033744
+  },
+  "best": "rf",
+  "best_auc": 0.994033744033744,
+  "url": "https://www.openml.org/d/41430",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "42900": {
+  "name": "breast-cancer-coimbra",
+  "n": 116,
+  "p": 9,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.7629206730769231,
+   "rf": 0.782001201923077
+  },
+  "best": "rf",
+  "best_auc": 0.782001201923077,
+  "url": "https://www.openml.org/d/42900",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
