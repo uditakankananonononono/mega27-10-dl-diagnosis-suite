@@ -1,7 +1,7 @@
 """UCSC Xena / GDC TCGA arm: per-cohort primary-tumor vs solid-tissue-normal.
 
 One accession-level dataset per TCGA cohort (TCGA-BRCA, ...). Expression
-matrices are the GDC hub htseq FPKM tables; labels come from the TCGA
+matrices are the GDC hub STAR count tables (log2 CPM+1 normalized); labels come from the TCGA
 barcode sample-type code (positions 14-15): 01-09 = tumor (case), 10-19 =
 normal (control); metastatic (06) and all other codes are discarded to keep
 the contrast clean. Min 5 per class, else SKIP. Same eval as the GEO arm:
@@ -36,7 +36,7 @@ for co in COHORTS:
     if acc in tried:
         continue
     t0 = time.time()
-    url = f"https://gdc.xenahubs.net/download/{acc}.htseq_fpkm.tsv.gz"
+    url = f"https://gdc.xenahubs.net/download/{acc}.star_counts.tsv.gz"
     path = f"data_cache/xena/{acc}.tsv.gz"
     try:
         if not os.path.exists(path):
@@ -79,8 +79,9 @@ for co in COHORTS:
                 continue
             genes.append(vals[0])
             X[len(genes) - 1] = [float(vals[j + 1]) for j in idx]
-        X = X[:len(genes)].T  # samples x genes
-        X = np.log2(np.maximum(X, 0.0) + 1.0)
+        X = X[:len(genes)].T  # samples x genes (raw STAR counts)
+        lib = np.maximum(X.sum(axis=1, keepdims=True), 1.0)
+        X = np.log2(X / lib * 1e6 + 1.0)  # log2(CPM+1)
         if X.size > 40_000_000:
             keep_p = max(2000, 40_000_000 // X.shape[0])
             v = np.var(X, axis=0)

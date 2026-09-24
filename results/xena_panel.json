@@ -1,0 +1,11 @@
+{
+ "TCGA-BLCA": {
+  "auc": 0.9935658216445761,
+  "n_case": 409,
+  "n_ctrl": 19,
+  "n_genes": 60660,
+  "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
+  "url": "https://gdc.xenahubs.net/download/TCGA-BLCA.star_counts.tsv.gz",
+  "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
+ }
+}
