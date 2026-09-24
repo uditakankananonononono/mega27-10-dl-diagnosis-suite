@@ -1,0 +1,13 @@
+FAIL pathmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL chestmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL dermamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL octmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL pneumoniamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL retinamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL breastmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL bloodmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL tissuemnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL organamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL organcmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL organsmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+MEDMNIST_DONE
