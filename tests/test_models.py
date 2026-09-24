@@ -78,3 +78,14 @@ def test_mlp_can_overfit_single_batch():
             loss0 = loss.item()
         opt.zero_grad(); loss.backward(); opt.step()
     assert loss.item() < 0.2 * loss0
+
+def test_models_handle_batch_of_one():
+    """LayerNorm must make batch-size-1 forward passes safe (mammographic bug)."""
+    import torch
+    from diagbench.models.mlp import MLP
+    from diagbench.models.cnn1d import CNN1D
+    for cls in (MLP, CNN1D):
+        m = cls(7)
+        m.train()
+        out = m(torch.randn(1, 7))
+        assert out.shape == (1,)

@@ -44,3 +44,4 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2860, in _verify_batch_size
     raise ValueError(
 ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 64])
+DONE echocardiogram 78s best=logreg 0.8333

@@ -10,7 +10,7 @@ class MLP(nn.Module):
         super().__init__()
         layers, prev = [], d_in
         for h in hidden:
-            layers += [nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(),
+            layers += [nn.Linear(prev, h), nn.LayerNorm(h), nn.ReLU(),
                        nn.Dropout(dropout)]
             prev = h
         layers.append(nn.Linear(prev, 1))
