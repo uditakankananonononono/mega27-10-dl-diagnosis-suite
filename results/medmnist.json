@@ -97,5 +97,14 @@
   "n_test": 8827,
   "auc": 0.9406126574979158,
   "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "chestmnist": {
+  "subset": "chestmnist",
+  "task": "multi-label, binary-class",
+  "n_classes": 14,
+  "n_train": 78468,
+  "n_test": 22433,
+  "auc": 0.6281323564630928,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
  }
 }
