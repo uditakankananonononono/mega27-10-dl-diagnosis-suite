@@ -39,7 +39,11 @@ for co in COHORTS:
     url = f"https://gdc.xenahubs.net/download/{acc}.star_counts.tsv.gz"
     path = f"data_cache/xena/{acc}.tsv.gz"
     try:
+        if os.path.exists(path) and os.path.getsize(path) == 0:
+            os.remove(path)
         if not os.path.exists(path):
+            import socket
+            socket.setdefaulttimeout(180)
             req = urllib.request.Request(url)
             with urllib.request.urlopen(req, timeout=120) as r, \
                     open(path, "wb") as fh:
@@ -104,6 +108,9 @@ for co in COHORTS:
               f"(+{(y==1).sum()}/-{(y==0).sum()})", flush=True)
     except Exception as e:
         print(f"FAIL {acc} {type(e).__name__}: {str(e)[:80]}", flush=True)
+        if os.path.exists(path) and type(e).__name__ in ("EOFError", "BadGzipFile"):
+            os.remove(path)
+            print(f"CACHE_PURGED {acc}", flush=True)
         failed.append(acc)
     json.dump(sorted(set(failed)), open(fail_path, "w"))
 print(f"XENA_DONE analyzed_total={len(out)}", flush=True)
