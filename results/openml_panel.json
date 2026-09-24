@@ -118,5 +118,50 @@
   "best_auc": 0.9793746713301087,
   "url": "https://www.openml.org/d/1084",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1101": {
+  "name": "lymphoma-2class",
+  "n": 45,
+  "p": 4026,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9980237154150198,
+   "rf": 0.9901185770750989
+  },
+  "best": "logreg",
+  "best_auc": 0.9980237154150198,
+  "url": "https://www.openml.org/d/1101",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1107": {
+  "name": "tumors-ramaswamy",
+  "n": 60,
+  "p": 7129,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.6471306471306472,
+   "rf": 0.631868131868132
+  },
+  "best": "logreg",
+  "best_auc": 0.6471306471306472,
+  "url": "https://www.openml.org/d/1107",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1122": {
+  "name": "ap-breast-prostate",
+  "n": 413,
+  "p": 10935,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9969666329625885,
+   "rf": 0.999262723289518
+  },
+  "best": "rf",
+  "best_auc": 0.999262723289518,
+  "url": "https://www.openml.org/d/1122",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
