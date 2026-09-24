@@ -7,7 +7,7 @@ analyzed with the same CV harness as the UCI panel (logreg + RF,
 sets (BNG, GAMETES) and re-upload duplicates of the UCI panel are excluded by
 curation. Every analyzed ID is recorded with provenance URL.
 """
-import json, os, signal, socket, time, warnings
+import json, os, signal, socket, sys, time, warnings
 socket.setdefaulttimeout(120)
 os.environ.setdefault("OMP_NUM_THREADS", "2")
 warnings.filterwarnings("ignore")
@@ -63,11 +63,13 @@ if os.path.exists("results/openml_panel.json"):
 class _T(Exception): pass
 def _alarm(sig, frm): raise _T()
 signal.signal(signal.SIGALRM, _alarm)
+only = set(map(int, sys.argv[1:]))
 for did, name in CANDIDATES.items():
+    if only and did not in only:
+        continue
     if str(did) in out:
         continue
     t0 = time.time()
-    signal.alarm(360)
     try:
         X, y = load(did)
         if X.size > MAX_ELEMS:
@@ -114,6 +116,4 @@ for did, name in CANDIDATES.items():
         print(f"DONE {did} {name} {time.time()-t0:.0f}s best {best} {aucs[best]:.3f} n={X.shape[0]} p={X.shape[1]}", flush=True)
     except Exception as e:
         print(f"FAIL {did} {name} {type(e).__name__}: {str(e)[:90]}", flush=True)
-    finally:
-        signal.alarm(0)
 print(f"OPENML_DONE analyzed={len(out)}", flush=True)
