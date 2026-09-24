@@ -163,5 +163,35 @@
   "best_auc": 0.999262723289518,
   "url": "https://www.openml.org/d/1122",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1126": {
+  "name": "ap-colon-lung",
+  "n": 412,
+  "p": 10935,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9875124875124874,
+   "rf": 0.9924658674658675
+  },
+  "best": "rf",
+  "best_auc": 0.9924658674658675,
+  "url": "https://www.openml.org/d/1126",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1128": {
+  "name": "ova-breast",
+  "n": 1545,
+  "p": 10935,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9699402629591619,
+   "rf": 0.978918972561625
+  },
+  "best": "rf",
+  "best_auc": 0.978918972561625,
+  "url": "https://www.openml.org/d/1128",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
