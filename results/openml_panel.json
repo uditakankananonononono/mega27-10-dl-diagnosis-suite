@@ -283,5 +283,50 @@
   "best_auc": 0.9830288729005796,
   "url": "https://www.openml.org/d/1471",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1498": {
+  "name": "sa-heart",
+  "n": 462,
+  "p": 9,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.6664114238410596,
+   "rf": 0.618698261589404
+  },
+  "best": "logreg",
+  "best_auc": 0.6664114238410596,
+  "url": "https://www.openml.org/d/1498",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1506": {
+  "name": "thoracic-surgery",
+  "n": 470,
+  "p": 16,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.5897857142857142,
+   "rf": 0.6082321428571429
+  },
+  "best": "rf",
+  "best_auc": 0.6082321428571429,
+  "url": "https://www.openml.org/d/1506",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1523": {
+  "name": "vertebra-column",
+  "n": 310,
+  "p": 6,
+  "n_classes": 3,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.9568111111111111,
+   "rf": 0.9510186507936508
+  },
+  "best": "logreg",
+  "best_auc": 0.9568111111111111,
+  "url": "https://www.openml.org/d/1523",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
