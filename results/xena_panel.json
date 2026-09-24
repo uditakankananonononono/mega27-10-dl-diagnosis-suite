@@ -151,5 +151,14 @@
   "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
   "url": "https://gdc.xenahubs.net/download/TCGA-THCA.star_counts.tsv.gz",
   "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
+ },
+ "TCGA-UCEC": {
+  "auc": 1.0,
+  "n_case": 550,
+  "n_ctrl": 35,
+  "n_genes": 60660,
+  "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
+  "url": "https://gdc.xenahubs.net/download/TCGA-UCEC.star_counts.tsv.gz",
+  "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
  }
 }
