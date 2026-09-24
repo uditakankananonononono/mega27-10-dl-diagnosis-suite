@@ -48,12 +48,9 @@ for co in COHORTS:
                     if not chunk:
                         break
                     fh.write(chunk)
-        hdr = None
-        genes, rows = [], []
         with gzip.open(path, "rt", errors="replace") as fh:
             hdr = fh.readline().rstrip("\n").split("\t")
-            for line in fh:
-                rows.append(line)
+            nlines = sum(1 for _ in fh)
         samples = hdr[1:]
         codes = []
         for s in samples:
@@ -70,18 +67,22 @@ for co in COHORTS:
             json.dump(sorted(set(failed)), open(fail_path, "w"))
             continue
         idx = np.where(keep)[0]
-        X = np.empty((len(rows), int(keep.sum())), dtype=np.float32)
-        bad = 0
-        for i, ln in enumerate(rows):
-            vals = ln.rstrip("\n").split("\t")
-            if len(vals) != len(hdr):
-                bad += 1
-                continue
-            genes.append(vals[0])
-            X[len(genes) - 1] = [float(vals[j + 1]) for j in idx]
-        X = X[:len(genes)].T  # samples x genes (raw STAR counts)
-        lib = np.maximum(X.sum(axis=1, keepdims=True), 1.0)
-        X = np.log2(X / lib * 1e6 + 1.0)  # log2(CPM+1)
+        X = np.empty((nlines, int(keep.sum())), dtype=np.float32)
+        ngenes = 0
+        with gzip.open(path, "rt", errors="replace") as fh:
+            fh.readline()
+            for ln in fh:
+                vals = ln.rstrip("\n").split("\t")
+                if len(vals) != len(hdr):
+                    continue
+                X[ngenes] = np.array(vals[1:], dtype=np.float32)[idx]
+                ngenes += 1
+        X = X[:ngenes].T  # samples x genes (raw STAR counts)
+        lib = np.maximum(X.sum(axis=1), 1.0)
+        X /= lib[:, None]
+        X *= 1e6
+        X += 1.0
+        np.log2(X, out=X)  # in-place log2(CPM+1)
         if X.size > 40_000_000:
             keep_p = max(2000, 40_000_000 // X.shape[0])
             v = np.var(X, axis=0)
