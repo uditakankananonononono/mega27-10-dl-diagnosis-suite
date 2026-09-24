@@ -113,7 +113,13 @@ labels it reaches 0.8838, beating the full-label MLP by 2.6 AUC points.
 The advantage persists at every label fraction tested (+6.0, +3.4, +1.7,
 +2.1 points at 10, 25, 50, 100 percent respectively). On WDBC, the GCN
 with a quarter of the labels matches the full-label MLP (0.9884 vs 0.9880).
-The mechanism is transparent: unlabeled patients shape the decision
+On Parkinson's the ranking inverts: the MLP dominates at 50 and 100
+percent labels (0.9014 and 0.9640 against the GCN's 0.8428 and 0.8851). The
+failure mode is informative - where the tabular margin is already wide, the
+similarity graph only smooths away signal. The label-efficiency claim is
+therefore scoped: transduction buys labels where the tabular problem is
+hard, and costs accuracy where it is easy. The mechanism in the winning
+regime is transparent: unlabeled patients shape the decision
 boundary through the graph Laplacian, so supervision propagates along
 diagnostically meaningful similarity structure instead of being confined to
 the labeled subset. For clinical deployment, where every label costs an
