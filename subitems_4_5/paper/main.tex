@@ -24,7 +24,7 @@ verified by SHA-256 against the publisher-stated hash). Each tool pairs a
 compact convolutional trunk with a region-graph neural network head whose
 propagation rule we derive and analyse. Beyond reproducing published
 benchmarks, we perform a \emph{label-noise census}: a confident-learning
-audit that names, by content-hashed identifier, individual images whose
+audit that names, by named identifier, individual images whose
 labels are statistically inconsistent with cross-validated model confidence,
 quantifies the noise rate of each dataset, and measures the retraining delta
 after correction. All code, splits, result files and figures are committed to
@@ -58,7 +58,7 @@ report head-to-head numbers on the same official splits.
 (SHA-verified downloads; splits committed).
 \item A compact CNN + region-GNN hybrid ($\approx$159k parameters) whose
 propagation rule we derive; it runs on 2 CPU cores.
-\item A \textbf{label-noise census} of both datasets: named, content-hashed
+\item A \textbf{label-noise census} of both datasets: named, individually checkable
 image identifiers flagged by a from-scratch confident-learning estimator,
 with quantified noise rates and measured retraining deltas. To our knowledge
 no published census of these label errors exists.
@@ -195,16 +195,95 @@ deterministic seeds; 2 CPU threads; augment = flips + $k\cdot90^\circ$
 rotations seeded per sample.
 \subsection{Census protocol} 3-fold out-of-fold probabilities on the training
 partition with the CNN core; thresholds and confident joint per Definition
-2.5; flagged identifiers are \texttt{relative/path\#md5prefix} so any third
-party can re-derive them from the public archives.
+2.5; flagged identifiers are the exact relative paths of the image files
+inside the public archives, so any third party can locate and inspect the
+precise images in the original downloads.
 
 \section{Results}
 \emph{All numbers below are read programmatically from committed JSON files
 under \texttt{results/}; see \texttt{src/make\_tables.py}.}
 \input{generated_tables}
 
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.72\textwidth]{../figures/malaria_training_curves.png}
+\caption{Malaria baseline training and validation loss, CNN core vs
+RegionGCN hybrid (committed history in
+\texttt{results/malaria/baseline\_results.json}).}
+\end{figure}
+\begin{figure}[h]\centering
+\includegraphics[width=0.6\textwidth]{../figures/malaria_confusion.png}
+\caption{Malaria test-set confusion, CNN core (2{,}758 held-out cells).}
+\end{figure}
+\begin{figure}[h]\centering
+\includegraphics[width=0.62\textwidth]{../figures/malaria_confident_joint.png}
+\caption{Malaria confident joint from the 3-fold out-of-fold census.
+Off-diagonal mass is strongly asymmetric: 2{,}358 cells labelled
+Parasitized are cross-validated as Uninfected, vs 164 in the opposite
+direction.}
+\end{figure}
+
 \section{Discussion}
-% filled after results land
+\subsection{What the census is and is not}
+The label-noise census estimates \emph{statistical} label inconsistency: an
+image is flagged when cross-validated model confidence in a \emph{different}
+class exceeds the class-mean confidence threshold. A flag is a falsifiable,
+individually checkable claim --- any reader can re-derive the flagged
+identifier from the public archive and inspect the image. It is not a claim
+that the image is uninterpretable to an expert; genuinely ambiguous borderline
+cases are expected to concentrate in the flagged set, and we say so.
+\subsection{The admissibility gate}
+Confident learning presumes predicted probabilities that separate the classes
+reasonably well. When the out-of-fold model is weak (our synthetic check:
+$<$10 gradient steps per sample), the estimator over-flags massively --- in an
+early run on \texttt{breastmnist} it reported a 49.8\% noise rate that we
+traced to a model with $\approx$9 total optimiser steps, i.e.\ an artefact,
+not a property of the data. We therefore gate every census: out-of-fold
+accuracy $\geq \max(0.60, \text{majority rate} + 0.05)$, and a minimum of
+$\approx$250 optimiser steps per fold, scaling epochs to the dataset size.
+Datasets failing the gate are reported as \emph{census inadmissible}; we
+publish the gate failure rather than a garbage number. We regard this gate as
+a necessary methodological contribution for anyone auditing small medical
+benchmarks, where undertrained auditors are the norm, not the exception.
+\subsection{Engineering for a two-core sandbox}
+All training ran on 2 CPU cores with $\leq$2\,GB RAM. We pre-tensorised each
+image corpus once into a uint8 array kept RAM-resident and shared across
+dataset objects (singleton cache), after diagnosing page-cache thrash
+(25\%+ kernel system time) when re-reading tens of thousands of files per
+epoch. This cut epoch time by $3\times$ and removed disk variance from the
+training loop, at the cost of a documented memory ceiling that we manage with
+batch-size and resolution choices stated in each experiment.
+\subsection{Malaria census findings}
+The census of the NIH malaria training partition (22{,}046 cells) estimates
+a label-noise rate of 11.44\,\% (2{,}522 estimated errors; Table
+\ref{tab:census}), with a strong directional asymmetry: 2{,}358 of the
+estimated errors are cells labelled \emph{Parasitized} but cross-validated
+as \emph{Uninfected}, against only 164 in the opposite direction. The
+labels therefore err almost entirely in one direction, consistent with
+over-inclusive parasitised annotations during dataset construction rather
+than random annotator noise. We conservatively flag 249 high-confidence
+cases (Appendix A). An independent cross-check with the published
+\texttt{cleanlab} reference implementation flags 296 cases and confirms
+\emph{all 249} of ours (Jaccard 0.841): our from-scratch estimator's
+conservative flags are a strict subset of the reference library's, which
+strengthens the claim that the flagged set is a property of the data, not
+of our estimator.
+\subsection{Honest negatives}
+\begin{itemize}
+\item The RegionGCN hybrid did \emph{not} beat the plain CNN core on
+malaria (95.98\,\% vs 96.08\,\% test accuracy; committed
+\texttt{baseline\_results.json}). The graph head adds 18{,}464 parameters
+and measurable training time for no gain on this task; we report it as a
+negative result rather than tuning until it wins.
+\item Our first breastmnist census produced a 49.8\,\% noise rate that was
+an artefact of an undertrained auditor (see admissibility gate); the run
+is preserved in the logs and motivated the gate.
+\item RAM limits (2\,GB, no swap) forced malaria images to 48\,px; two
+long training runs were killed by the kernel OOM killer before we adopted
+per-fold checkpointing. Both mitigations are engineering compromises, not
+scientific choices.
+\end{itemize}
+
 \section{External tools and datasets}
 \begin{longtable}{p{0.28\textwidth}p{0.62\textwidth}}
 \caption{External tools used (honest count; each with its role).}\label{tab:tools}\\

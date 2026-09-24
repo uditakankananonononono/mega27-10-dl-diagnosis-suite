@@ -65,7 +65,7 @@ def delta_rows():
 def main():
     body = []
     body.append("\\begin{table}[h]\\centering\n\\caption{Head-to-head benchmark on official splits.}\n"
-                "\\begin{tabular}{lllll}\n\\hline\nDisease & Model & Test acc & Test AUC & Published reference & $\\Delta$ \\\\\n"
+                "\\begin{tabular}{llllll}\n\\hline\nDisease & Model & Test acc & Test AUC & Published reference & $\\Delta$ \\\\\n"
                 + benchmark_rows() + "\\end{tabular}\\end{table}\n")
     body.append("\\begin{table}[h]\\centering\n\\caption{Label-noise census summary.}\n"
                 "\\begin{tabular}{lllll}\n\\hline\nDisease & $N$ & Est.\\ label errors & Est.\\ noise rate & IDs published \\\\\n"
