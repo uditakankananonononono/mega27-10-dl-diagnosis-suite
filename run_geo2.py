@@ -111,6 +111,8 @@ tried = set(out)
 fail_path = "results/geo_tried.json"
 if os.path.exists(fail_path):
     tried |= set(json.load(open(fail_path)))
+if os.path.exists("logs/geo_hung.txt"):
+    tried |= set(open("logs/geo_hung.txt").read().split())
 
 cands = []
 if "--esearch" in sys.argv:
@@ -128,6 +130,8 @@ print(f"candidates: {len(cands)}", flush=True)
 
 failed = json.load(open(fail_path)) if os.path.exists(fail_path) else []
 for gse in cands:
+    if gse in out or gse in tried:
+        continue
     t0 = time.time()
     try:
         path, url = fetch_matrix(gse)
