@@ -116,6 +116,10 @@ for gse in CANDIDATES:
         X = X[:, keep].T
         y = y[keep]
         X = np.log2(np.maximum(X, 0.0) + 1.0)
+        if X.size > 40_000_000:
+            keep_p = max(2000, 40_000_000 // X.shape[0])
+            v = np.var(X, axis=0)
+            X = X[:, np.argsort(v)[-keep_p:]]
         cv = StratifiedKFold(5, shuffle=True, random_state=0)
         clf = make_pipeline(StandardScaler(),
                             LogisticRegression(max_iter=2000,
