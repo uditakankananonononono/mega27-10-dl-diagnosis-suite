@@ -1,0 +1,56 @@
+{
+ "wdbc": [
+  {
+   "claim": "Logistic regression accuracy 97.5%",
+   "source": "PeerJ Computer Science 2024",
+   "url": "https://doi.org/10.7717/peerj-cs.2784"
+  },
+  {
+   "claim": "Naive Bayes accuracy 97.36%; SVM 91.5%",
+   "source": "Wiley/Hindawi 2020",
+   "url": "https://onlinelibrary.wiley.com/doi/10.1155/2020/4671349"
+  },
+  {
+   "claim": "Accuracy 99.12% after preprocessing + feature selection (protocol differs)",
+   "source": "PMC9398810",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9398810/"
+  }
+ ],
+ "cleveland": [
+  {
+   "claim": "Neural network accuracy >93% (tuned, single split)",
+   "source": "medRxiv 2020.02.13.948414",
+   "url": "https://doi.org/10.1101/2020.02.13.948414"
+  },
+  {
+   "claim": "XGBoost accuracy 90%, AUC-ROC ~0.9",
+   "source": "Applied Medical Informatics",
+   "url": "https://ami.info.umfcluj.ro/index.php/AMI/article/download/1060/966/4432"
+  }
+ ],
+ "pima": [
+  {
+   "claim": "XGBoost accuracy 85%, AUC-ROC 91% (protocol differs)",
+   "source": "JIMR 2025",
+   "url": "https://doi.org/10.56397/jimr/2025.02.07"
+  },
+  {
+   "claim": "GBM accuracy 90.91%; AUROC up to 95.26% (different pipeline)",
+   "source": "PMC8828812",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8828812/"
+  }
+ ],
+ "parkinsons": [
+  {
+   "claim": "FNN accuracy 99.11%, KSVM 95.89% (protocol differs)",
+   "source": "Scientific Reports 2024",
+   "url": "https://link.springer.com/article/10.1038/s41598-024-64004-9"
+  },
+  {
+   "claim": "XGBoost accuracy 93.88%",
+   "source": "Bioengineering 2025",
+   "url": "https://doi.org/10.3390/bioengineering12070699"
+  }
+ ],
+ "note": "Literature numbers use heterogeneous, often non-nested evaluation protocols on these small datasets; our protocol is held-out 25% test, 5 seeds, bootstrap CIs. Comparisons are reported with protocol caveats."
+}

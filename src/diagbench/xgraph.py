@@ -49,6 +49,7 @@ class Encoder(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(d_in, d_hid), nn.Tanh(),
+            nn.Linear(d_hid, d_hid), nn.Tanh(),
             nn.Linear(d_hid, d_lat), nn.Tanh(),
         )
 
@@ -80,7 +81,7 @@ def _standardize_fit(X: np.ndarray):
 
 def train_encoders(datasets: list, idx_train: list, idx_val: list,
                    d_lat: int = 16, epochs: int = 300, lr: float = 1e-3,
-                   patience: int = 40, seed: int = 0):
+                   patience: int = 60, seed: int = 0):
     """Phase A: supervised multi-task training of per-disease encoders.
 
     Returns (encoders, heads, Z_blocks) where Z_blocks[d] is the latent
@@ -158,7 +159,7 @@ def build_unified_graph(Z_blocks: list, meta_blocks: list = None,
 def train_multitask_gcn(Z: np.ndarray, A: np.ndarray, block: np.ndarray,
                         ys: list, idx_train: list, idx_val: list,
                         epochs: int = 300, lr: float = 5e-3,
-                        patience: int = 40, seed: int = 0):
+                        patience: int = 60, seed: int = 0):
     """Phase B: multi-task GCN over the unified (or ablated) graph."""
     set_seed(seed)
     n_dis = len(ys)
