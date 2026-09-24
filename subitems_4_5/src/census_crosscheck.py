@@ -29,7 +29,7 @@ def main(disease: str):
 
     cl_issues = find_label_issues(y, probs, return_indices_ranked_by="self_confidence")
     mine = set(census["flagged_ids"])
-    theirs = {ds.sample_id(int(np.array(split["train"])[i])) for i in cl_issues}
+    theirs = {ds.sample_id(int(np.array(split["train"])[i])).split("#")[0] for i in cl_issues}
     inter = mine & theirs
     out = {
         "ours_flagged": len(mine), "cleanlab_flagged": len(theirs),
