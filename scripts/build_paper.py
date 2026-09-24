@@ -94,6 +94,10 @@ def main():
         table(doc, ["Dataset", "n", "features", "Citation"], rows)
 
     h(doc, "Results")
+    para(doc, "Each subsection reports the committed result file for one "
+              "dataset: per-model ROC AUC (mean +- std across seeds), "
+              "balanced accuracy, Brier score and ECE. The best model is "
+              "named; all numbers trace to results/*.json in the repository.")
     for f in sorted(glob.glob("results/*.json")):
         r = json.load(open(f))
         if "models" in r:
@@ -162,8 +166,10 @@ def main():
     for pgh in pc.DISCUSSION.strip().split("\n\n"):
         para(doc, pgh.strip())
 
+    h(doc, "Figures")
     for fig in sorted(glob.glob("figures/*.png")):
         doc.add_picture(fig, width=Inches(6))
+        para(doc, os.path.basename(fig).replace("_", " ").replace(".png", ""))
 
     doc.save("paper/MEGA27-10-paper.docx")
     print("saved paper/MEGA27-10-paper.docx")
