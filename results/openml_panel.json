@@ -223,5 +223,50 @@
   "best_auc": 0.8477187733732237,
   "url": "https://www.openml.org/d/1412",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1464": {
+  "name": "blood-transfusion",
+  "n": 748,
+  "p": 4,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.7495811157106248,
+   "rf": 0.6699388921742558
+  },
+  "best": "logreg",
+  "best_auc": 0.7495811157106248,
+  "url": "https://www.openml.org/d/1464",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1465": {
+  "name": "breast-tissue",
+  "n": 106,
+  "p": 9,
+  "n_classes": 6,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 0.6968761050922176,
+   "rf": 0.7662487605342466
+  },
+  "best": "rf",
+  "best_auc": 0.7662487605342466,
+  "url": "https://www.openml.org/d/1465",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1466": {
+  "name": "cardiotocography",
+  "n": 2126,
+  "p": 35,
+  "n_classes": 10,
+  "multiclass": true,
+  "aucs": {
+   "logreg": 1.0,
+   "rf": 1.0
+  },
+  "best": "logreg",
+  "best_auc": 1.0,
+  "url": "https://www.openml.org/d/1466",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
