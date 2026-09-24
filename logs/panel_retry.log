@@ -1,1 +1,4 @@
 DONE mammographic 49s best=mlp 0.9019
+DONE new_thyroid 44s best=random_forest 0.9995
+DONE ann_thyroid 163s best=random_forest 0.9994
+RETRY_DONE

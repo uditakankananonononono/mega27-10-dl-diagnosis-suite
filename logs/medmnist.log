@@ -1,13 +1,133 @@
-FAIL pathmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL chestmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL dermamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL octmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL pneumoniamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL retinamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL breastmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL bloodmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL tissuemnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL organamnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL organcmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
-FAIL organsmnist RuntimeError: Failed to setup the default `root` directory. Please specify and create the `root` directory manually.
+FAIL pathmnist RuntimeError: 
+                Automatic download failed! Please download pathmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/pathmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    a8b06965200029087d5bd730944a56c1
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL chestmnist RuntimeError: 
+                Automatic download failed! Please download chestmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/chestmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    02c8a6516a18b556561a56cbdd36c4a8
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL dermamnist RuntimeError: 
+                Automatic download failed! Please download dermamnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/dermamnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    0744692d530f8e62ec473284d019b0c7
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL octmnist RuntimeError: 
+                Automatic download failed! Please download octmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/octmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    c68d92d5b585d8d81f7112f81e2d0842
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL pneumoniamnist RuntimeError: 
+                Automatic download failed! Please download pneumoniamnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/pneumoniamnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    28209eda62fecd6e6a2d98b1501bb15f
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL retinamnist RuntimeError: 
+                Automatic download failed! Please download retinamnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/retinamnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    bd4c0672f1bba3e3a89f0e4e876791e4
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL breastmnist RuntimeError: 
+                Automatic download failed! Please download breastmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/breastmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    750601b1f35ba3300ea97c75c52ff8f6
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL bloodmnist RuntimeError: 
+                Automatic download failed! Please download bloodmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/bloodmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    7053d0359d879ad8a5505303e11de1dc
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL tissuemnist RuntimeError: 
+                Automatic download failed! Please download tissuemnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/tissuemnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    ebe78ee8b05294063de985d821c1c34b
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL organamnist RuntimeError: 
+                Automatic download failed! Please download organamnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/organamnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    68e3f8846a6bd62f0c9bf841c0d9eacc
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL organcmnist RuntimeError: 
+                Automatic download failed! Please download organcmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/organcmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    b9ceb9546e10131b32923c5bbeaea2b1
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
+FAIL organsmnist RuntimeError: 
+                Automatic download failed! Please download organsmnist.npz manually.
+                1. [Optional] Check your network connection: 
+                    Go to https://github.com/MedMNIST/MedMNIST/ and find the Zenodo repository
+                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                    https://zenodo.org/records/10519652/files/organsmnist.npz?download=1
+                3. [Optional] Verify the MD5: 
+                    9ab87b696fb54e2a387ebe992d6ed5f1
+                4. Put the npz file under your MedMNIST root folder: 
+                    data_cache/medmnist
+                
 MEDMNIST_DONE
