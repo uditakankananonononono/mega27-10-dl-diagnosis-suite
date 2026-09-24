@@ -10,10 +10,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from src.common.models import GlobalCNNClassifier, RegionGCNClassifier
 
 SPECS = {
-    "malaria":   dict(weights="results/malaria/model_gcn.pt", in_ch=3, size=64,
-                      classes=["parasitised", "uninfected"]),
+    "malaria":   dict(weights="results/malaria/model_gcn.pt", in_ch=3, size=48,
+                      grid=3, classes=["parasitised", "uninfected"]),
     "pneumonia": dict(weights="results/pneumonia/model_gcn.pt", in_ch=1, size=128,
-                      classes=["normal", "pneumonia"]),
+                      grid=4, classes=["normal", "pneumonia"]),
 }
 
 
@@ -34,7 +34,7 @@ def main(name: str):
     spec = SPECS[name]
     root = Path(__file__).resolve().parent.parent.parent
     wpath = args.weights or str(root / spec["weights"])
-    model = RegionGCNClassifier(spec["in_ch"])
+    model = RegionGCNClassifier(spec["in_ch"], grid=spec["grid"])
     state = torch.load(wpath, map_location="cpu")
     model.load_state_dict(state)
     model.eval()
