@@ -58,6 +58,14 @@ def main():
               "transferable diagnostic signal. All claims are reported with "
               "seed variance; negative results are preserved.")
 
+    sys.path.insert(0, "scripts")
+    import paper_content as pc
+    h(doc, "Introduction")
+    for pgh in pc.INTRO.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    h(doc, "Methods")
+    for pgh in pc.METHODS.strip().split("\n\n"):
+        para(doc, pgh.strip())
     h(doc, "Mathematical formulation")
     eqs = [
         "(1) Gaussian kNN kernel, self-tuned bandwidth: A_ij = exp(-||x_i - x_j||^2 / (2 sigma^2)), sigma^2 = median kNN squared distance (Zelnik-Manor & Perona).",
@@ -120,9 +128,39 @@ def main():
         table(doc, ["Tool", "Version", "Used for"],
               [[t["tool"], t.get("version", ""), t["used_for"]] for t in tools])
 
+    h(doc, "Discovery experiment: cross-disease bridges")
+    for pgh in pc.DISCOVERY.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    h(doc, "Label efficiency")
+    for pgh in pc.LABEL_EFF.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    if os.path.exists("results/label_efficiency.json"):
+        le = json.load(open("results/label_efficiency.json"))
+        rows = []
+        for name in le:
+            for f in ("0.1", "0.25", "0.5", "1.0"):
+                g, m = le[name]["gcn"].get(f), le[name]["mlp"].get(f)
+                if g and m:
+                    import numpy as np
+                    rows.append([name, f"{float(f)*100:.0f}%",
+                                 f"{np.mean(g):.4f}", f"{np.mean(m):.4f}"])
+        table(doc, ["Dataset", "Labels", "GCN AUC", "MLP AUC"], rows)
+    h(doc, "Published SOTA comparison")
+    if os.path.exists("results/sota_comparison.json"):
+        sc = json.load(open("results/sota_comparison.json"))
+        para(doc, sc.get("note", ""))
+        rows = []
+        for ds, claims in sc.items():
+            if isinstance(claims, list):
+                for c in claims:
+                    rows.append([ds, c["claim"], c["source"]])
+        table(doc, ["Dataset", "Published claim", "Source"], rows)
     h(doc, "Negative results")
-    para(doc, "All experiments in which the discovery claim was not supported "
-              "are preserved here with full numbers.")
+    for pgh in pc.NEGATIVE.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    h(doc, "Discussion")
+    for pgh in pc.DISCUSSION.strip().split("\n\n"):
+        para(doc, pgh.strip())
 
     for fig in sorted(glob.glob("figures/*.png")):
         doc.add_picture(fig, width=Inches(6))
