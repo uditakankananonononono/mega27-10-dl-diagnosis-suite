@@ -1,3 +1,5 @@
 DONE wdbc 134s -> results/wdbc.json
 DONE cleveland 111s -> results/cleveland.json
 DONE pima 477s -> results/pima.json
+DONE parkinsons 469s -> results/parkinsons.json
+ALL_DONE
