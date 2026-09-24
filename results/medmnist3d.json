@@ -28,5 +28,25 @@
   "auc": 0.7995063603569394,
   "url": "https://zenodo.org/records/10519652/files/adrenalmnist3d.npz?download=1",
   "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ },
+ "fracturemnist3d": {
+  "subset": "fracturemnist3d",
+  "task": "multi-class",
+  "n_classes": 3,
+  "n_train": 1027,
+  "n_test": 240,
+  "auc": 0.6306581328914188,
+  "url": "https://zenodo.org/records/10519652/files/fracturemnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ },
+ "vesselmnist3d": {
+  "subset": "vesselmnist3d",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 1335,
+  "n_test": 382,
+  "auc": 0.8327502229539687,
+  "url": "https://zenodo.org/records/10519652/files/vesselmnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
  }
 }
