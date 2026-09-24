@@ -1,0 +1,347 @@
+{
+  "dataset": "dermatology",
+  "n": 366,
+  "d": 34,
+  "source": "https://archive.ics.uci.edu/ml/machine-learning-databases/dermatology/dermatology.data",
+  "citation": "Ilter & Guvenir (1998), UCI",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "models": {
+    "mlp": {
+      "per_seed": [
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 3.8876467162771065e-05,
+          "ece": 0.0017676806798550863,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 5.359067522943279e-06,
+          "ece": 0.0010328003816022888,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 3.328639261037824e-06,
+          "ece": 0.0009432991411922162,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        }
+      ],
+      "summary": {
+        "prevalence": {
+          "mean": 0.6956521739130435,
+          "std": 0.0
+        },
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "roc_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "pr_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "f1": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "brier": {
+          "mean": 1.5854724648917387e-05,
+          "std": 1.6299920879405507e-05
+        },
+        "ece": {
+          "mean": 0.0012479267342165306,
+          "std": 0.00036933340043369175
+        }
+      }
+    },
+    "gcn": {
+      "per_seed": [
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 2.9590033862976476e-05,
+          "ece": 0.001684282405646922,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 6.38306637127346e-06,
+          "ece": 0.000982561886828855,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.000503958855450589,
+          "ece": 0.005842622146650332,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        }
+      ],
+      "summary": {
+        "prevalence": {
+          "mean": 0.6956521739130435,
+          "std": 0.0
+        },
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "roc_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "pr_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "f1": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "brier": {
+          "mean": 0.000179977318561613,
+          "std": 0.00022928536516569255
+        },
+        "ece": {
+          "mean": 0.0028364888130420363,
+          "std": 0.0021448746872806297
+        }
+      }
+    },
+    "logreg": {
+      "per_seed": [
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.0025840863482761334,
+          "ece": 0.018065100487831436,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.0002754114344166963,
+          "ece": 0.006683908595524475,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.0010299598007030009,
+          "ece": 0.010237195603878034,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        }
+      ],
+      "summary": {
+        "prevalence": {
+          "mean": 0.6956521739130435,
+          "std": 0.0
+        },
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "roc_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "pr_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "f1": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "brier": {
+          "mean": 0.0012964858611319435,
+          "std": 0.0009611701445414678
+        },
+        "ece": {
+          "mean": 0.011662068229077982,
+          "std": 0.004754336877764804
+        }
+      }
+    },
+    "random_forest": {
+      "per_seed": [
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.006873067632850242,
+          "ece": 0.0406884057971013,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.003789371980676329,
+          "ece": 0.029927536231883944,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        {
+          "n": 92,
+          "prevalence": 0.6956521739130435,
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "f1": 1.0,
+          "brier": 0.007118115942028986,
+          "ece": 0.03304347826086953,
+          "roc_auc_ci95": [
+            0.9999999999999999,
+            1.0
+          ]
+        }
+      ],
+      "summary": {
+        "prevalence": {
+          "mean": 0.6956521739130435,
+          "std": 0.0
+        },
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "roc_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "pr_auc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "f1": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "brier": {
+          "mean": 0.005926851851851852,
+          "std": 0.0015147337099785864
+        },
+        "ece": {
+          "mean": 0.03455314009661826,
+          "std": 0.0045209429395236
+        }
+      }
+    }
+  },
+  "wall_seconds": 212.72
+}

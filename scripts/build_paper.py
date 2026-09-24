@@ -132,6 +132,12 @@ def main():
         table(doc, ["Tool", "Version", "Used for"],
               [[t["tool"], t.get("version", ""), t["used_for"]] for t in tools])
 
+    h(doc, "Related work")
+    for pgh in pc.RELATED.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    h(doc, "Protocol and reproducibility")
+    for pgh in pc.PROTOCOL.strip().split("\n\n"):
+        para(doc, pgh.strip())
     h(doc, "Mathematical derivations")
     for pgh in pc.DERIVATIONS.strip().split("\n\n"):
         para(doc, pgh.strip())

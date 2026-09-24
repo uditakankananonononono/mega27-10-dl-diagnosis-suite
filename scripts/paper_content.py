@@ -246,3 +246,44 @@ to fitting the labeled nodes. The label-efficiency result is the empirical
 shadow of this variational fact: unlabeled nodes reduce the energy
 landscape's dependence on the labeled subset.
 """
+
+RELATED = """
+WDBC has been a benchmark since Street, Wolberg and Mangasarian (1993)
+introduced the ten cytological features; reported accuracies climbed from
+97 percent with simple linear models to claims above 99 percent under
+feature-selection pipelines (PeerJ Computer Science 2024 reports logistic
+regression at 97.5 percent; a 2022 preprocessing-plus-selection pipeline
+claims 99.12 percent). The Cleveland heart-disease cohort of Detrano et
+al. (1989) shows the same inflation curve, with tuned single-split neural
+networks reported above 93 percent accuracy and XGBoost at 90 percent
+under stricter evaluation. For Pima diabetes, gradient boosting claims
+range from 85 to 91 percent accuracy depending on protocol, and for the
+Parkinson's vocal dataset recent claims reach 99.11 percent with feedforward
+networks. Two observations motivate our protocol: first, the spread within
+a dataset across papers is larger than the spread between model families,
+which is the signature of protocol variance rather than model progress;
+second, almost none of these works report calibration, which is the metric
+that decides whether a score can be thresholded clinically. Graph neural
+networks for tabular clinical data remain comparatively unexplored outside
+medical imaging; our transductive patient-graph construction follows the
+semi-supervised classification line of Kipf and Welling (2017) and the
+self-tuning spectral clustering of Zelnik-Manor and Perona (2004), and our
+label-efficiency framing connects to the broader semi-supervised learning
+literature, adapted here to cohorts of a few hundred patients.
+"""
+
+PROTOCOL = """
+Compute environment. All experiments ran on a two-core CPU sandbox with
+2 GB RAM; no GPU was used. This constrains model size deliberately: every
+architecture in this paper trains in under five minutes per seed on this
+hardware, which makes the full suite reproducible on a laptop. Determinism
+is enforced by explicit seeding of NumPy and PyTorch; data splits are
+stratified with a fixed 75/25 train/test ratio; graph models carve a
+20 percent validation slice from the training indices for early stopping.
+The hermetic test suite (28 tests) validates every loader against recorded
+properties (shape, prevalence bounds, label coding), every model for
+output shape and finite loss, graph construction for symmetry and block
+structure, the metrics against hand-computed cases, and the discovery
+pipeline end-to-end on synthetic separable data. Tests never touch the
+network; live downloads happen only in the documented fetch layer.
+"""
