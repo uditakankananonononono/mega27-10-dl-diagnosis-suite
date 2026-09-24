@@ -1,0 +1,32 @@
+{
+ "organmnist3d": {
+  "subset": "organmnist3d",
+  "task": "multi-class",
+  "n_classes": 11,
+  "n_train": 971,
+  "n_test": 610,
+  "auc": 0.9766808084933122,
+  "url": "https://zenodo.org/records/10519652/files/organmnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ },
+ "nodulemnist3d": {
+  "subset": "nodulemnist3d",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 1158,
+  "n_test": 310,
+  "auc": 0.8817962398373983,
+  "url": "https://zenodo.org/records/10519652/files/nodulemnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ },
+ "adrenalmnist3d": {
+  "subset": "adrenalmnist3d",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 1188,
+  "n_test": 298,
+  "auc": 0.7995063603569394,
+  "url": "https://zenodo.org/records/10519652/files/adrenalmnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ }
+}
