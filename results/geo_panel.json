@@ -198,5 +198,59 @@
   "n_probes": 54675,
   "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE14nnn/GSE14905/matrix/GSE14905_series_matrix.txt.gz",
   "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE8671": {
+  "auc": 1.0,
+  "n_case": 32,
+  "n_ctrl": 32,
+  "n_probes": 54675,
+  "labeling": "field:adenoma|normal",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE8nnn/GSE8671/matrix/GSE8671_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE20916": {
+  "auc": 0.9994175888177053,
+  "n_case": 101,
+  "n_ctrl": 34,
+  "n_probes": 25410,
+  "labeling": "text",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE20nnn/GSE20916/matrix/GSE20916_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE15471": {
+  "auc": 0.9342537804076265,
+  "n_case": 39,
+  "n_ctrl": 39,
+  "n_probes": 54675,
+  "labeling": "field:normal|tumor",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE15nnn/GSE15471/matrix/GSE15471_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE5281": {
+  "auc": 0.9895930413171792,
+  "n_case": 87,
+  "n_ctrl": 74,
+  "n_probes": 54675,
+  "labeling": "field:alzheimer's disease|normal",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5281/matrix/GSE5281_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE68465": {
+  "auc": 1.0,
+  "n_case": 443,
+  "n_ctrl": 19,
+  "n_probes": 22283,
+  "labeling": "field:lung adenocarcinoma|normal",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE68nnn/GSE68465/matrix/GSE68465_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE33113": {
+  "auc": 1.0,
+  "n_case": 90,
+  "n_ctrl": 6,
+  "n_probes": 33777,
+  "labeling": "field:normal colon mucosa|primary tumor resection",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE33nnn/GSE33113/matrix/GSE33113_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
  }
 }
