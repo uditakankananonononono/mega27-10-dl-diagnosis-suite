@@ -18,3 +18,24 @@ pima seed 4 done
 SAVED pima
 parkinsons seed 0 done
 parkinsons seed 1 done
+parkinsons seed 2 done
+parkinsons seed 3 done
+parkinsons seed 4 done
+SAVED parkinsons
+LABEL_EFF_DONE
+wdbc        labels  10%  GCN 0.9824  MLP 0.9715
+wdbc        labels  25%  GCN 0.9884  MLP 0.9883
+wdbc        labels  50%  GCN 0.9884  MLP 0.9923
+wdbc        labels 100%  GCN 0.9915  MLP 0.9880
+cleveland   labels  10%  GCN 0.8617  MLP 0.8022
+cleveland   labels  25%  GCN 0.8838  MLP 0.8496
+cleveland   labels  50%  GCN 0.8730  MLP 0.8559
+cleveland   labels 100%  GCN 0.8790  MLP 0.8580
+pima        labels  10%  GCN 0.7843  MLP 0.7231
+pima        labels  25%  GCN 0.7989  MLP 0.7908
+pima        labels  50%  GCN 0.8062  MLP 0.7953
+pima        labels 100%  GCN 0.8216  MLP 0.8039
+parkinsons  labels  10%  GCN 0.7919  MLP 0.8005
+parkinsons  labels  25%  GCN 0.8739  MLP 0.8752
+parkinsons  labels  50%  GCN 0.8428  MLP 0.9014
+parkinsons  labels 100%  GCN 0.8851  MLP 0.9640
