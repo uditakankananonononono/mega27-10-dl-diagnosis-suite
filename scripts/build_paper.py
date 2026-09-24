@@ -168,6 +168,23 @@ def main():
                 for c in claims:
                     rows.append([ds, c["claim"], c["source"]])
         table(doc, ["Dataset", "Published claim", "Source"], rows)
+    h(doc, "Transcriptomic panel (GEO)")
+    for pgh in pc.GEO_ARM.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    if os.path.exists("results/geo_panel.json"):
+        geo = json.load(open("results/geo_panel.json"))
+        rows = [[g, f"{v['auc']:.3f}", f"+{v['n_case']}/-{v['n_ctrl']}",
+                 v["n_probes"]] for g, v in sorted(geo.items())]
+        table(doc, ["GEO accession", "CV AUC", "cases/controls", "probes"],
+              rows)
+    h(doc, "Medical image arm (MedMNIST)")
+    for pgh in pc.MEDMNIST_ARM.strip().split("\n\n"):
+        para(doc, pgh.strip())
+    if os.path.exists("results/medmnist.json"):
+        mm = json.load(open("results/medmnist.json"))
+        rows = [[k, v["task"], f"{v['auc']:.4f}", f"{v['n_train']}/{v['n_test']}"]
+                for k, v in sorted(mm.items())]
+        table(doc, ["Subset", "Task", "CNN AUC", "n train/test"], rows)
     h(doc, "Negative results")
     for pgh in pc.NEGATIVE.strip().split("\n\n"):
         para(doc, pgh.strip())

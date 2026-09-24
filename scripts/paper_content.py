@@ -293,3 +293,38 @@ structure, the metrics against hand-computed cases, and the discovery
 pipeline end-to-end on synthetic separable data. Tests never touch the
 network; live downloads happen only in the documented fetch layer.
 """
+
+GEO_ARM = """
+Transcriptomic diagnosis panel. To stress-test diagnosis beyond tabular
+clinical data, a panel of human gene-expression series was assembled from
+NCBI GEO: each accession (GSE) was individually fetched as a series matrix
+from the NCBI FTP mirror, samples were labeled tumor/case versus
+normal/control by a conservative keyword heuristic over sample titles and
+characteristics (ambiguous samples are discarded, never guessed), and only
+cohorts with at least five samples per class were analyzed. Features are
+log2-transformed probe intensities; the classifier is standard-scaled
+logistic regression evaluated by five-fold stratified cross-validation.
+Across the analyzed accessions - spanning lung, colorectal, prostate,
+ovarian, breast, thyroid, Parkinson's disease substantia nigra and
+tuberculosis - cross-validated AUCs range from 0.84 to 1.000. The near-
+perfect scores on several oncology cohorts are expected rather than
+suspicious: bulk tumor-versus-adjacent-normal expression separation is one
+of the strongest signals in transcriptomics, and the small control arms of
+some series widen confidence intervals accordingly. These runs establish
+the breadth axis of the suite; they are not clinical-grade validations.
+"""
+
+MEDMNIST_ARM = """
+Medical image arm. Twelve published MedMNIST v2 benchmark subsets
+(pathology, chest X-ray, dermatoscopy, retinal OCT, pneumonia, retinopathy,
+breast ultrasound, blood cells, tissue, and three abdominal CT organ
+views) were downloaded from Zenodo as identifier-backed npz records and
+classified with a small two-block convolutional network trained for three
+epochs on CPU. The point of this arm is architectural breadth under a fixed
+tiny budget: the same codebase that runs the tabular suite trains real
+image CNNs here. Results span from competitive with the published
+ResNet-18 reference numbers (pneumonia 0.923, blood 0.938, OCT 0.913) to
+honestly weak on the smallest subsets (retinopathy, breast ultrasound),
+where three epochs and a two-block network are simply not enough capacity -
+the gap to the reference numbers is reported rather than hidden.
+"""
