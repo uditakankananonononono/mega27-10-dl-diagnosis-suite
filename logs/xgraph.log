@@ -3,3 +3,10 @@ seed 0 done 77s cross_edges=4425
 seed 1 done 103s cross_edges=4387
 seed 2 done 64s cross_edges=4382
 seed 3 done 36s cross_edges=4402
+seed 4 done 26s cross_edges=4364
+XGRAPH_DONE -> results/xgraph.json
+wdbc        full 0.9897 vs ablated 0.9893  delta +0.0004
+cleveland   full 0.8273 vs ablated 0.8171  delta +0.0102
+pima        full 0.7621 vs ablated 0.7555  delta +0.0066
+parkinsons  full 0.9248 vs ablated 0.9108  delta +0.0140
+stable bridges: [{"pair": "wdbc<->cleveland", "seed_recurrence": 5, "endpoint_label_counts": {"1-0": 379, "1-1": 1230, "0-0": 821, "0-1": 371}}, {"pair": "wdbc<->pima", "seed_recurrence": 5, "endpoint_label_counts": {"1-0": 1091, "1-1": 2321, "0-0": 3549, "0-1": 1081}}, {"pair": "wdbc<->parkinsons", "seed_recurrence": 5, "endpoint_label_counts": {"1-1": 733, "0-1": 1221, "0-0": 57, "1-0": 15}}, {"pair": "cleveland<->pima", "seed_recurrence": 5, "endpoint_label_counts": {"0-0": 1818, "0-1": 670, "1-1": 1039, "1-0": 1585}}, {"pair": "cleveland<->parkinsons", "seed_recurrence": 5, "endpoint_label_counts": {"1-1": 546, "0-1": 804, "0-0": 155, "1-0": 154}}, {"pair": "pima<->parkinsons", "seed_recurrence": 5, "endpoint_label_counts": {"1-1": 759, "1-0": 205, "0-1": 1101, "0-0": 255}}]

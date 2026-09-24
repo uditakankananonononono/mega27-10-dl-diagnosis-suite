@@ -1,0 +1,14 @@
+[
+ {"tool": "PyTorch", "version": "2.14.0+cpu", "used_for": "MLP/CNN1D/GCN/GAT model implementations and training loops"},
+ {"tool": "scikit-learn", "version": "1.7.2", "used_for": "logistic regression + random forest baselines, metric implementations (roc_auc, brier, f1)"},
+ {"tool": "NumPy", "version": "2.2.6", "used_for": "all numerical computation, kNN graph construction"},
+ {"tool": "SciPy", "version": "1.15.3", "used_for": "statistical utilities"},
+ {"tool": "NetworkX", "version": "latest", "used_for": "graph inspection/validation of patient-similarity graphs"},
+ {"tool": "Matplotlib", "version": "3.10.9", "used_for": "figures for the paper"},
+ {"tool": "Biopython", "version": "latest", "used_for": "NCBI/Entrez citation and dataset verification"},
+ {"tool": "pytest", "version": "latest", "used_for": "hermetic test suites (28 tests)"},
+ {"tool": "UCI ML Repository", "version": "live", "used_for": "25 clinical datasets, direct-download verified"},
+ {"tool": "GitHub (jbrownlee/Datasets)", "version": "live", "used_for": "Pima diabetes dataset mirror"},
+ {"tool": "python-docx", "version": "1.2.0", "used_for": "paper DOCX generation (Times New Roman)"},
+ {"tool": "git/GitHub", "version": "2.34.1", "used_for": "reproducible artifact versioning"}
+]
