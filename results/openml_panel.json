@@ -433,5 +433,20 @@
   "best_auc": 0.782001201923077,
   "url": "https://www.openml.org/d/42900",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "43439": {
+  "name": "appointment-noshow",
+  "n": 20000,
+  "p": 12,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.6487907641243921,
+   "rf": 0.6871670610070965
+  },
+  "best": "rf",
+  "best_auc": 0.6871670610070965,
+  "url": "https://www.openml.org/d/43439",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
