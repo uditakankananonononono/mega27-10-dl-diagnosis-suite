@@ -208,5 +208,20 @@
   "best_auc": 0.9668137633253913,
   "url": "https://www.openml.org/d/1130",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1412": {
+  "name": "lung-gse31210",
+  "n": 226,
+  "p": 23,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.7174270755422587,
+   "rf": 0.8477187733732237
+  },
+  "best": "rf",
+  "best_auc": 0.8477187733732237,
+  "url": "https://www.openml.org/d/1412",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
