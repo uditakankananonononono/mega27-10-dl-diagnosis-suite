@@ -52,5 +52,32 @@
   "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
   "url": "https://gdc.xenahubs.net/download/TCGA-GBM.star_counts.tsv.gz",
   "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
+ },
+ "TCGA-HNSC": {
+  "auc": 0.9946882619296413,
+  "n_case": 522,
+  "n_ctrl": 44,
+  "n_genes": 60660,
+  "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
+  "url": "https://gdc.xenahubs.net/download/TCGA-HNSC.star_counts.tsv.gz",
+  "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
+ },
+ "TCGA-KIRC": {
+  "auc": 0.9933653448988022,
+  "n_case": 538,
+  "n_ctrl": 72,
+  "n_genes": 60660,
+  "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
+  "url": "https://gdc.xenahubs.net/download/TCGA-KIRC.star_counts.tsv.gz",
+  "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
+ },
+ "TCGA-KIRP": {
+  "auc": 0.9998926116838488,
+  "n_case": 291,
+  "n_ctrl": 32,
+  "n_genes": 60660,
+  "labeling": "barcode sample-type code (01-09 tumor, 10-19 normal)",
+  "url": "https://gdc.xenahubs.net/download/TCGA-KIRP.star_counts.tsv.gz",
+  "source": "UCSC Xena GDC hub (Goldman et al., Nat Biotechnol 2020)"
  }
 }
