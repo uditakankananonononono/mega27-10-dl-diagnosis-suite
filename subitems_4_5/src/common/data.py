@@ -113,6 +113,9 @@ class NpyDataset(Dataset):
         self.x, self.y, self.ids = self._shared(prefix)
         self.y = np.load(f"{prefix}_y.npy")
         self.ids = np.load(f"{prefix}_ids.npy")
+        cp = Path(f"{prefix}_classes.npy")
+        self.classes = (np.load(cp).tolist() if cp.exists()
+                        else sorted({str(i).split('/')[0] for i in self.ids}))
         self.train = train
         self.seed = seed
 
