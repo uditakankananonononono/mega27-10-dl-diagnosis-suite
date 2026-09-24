@@ -193,5 +193,20 @@
   "best_auc": 0.978918972561625,
   "url": "https://www.openml.org/d/1128",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1130": {
+  "name": "ova-lung",
+  "n": 1545,
+  "p": 10935,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.9468382607917493,
+   "rf": 0.9668137633253913
+  },
+  "best": "rf",
+  "best_auc": 0.9668137633253913,
+  "url": "https://www.openml.org/d/1130",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
