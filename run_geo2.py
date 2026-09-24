@@ -28,12 +28,14 @@ CTRL = re.compile(r"normal|healthy|control|adjacent|non[- ]?tumou?r|unaffected|"
                   r"peritumou?ral|uninvolved|disease[- ]?free", re.I)
 
 def esearch(term, retmax=250):
+    time.sleep(0.4)
     q = urllib.parse.urlencode({"db": "gds", "term": term, "retmax": retmax})
     u = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?{q}"
     root = ET.fromstring(urllib.request.urlopen(u, timeout=60).read())
     return [e.text for e in root.iter("Id")]
 
 def esummary_gse(ids):
+    time.sleep(0.4)
     if not ids: return []
     q = urllib.parse.urlencode({"db": "gds", "id": ",".join(ids)})
     u = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?{q}"
@@ -116,10 +118,8 @@ if os.path.exists("logs/geo_hung.txt"):
 
 cands = []
 if "--esearch" in sys.argv:
-    ids = esearch('("expression profiling by array"[DataSet Type]) AND '
-                  '((tumor[All Fields] AND normal[All Fields]) OR '
-                  '(cancer[All Fields] AND adjacent[All Fields])) AND '
-                  '(human[Organism] OR "homo sapiens"[Organism])')
+    ids = esearch('gse[ETYP] AND "Homo sapiens"[Organism] AND '
+                  'tumor[All Fields] AND normal[All Fields]')
     for gse, n in esummary_gse(ids):
         if gse not in tried and n and 24 <= n <= 1200:
             cands.append(gse)
