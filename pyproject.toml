@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diagbench"
+version = "0.1.0"
+description = "Deep-learning diagnosis benchmark suite: CNN and GNN architectures on real clinical datasets (MEGA-27 item 10)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "scikit-learn", "torch"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
