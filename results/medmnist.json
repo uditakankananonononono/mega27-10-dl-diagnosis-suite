@@ -1,0 +1,65 @@
+{
+ "pathmnist": {
+  "subset": "pathmnist",
+  "task": "multi-class",
+  "n_classes": 9,
+  "n_train": 89996,
+  "n_test": 7180,
+  "auc": 0.8970474666790792,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "dermamnist": {
+  "subset": "dermamnist",
+  "task": "multi-class",
+  "n_classes": 7,
+  "n_train": 7007,
+  "n_test": 2005,
+  "auc": 0.7286165738179393,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "octmnist": {
+  "subset": "octmnist",
+  "task": "multi-class",
+  "n_classes": 4,
+  "n_train": 97477,
+  "n_test": 1000,
+  "auc": 0.9128546666666666,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "pneumoniamnist": {
+  "subset": "pneumoniamnist",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 4708,
+  "n_test": 624,
+  "auc": 0.9230111768573306,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "retinamnist": {
+  "subset": "retinamnist",
+  "task": "ordinal-regression",
+  "n_classes": 5,
+  "n_train": 1080,
+  "n_test": 400,
+  "auc": 0.6462211129289284,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "breastmnist": {
+  "subset": "breastmnist",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 546,
+  "n_test": 156,
+  "auc": 0.6723057644110276,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ },
+ "bloodmnist": {
+  "subset": "bloodmnist",
+  "task": "multi-class",
+  "n_classes": 8,
+  "n_train": 11959,
+  "n_test": 3421,
+  "auc": 0.9374990621813886,
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"
+ }
+}

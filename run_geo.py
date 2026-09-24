@@ -24,6 +24,14 @@ CANDIDATES = [
     "GSE18520", "GSE26712", "GSE15852", "GSE42568", "GSE54002", "GSE7621",
     "GSE5281", "GSE19491", "GSE25724", "GSE38642", "GSE9476", "GSE4290",
     "GSE6344", "GSE6004", "GSE3678", "GSE33630", "GSE7307", "GSE5364",
+    "GSE57691", "GSE67980", "GSE30219", "GSE31210", "GSE50081",
+    "GSE68465", "GSE40419", "GSE75037", "GSE18842", "GSE27262",
+    "GSE33356", "GSE39582", "GSE33113", "GSE17536", "GSE14333",
+    "GSE37892", "GSE35896", "GSE23878", "GSE112506", "GSE84437",
+    "GSE59246", "GSE36376", "GSE14520", "GSE10143", "GSE62254",
+    "GSE15459", "GSE26899", "GSE29272", "GSE13911", "GSE79973",
+    "GSE63089", "GSE44076", "GSE46862", "GSE36668", "GSE29044",
+    "GSE10780", "GSE32448", "GSE53757", "GSE66271", "GSE14905",
 ]
 CASE = re.compile(r"tumou?r|carcinoma|cancer|adenocarcinoma|lesion|malignant|"
                   r"neoplas|glioblastoma|glioma|melanoma|leukemi|lymphoma|"
@@ -75,7 +83,11 @@ def label_samples(titles, chars):
 
 os.makedirs("data_cache/geo", exist_ok=True)
 out = {}
+if os.path.exists("results/geo_panel.json"):
+    out = json.load(open("results/geo_panel.json"))
 for gse in CANDIDATES:
+    if gse in out:
+        continue
     t0 = time.time()
     try:
         path, url = fetch_matrix(gse)

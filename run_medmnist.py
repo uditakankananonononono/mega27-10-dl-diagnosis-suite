@@ -26,17 +26,19 @@ class SmallCNN(nn.Module):
 
 def run_subset(name, epochs=3, seed=0):
     info = INFO[name]
-    DataCls = getattr(medmnist, info["python_class"])
-    tr = DataCls(split="train", download=True, root="data_cache/medmnist")
-    va = DataCls(split="val", download=True, root="data_cache/medmnist")
-    te = DataCls(split="test", download=True, root="data_cache/medmnist")
+    z = np.load(f"data_cache/medmnist/{name}.npz")
+    tr_imgs, tr_labels = z["train_images"], z["train_labels"]
+    te_imgs, te_labels = z["test_images"], z["test_labels"]
+    if tr_imgs.ndim == 4:  # RGB subsets -> grayscale
+        tr_imgs = tr_imgs.mean(axis=3).astype(np.uint8)
+        te_imgs = te_imgs.mean(axis=3).astype(np.uint8)
     n_classes = len(info["label"])
     task = info["task"]
     torch.manual_seed(seed)
     model = SmallCNN(n_classes)
     opt = torch.optim.Adam(model.parameters(), lr=1e-3)
-    Xtr = torch.tensor(tr.imgs, dtype=torch.float32).unsqueeze(1) / 255.0
-    ytr = torch.tensor(tr.labels.squeeze(), dtype=torch.long)
+    Xtr = torch.tensor(tr_imgs, dtype=torch.float32).unsqueeze(1) / 255.0
+    ytr = torch.tensor(tr_labels.squeeze(), dtype=torch.long)
     bs = 128
     for ep in range(epochs):
         model.train()
@@ -52,8 +54,8 @@ def run_subset(name, epochs=3, seed=0):
                 loss = nn.functional.cross_entropy(logits, ytr[idx])
             opt.zero_grad(); loss.backward(); opt.step()
     model.eval()
-    Xte = torch.tensor(te.imgs, dtype=torch.float32).unsqueeze(1) / 255.0
-    yte = te.labels.squeeze()
+    Xte = torch.tensor(te_imgs, dtype=torch.float32).unsqueeze(1) / 255.0
+    yte = te_labels.squeeze()
     with torch.no_grad():
         logits = torch.cat([model(Xte[i:i + 256]) for i in range(0, len(Xte), 256)])
     prob = torch.softmax(logits, dim=1).numpy()
@@ -63,7 +65,7 @@ def run_subset(name, epochs=3, seed=0):
         yoh = np.eye(n_classes)[yte]
         auc = roc_auc_score(yoh, prob, average="macro", multi_class="ovr")
     return {"subset": name, "task": task, "n_classes": n_classes,
-            "n_train": len(tr), "n_test": len(te), "auc": float(auc),
+            "n_train": len(tr_imgs), "n_test": len(te_imgs), "auc": float(auc),
             "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo"}
 
 results = {}

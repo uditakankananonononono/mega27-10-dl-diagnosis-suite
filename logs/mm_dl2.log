@@ -1,0 +1,13 @@
+DL pathmnist 197M
+DL chestmnist 6.1M
+DL dermamnist 19M
+DL octmnist 53M
+DL pneumoniamnist 4.0M
+DL retinamnist 3.2M
+DL breastmnist 548K
+DL bloodmnist 34M
+DL tissuemnist 120M
+DL organamnist 37M
+DL organcmnist 15M
+DL organsmnist 16M
+ALL_DL_DONE
