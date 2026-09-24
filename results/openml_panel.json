@@ -268,5 +268,20 @@
   "best_auc": 1.0,
   "url": "https://www.openml.org/d/1466",
   "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
+ },
+ "1471": {
+  "name": "eeg-eye-state",
+  "n": 14980,
+  "p": 14,
+  "n_classes": 2,
+  "multiclass": false,
+  "aucs": {
+   "logreg": 0.6269201161532993,
+   "rf": 0.9830288729005796
+  },
+  "best": "rf",
+  "best_auc": 0.9830288729005796,
+  "url": "https://www.openml.org/d/1471",
+  "source": "OpenML (Vanschoren et al., SIGKDD Explor. 2014)"
  }
 }
