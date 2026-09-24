@@ -1,0 +1,82 @@
+{
+ "GSE10072": {
+  "auc": 0.9992962702322308,
+  "n_case": 58,
+  "n_ctrl": 49,
+  "n_probes": 22283,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE10nnn/GSE10072/matrix/GSE10072_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE19188": {
+  "auc": 0.9688926458157228,
+  "n_case": 91,
+  "n_ctrl": 65,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE19nnn/GSE19188/matrix/GSE19188_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE19804": {
+  "auc": 0.9644444444444444,
+  "n_case": 60,
+  "n_ctrl": 60,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE19nnn/GSE19804/matrix/GSE19804_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE4183": {
+  "auc": 1.0,
+  "n_case": 15,
+  "n_ctrl": 8,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE4nnn/GSE4183/matrix/GSE4183_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE32323": {
+  "auc": 1.0,
+  "n_case": 17,
+  "n_ctrl": 5,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE32nnn/GSE32323/matrix/GSE32323_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE9348": {
+  "auc": 1.0,
+  "n_case": 70,
+  "n_ctrl": 12,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE9nnn/GSE9348/matrix/GSE9348_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE46602": {
+  "auc": 1.0,
+  "n_case": 36,
+  "n_ctrl": 10,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE46nnn/GSE46602/matrix/GSE46602_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE18520": {
+  "auc": 0.9849056603773585,
+  "n_case": 53,
+  "n_ctrl": 10,
+  "n_probes": 54675,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE18nnn/GSE18520/matrix/GSE18520_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE26712": {
+  "auc": 1.0,
+  "n_case": 185,
+  "n_ctrl": 10,
+  "n_probes": 22283,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE26nnn/GSE26712/matrix/GSE26712_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ },
+ "GSE15852": {
+  "auc": 0.9291508923742564,
+  "n_case": 43,
+  "n_ctrl": 43,
+  "n_probes": 22283,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE15nnn/GSE15852/matrix/GSE15852_series_matrix.txt.gz",
+  "source": "NCBI GEO (Barrett et al., NAR 2013)"
+ }
+}

@@ -5,3 +5,4 @@ DL octmnist 53M
 DL pneumoniamnist 4.0M
 DL retinamnist 3.2M
 DL breastmnist 548K
+DL bloodmnist 34M
