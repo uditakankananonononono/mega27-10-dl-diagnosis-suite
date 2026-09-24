@@ -29,23 +29,28 @@ def run_subset(name, epochs=3, seed=0):
     z = np.load(f"data_cache/medmnist/{name}.npz")
     tr_imgs, tr_labels = z["train_images"], z["train_labels"]
     te_imgs, te_labels = z["test_images"], z["test_labels"]
-    if tr_imgs.ndim == 4:  # RGB subsets -> grayscale
-        tr_imgs = tr_imgs.mean(axis=3).astype(np.uint8)
-        te_imgs = te_imgs.mean(axis=3).astype(np.uint8)
+    if tr_imgs.ndim == 4:  # RGB subsets -> grayscale (chunked, no float64 blowup)
+        def gray(a):
+            out = np.empty(a.shape[:3], np.uint8)
+            for i in range(0, len(a), 20000):
+                out[i:i+20000] = a[i:i+20000].astype(np.float32).mean(axis=3)
+            return out
+        tr_imgs, te_imgs = gray(tr_imgs), gray(te_imgs)
     n_classes = len(info["label"])
     task = info["task"]
     torch.manual_seed(seed)
     model = SmallCNN(n_classes)
     opt = torch.optim.Adam(model.parameters(), lr=1e-3)
-    Xtr = torch.tensor(tr_imgs, dtype=torch.float32).unsqueeze(1) / 255.0
     ytr = torch.tensor(tr_labels.squeeze(), dtype=torch.long)
     bs = 128
+    ntr = len(tr_imgs)
     for ep in range(epochs):
         model.train()
-        perm = torch.randperm(len(Xtr))
-        for i in range(0, len(Xtr), bs):
+        perm = torch.randperm(ntr)
+        for i in range(0, ntr, bs):
             idx = perm[i:i + bs]
-            logits = model(Xtr[idx])
+            xb = torch.tensor(tr_imgs[idx.numpy()], dtype=torch.float32).unsqueeze(1) / 255.0
+            logits = model(xb)
             if task == "multi-label, binary-class":
                 loss = nn.functional.binary_cross_entropy_with_logits(
                     logits, ytr[idx].float() if ytr.dim() > 1 else
@@ -54,10 +59,10 @@ def run_subset(name, epochs=3, seed=0):
                 loss = nn.functional.cross_entropy(logits, ytr[idx])
             opt.zero_grad(); loss.backward(); opt.step()
     model.eval()
-    Xte = torch.tensor(te_imgs, dtype=torch.float32).unsqueeze(1) / 255.0
     yte = te_labels.squeeze()
     with torch.no_grad():
-        logits = torch.cat([model(Xte[i:i + 256]) for i in range(0, len(Xte), 256)])
+        logits = torch.cat([model(torch.tensor(te_imgs[i:i + 256], dtype=torch.float32).unsqueeze(1) / 255.0)
+                            for i in range(0, len(te_imgs), 256)])
     prob = torch.softmax(logits, dim=1).numpy()
     if n_classes == 2:
         auc = roc_auc_score(yte, prob[:, 1])
