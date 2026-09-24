@@ -45,3 +45,54 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 64])
 DONE echocardiogram 78s best=logreg 0.8333
+FAIL ann_thyroid
+Traceback (most recent call last):
+  File "/home/sandbox/mega27-10a/repo/run_panel.py", line 17, in <module>
+    res = run_benchmark(ds, models=MODELS, seeds=(0, 1, 2), k=10)
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 121, in run_benchmark
+    runs = [run_one_seed(ds, model_name, s, k=k) for s in seeds]
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 121, in <listcomp>
+    runs = [run_one_seed(ds, model_name, s, k=k) for s in seeds]
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 99, in run_one_seed
+    model, A_in = train_graph(model, Xall, yall, tr_in, va_in, k=k,
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/train.py", line 78, in train_graph
+    A = knn_similarity_graph(X, k=k)
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/graphs.py", line 17, in knn_similarity_graph
+    d2 = np.sum((X[:, None, :] - X[None, :, :]) ** 2, axis=-1)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 4.06 GiB for an array with shape (7200, 7200, 21) and data type float32
+FAIL new_thyroid
+Traceback (most recent call last):
+  File "/home/sandbox/mega27-10a/repo/run_panel.py", line 17, in <module>
+    res = run_benchmark(ds, models=MODELS, seeds=(0, 1, 2), k=10)
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 121, in run_benchmark
+    runs = [run_one_seed(ds, model_name, s, k=k) for s in seeds]
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 121, in <listcomp>
+    runs = [run_one_seed(ds, model_name, s, k=k) for s in seeds]
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/benchmark.py", line 71, in run_one_seed
+    model = train_tabular(model, Xtr[ptr], ds.y[itr], Xtr[pva],
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/train.py", line 47, in train_tabular
+    logits = model(Xtr[idx])
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sandbox/mega27-10a/repo/src/diagbench/models/mlp.py", line 20, in forward
+    return self.net(x).squeeze(-1)  # logits (n,)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 259, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2895, in batch_norm
+    _verify_batch_size(input.size())
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2860, in _verify_batch_size
+    raise ValueError(
+ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 64])
+DONE arrhythmia 44s best=random_forest 0.8724
