@@ -95,5 +95,6 @@ Brier 0.0302; the GCN scores ECE 0.0088 and Brier
 (Brier skill 0.88/0.87). Two independent ECE
 implementations and two Brier implementations agree to $10^{-9}$
 (\\texttt{results/calibration.json}). The clinical reading: a predicted
-0.9 is right about nine times in ten, so the scores can be thresholded for
-triage without recalibration.
+0.9 is right about nine times in ten on average; calibration is a
+population property of the score, not a per-image guarantee, and we report
+it as such.

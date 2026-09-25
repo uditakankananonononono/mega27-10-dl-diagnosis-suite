@@ -130,8 +130,9 @@ Brier """ + f"{cal['cnn']['brier']:.4f}" + r"""; the GCN scores ECE """ + f"{cal
 (Brier skill """ + f"{cal['cnn']['brier_skill_vs_prior']:.2f}" + r"""/""" + f"{cal['gcn']['brier_skill_vs_prior']:.2f}" + r"""). Two independent ECE
 implementations and two Brier implementations agree to $10^{-9}$
 (\\texttt{results/calibration.json}). The clinical reading: a predicted
-0.9 is right about nine times in ten, so the scores can be thresholded for
-triage without recalibration.
+0.9 is right about nine times in ten on average; calibration is a
+population property of the score, not a per-image guarantee, and we report
+it as such.
 """)
 open(os.path.join(ROOT, 'paper_malaria', 'sec_validation.tex'), 'w').write(tex2)
 print("calibration subsection appended;", len(tex2), "chars total")
