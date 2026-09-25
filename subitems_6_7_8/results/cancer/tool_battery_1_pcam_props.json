@@ -1,0 +1,22 @@
+{
+ "dataset": "pcam_valid",
+ "n_images": 800,
+ "wall_seconds": 1.28,
+ "tools": [
+  "scikit-image",
+  "scipy",
+  "Pillow",
+  "numpy"
+ ],
+ "thumb": [
+  64,
+  64
+ ],
+ "negative_sharp_mean": 0.06423,
+ "negative_n": 374,
+ "negative_ent_mean": 6.66892,
+ "positive_sharp_mean": 0.06051,
+ "positive_n": 426,
+ "positive_ent_mean": 7.39538,
+ "sharpness_mannwhitney_p": 0.5960888297544404
+}

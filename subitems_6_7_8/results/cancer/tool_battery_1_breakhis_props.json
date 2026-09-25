@@ -1,0 +1,21 @@
+{
+ "dataset": "breakhis",
+ "n_images": 800,
+ "wall_seconds": 2.37,
+ "tools": [
+  "scikit-image",
+  "scipy",
+  "Pillow",
+  "numpy"
+ ],
+ "thumb": [
+  64,
+  64
+ ],
+ "negative_sharp_mean": 0.01331,
+ "negative_n": 800,
+ "negative_ent_mean": 6.19994,
+ "positive_sharp_mean": null,
+ "positive_n": 0,
+ "positive_ent_mean": null
+}

@@ -1,0 +1,25 @@
+{
+ "dataset": "breakhis",
+ "tool": "pandas",
+ "n_patients": 82,
+ "split_rule": "patient-level 70/15/15, seed 42",
+ "patients_per_split": {
+  "test": 12,
+  "train": 58,
+  "val": 12
+ },
+ "images_per_split_x_class": {
+  "test": {
+   "benign": 751,
+   "malignant": 531
+  },
+  "train": {
+   "benign": 1609,
+   "malignant": 3977
+  },
+  "val": {
+   "benign": 120,
+   "malignant": 921
+  }
+ }
+}

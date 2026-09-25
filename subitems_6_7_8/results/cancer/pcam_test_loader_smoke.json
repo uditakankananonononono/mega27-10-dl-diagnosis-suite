@@ -1,0 +1,24 @@
+{
+ "dataset": "pcam_test",
+ "n_decoded": 300,
+ "wall_seconds": 0.09,
+ "first_ids": [
+  "pcam_test_000000",
+  "pcam_test_000001",
+  "pcam_test_000002",
+  "pcam_test_000003",
+  "pcam_test_000004"
+ ],
+ "label_counts": {
+  "0": 138,
+  "1": 162
+ },
+ "unique_shapes": [
+  [
+   96,
+   96,
+   3
+  ]
+ ],
+ "n_unique_shapes": 1
+}

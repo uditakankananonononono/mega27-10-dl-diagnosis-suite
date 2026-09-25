@@ -1,0 +1,24 @@
+{
+ "dataset": "pcam_valid",
+ "n_decoded": 300,
+ "wall_seconds": 0.24,
+ "first_ids": [
+  "pcam_valid_000000",
+  "pcam_valid_000001",
+  "pcam_valid_000002",
+  "pcam_valid_000003",
+  "pcam_valid_000004"
+ ],
+ "label_counts": {
+  "0": 136,
+  "1": 164
+ },
+ "unique_shapes": [
+  [
+   96,
+   96,
+   3
+  ]
+ ],
+ "n_unique_shapes": 1
+}

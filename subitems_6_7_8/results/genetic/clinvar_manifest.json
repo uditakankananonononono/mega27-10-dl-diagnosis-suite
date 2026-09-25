@@ -123,6 +123,6 @@
  "classification_subset": {
   "filter": "OriginSimple=germline AND Type=single nucleotide variant AND ClinicalSignificance in {Pathogenic, Likely pathogenic, Pathogenic/Likely pathogenic, Benign, Likely benign, Benign/Likely benign} AND ReviewStatus >= 1 star (criteria provided+)",
   "n_records": 3020773,
-  "file": "clinvar_classification_subset.tsv.gz"
+  "file": "data/clinvar/clinvar_classification_subset.tsv.gz (gitignored, 102MB gz)"
  }
 }

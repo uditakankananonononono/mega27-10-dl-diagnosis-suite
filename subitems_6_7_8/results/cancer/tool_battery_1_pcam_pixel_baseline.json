@@ -1,0 +1,19 @@
+{
+ "dataset": "pcam valid->test",
+ "model": "sklearn LogisticRegression on 32x32 px",
+ "n_train": 2000,
+ "n_test": 1000,
+ "test_accuracy": 0.643,
+ "wilson95": [
+  0.6128,
+  0.6721
+ ],
+ "tools": [
+  "scikit-learn",
+  "statsmodels",
+  "Pillow",
+  "numpy"
+ ],
+ "note": "downsampled-pixel baseline, NOT the CNN benchmark number",
+ "wall_seconds": 3.74
+}
