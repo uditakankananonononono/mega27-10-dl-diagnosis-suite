@@ -54,4 +54,8 @@ def pneumonia():
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "malaria")
+    if len(sys.argv) > 1 and sys.argv[1] in SPECS:
+        name = sys.argv.pop(1)
+    else:
+        name = "malaria"
+    main(name)

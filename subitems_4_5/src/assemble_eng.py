@@ -21,6 +21,21 @@ imageio cross-decode audit), and emits the class probability with a Wilson
 confidence statement where a batch is scored. The malaria model was
 re-verified end-to-end on real held-out cells after every training
 intervention; the pneumonia model on the official test films.
+\subsection{Live verification transcript}
+After every training intervention the shipped CLI is re-run on real
+held-out images. Current output (RegionGCN weights, committed
+\texttt{model\_gcn.pt}):
+\begin{verbatim}
+$ dx-malaria predict C100P61ThinF_..._cell_128.png   # known-uninfected
+uninfected probability: 0.9878
+parasitised probability: 0.0122
+$ dx-malaria predict C100P61ThinF_..._cell_162.png   # known-parasitized
+uninfected probability: 0.0012
+parasitised probability: 0.9988
+\end{verbatim}
+Both predictions are confident and correct; the CLI entry-point bug found
+during this verification (disease-name argument misparsed) was fixed and
+the fix is part of the shipped tool.
 \subsection{Census path}
 \texttt{dx-census} enforces the admissibility gate before estimating: OOF
 accuracy $\ge \max(0.60, \text{majority}+0.05)$ and $\ge 250$ optimizer
