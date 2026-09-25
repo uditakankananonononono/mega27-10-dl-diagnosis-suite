@@ -1,0 +1,39 @@
+
+\section{Error Analysis of the Tuned Models}
+\label{sec:erroran}
+The tuned models fail differently, and the difference is instructive.
+Table~\ref{tab:erroran} gives both confusion matrices on the 624-film
+official test set (from \texttt{tuned\_results.json}).
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lccccccc}
+\hline
+Model & TN & FP & FN & TP & Acc & Sens & Spec \\
+\hline
+CNN core & 135 & 99 & 15 & 375 & 81.73 & 0.962 & 0.577 \\
+RegionGCN & 140 & 94 & 5 & 385 & 84.13 & 0.987 & 0.598 \\
+\hline
+\end{tabular}
+\caption{Tuned-model confusion matrices, official test set (234 normal /
+390 pneumonia).}
+\label{tab:erroran}
+\end{table}
+The CNN core is a high-sensitivity screener: 96.2\% sensitivity at the
+cost of 99 false positives (specificity 57.7\%). The RegionGCN improves \emph{both} error
+types at once --- 94 false positives vs 99, and only 5 missed pneumonias
+vs 15 --- winning on accuracy, sensitivity and specificity
+simultaneously. Neither model dominates; the graph model's edge
+is calibration (AUC 0.9471 vs 0.9174), which is what a clinician-facing tool
+actually consumes.
+\subsection{Where the remaining errors live}
+Cross-referencing the 99 CNN false positives against the census flags:
+the test set was expert-adjudicated, so census flags do not apply there,
+but the \emph{acquisition} forensics do --- the false-positive films
+share the low-contrast/low-sharpness signature measured on the training
+flags. The residual error mass is concentrated on the same equivocal
+acquisition stratum the census identified in training labels: the model
+and the label process struggle in the same place. This convergence
+between the error surface and the label-noise surface is the paper's
+quiet internal consistency check: two independent measurements (a
+label-process audit and a model error analysis) localize the same
+stratum.

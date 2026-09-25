@@ -1,0 +1,33 @@
+\section{Extended Discussion: Reading the Three Findings Together}
+\label{sec:discext}
+Taken separately, each of this paper's findings has a mundane reading.
+A 21.15\% training-label noise estimate could be an artefact of a weak
+probe --- the gate exists to answer that. A +5.9-point cleaning gain
+could be a seed fluke --- we flag the multi-seed replication as the top
+follow-up. A 45.7-point head-to-head win could mean the external tool
+was never meant for paediatric JPEGs --- the deep dive says exactly
+that. The case for the findings is that they \emph{converge}:
+\begin{enumerate}
+\item The census says the training labels are one-directionally
+contaminated (973:23), concentrated on acquisition-degraded films
+($p=1.7\times10^{-27}$).
+\item Cleaning that stratum improves a compact model more than any
+hyperparameter or augmentation change we tested (+5.9 points vs
++0.4 for Optuna's best).
+\item The failure surface of the strongest external tool is the mirror
+image of the same stratum: it misses 384 of 390 pneumonias while never
+crying wolf on normals --- a model calibrated away from exactly the
+borderline region where this benchmark's labels and images disagree.
+\end{enumerate}
+Three independent instruments --- a label-process audit, a training
+intervention, and an external-tool autopsy --- point at the same
+structure. That convergence, not any single number, is the paper's
+evidential core.
+\subsection{What we would do with more compute}
+Ordered by expected information per GPU-hour: (1) multi-seed cleaning
+replication; (2) a blinded re-read of the 155 flags by a paediatric
+radiologist (the definitive validation, and cheap in money rather than
+compute); (3) recalibrated head-to-heads against the external tool with
+its threshold fit on a validation split; (4) a pretrained backbones
+census crosscheck at higher resolution. None requires new data or new
+methods; all are scheduled as future work in the repository.

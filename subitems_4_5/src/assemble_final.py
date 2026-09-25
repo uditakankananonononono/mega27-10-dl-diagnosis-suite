@@ -208,4 +208,4 @@ if __name__ == '__main__':
         'MEGA-PROGRAM-27, Item 10.5 (pneumonia, Kermany ChestXRay2017)',
         ABS_PNE,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',
-         'sec_results', 'sec_verification', 'lit_survey_pneumonia', 'sec_atlas', 'sec_tooldeepdive', 'sec_walkthrough', 'sec_flagcases_gate', 'sec_census_tool_falsify_discussion'] + common_tail))
+         'sec_results', 'sec_verification', 'lit_survey_pneumonia', 'sec_atlas', 'sec_discussion_ext', 'sec_erroran2', 'sec_litsynth', 'sec_tooldeepdive', 'sec_walkthrough', 'sec_flagcases_gate', 'sec_census_tool_falsify_discussion'] + common_tail + ['sec_flags_appendix']))

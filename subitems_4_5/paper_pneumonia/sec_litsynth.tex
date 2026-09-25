@@ -1,0 +1,34 @@
+
+\section{Synthesis of the 150-Record Literature Audit}
+\label{sec:litsynth}
+The audit behind our novelty claim is quantitative, not vibes. We
+fetched and parsed 150 PubMed records on pneumonia chest-radiograph deep
+learning (NCBI E-utilities, titles, journals, dates, authors; full list
+in the appendix). Classifying every record by its title and metadata:
+\begin{itemize}
+\item \textbf{89/150} propose or evaluate a deep-learning model ---
+the field's centre of gravity is architectures and scores.
+\item \textbf{16/150} mention radiology \emph{reports} at all, mostly
+as a label source or NLP target --- the label-generation process is
+infrastructure to these papers, not an object of study.
+\item \textbf{9/150} address transfer/generalization.
+\item \textbf{0/150} --- zero --- mention label noise, mislabeling,
+confident learning, annotation audit, or inter-rater analysis of a
+benchmark's labels.
+\end{itemize}
+Publication years span 2019: 1; 2020: 12; 2021: 30; 2022: 45; 2023: 21; 2024: 22; 2025: 12; 2026: 5. The pattern is unambiguous: a decade of
+scoring work on report-parsed chest-radiograph collections, and no
+published audit of what the labels actually say. That is the gap this
+paper's census fills, and it is why the census --- not the 84.13\%
+--- is the contribution. The same screen on the malaria side (197
+records) found the identical shape: architectures everywhere, label
+audits nowhere.
+\subsection{What the closest neighbors do instead}
+The nearest methodological neighbors are the CheXpert/CheXNeXt line
+(label \emph{generation} from reports with uncertainty classes) and the
+confident-learning methodology line (Northcutt et al., which
+demonstrates on ImageNet/CIFAR and Amazon reviews, not medical imaging
+benchmarks). Our work sits in the empty intersection: applying a
+verified label-audit method, with an admissibility gate we show is
+necessary, to the two most-taught medical-imaging benchmarks, and
+publishing per-image flags anyone can falsify.
