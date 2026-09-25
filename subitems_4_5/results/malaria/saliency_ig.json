@@ -1,0 +1,47 @@
+{
+  "n_images": 8,
+  "centre_mass_mean": 0.2192,
+  "centre_mass_per_image": [
+    {
+      "idx": 3528,
+      "class": 0,
+      "centre_attribution_mass": 0.1029
+    },
+    {
+      "idx": 7022,
+      "class": 0,
+      "centre_attribution_mass": 0.1805
+    },
+    {
+      "idx": 11639,
+      "class": 0,
+      "centre_attribution_mass": 0.1087
+    },
+    {
+      "idx": 8651,
+      "class": 0,
+      "centre_attribution_mass": 0.4126
+    },
+    {
+      "idx": 13963,
+      "class": 1,
+      "centre_attribution_mass": 0.1666
+    },
+    {
+      "idx": 24923,
+      "class": 1,
+      "centre_attribution_mass": 0.2701
+    },
+    {
+      "idx": 16096,
+      "class": 1,
+      "centre_attribution_mass": 0.3199
+    },
+    {
+      "idx": 22683,
+      "class": 1,
+      "centre_attribution_mass": 0.1919
+    }
+  ],
+  "note": "centre = central 50% x 50% crop; uniform attention would give 0.25"
+}

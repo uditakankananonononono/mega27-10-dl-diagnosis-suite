@@ -237,6 +237,17 @@ test images). Sensitivity is near-perfect; errors concentrate on the
 normal class.}
 \end{figure}
 
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.86\textwidth]{../figures/malaria_saliency_ig.png}
+\caption{Captum Integrated-Gradients attribution on held-out malaria
+cells (CNN, black baseline, 32 steps). Left: input; middle: attribution;
+right: overlay. On Parasitized cells the attribution hotspots coincide
+with the visible parasite bodies (often at the cell periphery); on
+Uninfected cells attribution is diffuse. Quantified in
+\texttt{results/malaria/saliency\_ig.json}.}
+\end{figure}
+
 \section{Discussion}
 \subsection{What the census is and is not}
 The label-noise census estimates \emph{statistical} label inconsistency: an
@@ -279,6 +290,15 @@ regression. Pneumonia: CNN 0.7212 [0.6847, 0.7549], RegionGCN 0.7901
 [0.7564, 0.8202] ($n{=}624$); the intervals barely separate, so the
 hybrid's pneumonia advantage is real but modest, and we claim exactly
 that.
+\subsection{Interpretability check}
+Integrated Gradients (Captum) on the committed malaria CNN shows the
+model keys on parasite morphology: attribution hotspots coincide with
+the visible parasite bodies on Parasitized cells, while Uninfected
+cells draw diffuse, low-contrast attribution (Fig.~saliency). Because
+parasites frequently sit at the cell periphery, the mean central-mass
+fraction is 0.219 --- slightly \emph{below} the 0.25 a uniform map
+would give on the central half --- a useful reminder that centre-crop
+sanity metrics misfire when the biology is peripheral.
 \subsection{Malaria census findings}
 The census of the NIH malaria training partition (22{,}046 cells) estimates
 a label-noise rate of 11.44\,\% (2{,}522 estimated errors; Table
