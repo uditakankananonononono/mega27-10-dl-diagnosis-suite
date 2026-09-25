@@ -98,3 +98,20 @@ implementations and two Brier implementations agree to $10^{-9}$
 0.9 is right about nine times in ten on average; calibration is a
 population property of the score, not a per-image guarantee, and we report
 it as such.
+
+\subsection{Error enrichment: do the flags live where models struggle?}}
+\label{sec:enrichment}}
+Per-image out-of-fold loss tells the same story twice. The CNN's own 249
+flags are 10.0$\\times$ enriched in its top-decile OOF-loss
+stratum --- partly by construction, since the flags derive from those same
+probabilities, so we report it as a sanity check only. The non-circular
+check is cross-architectural: the 68 images flagged \\emph{only}
+by the GCN auditor (no CNN input) make up
+0.31\\% of the training set but
+3.04\\% of the CNN's top-decile loss --- a
+9.8$\\times$ enrichment, with mean OOF loss
+2.02 against 0.09 for unflagged images
+(\\texttt{results/malaria/error\\_enrichment.json}). Images one architecture
+suspects genuinely give the other architecture trouble: the flags track a
+real, representation-independent difficult stratum, which is what
+directional label contamination looks like before expert adjudication.

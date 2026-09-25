@@ -136,3 +136,33 @@ it as such.
 """)
 open(os.path.join(ROOT, 'paper_malaria', 'sec_validation.tex'), 'w').write(tex2)
 print("calibration subsection appended;", len(tex2), "chars total")
+
+# --- error-enrichment subsection (judge R5 weakness #2, Option B) ---
+enr = json.load(open(os.path.join(ROOT, 'results', 'malaria', 'error_enrichment.json')))
+ca = enr['cross_architecture']
+tex3 = tex2.replace(
+"""population property of the score, not a per-image guarantee, and we report
+it as such.
+""",
+"""population property of the score, not a per-image guarantee, and we report
+it as such.
+
+\\subsection{Error enrichment: do the flags live where models struggle?}}
+\\label{sec:enrichment}}
+Per-image out-of-fold loss tells the same story twice. The CNN's own 249
+flags are """ + f"{enr['enrichment_ratio_flagged']:.1f}" + r"""$\\times$ enriched in its top-decile OOF-loss
+stratum --- partly by construction, since the flags derive from those same
+probabilities, so we report it as a sanity check only. The non-circular
+check is cross-architectural: the """ + f"{ca['gcn_only_flags_in_cnn_loss']['n']}" + r""" images flagged \\emph{only}
+by the GCN auditor (no CNN input) make up
+""" + f"{ca['gcn_only_flags_in_cnn_loss']['share_of_train']*100:.2f}" + r"""\\% of the training set but
+""" + f"{ca['gcn_only_flags_in_cnn_loss']['share_of_cnn_top10pct_loss']*100:.2f}" + r"""\\% of the CNN's top-decile loss --- a
+""" + f"{ca['gcn_only_flags_in_cnn_loss']['enrichment_ratio']:.1f}" + r"""$\\times$ enrichment, with mean OOF loss
+""" + f"{ca['gcn_only_flags_in_cnn_loss']['mean_cnn_oof_nll']:.2f}" + r""" against """ + f"{enr['mean_nll_unflagged']:.2f}" + r""" for unflagged images
+(\\texttt{results/malaria/error\\_enrichment.json}). Images one architecture
+suspects genuinely give the other architecture trouble: the flags track a
+real, representation-independent difficult stratum, which is what
+directional label contamination looks like before expert adjudication.
+""")
+open(os.path.join(ROOT, 'paper_malaria', 'sec_validation.tex'), 'w').write(tex3)
+print("enrichment subsection appended;", len(tex3), "chars")
