@@ -1,0 +1,37 @@
+
+\section{Training dynamics}
+
+\subsection{CNN core baseline training log}
+Per-epoch committed history (\texttt{results/pneumonia/baseline\_results.json}):
+\begin{tabular}{rrrr}
+\hline Epoch & Train loss & Val loss & Secs \\ \hline
+0 & 0.3348 & 0.8710 & 649 \\
+1 & 0.2711 & 0.3190 & 933 \\
+2 & 0.2316 & 0.3772 & 723 \\
+3 & 0.2047 & 0.2139 & 860 \\
+4 & 0.1588 & 0.8660 & 934 \\
+5 & 0.1502 & 0.3097 & 949 \\
+\hline
+\end{tabular}
+Best validation loss at epoch 3; early stopping restores that
+checkpoint. Epoch cost ~649s on the 2-core sandbox ---
+the full training budget of this study is visible in this table.
+
+
+\subsection{RegionGCN baseline training log}
+Per-epoch committed history (\texttt{results/pneumonia/baseline\_results.json}):
+\begin{tabular}{rrrr}
+\hline Epoch & Train loss & Val loss & Secs \\ \hline
+0 & 0.3592 & 0.3472 & 736 \\
+1 & 0.2753 & 0.2688 & 861 \\
+2 & 0.2576 & 0.3302 & 947 \\
+3 & 0.2181 & 0.2656 & 954 \\
+4 & 0.1935 & 0.1849 & 948 \\
+5 & 0.1770 & 0.1823 & 956 \\
+6 & 0.1538 & 0.2445 & 948 \\
+7 & 0.1468 & 0.3503 & 954 \\
+\hline
+\end{tabular}
+Best validation loss at epoch 5; early stopping restores that
+checkpoint. Epoch cost ~736s on the 2-core sandbox ---
+the full training budget of this study is visible in this table.

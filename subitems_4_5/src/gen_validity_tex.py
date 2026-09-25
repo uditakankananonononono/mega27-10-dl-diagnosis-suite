@@ -86,8 +86,8 @@ train from scratch (batch 32, Adam $10^{-3}$, early stopping). The
 official test films never enter any fold. Fold checkpoints retained under
 \texttt{results/pneumonia/oof\_ckpt}.
 \subsection{Admissibility, enforced}
-The gate evaluated OOF accuracy 72.78\% against the majority baseline
-64.10\% plus margin --- admissible, and recorded with the rule text in
+The gate evaluated OOF accuracy 89.81\% against the majority baseline
+74.20\% plus margin --- admissible, and recorded with the rule text in
 \texttt{results/pneumonia/label\_noise\_census.json}. An earlier
 inadmissible configuration (weaker folds) fabricated a much higher noise
 rate; that run is the reason the gate exists and is described in the

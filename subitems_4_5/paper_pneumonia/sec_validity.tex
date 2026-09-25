@@ -1,0 +1,42 @@
+
+\section{Threats to validity}
+\subsection{Internal validity}
+The official patient-level split is preserved exactly; validation is
+carved from train only. Class weighting changes the effective decision
+threshold, so tuned configurations are reported with full
+sensitivity/specificity pairs. The census fold assignments are seeded and
+committed.
+\subsection{Construct validity}
+Binary normal/pneumonia collapses viral/bacterial; the published reference
+uses the same binary task for its headline number. The TorchXRayVision
+comparison maps its multi-pathology output to the binary task by the
+Pneumonia logit only --- the mapping is stated in the methods and the raw
+probabilities are committed for re-analysis.
+\subsection{External validity}
+Paediatric films only; adult pneumonia and other views are out of scope.
+The atlas panel (PneumoniaMNIST, 8.96\% noise, admissible) is a different
+collection and is used only for method-level triangulation.
+\subsection{Reliability}
+As in the malaria study: committed probability dumps, dual metric
+libraries, programmatic tables, UNVERIFIED on any missing value. The
+SimpleITK NaN probe and the chestmnist atlas run error are reported as
+failures, not deleted.
+
+\section{Census methodology in detail}
+\subsection{Fold protocol}
+Three folds, stratified on the training partition, seeded; fold models
+train from scratch (batch 32, Adam $10^{-3}$, early stopping). The
+official test films never enter any fold. Fold checkpoints retained under
+\texttt{results/pneumonia/oof\_ckpt}.
+\subsection{Admissibility, enforced}
+The gate evaluated OOF accuracy 89.81\% against the majority baseline
+74.20\% plus margin --- admissible, and recorded with the rule text in
+\texttt{results/pneumonia/label\_noise\_census.json}. An earlier
+inadmissible configuration (weaker folds) fabricated a much higher noise
+rate; that run is the reason the gate exists and is described in the
+discussion.
+\subsection{Threshold computation and cross-check}
+As in the malaria study: class-mean self-confidence thresholds, confident
+joint, off-diagonal flags; cleanlab on identical OOF probabilities flags
+a superset (209 vs our 155; Jaccard 0.742), so our census is again the
+conservative estimator.

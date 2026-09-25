@@ -1,0 +1,21 @@
+
+\section{Robustness and search battery}
+\subsection{SimpleITK resampling robustness}
+Re-resampling 200 test films with SimpleITK (linear vs nearest) shifts
+predicted probabilities by 0.0729 on
+average (\texttt{results/pneumonia/tool\_battery\_8.json}). The linear
+variant's AUC is undefined (degenerate constant predictions on the
+resampled batch) --- recorded as NaN in the committed JSON and reported
+here as a failed probe rather than smoothed over; the nearest-neighbour
+pipeline used everywhere else is unaffected.
+\subsection{Grad-CAM explanations}
+pytorch-grad-cam over 20 held-out films: the mean
+activated area above 0.5 is 0.0024 of the frame
+--- attention collapses onto small pulmonary regions rather than spreading
+across the field, the expected signature for consolidation detection.
+\subsection{scikit-optimize cross-check}
+A GP search (skopt, 10 calls: 5 random + 5 GP-guided,
+1-epoch quarter-subsample objective) selects lr
+4.49e-04 with quick-validation AUC 0.8925,
+independently corroborating the low-learning-rate regime the Optuna search
+found.

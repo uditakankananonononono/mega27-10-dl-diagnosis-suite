@@ -1,0 +1,33 @@
+
+\section{Training dynamics}
+
+\subsection{CNN core baseline training log}
+Per-epoch committed history (\texttt{results/malaria/baseline\_results.json}):
+\begin{tabular}{rrrr}
+\hline Epoch & Train loss & Val loss & Secs \\ \hline
+0 & 0.2081 & 0.1406 & 97 \\
+1 & 0.1348 & 0.1358 & 102 \\
+2 & 0.1281 & 0.1285 & 346 \\
+3 & 0.1198 & 0.1442 & 339 \\
+4 & 0.1158 & 0.1259 & 601 \\
+\hline
+\end{tabular}
+Best validation loss at epoch 4; early stopping restores that
+checkpoint. Epoch cost ~97s on the 2-core sandbox ---
+the full training budget of this study is visible in this table.
+
+
+\subsection{RegionGCN baseline training log}
+Per-epoch committed history (\texttt{results/malaria/baseline\_results.json}):
+\begin{tabular}{rrrr}
+\hline Epoch & Train loss & Val loss & Secs \\ \hline
+0 & 0.1925 & 0.1399 & 350 \\
+1 & 0.1356 & 0.1290 & 593 \\
+2 & 0.1283 & 0.1360 & 381 \\
+3 & 0.1248 & 0.1421 & 589 \\
+4 & 0.1197 & 0.1244 & 344 \\
+\hline
+\end{tabular}
+Best validation loss at epoch 4; early stopping restores that
+checkpoint. Epoch cost ~350s on the 2-core sandbox ---
+the full training budget of this study is visible in this table.

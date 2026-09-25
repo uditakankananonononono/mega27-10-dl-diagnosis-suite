@@ -1,0 +1,21 @@
+
+\section{Dataset card: NIH cell\_images}
+\subsection{Anatomy}
+27{,}558 segmented single-cell PNGs, class parity by construction
+(13{,}779 parasitised / 13{,}779 uninfected as published; extraction
+count-audited byte-for-byte). Cells are centred crops from thin-smear
+slides (193 patients per the source record), Giemsa stain, variable crop
+size around a modal ~48px.
+\subsection{Tensorisation}
+Decoded once to $(27558, 3, 48, 48)$ uint8 NCHW
+(\texttt{data/malaria/malaria48\_x.npy}); BILINEAR resize; independent
+imageio re-decode of 60 sampled cells matches the stored array at 0 max
+absolute pixel difference (\texttt{results/tool\_battery\_3.json}).
+Identifiers preserved in \texttt{malaria48\_ids.npy} so every array row
+maps to its archive path.
+\subsection{Known contamination}
+The census estimates 11.44\% label inconsistency with a strongly
+one-directional pattern (Parasitized$\to$Uninfected cross-validation
+dominates 2{,}358:164). Downstream users should treat the parity of the
+published class counts with suspicion: parity by construction does not
+imply purity.

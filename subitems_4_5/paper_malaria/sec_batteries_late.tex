@@ -1,0 +1,48 @@
+
+\section{Probe battery: pretrained baseline, embeddings, statistics}
+\subsection{timm pretrained linear probe, beaten}
+An ImageNet-pretrained ResNet-18 (timm) with a linear probe trained on
+4{,}000 cells scores \textbf{91.84\%} accuracy /
+0.9702 AUC on the held-out test set
+(\texttt{results/malaria/tool\_battery\_7.json}) --- \emph{below} our
+from-scratch compact CNN (96.08\% / 0.9929). Pretraining is not a free
+lunch on this collection: the compact model trained on the task wins, and
+the benchmark chapter's +2.1-point margin over the published reference is
+achieved without any external weights.
+\subsection{UMAP embedding structure}
+UMAP over the test-set CNN features (2758 points) shows the two
+classes separating along the first embedding dimension (point-biserial
+$r = -0.343$); committed coordinates in
+\texttt{results/malaria/umap\_embedding.npy}.
+\subsection{Property statistics, effect sizes}
+Pingouin Mann--Whitney tests with rank-biserial effect sizes (flagged vs
+control): sharpness $p=0.46$,
+$r_{RBC}=0.033$; contrast
+$p=2.39e-03$, $r_{RBC}=0.136$;
+entropy $p=0.62$, $r_{RBC}=0.022$.
+Only contrast reaches significance, and with a small effect --- the
+forensics chapter's honest verdict stands.
+\subsection{ydata-profiling and SHAP}
+The property profile report (\texttt{results/malaria/properties\_profile.html})
+covers 749 per-image rows; SHAP gradient
+attributions cross-check the Captum analysis (agreement evidence in the
+battery JSON).
+
+\section{Augmentation ablation (malaria)}
+Three policies, identical protocol otherwise
+(\texttt{results/malaria/augmentation\_ablation.json}):
+\begin{table}[h]\centering\small
+\begin{tabular}{lcc}
+\hline Policy & Val AUC & Val acc \% \\ \hline
+No augmentation & 0.9816 & 93.14 \\
+Flips + rot90 (shipped) & 0.9835 & 94.41 \\
+Albumentations policy & \textbf{0.9893} & \textbf{94.70} \\
+\hline
+\end{tabular}
+\caption{Augmentation ablation, 3 arms $\times$ identical budget.}
+\label{tab:ablation}
+\end{table}
+The albumentations policy is the best arm by both metrics; augmentation
+helps (+1.5 acc points over none), and the richer policy adds a further
++0.3. Adopting it for a final retrain is a flagged follow-up; the shipped
+configuration's numbers stand as committed.
