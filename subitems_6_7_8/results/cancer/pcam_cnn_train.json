@@ -1,0 +1,16 @@
+{
+ "dataset": "pcam valid->test",
+ "n_train": 6144,
+ "n_test": 4096,
+ "benchmark_to_beat": "published PCam CNN ~0.90+ AUC (Veeling et al. arXiv:1806.03962)",
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.3991,
+   "acc": 0.7869,
+   "bacc": 0.7875,
+   "auc": 0.8683,
+   "elapsed_s": 43.6
+  }
+ ]
+}

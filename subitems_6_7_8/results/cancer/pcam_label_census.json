@@ -1,0 +1,261 @@
+{
+ "tool": "cleanlab (Northcutt et al.)",
+ "dataset": "pcam_test",
+ "method": "find_label_issues on CNN held-out probs (model trained on official valid split)",
+ "n_test": 4096,
+ "n_flagged": 517,
+ "noise_rate_pct": 12.62,
+ "top50_flags": [
+  {
+   "patch_id": "pcam_test_003110",
+   "given": 1,
+   "p_pos": 0.0028
+  },
+  {
+   "patch_id": "pcam_test_002866",
+   "given": 1,
+   "p_pos": 0.0034
+  },
+  {
+   "patch_id": "pcam_test_000494",
+   "given": 1,
+   "p_pos": 0.0035
+  },
+  {
+   "patch_id": "pcam_test_003539",
+   "given": 1,
+   "p_pos": 0.0039
+  },
+  {
+   "patch_id": "pcam_test_002242",
+   "given": 1,
+   "p_pos": 0.004
+  },
+  {
+   "patch_id": "pcam_test_000952",
+   "given": 1,
+   "p_pos": 0.0049
+  },
+  {
+   "patch_id": "pcam_test_002989",
+   "given": 1,
+   "p_pos": 0.005
+  },
+  {
+   "patch_id": "pcam_test_000860",
+   "given": 1,
+   "p_pos": 0.0057
+  },
+  {
+   "patch_id": "pcam_test_002873",
+   "given": 1,
+   "p_pos": 0.0063
+  },
+  {
+   "patch_id": "pcam_test_003000",
+   "given": 1,
+   "p_pos": 0.0074
+  },
+  {
+   "patch_id": "pcam_test_000770",
+   "given": 1,
+   "p_pos": 0.0101
+  },
+  {
+   "patch_id": "pcam_test_000212",
+   "given": 1,
+   "p_pos": 0.0113
+  },
+  {
+   "patch_id": "pcam_test_002026",
+   "given": 1,
+   "p_pos": 0.0115
+  },
+  {
+   "patch_id": "pcam_test_003549",
+   "given": 1,
+   "p_pos": 0.013
+  },
+  {
+   "patch_id": "pcam_test_003497",
+   "given": 0,
+   "p_pos": 0.9868
+  },
+  {
+   "patch_id": "pcam_test_001177",
+   "given": 1,
+   "p_pos": 0.0133
+  },
+  {
+   "patch_id": "pcam_test_003763",
+   "given": 1,
+   "p_pos": 0.0134
+  },
+  {
+   "patch_id": "pcam_test_000592",
+   "given": 1,
+   "p_pos": 0.0144
+  },
+  {
+   "patch_id": "pcam_test_002879",
+   "given": 1,
+   "p_pos": 0.0145
+  },
+  {
+   "patch_id": "pcam_test_000819",
+   "given": 1,
+   "p_pos": 0.0146
+  },
+  {
+   "patch_id": "pcam_test_002905",
+   "given": 1,
+   "p_pos": 0.0147
+  },
+  {
+   "patch_id": "pcam_test_000919",
+   "given": 1,
+   "p_pos": 0.0152
+  },
+  {
+   "patch_id": "pcam_test_001048",
+   "given": 1,
+   "p_pos": 0.0152
+  },
+  {
+   "patch_id": "pcam_test_001024",
+   "given": 1,
+   "p_pos": 0.0155
+  },
+  {
+   "patch_id": "pcam_test_003896",
+   "given": 0,
+   "p_pos": 0.9836
+  },
+  {
+   "patch_id": "pcam_test_000199",
+   "given": 1,
+   "p_pos": 0.0167
+  },
+  {
+   "patch_id": "pcam_test_002107",
+   "given": 1,
+   "p_pos": 0.0167
+  },
+  {
+   "patch_id": "pcam_test_001620",
+   "given": 1,
+   "p_pos": 0.0185
+  },
+  {
+   "patch_id": "pcam_test_002041",
+   "given": 1,
+   "p_pos": 0.019
+  },
+  {
+   "patch_id": "pcam_test_003677",
+   "given": 1,
+   "p_pos": 0.0198
+  },
+  {
+   "patch_id": "pcam_test_001151",
+   "given": 1,
+   "p_pos": 0.0206
+  },
+  {
+   "patch_id": "pcam_test_003660",
+   "given": 1,
+   "p_pos": 0.0207
+  },
+  {
+   "patch_id": "pcam_test_000991",
+   "given": 1,
+   "p_pos": 0.0235
+  },
+  {
+   "patch_id": "pcam_test_003064",
+   "given": 1,
+   "p_pos": 0.0235
+  },
+  {
+   "patch_id": "pcam_test_001774",
+   "given": 1,
+   "p_pos": 0.0251
+  },
+  {
+   "patch_id": "pcam_test_002405",
+   "given": 1,
+   "p_pos": 0.0254
+  },
+  {
+   "patch_id": "pcam_test_001659",
+   "given": 1,
+   "p_pos": 0.0272
+  },
+  {
+   "patch_id": "pcam_test_000846",
+   "given": 1,
+   "p_pos": 0.0281
+  },
+  {
+   "patch_id": "pcam_test_001604",
+   "given": 1,
+   "p_pos": 0.0287
+  },
+  {
+   "patch_id": "pcam_test_003566",
+   "given": 1,
+   "p_pos": 0.032
+  },
+  {
+   "patch_id": "pcam_test_002351",
+   "given": 1,
+   "p_pos": 0.033
+  },
+  {
+   "patch_id": "pcam_test_001070",
+   "given": 1,
+   "p_pos": 0.0344
+  },
+  {
+   "patch_id": "pcam_test_001541",
+   "given": 1,
+   "p_pos": 0.0347
+  },
+  {
+   "patch_id": "pcam_test_002357",
+   "given": 1,
+   "p_pos": 0.0351
+  },
+  {
+   "patch_id": "pcam_test_002943",
+   "given": 1,
+   "p_pos": 0.0352
+  },
+  {
+   "patch_id": "pcam_test_003831",
+   "given": 0,
+   "p_pos": 0.9637
+  },
+  {
+   "patch_id": "pcam_test_002831",
+   "given": 1,
+   "p_pos": 0.0378
+  },
+  {
+   "patch_id": "pcam_test_002770",
+   "given": 0,
+   "p_pos": 0.9609
+  },
+  {
+   "patch_id": "pcam_test_001915",
+   "given": 0,
+   "p_pos": 0.9605
+  },
+  {
+   "patch_id": "pcam_test_002560",
+   "given": 0,
+   "p_pos": 0.96
+  }
+ ],
+ "note": "held-out flags are model-conditional candidates, not proven label errors"
+}

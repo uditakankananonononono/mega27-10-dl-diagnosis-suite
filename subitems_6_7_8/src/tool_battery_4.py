@@ -33,18 +33,18 @@ def torchmetrics_verify():
     y = torch.from_numpy(d["y_true"]).long()
     p = torch.from_numpy(np.stack([1 - d["prob_pos"], d["prob_pos"]], axis=1)).float()
     auc = AUROC(task="binary")(p[:, 1], y)
-    acc = Accuracy(task="binary", num_classes=2)(p, y)
-    ece = CalibrationError(task="binary", n_bins=15)(p, y)
+    acc = Accuracy(task="multiclass", num_classes=2)(p, y)
+    ece = CalibrationError(task="binary", n_bins=15)(p[:, 1], y)
     ref = json.load(open(OUT / "cancer" / "pcam_cnn_train.json"))
     final = ref["history"][-1]
     json.dump({"tool": "torchmetrics",
                "auroc_torchmetrics": round(float(auc), 4),
-               "auroc_sklearn": final["test_auc"],
-               "auroc_abs_delta": round(abs(float(auc) - final["test_auc"]), 5),
+               "auroc_sklearn": final["auc"],
+               "auroc_abs_delta": round(abs(float(auc) - final["auc"]), 5),
                "acc_torchmetrics": round(float(acc), 4),
-               "acc_train_json": final["test_acc"],
+               "acc_train_json": final["acc"],
                "ece_15bin": round(float(ece), 4),
-               "verdict": "metrics cross-verified" if abs(float(auc) - final["test_auc"]) < 0.002 else "MISMATCH - investigate"},
+               "verdict": "metrics cross-verified" if abs(float(auc) - final["auc"]) < 0.002 else "MISMATCH - investigate"},
               open(OUT / "cancer" / "pcam_metrics_crossverify.json", "w"), indent=1)
 
 
@@ -72,7 +72,7 @@ def arch_audit():
     from torchinfo import summary
     import train_cnn
     model = train_cnn.small_cnn(3, 2, 96)
-    model.load_state_dict(torch.load(OUT / "cancer" / "pcam_cnn.pt", weights_only=True))
+    model.load_state_dict(torch.load(OUT / "cancer" / "pcam_cnn_ckpt.pt", weights_only=False)["model"])  # own checkpoint: contains numpy rng state, weights_only=False required
     s = summary(model, input_size=(1, 3, 96, 96), verbose=0)
     json.dump({"tool": "torchinfo", "model": "small_cnn pcam",
                "total_params": s.total_params, "trainable_params": s.trainable_params,
