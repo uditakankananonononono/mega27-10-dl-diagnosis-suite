@@ -1,0 +1,28 @@
+{
+  "accuracy": 0.6939102564102564,
+  "precision": 0.6736474694589878,
+  "recall_sensitivity": 0.9897435897435898,
+  "specificity": 0.20085470085470086,
+  "f1": 0.8016614745586709,
+  "roc_auc": 0.9233946964716196,
+  "confusion_matrix": [
+    [
+      47,
+      187
+    ],
+    [
+      4,
+      386
+    ]
+  ],
+  "n": 624,
+  "train_secs": 92.8,
+  "recipe": {
+    "backbone": "timm resnet18 imagenet",
+    "epochs": 2,
+    "subsample": 4,
+    "lr": 0.0003,
+    "train_n": 1178,
+    "best_val_auc": 0.9827
+  }
+}
