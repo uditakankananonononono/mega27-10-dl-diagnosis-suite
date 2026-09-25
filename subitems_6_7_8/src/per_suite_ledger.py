@@ -24,6 +24,10 @@ TOOLS = [
     ("hashlib (sha256)", "archive integrity: every downloaded artifact hashed into manifests", "A"),
     ("gzip/csv streaming", "9.22M-row ClinVar parse without full materialization (10.8)", "G"),
     ("pytest", "hermetic loader tests, no network (5 tests)", "A"),
+    ("OpenCV", "resize-backend robustness audits (mean abs backend delta)", "A"),
+    ("matplotlib", "committed class-distribution figures, all suites", "A"),
+    ("NCBI E-utilities", "novelty/benchmark literature audits with PMIDs", "A"),
+    ("CrossRef API", "DOI/title verification of dataset papers (mismatches corrected)", "A"),
 ]
 
 EVIDENCE = {
@@ -42,6 +46,10 @@ EVIDENCE = {
     "hashlib (sha256)": ["results/cancer/breakhis_manifest.json", "results/cancer/pcam_manifest.json", "results/genetic/clinvar_manifest.json"],
     "gzip/csv streaming": ["results/genetic/clinvar_manifest.json"],
     "pytest": ["tests/test_loaders.py"],
+    "OpenCV": ["results/cancer/tool_battery_2_pcam_resize_audit.json", "results/neuro/tool_battery_2_resize_audit.json"],
+    "matplotlib": ["results/cancer/tool_battery_2_figures.json", "results/neuro/tool_battery_2_figures.json", "results/genetic/tool_battery_2_figures.json"],
+    "NCBI E-utilities": ["results/cancer/tool_battery_2_lit_audit.json", "results/neuro/tool_battery_2_lit_audit.json", "results/genetic/tool_battery_2_lit_audit.json"],
+    "CrossRef API": ["results/cancer/tool_battery_2_doi_verify.json", "results/genetic/tool_battery_2_doi_verify.json"],
 }
 
 DATASETS = {

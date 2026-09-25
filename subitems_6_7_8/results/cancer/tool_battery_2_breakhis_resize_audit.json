@@ -1,0 +1,8 @@
+{
+ "dataset": "breakhis",
+ "tool": "OpenCV",
+ "n_images": 200,
+ "mean_abs_backend_delta": 4.6517,
+ "max_abs_backend_delta": 8.7629,
+ "wall_seconds": 0.41
+}

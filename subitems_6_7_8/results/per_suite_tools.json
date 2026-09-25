@@ -1,7 +1,7 @@
 {
- "cancer_tools": 12,
- "neuro_tools": 10,
- "genetic_tools": 11,
+ "cancer_tools": 16,
+ "neuro_tools": 14,
+ "genetic_tools": 15,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -84,6 +84,26 @@
   {
    "name": "pytest",
    "use": "hermetic loader tests, no network (5 tests)",
+   "tag": "A"
+  },
+  {
+   "name": "OpenCV",
+   "use": "resize-backend robustness audits (mean abs backend delta)",
+   "tag": "A"
+  },
+  {
+   "name": "matplotlib",
+   "use": "committed class-distribution figures, all suites",
+   "tag": "A"
+  },
+  {
+   "name": "NCBI E-utilities",
+   "use": "novelty/benchmark literature audits with PMIDs",
+   "tag": "A"
+  },
+  {
+   "name": "CrossRef API",
+   "use": "DOI/title verification of dataset papers (mismatches corrected)",
    "tag": "A"
   }
  ]

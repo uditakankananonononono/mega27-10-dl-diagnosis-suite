@@ -1,0 +1,7 @@
+{
+ "suite": "neuro",
+ "tool": "matplotlib",
+ "figures": [
+  "fig_brain_mri_classes.png"
+ ]
+}

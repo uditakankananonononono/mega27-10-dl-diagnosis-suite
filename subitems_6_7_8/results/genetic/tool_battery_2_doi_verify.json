@@ -1,0 +1,10 @@
+{
+ "tool": "CrossRef API",
+ "dois": {
+  "10.1093/nar/gkx1153": {
+   "title": "ClinVar: improving access to variant interpretations and supporting evidence",
+   "container": "Nucleic Acids Research",
+   "year": 2017
+  }
+ }
+}

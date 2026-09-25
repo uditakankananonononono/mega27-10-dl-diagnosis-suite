@@ -1,0 +1,20 @@
+{
+ "suite": "genetic",
+ "tools": [
+  "NCBI E-utilities",
+  "CrossRef API"
+ ],
+ "queries": {
+  "clinvar_pathogenicity": {
+   "query": "ClinVar variant pathogenicity prediction machine learning",
+   "count": 65,
+   "top_pmids": [
+    "42718683",
+    "42668306",
+    "42644811",
+    "42635207",
+    "42614771"
+   ]
+  }
+ }
+}

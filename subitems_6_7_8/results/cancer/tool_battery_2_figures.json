@@ -1,0 +1,8 @@
+{
+ "suite": "cancer",
+ "tool": "matplotlib",
+ "figures": [
+  "fig_breakhis_subclasses.png",
+  "fig_pcam_valid_labels.png"
+ ]
+}

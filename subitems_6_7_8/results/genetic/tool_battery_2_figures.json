@@ -1,0 +1,7 @@
+{
+ "suite": "genetic",
+ "tool": "matplotlib",
+ "figures": [
+  "fig_clinvar_significance_top8.png"
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "tool": "CrossRef API",
+ "dois": {
+  "10.1109/TBME.2015.2496264": {
+   "title": "A Dataset for Breast Cancer Histopathological Image Classification",
+   "container": "IEEE Transactions on Biomedical Engineering",
+   "year": 2016
+  }
+ },
+ "arxiv": {
+  "1806.03962": {
+   "title": "Rotation Equivariant CNNs for Digital Pathology",
+   "verified_via": "https://arxiv.org/abs/1806.03962 (title check)",
+   "note": "Veeling et al. PCam paper; CrossRef bibliographic query did not surface the LNCS DOI; arXiv abs page title verified"
+  }
+ },
+ "correction": "removed unverified DOI guesses (10.1109/CBMS.2018.00062, 10.1007/978-3-030-00934-2_89) after title check showed mismatches"
+}

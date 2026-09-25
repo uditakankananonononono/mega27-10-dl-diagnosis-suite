@@ -1,0 +1,20 @@
+{
+ "suite": "neuro",
+ "tools": [
+  "NCBI E-utilities",
+  "CrossRef API"
+ ],
+ "queries": {
+  "brain_tumor_mri_benchmark": {
+   "query": "brain tumor MRI classification deep learning glioma meningioma pituitary",
+   "count": 130,
+   "top_pmids": [
+    "42751711",
+    "42665755",
+    "42601923",
+    "42557264",
+    "42507605"
+   ]
+  }
+ }
+}

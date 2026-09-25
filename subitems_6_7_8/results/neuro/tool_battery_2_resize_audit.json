@@ -1,0 +1,8 @@
+{
+ "dataset": "brain_mri",
+ "tool": "OpenCV",
+ "n_images": 150,
+ "mean_abs_backend_delta": 3.8289,
+ "max_abs_backend_delta": 5.5779,
+ "wall_seconds": 1.14
+}

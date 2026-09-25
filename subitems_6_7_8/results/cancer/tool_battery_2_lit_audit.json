@@ -1,0 +1,28 @@
+{
+ "suite": "cancer",
+ "tools": [
+  "NCBI E-utilities",
+  "CrossRef API"
+ ],
+ "queries": {
+  "breakhis_label_noise": {
+   "query": "BreakHis breast histopathology deep learning",
+   "count": 89,
+   "top_pmids": [
+    "42587609",
+    "42457794",
+    "42366429",
+    "42179815",
+    "42115270"
+   ]
+  },
+  "pcam_benchmark": {
+   "query": "PatchCamelyon metastasis detection deep learning",
+   "count": 2,
+   "top_pmids": [
+    "42752485",
+    "33053723"
+   ]
+  }
+ }
+}

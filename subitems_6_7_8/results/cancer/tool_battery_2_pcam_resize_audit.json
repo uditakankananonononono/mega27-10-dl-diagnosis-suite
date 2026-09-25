@@ -1,0 +1,8 @@
+{
+ "dataset": "pcam_valid",
+ "tool": "OpenCV",
+ "n_images": 200,
+ "mean_abs_backend_delta": 5.5618,
+ "max_abs_backend_delta": 10.9096,
+ "wall_seconds": 0.34
+}
