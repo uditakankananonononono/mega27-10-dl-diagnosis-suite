@@ -39,7 +39,7 @@ def batch(X, idx):
     return torch.from_numpy(X[idx].astype(np.float32) / 255.0)
 
 
-def eval_probs(model, Xte, chunk=1024):
+def eval_probs(model, Xte, chunk=256):
     model.eval()
     ps = []
     with torch.no_grad():
@@ -48,7 +48,7 @@ def eval_probs(model, Xte, chunk=1024):
     return np.concatenate(ps)
 
 
-def train_pcam(cap_tr=8192, cap_te=8192, epochs=4, bs=64, lr=1e-3):
+def train_pcam(cap_tr=6144, cap_te=4096, epochs=4, bs=64, lr=1e-3):
     from sklearn.metrics import roc_auc_score, balanced_accuracy_score
     from statsmodels.stats.proportion import proportion_confint
     t0 = time.time()
@@ -151,7 +151,7 @@ def fit_eval(Xtr, ytr, Xte, yte, n_classes, size, epochs, bs, lr, out_json, out_
     print(ds_name, "CNN DONE", flush=True)
 
 
-def eval_probs_multi(model, Xte, n_classes, chunk=512):
+def eval_probs_multi(model, Xte, n_classes, chunk=256):
     model.eval()
     ps = []
     with torch.no_grad():
