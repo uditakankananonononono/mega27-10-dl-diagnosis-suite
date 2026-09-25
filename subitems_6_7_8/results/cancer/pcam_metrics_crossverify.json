@@ -1,10 +1,10 @@
 {
  "tool": "torchmetrics",
- "auroc_torchmetrics": 0.8683,
- "auroc_sklearn": 0.8683,
- "auroc_abs_delta": 1e-05,
- "acc_torchmetrics": 0.7869,
- "acc_train_json": 0.7869,
- "ece_15bin": 0.043,
+ "auroc_torchmetrics": 0.847,
+ "auroc_sklearn": 0.847,
+ "auroc_abs_delta": 4e-05,
+ "acc_torchmetrics": 0.7366,
+ "acc_train_json": 0.7366,
+ "ece_15bin": 0.1933,
  "verdict": "metrics cross-verified"
 }

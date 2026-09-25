@@ -1,0 +1,16 @@
+{
+ "dataset": "breakhis patient-level",
+ "n_train": 5586,
+ "n_test": 2323,
+ "benchmark_to_beat": "published BreakHis image-level ~83-90% by mag (Spanhol 2016; ours 224px mirror -> 64px, caveat)",
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.228,
+   "acc": 0.7284,
+   "bacc": 0.6768,
+   "auc": 0.6436,
+   "elapsed_s": 13.3
+  }
+ ]
+}
