@@ -11,6 +11,22 @@
    "bacc": 0.6768,
    "auc": 0.6436,
    "elapsed_s": 13.3
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.249,
+   "acc": 0.6832,
+   "bacc": 0.5793,
+   "auc": 0.672,
+   "elapsed_s": 54.0
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.229,
+   "acc": 0.6251,
+   "bacc": 0.5,
+   "auc": 0.507,
+   "elapsed_s": 1217.3
   }
  ]
 }
