@@ -1,7 +1,7 @@
 
 \section{Census as a Runnable Tool: \texttt{dx-census}}
 \label{sec:dxcensus}
-The label-noise census is not a one-off analysis in this paper --- it is a
+The annotation-consistency audit is not a one-off analysis in this paper --- it is a
 command in the shipped tool, with the admissibility gate enforced in code:
 \begin{verbatim}
 usage: dx-census [-h] [--image-size IMAGE_SIZE] [--epochs EPOCHS]
@@ -64,7 +64,6 @@ gradients; on malaria, where the expert-audited test set shares no
 contamination with training, the same procedure does not transfer.
 The broader implication for medical-imaging benchmarks: a published
 accuracy on a web-mined or report-parsed dataset is a property of the
-label process as much as of the model, and a label-noise census with an
-admissibility gate is a cheap prerequisite ($\sim$2 CPU-hours here) for
+label process as much as of the model, and an annotation-consistency audit with an admissibility gate is a cheap prerequisite ($\sim$2 CPU-hours here) for
 interpreting any such number. We recommend benchmark papers report a
 census alongside the leaderboard, and we ship the tool that produces one.

@@ -26,20 +26,14 @@ The strongest external tool we could run unchanged on the identical test
 set is TorchXRayVision's DenseNet-121 (\texttt{densenet121-res224-all},
 published weights, official preprocessing). On the same 624 films it scores
 accuracy 38.5\% and ROC-AUC 0.7990
-(\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}). Every one
-of our six configurations beats it on the same data and split --- the
-cleaned RegionGCN by +46.5 accuracy
-points and +0.139 AUC. This is the decisive
-like-for-like comparison: identical films, identical split, tool used as
-published.
+(\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}). Every one of our six configurations outperforms it on the same data and split --- the cleaned RegionGCN by +0.139 AUC and +46.5 threshold-accuracy points (threshold accuracy at 0.5 understates the transfer model's ranking ability, as its AUC shows, so we lead with AUC). We read this as a domain-shift finding --- adult-pretrained CXR models do not transfer zero-shot to this paediatric benchmark --- not as a general ``small beats big'' claim. The comparison stays like-for-like: identical films, identical split, tool used as published.
 \subsection{The published-benchmark gap, stated honestly}
 Kermany et al.\ report 92.8\% accuracy \cite{kermany2018} with a
 transfer-learned Inception-v3 at 299px trained at substantially larger
 effective scale; that number is paywalled and was corroborated through two
 independent secondary sources (\texttt{results/kermany\_number\_verification.json}).
 Our compact 2-CPU models do not close that cross-regime gap, and we do not
-claim otherwise. The honest framing: on the strongest \emph{same-split}
-external tool comparison available, our models win decisively; against the
+claim otherwise. The honest framing: on the strongest \emph{same-split} external tool comparison available, dataset-specific training prevails over zero-shot adult-domain transfer; against the
 published cross-regime reference the gap is recorded as a redirected angle
 (transfer initialisation from a large-scale pretrained trunk), pursued in
 the transfer study below.

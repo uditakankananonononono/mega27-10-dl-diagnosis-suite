@@ -61,3 +61,13 @@ discovery claim --- ``an automated, falsifiable census of a benchmark''
 --- conservatism
 is the correct failure direction, and the gate is enforced inside the
 shipped \texttt{dx-census} command rather than in the paper text alone.
+
+A circularity objection deserves an explicit answer: the gate uses a model
+to decide whether an auditing model's output may be trusted. The gate does
+not claim clinical correctness --- it certifies only that the auditing
+model is non-random and label-informative on this data (its out-of-fold
+predictions beat the class prior by a wide margin). What the flags
+\emph{mean} medically is a separate question: they are published as
+reproducible candidates for annotation-quality issues, and confirmation
+requires expert adjudication, which we scope as follow-up (a blind review
+of a random flag/control sample) rather than assert.

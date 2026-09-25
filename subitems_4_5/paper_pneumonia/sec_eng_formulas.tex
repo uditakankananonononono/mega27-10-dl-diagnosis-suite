@@ -2,7 +2,7 @@
 \section{The dxtool diagnostic CLI}
 \subsection{Design}
 \texttt{dxtool} is the shipped command-line tool: one binary entry point
-with subcommands for inference (\texttt{dx-predict}), label-noise census
+with subcommands for inference (\texttt{dx-predict}), annotation-consistency audit
 (\texttt{dx-census}), and integrity audit (\texttt{dx-audit}). Design
 constraints from the deployment target (2 CPU cores, 2\,GB RAM, no swap):
 single-process execution, resident arrays capped at $\sim$200\,MB,

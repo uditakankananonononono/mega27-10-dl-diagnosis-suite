@@ -55,7 +55,7 @@ conflicting gradient signal rather than hard-but-correct examples; (ii)
 the official test split is patient-level and was curated separately from
 the training pool, so its label process is not the same contaminated
 process. We report the contrast between the two diseases as a finding in
-itself: the value of a label-noise census is regime-dependent, and the
+itself: the value of an annotation-consistency audit is regime-dependent, and the
 regime variables (contamination mass, test-set curation) are measurable.
 \subsection{Cross-regime benchmark positioning}
 The Kermany reference number is cross-regime: different model class
@@ -74,8 +74,7 @@ the verdict).
 \section{Limitations and redirected angles}
 \begin{enumerate}
 \item \textbf{Cross-regime published gap.} The Kermany 92.8\% reference
-stands; our same-split evidence beats the strongest runnable external
-tool but does not close the cross-regime gap. Redirected angle: the
+stands; our same-split evidence shows dataset-specific training outperforming zero-shot adult-domain transfer from the strongest runnable external tool, but does not close the cross-regime gap. Redirected angle: the
 transfer study initialises from a pretrained trunk; its results are
 reported with committed evidence.
 \item \textbf{Paediatric-only distribution.} The collection is paediatric;
