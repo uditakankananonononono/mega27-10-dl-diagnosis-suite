@@ -1,0 +1,39 @@
+{
+ "torchxrayvision_densenet121_all": {
+  "test_auc_pneumonia": 0.799,
+  "test_acc_0p5": 0.3846,
+  "n": 624,
+  "secs": "cached-from-prior-run"
+ },
+ "kornia_stability": {
+  "n": 96,
+  "mean_abs_prob_shift": 0.6267,
+  "max_abs_prob_shift": 0.9944,
+  "flip_rate_0p5": 0.6979,
+  "secs": 6.1
+ },
+ "shap_gradient": {
+  "n_explained": 16,
+  "mean_abs_attr": 0.002644,
+  "secs": 370.4
+ },
+ "pingouin_property_tests": {
+  "sharpness": {
+   "mwu_p": 1.738869077725716e-27,
+   "effect_rbc": 0.5770064516129032
+  },
+  "contrast": {
+   "mwu_p": 4.927615501083636e-07,
+   "effect_rbc": 0.26714838709677424
+  },
+  "entropy": {
+   "mwu_p": 0.003532006617766897,
+   "effect_rbc": 0.1549677419354839
+  }
+ },
+ "ydata_profiling": {
+  "report": "results/pneumonia/properties_profile.html",
+  "n_rows": 655,
+  "secs": 4.9
+ }
+}

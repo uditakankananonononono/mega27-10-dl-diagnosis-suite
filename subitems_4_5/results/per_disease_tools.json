@@ -1,16 +1,11 @@
 {
- "malaria_tools": 37,
- "pneumonia_tools": 33,
+ "malaria_tools": 39,
+ "pneumonia_tools": 36,
  "pending_evidence": [
   "optuna",
   "albumentations",
-  "timm",
-  "umap-learn",
   "torchxrayvision",
-  "kornia",
-  "SimpleITK",
-  "pytorch-grad-cam",
-  "scikit-optimize"
+  "kornia"
  ],
  "tools": [
   {
