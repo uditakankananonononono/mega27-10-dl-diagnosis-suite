@@ -337,6 +337,52 @@ INTER\_AREA vs INTER\_LINEAR moves the committed model's confidence by
 choice is a real deployment variable, so dxtool pins its resizer.
 (iv) \textbf{seaborn}: OOF confidence distributions (Fig.~above) show
 the one-directional noise tails directly.
+\subsection{Source verification of the published baselines}
+Benchmark numbers quoted from memory are a known failure mode, so both
+published frontiers were re-derived from source
+(\texttt{results/tool\_battery\_2.json}, \texttt{tool\_battery\_4.json}).
+\textbf{NCBI E-utilities} and \textbf{Europe PMC} full-text search find
+\emph{zero} prior label-noise censuses of either dataset (the novelty
+claim). \textbf{CrossRef} verifies both benchmark DOIs. The Europe PMC
+full text of Rajaraman et al.\ (PMC5907772), parsed with \textbf{lxml}
+and independently re-parsed with \textbf{xmltodict} (identical numbers),
+corrected two misquotes we initially carried: their custom CNN reports
+$94.0 \pm 1.0$\% cell-level accuracy (the widely-quoted 95.9\% is the
+\emph{patient}-level number, their Table~6), and the pre-trained
+reference is VGG-16 at $94.5 \pm 1.5$\% --- no VGG-19 appears in the
+paper. Our 96.08\% cell-level result therefore stands $+2.1$ points
+above their cell-level custom CNN, not the $+0.2$ a memory-level quote
+would suggest. Kermany's headline 92.8\%/93.2\%/90.1\% is paywalled;
+all three numbers were corroborated against two independent open-access
+citing papers (PMC10660141, PMC11759907) and are labelled as
+secondary-sourced. \textbf{trafilatura} captured clean provenance text
+for the NIH dataset record (PubMed/PMC/PeerJ/Mendeley landing pages are
+browser-gated to automated fetches --- recorded as a limitation), and
+\textbf{htmldate} dates the record to 2020-03-16. \textbf{BeautifulSoup}
+extracted the LHC dataset table structure, confirming our release is the
+thin-smear series.
+\subsection{Pipeline integrity and consistency audits}
+(\texttt{results/tool\_battery\_3.json}, \texttt{tool\_battery\_4.json}.)
+\textbf{imageio} re-decoded 100 source files (60 malaria PNGs, 40
+pneumonia JPEGs) through an independent code path and reproduced the
+stored training arrays with \emph{zero} pixel difference --- the
+preprocessing pipeline preserves the source bytes. \textbf{DuckDB} SQL
+cross-tabs show pneumonia flags concentrate in the pneumonia class
+(132 of 155), consistent with ambiguous infiltrate films being the noisy
+ones. An adjusted \textbf{formulaic} logistic model of flag status on
+the image properties shows pneumonia flags are driven by sharpness alone
+(OR 3.09 per SD, $p{=}1.1{\times}10^{-17}$) while malaria flags are
+driven by contrast (OR 1.58, $p{=}1.4{\times}10^{-4}$) and entropy
+(OR 1.27, $p{=}0.013$) but \emph{not} sharpness --- and the low
+pseudo-$R^2$ (0.017 malaria / 0.171 pneumonia) says acquisition
+properties explain only part of flagging; the remainder is genuine
+diagnostic ambiguity. \textbf{pdfplumber} re-extracted the rendered
+paper's tables and confirmed every audited number matches the committed
+JSONs; \textbf{PyMuPDF} renders pages for visual inspection.
+\textbf{Plotly} and \textbf{openpyxl} produce the interactive
+property-scatter and the flagged-image registry workbook shipped with
+the results; \textbf{ReportLab} generates the one-page census review
+card.
 \subsection{Flagged images are measurably atypical}
 If the census flags a property of the images rather than an artefact of
 the estimator, flagged images should differ measurably from unflagged
