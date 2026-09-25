@@ -248,6 +248,15 @@ Uninfected cells attribution is diffuse. Quantified in
 \texttt{results/malaria/saliency\_ig.json}.}
 \end{figure}
 
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.62\textwidth]{../figures/pneumonia_confident_joint.png}
+\caption{Pneumonia confident joint from the 3-fold out-of-fold census.
+The off-diagonal mass is again strongly one-directional: 973 training
+images labelled \emph{pneumonia} cross-validate as \emph{normal}, vs 23
+in the opposite direction.}
+\end{figure}
+
 \section{Discussion}
 \subsection{What the census is and is not}
 The label-noise census estimates \emph{statistical} label inconsistency: an
@@ -314,6 +323,19 @@ cases (Appendix A). An independent cross-check with the published
 conservative flags are a strict subset of the reference library's, which
 strengthens the claim that the flagged set is a property of the data, not
 of our estimator.
+\subsection{Pneumonia census findings}
+The census of the Kermany training partition (4{,}708 films) estimates a
+label-noise rate of 21.15\,\% (996 estimated errors), admissible under
+the gate (OOF accuracy 0.898 against a 0.742 majority rate), with the
+same one-directional signature as malaria but stronger: 973 images
+labelled \emph{pneumonia} cross-validate as \emph{normal}, against only
+23 in the opposite direction. We conservatively flag 155 high-confidence
+cases (Appendix A), every one of which is independently flagged by the
+\texttt{cleanlab} reference implementation (which flags 209; Jaccard
+0.742). That two independently assembled public medical datasets exhibit
+the same directional failure mode --- over-inclusive positive labels ---
+is the central empirical finding of this study, and each flagged
+identifier is published so any reader can inspect the films.
 \subsection{Pneumonia: an honest gap, and where it lives}
 Our from-scratch models underperform the published Kermany et al.\ number
 (92.8\,\%, Inception-v3 transfer from ImageNet) by 13--21 accuracy points
