@@ -1,0 +1,159 @@
+{
+  "duckdb_difficulty": {
+    "n_hard_below_0.7": 2,
+    "hardest": [
+      {
+        "dataset": "fertility",
+        "models": 4,
+        "best_auc": 0.6591,
+        "mean_auc": 0.517
+      },
+      {
+        "dataset": "haberman",
+        "models": 4,
+        "best_auc": 0.6783,
+        "mean_auc": 0.6549
+      },
+      {
+        "dataset": "heart_va",
+        "models": 4,
+        "best_auc": 0.719,
+        "mean_auc": 0.6671
+      },
+      {
+        "dataset": "wpbc",
+        "models": 4,
+        "best_auc": 0.7346,
+        "mean_auc": 0.6782
+      },
+      {
+        "dataset": "ilpd",
+        "models": 4,
+        "best_auc": 0.7647,
+        "mean_auc": 0.7453
+      }
+    ],
+    "by_model": [
+      {
+        "model": "mlp",
+        "datasets": 22,
+        "mean_auc": 0.8539,
+        "med_auc": 0.8978
+      },
+      {
+        "model": "random_forest",
+        "datasets": 22,
+        "mean_auc": 0.8499,
+        "med_auc": 0.8751
+      },
+      {
+        "model": "logreg",
+        "datasets": 22,
+        "mean_auc": 0.8461,
+        "med_auc": 0.886
+      },
+      {
+        "model": "gcn",
+        "datasets": 22,
+        "mean_auc": 0.8217,
+        "med_auc": 0.8804
+      }
+    ]
+  },
+  "agate_stats": {
+    "per_model": [
+      {
+        "model": "mlp",
+        "n_runs": 66.0,
+        "mean_auc": 0.8539,
+        "median_auc": 0.8978,
+        "min_auc": 0.3793,
+        "max_auc": 1.0
+      },
+      {
+        "model": "gcn",
+        "n_runs": 66.0,
+        "mean_auc": 0.8217,
+        "median_auc": 0.8804,
+        "min_auc": 0.3106,
+        "max_auc": 1.0
+      },
+      {
+        "model": "logreg",
+        "n_runs": 66.0,
+        "mean_auc": 0.8461,
+        "median_auc": 0.886,
+        "min_auc": 0.3864,
+        "max_auc": 1.0
+      },
+      {
+        "model": "random_forest",
+        "n_runs": 66.0,
+        "mean_auc": 0.8499,
+        "median_auc": 0.8751,
+        "min_auc": 0.3636,
+        "max_auc": 1.0
+      }
+    ]
+  },
+  "csvkit_profile": {
+    "returncode": 0,
+    "roc_auc": {
+      "mean": 0.8429,
+      "median": 0.8828,
+      "min": 0.3106,
+      "max": 1.0,
+      "stdev": 0.1441
+    },
+    "accuracy": {
+      "mean": 0.8219,
+      "median": 0.8235,
+      "min": 0.26,
+      "max": 1.0,
+      "stdev": 0.1248
+    },
+    "balanced_accuracy": {
+      "mean": 0.7748,
+      "median": 0.7959,
+      "min": 0.4356,
+      "max": 1.0,
+      "stdev": 0.1495
+    }
+  },
+  "statsmodels_fdr": {
+    "n_datasets": 22,
+    "n_significant_fdr05": 0,
+    "most_significant": [
+      {
+        "dataset": "ann_thyroid",
+        "p": 0.125,
+        "q": 0.130952
+      },
+      {
+        "dataset": "arrhythmia",
+        "p": 0.125,
+        "q": 0.130952
+      },
+      {
+        "dataset": "cervical",
+        "p": 0.125,
+        "q": 0.130952
+      },
+      {
+        "dataset": "diabetes_early_risk",
+        "p": 0.125,
+        "q": 0.130952
+      },
+      {
+        "dataset": "echocardiogram",
+        "p": 0.125,
+        "q": 0.130952
+      }
+    ],
+    "null": "per-dataset best-model seed AUCs > 0.5 (one-sided Wilcoxon)",
+    "power_caveat": "10a panels have 3 seeds/dataset; the minimum achievable one-sided Wilcoxon p with n=3 is 0.25, so NO dataset can reach FDR significance by design. Per-dataset superiority claims for 10a panels are underpowered and should be stated descriptively."
+  },
+  "leather_chart": {
+    "artifact": "results/tena_scope/tena_panel_auc.svg"
+  }
+}

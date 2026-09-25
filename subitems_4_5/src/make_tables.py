@@ -113,6 +113,9 @@ def main():
         ("PyMuPDF", "page rendering for visual verification of the built paper"),
         ("htmldate", "publication-date evidence for the NIH malaria dataset record (2020-03-16)"),
         ("ReportLab", "generated census review card PDF for reviewers"),
+        ("agate", "per-model descriptive statistics across the 22 10a panel datasets"),
+        ("csvkit (csvstat)", "independent CSV profile of the flattened panel metrics"),
+        ("leather", "SVG chart of per-dataset best-model AUC across 10a panels"),
     ]
     # Infrastructure is used but deliberately NOT counted, per program
     # convention: git, GitHub, pytest, TeX Live, pandoc, curl, sha256sum.
