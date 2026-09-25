@@ -1,0 +1,25 @@
+\section{Flagged-image forensics}
+Flagged and control groups ($n=249$ flagged, $n=500$ controls) compared on Laplace-variance sharpness, RMS contrast, and Shannon entropy (scikit-image; tests by pingouin):
+\begin{table}[h]\centering\small
+\begin{tabular}{lcccccc}
+\hline
+Property & Flag mean & Flag med & Ctrl mean & Ctrl med & $U$ & $p$ \\
+\hline
+sharpness & 0.0293 & 0.0290 & 0.0289 & 0.0291 & 64319 & 4.58e-01 \\
+contrast & 0.2867 & 0.2872 & 0.2814 & 0.2816 & 70722 & 2.39e-03 \\
+entropy & 4.6409 & 4.6584 & 4.6324 & 4.6265 & 63618 & 6.24e-01 \\
+\hline
+\end{tabular}
+\caption{Flagged vs control image properties (malaria; Mann--Whitney, pingouin). Data: \texttt{results/malaria/flagged\_image\_properties.json}.}\label{tab:forensics}
+\end{table}
+
+\subsection{Verdict, stated honestly}
+Only contrast separates the malaria flagged set from controls
+($p=2.39e-03$); sharpness ($p=0.46$)
+and entropy ($p=0.62$) do not. The malaria flags are
+therefore \emph{not} a low-quality-image artifact: they are
+label-consistent-statistics outliers in otherwise normal-looking cells,
+which strengthens the interpretation that the census found genuine
+label-side inconsistency rather than a acquisition-quality stratum. An
+earlier draft claim that flagged images are generically atypical was
+corrected against this table and survives only for pneumonia.

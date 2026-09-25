@@ -47,11 +47,11 @@ cells it is diffuse. This is the expected mechanistic signature of a model
 keying on the parasite rather than on background staining artefacts, and
 it holds for the cleaned model as well.
 \subsection{Flagged-image forensics}
-Flagged cells are measurably atypical: sharpness, contrast, and entropy
-distributions differ materially between flagged and unflagged groups
-(\texttt{results/malaria/flagged\_image\_properties.json}; per-image rows in
-\texttt{results/flagged\_property\_rows.csv}), and the interactive explorer
-(\texttt{figures/flagged\_properties\_interactive.html}) makes every flagged
+Malaria flags are \emph{not} a low-quality stratum: only contrast separates
+flagged from control cells (full statistics in the forensics chapter), so the
+census found label-side inconsistency in normal-looking cells. Per-image rows
+(\texttt{results/flagged\_property\_rows.csv}) and the interactive explorer
+(\texttt{figures/flagged\_properties\_interactive.html}) make every flagged
 cell inspectable against its properties.
 
 \section{Discussion}

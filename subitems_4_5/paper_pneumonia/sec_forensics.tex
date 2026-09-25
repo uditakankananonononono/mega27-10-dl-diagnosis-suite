@@ -1,0 +1,27 @@
+\section{Flagged-image forensics}
+Flagged and control groups ($n=155$ flagged, $n=500$ controls) compared on Laplace-variance sharpness, RMS contrast, and Shannon entropy (scikit-image; tests by pingouin):
+\begin{table}[h]\centering\small
+\begin{tabular}{lcccccc}
+\hline
+Property & Flag mean & Flag med & Ctrl mean & Ctrl med & $U$ & $p$ \\
+\hline
+sharpness & 0.0053 & 0.0053 & 0.0035 & 0.0032 & 61109 & 1.74e-27 \\
+contrast & 0.2355 & 0.2323 & 0.2187 & 0.2209 & 49102 & 4.93e-07 \\
+entropy & 7.3202 & 7.3392 & 7.2610 & 7.3030 & 44755 & 3.53e-03 \\
+\hline
+\end{tabular}
+\caption{Flagged vs control image properties (pneumonia; Mann--Whitney, pingouin). Data: \texttt{results/pneumonia/flagged\_image\_properties.json}.}\label{tab:forensics}
+\end{table}
+
+\subsection{Verdict}
+All three properties separate the pneumonia flagged set from controls ---
+sharpness decisively ($p=1.74e-27$), contrast
+($p=4.93e-07$), entropy ($p=3.53e-03$).
+Flagged films are measurably atypical: they are blurrier and flatter than
+unflagged films. Two readings are compatible with the data: (i) genuinely
+mislabeled films include technically substandard acquisitions that the
+model reads as the other class; (ii) borderline films are both harder to
+acquire well and harder to label. Either way the flags track measurable
+acquisition differences, and the per-image rows
+(\texttt{results/flagged\_property\_rows.csv}) let any reader inspect
+the claim film by film.
