@@ -1,0 +1,9 @@
+[
+ "However, their accuracy depends on smear quality and expertise in classifying and counting parasitized and uninfected cells. Such an examination could be arduous for large-scale diagnoses resulting in poor quality.",
+ "The authors reported 96.4% accuracy in the task of classifying a dataset of 4,100 cells with randomized train/test splits.",
+ "The authors used a customized portable slide scanner and off-the shelf components for data acquisition and demonstrated sensitivity and specificity of 97.06% and 98.",
+ "We evaluated the performance of the pre-trained CNNs in terms of accuracy, AUC, sensitivity, specificity, F1-score, and MCC. The model architecture and weights for the pre-trained CNNs were downloaded from GitHub repositories ( Chollet, 2017 ; Yu, 2016 ).",
+ "We observed that, in terms of accuracy, there existed a statistically significant difference in performance between the different CNNs ( \u03c7 2 (5) = 15.508, p = 0.",
+ "However, ResNet-50 obtained the highest mean ranks for accuracy, specificity, F1-score, and MCC. Discussions and Conclusion The customized model converged to an optimal solution due to hyper-parameter optimization, implicit regularization imposed by smaller convolutional filter sizes and aggressive dropouts in the fully connected layers.",
+ "While performing Kruskal-Wallis H and post-hoc analyses, we observed that the pre-trained ResNet-50 obtained the highest mean ranks for accuracy, specificity, F1-score, and MCC. If we were to select a model based on a balance between precision and sensitivity as demonstrated by the F1-score, we could observe that the pre-trained ResNet-50 outperformed the other models under study."
+]
