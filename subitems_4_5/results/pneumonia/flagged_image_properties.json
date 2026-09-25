@@ -1,0 +1,47 @@
+{
+  "disease": "pneumonia",
+  "n_flagged": 155,
+  "n_control": 500,
+  "flagged": {
+    "sharpness": {
+      "mean": 0.005301,
+      "median": 0.005273
+    },
+    "contrast": {
+      "mean": 0.235458,
+      "median": 0.232263
+    },
+    "entropy": {
+      "mean": 7.320236,
+      "median": 7.33916
+    }
+  },
+  "control": {
+    "sharpness": {
+      "mean": 0.003516,
+      "median": 0.003236
+    },
+    "contrast": {
+      "mean": 0.218673,
+      "median": 0.220939
+    },
+    "entropy": {
+      "mean": 7.260964,
+      "median": 7.302962
+    }
+  },
+  "mann_whitney": {
+    "sharpness": {
+      "U": 61109.0,
+      "p": 1.738869077725716e-27
+    },
+    "contrast": {
+      "U": 49102.0,
+      "p": 4.927615501083636e-07
+    },
+    "entropy": {
+      "U": 44755.0,
+      "p": 0.003532006617766897
+    }
+  }
+}

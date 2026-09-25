@@ -1,0 +1,47 @@
+{
+  "disease": "malaria",
+  "n_flagged": 249,
+  "n_control": 500,
+  "flagged": {
+    "sharpness": {
+      "mean": 0.029259,
+      "median": 0.028966
+    },
+    "contrast": {
+      "mean": 0.286743,
+      "median": 0.28722
+    },
+    "entropy": {
+      "mean": 4.640923,
+      "median": 4.658357
+    }
+  },
+  "control": {
+    "sharpness": {
+      "mean": 0.028927,
+      "median": 0.02907
+    },
+    "contrast": {
+      "mean": 0.281445,
+      "median": 0.281615
+    },
+    "entropy": {
+      "mean": 4.632398,
+      "median": 4.626512
+    }
+  },
+  "mann_whitney": {
+    "sharpness": {
+      "U": 64319.0,
+      "p": 0.4583699601848801
+    },
+    "contrast": {
+      "U": 70722.0,
+      "p": 0.0023899624341542445
+    },
+    "entropy": {
+      "U": 63618.0,
+      "p": 0.6239689452543792
+    }
+  }
+}

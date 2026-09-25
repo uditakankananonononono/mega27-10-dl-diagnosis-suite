@@ -308,6 +308,20 @@ parasites frequently sit at the cell periphery, the mean central-mass
 fraction is 0.219 --- slightly \emph{below} the 0.25 a uniform map
 would give on the central half --- a useful reminder that centre-crop
 sanity metrics misfire when the biology is peripheral.
+\subsection{Flagged images are measurably atypical}
+If the census flags a property of the images rather than an artefact of
+the estimator, flagged images should differ measurably from unflagged
+ones. Using scikit-image (variance-of-Laplacian sharpness, RMS contrast,
+Shannon entropy) with Mann--Whitney tests against 500 matched controls
+(\texttt{results/*/flagged\_image\_properties.json}): flagged pneumonia
+films are significantly \emph{sharper} (median 0.0053 vs 0.0032,
+$p{=}1.7{\times}10^{-27}$), higher-contrast ($p{=}4.9{\times}10^{-7}$)
+and higher-entropy ($p{=}0.0035$) than controls --- acquisition-atypical
+films are exactly where label errors concentrate. Flagged malaria cells
+differ only in contrast ($p{=}0.0024$; sharpness $p{=}0.46$, entropy
+$p{=}0.62$), consistent with subtler borderline parasitisation rather
+than acquisition artefacts. The two diseases fail differently, and the
+census sees both.
 \subsection{Malaria census findings}
 The census of the NIH malaria training partition (22{,}046 cells) estimates
 a label-noise rate of 11.44\,\% (2{,}522 estimated errors; Table
