@@ -1,0 +1,41 @@
+{
+ "timm_resnet18_linear_probe": {
+  "test_acc": 0.9184,
+  "test_auc": 0.9702,
+  "train_n": 4000,
+  "secs": 32.0
+ },
+ "umap_embedding": {
+  "shape": [
+   2758,
+   2
+  ],
+  "dim0_label_pointbiserial_r": -0.343,
+  "secs": 29.8
+ },
+ "pingouin_property_tests": {
+  "sharpness": {
+   "mwu_p": 0.4583699601848801,
+   "effect_rbc": 0.033236947791164706
+  },
+  "contrast": {
+   "mwu_p": 0.0023899624341542445,
+   "effect_rbc": 0.13609638554216863
+  },
+  "entropy": {
+   "mwu_p": 0.6239689452543792,
+   "effect_rbc": 0.02197590361445778
+  }
+ },
+ "ydata_profiling": {
+  "report": "results/malaria/properties_profile.html",
+  "n_rows": 749,
+  "secs": 4.3
+ },
+ "shap_gradient": {
+  "n_explained": 40,
+  "mean_abs_attr": 0.004686,
+  "top_quartile_mass": 0.25,
+  "secs": 56.4
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "simpleitk_resampling": {
+  "n": 200,
+  "auc_sitk_linear": NaN,
+  "mean_abs_shift_linear_vs_nearest": 0.0729,
+  "secs": 13.6
+ },
+ "pytorch_grad_cam": {
+  "n_explained": 20,
+  "mean_cam_area_over_0p5": 0.0024,
+  "target_layer": "ReLU",
+  "secs": 4.1
+ },
+ "skopt_search": {
+  "best_lr": 0.00044887828707425667,
+  "best_val_auc": 0.8925,
+  "n_calls": 10,
+  "note": "1-epoch quarter-subsample search; 5 random + 5 GP-guided calls",
+  "secs": 667.2
+ }
+}

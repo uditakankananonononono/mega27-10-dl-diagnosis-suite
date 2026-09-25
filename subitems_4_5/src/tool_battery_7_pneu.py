@@ -51,6 +51,7 @@ else:
     print("xrv done", flush=True)
     del model_xrv
 
+import gc; gc.collect()
 # 2) kornia augmentation-stability audit of the tuned CNN
 t0 = time.time()
 import kornia.augmentation as K
@@ -59,7 +60,7 @@ model.load_state_dict(torch.load(OUT / "model_cnn_tuned.pt", map_location="cpu")
 model.eval()
 aug = torch.nn.Sequential(K.RandomAffine(degrees=8, translate=(0.05, 0.05), p=1.0),
                           K.RandomBrightness(brightness=(0.0, 0.2), p=1.0))
-xs = torch.from_numpy(np.asarray(X[:200])).float() / 255.0
+xs = torch.from_numpy(np.asarray(X[:96])).float() / 255.0
 with torch.no_grad():
     p0 = torch.softmax(model(xs), 1)[:, 1]
     torch.manual_seed(0)
@@ -75,8 +76,8 @@ print("kornia done", flush=True)
 # 3) shap attributions for the tuned pneumonia CNN
 t0 = time.time()
 import shap
-bg = torch.from_numpy(np.asarray(X[:50])).float() / 255.0
-te_x = torch.from_numpy(np.asarray(X[200:240])).float() / 255.0
+bg = torch.from_numpy(np.asarray(X[:16])).float() / 255.0
+te_x = torch.from_numpy(np.asarray(X[200:216])).float() / 255.0
 ex = shap.GradientExplainer(model, bg)
 sv = ex.shap_values(te_x)
 sv_arr = np.asarray(sv[1] if isinstance(sv, list) else sv)
