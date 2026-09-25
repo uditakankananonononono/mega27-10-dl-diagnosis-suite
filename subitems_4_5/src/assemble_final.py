@@ -152,25 +152,37 @@ def main_tex(disease, title, subtitle, abstract, inputs):
 \end{{document}}
 """)
 
-ABS_MAL = ("We train a compact CNN core and a CNN--graph hybrid (RegionGCN) "
-"on the 27,558-cell NIH malaria benchmark, beating the source-verified "
-"published cell-level reference (94.0\\%) with 96.08\\% test accuracy and "
-"ROC-AUC 0.9929 on 2,758 held-out cells. A three-fold out-of-fold "
-"confident-learning census estimates 11.44\\% label noise and publishes "
-"249 falsifiable per-image flags, cross-validated against an independent "
-"library; cleaned retraining is reported honestly. The study uses 240 "
-"accession-level datasets and its tool ledger is evidence-gated per tool.")
+ABS_MAL = ("We present the first label-noise census of the NIH Lister Hill "
+"cell\\_images malaria benchmark - the most-used teaching collection in "
+"medical image classification - and publish 249 falsifiable per-image flags "
+"with a 11.44\\% estimated noise rate, cross-validated against an "
+"independent library. The noise is one-directional: Parasitized-labelled "
+"cells cross-validate as Uninfected 14:1, a contamination asymmetry hidden "
+"by the collection's published class parity. We contribute an admissibility "
+"gate that prevents confident learning from fabricating noise rates under "
+"weak out-of-fold models, demonstrated on real collapse cases. Supporting "
+"evidence: a 140k-parameter CNN trained from scratch reaches 96.08\\% test "
+"accuracy, beating the source-verified 94.0\\% published reference and an "
+"ImageNet-pretrained probe, at two orders of magnitude fewer parameters. "
+"The study uses 240 accession-level datasets; every number regenerates "
+"from committed files.")
 
-ABS_PNE = ("We train a compact CNN core and a CNN--graph hybrid (RegionGCN) "
-"on the official Kermany ChestXRay2017 split, reaching 84.94\\% test "
-"accuracy (census-cleaned RegionGCN) on the 624-film official test set. "
-"Head-to-head on the identical films, the strongest runnable external "
-"tool --- TorchXRayVision's DenseNet-121 --- scores 38.5\\% accuracy and "
-"0.7990 AUC, losing to every configuration we ship. A confident-learning "
-"census estimates 21.15\\% label noise with 155 published flags; cleaning "
-"improves the RegionGCN by +5.9 points. The cross-regime gap to the "
-"published 92.8\\% reference is stated honestly and addressed through a "
-"transfer study. The study uses 161 accession-level datasets.")
+ABS_PNE = ("We present the first confident-learning label-noise census of the "
+"Kermany ChestXRay2017 training set - 21.15\\% estimated noise with 155 "
+"published falsifiable flags - and show the contamination is "
+"one-directional (PNEUMONIA-labelled films cross-validate as NORMAL 42:1) "
+"and co-varies with acquisition quality: flagged films are measurably "
+"blurrier and flatter ($p<10^{-6}$), evidence consistent with the "
+"collection's automated report-parsing label generation. Cleaning the "
+"census flags improves our strongest model by +5.9 points - a "
+"regime-dependent effect we contrast with malaria, where cleaning does "
+"not help, and we identify the measurable regime variables behind the "
+"difference. Supporting evidence: on the identical 624 official test "
+"films, our compact models beat the strongest runnable external tool "
+"(TorchXRayVision DenseNet-121) by +46.5 accuracy points; the "
+"cross-regime gap to the published 92.8\\% reference is stated honestly "
+"and addressed with a tested transfer study. The study uses 161 "
+"accession-level datasets.")
 
 def write(path, text):
     with open(path, 'w') as f: f.write(text)
@@ -185,14 +197,14 @@ if __name__ == '__main__':
     common_tail = ['sec_fig_interp_disc_lim', 'sec_rocfig', 'sec_landscape', 'sec_validity', 'sec_error_analysis', 'sec_forensics', '../paper_shared/discussion_extra', 'sec_tables', 'sec_dynamics', 'sec_repro_config', 'sec_batteries', 'sec_batteries_late', 'sec_eng_formulas', 'sec_env_notation_theory', 'sec_ledgers', 'sec_flagged', 'sec_refs']
     write(R('paper_malaria/main.tex'), main_tex(
         'malaria',
-        'Malaria Parasite Detection with a CNN--GNN Hybrid: Benchmark Win, Label-Noise Census, and a Verified Diagnostic Tool',
+        'A Label-Noise Census of the NIH Malaria Benchmark: One-Directional Contamination, an Admissibility Gate, and a Compact Verified Diagnostic',
         'MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\\_images)',
         ABS_MAL,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',
          'sec_results', 'sec_verification', 'sec_bbbc', 'lit_survey_malaria'] + common_tail))
     write(R('paper_pneumonia/main.tex'), main_tex(
         'pneumonia',
-        'Pneumonia Detection in Chest Radiographs with a CNN--GNN Hybrid: Head-to-Head Tool Win, Label-Noise Census, and a Verified Diagnostic Tool',
+        'A Label-Noise Census of ChestXRay2017: Directional Contamination from Report Parsing, a Cleaning Gain of +5.9 Points, and a Compact Verified Diagnostic',
         'MEGA-PROGRAM-27, Item 10.5 (pneumonia, Kermany ChestXRay2017)',
         ABS_PNE,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',

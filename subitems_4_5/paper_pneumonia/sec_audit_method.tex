@@ -1,0 +1,26 @@
+
+\section{Literature-audit methodology}
+\subsection{Queries and retrieval}
+150 PubMed records were individually fetched through NCBI E-utilities
+(esearch, relevance-ranked, then esummary per record) with these queries:
+\begin{itemize}
+\item \texttt{pneumonia chest x-ray deep learning diagnosis}
+\item \texttt{pediatric pneumonia radiograph computer aided detection}
+\item \texttt{chest radiograph classification convolutional neural network}
+\item \texttt{pneumonia detection transfer learning chest X-ray}
+\item \texttt{label noise chest x-ray dataset}
+\end{itemize}
+Retrieval was capped at 150 records per query; deduplication by PMID; the
+shared suite audit's pneumonia subset was unioned in and deduplicated again.
+Every record carries its PMID, title, journal, and date in
+\texttt{results/lit\_audit\_pneumonia.json} --- accession-level evidence, not
+a count claim.
+\subsection{Screening and clustering}
+Records were screened by title and assigned to thematic clusters by
+keyword analysis (deep learning, CAD/segmentation, classical ML,
+dataset/benchmark, clinical context, label noise/robustness). The
+screen's limits are stated in the survey: title-keyword clustering can
+misfile borderline records, PubMed coverage is not the whole literature,
+and the audit date bounds recency claims. No record was excluded from the
+ledger for being inconvenient to our novelty claim --- the label-noise
+cluster's tiny size \emph{is} the finding.

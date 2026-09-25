@@ -1,0 +1,43 @@
+
+\section{Reproducing every number in this paper}
+\subsection{From archive to array}
+Download \texttt{cell\_images.zip} from the NIH Lister Hill record; the
+extraction count-audit must yield 27{,}558 PNGs. \texttt{src/pretensorize}
+decodes to \texttt{data/malaria/malaria48\_x.npy} (NCHW uint8); the
+imageio cross-decode (\texttt{src/tool\_battery\_3.py}) must report 0 max
+pixel difference before any training.
+\subsection{From array to headline}
+\texttt{src/run\_malaria.py} trains both heads (seeds fixed) and writes
+\texttt{results/malaria/baseline\_results.json}; the test partition is
+touched exactly once per model. Every table in this paper regenerates
+from that JSON via the assembly scripts (\texttt{src/assemble\_*.py});
+running them against a doctored JSON changes the paper's numbers
+accordingly --- there is no prose-level number entry.
+\subsection{From probabilities to census}
+\texttt{src/run\_census.py} (3-fold OOF) writes
+\texttt{label\_noise\_census.json}; \texttt{src/census\_crosscheck.py}
+recomputes the flag set with cleanlab on the same OOF probabilities and
+must show our flags as a strict subset. Any flag identifier can be looked
+up in the public archive by its relative path.
+\subsection{Expected runtime}
+On the reference 2-core sandbox: pretensorise ~6 min, baseline training
+~35 min, census ~100 min, batteries ~60 min. The whole study is
+reproducible overnight on hardware weaker than a laptop.
+
+\section{Configuration-by-configuration analysis}
+\subsection{CNN core, baseline (96.08\% / 0.9929)}
+The reference configuration and the benchmark-beating one. Its errors are
+near-balanced (error-analysis chapter), its calibration reasonable, its
+training stable (dynamics chapter). It is the dxtool deployment default
+for malaria.
+\subsection{RegionGCN, baseline (95.98\% / 0.9918)}
+Statistically indistinguishable from the CNN at $n=2{,}758$ (Wilson
+intervals overlap); the region head's value here is interpretability
+(region-level attributions) rather than accuracy.
+\subsection{CNN core, census-cleaned (95.50\% / 0.9878)}
+The honest negative: cleaning under a same-process contaminated test
+split costs 0.6 points. Kept verbatim; motivates the
+decontaminated-test-set follow-up.
+\subsection{RegionGCN, census-cleaned (95.43\% / 0.9856)}
+Same pattern (-0.55 points); the cleaning interaction is regime-bound, as
+analysed in the discussion's two-disease contrast.

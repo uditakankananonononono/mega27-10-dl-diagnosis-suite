@@ -5,11 +5,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 Q = {
 'malaria': ["malaria parasite detection deep learning blood smear",
             "automated malaria microscopy diagnosis",
+            "Plasmodium image classification machine learning",
             "malaria thin smear image analysis computer aided",
             "malaria red blood cell segmentation detection"],
 'pneumonia': ["pneumonia chest x-ray deep learning diagnosis",
-              "chest radiograph pneumonia classification benchmark",
-              "pediatric chest x-ray computer aided diagnosis"],
+              "pediatric pneumonia radiograph computer aided detection",
+              "chest radiograph classification convolutional neural network",
+              "pneumonia detection transfer learning chest X-ray",
+              "label noise chest x-ray dataset"],
 }
 for d in ('malaria', 'pneumonia'):
     lit = json.load(open(os.path.join(ROOT, f'results/lit_audit_{d}.json')))
@@ -22,7 +25,7 @@ for d in ('malaria', 'pneumonia'):
 (esearch, relevance-ranked, then esummary per record) with these queries:
 \begin{{itemize}}
 {qlist}
-\end{{itemize}
+\end{{itemize}}
 Retrieval was capped at 150 records per query; deduplication by PMID; the
 shared suite audit's {d} subset was unioned in and deduplicated again.
 Every record carries its PMID, title, journal, and date in

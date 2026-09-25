@@ -27,14 +27,14 @@ A CNN--GNN Hybrid Benchmark and a Confident-Learning\\Label-Noise Census of Two 
 \author{MEGA27-10b build lane \quad (computational study; no wet lab)}
 \date{September 24, 2026}
 
-\title{\textbf{Malaria Parasite Detection with a CNN--GNN Hybrid: Benchmark Win, Label-Noise Census, and a Verified Diagnostic Tool}\\
+\title{\textbf{A Label-Noise Census of the NIH Malaria Benchmark: One-Directional Contamination, an Admissibility Gate, and a Compact Verified Diagnostic}\\
 \large MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\_images)}
 \author{MEGA27-10b build lane \quad (computational study; no wet lab)}
 \date{September 26, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We train a compact CNN core and a CNN--graph hybrid (RegionGCN) on the 27,558-cell NIH malaria benchmark, beating the source-verified published cell-level reference (94.0\%) with 96.08\% test accuracy and ROC-AUC 0.9929 on 2,758 held-out cells. A three-fold out-of-fold confident-learning census estimates 11.44\% label noise and publishes 249 falsifiable per-image flags, cross-validated against an independent library; cleaned retraining is reported honestly. The study uses 240 accession-level datasets and its tool ledger is evidence-gated per tool.
+We present the first label-noise census of the NIH Lister Hill cell\_images malaria benchmark - the most-used teaching collection in medical image classification - and publish 249 falsifiable per-image flags with a 11.44\% estimated noise rate, cross-validated against an independent library. The noise is one-directional: Parasitized-labelled cells cross-validate as Uninfected 14:1, a contamination asymmetry hidden by the collection's published class parity. We contribute an admissibility gate that prevents confident learning from fabricating noise rates under weak out-of-fold models, demonstrated on real collapse cases. Supporting evidence: a 140k-parameter CNN trained from scratch reaches 96.08\% test accuracy, beating the source-verified 94.0\% published reference and an ImageNet-pretrained probe, at two orders of magnitude fewer parameters. The study uses 240 accession-level datasets; every number regenerates from committed files.
 \end{abstract}
 \tableofcontents
 \newpage
@@ -55,6 +55,7 @@ We train a compact CNN core and a CNN--graph hybrid (RegionGCN) on the 27,558-ce
 \input{../paper_shared/discussion_extra}
 \input{sec_tables}
 \input{sec_dynamics}
+\input{sec_repro_config}
 \input{sec_batteries}
 \input{sec_batteries_late}
 \input{sec_eng_formulas}

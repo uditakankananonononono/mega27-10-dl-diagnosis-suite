@@ -1,0 +1,39 @@
+
+\section{Reproducing every number in this paper}
+\subsection{From archive to array}
+Download \texttt{ChestXRay2017.zip} (Mendeley \texttt{rscbjbr9sj} v2);
+SHA-256 must match the publisher API value. \texttt{src/pretensorize}
+decodes to \texttt{data/pneumonia/cxr\_*.npy} with the official
+patient-level split preserved; the imageio cross-decode must report 0 max
+pixel difference.
+\subsection{From array to headline}
+\texttt{src/run\_pneumonia.py} trains both heads and writes
+\texttt{baseline\_results.json}; \texttt{src/run\_tuned.py} the
+class-weighted configuration; \texttt{src/run\_cleaned.py} the
+census-cleaned configuration. All tables regenerate programmatically via
+\texttt{src/assemble\_*.py}.
+\subsection{External head-to-head}
+\texttt{src/tool\_battery\_7\_pneu.py} downloads TorchXRayVision
+\texttt{densenet121-res224-all} weights and scores the identical 624 test
+films, committing \texttt{test\_probs\_torchxrayvision.json}. The ROC
+overlay in this paper comes from that file, not from any quoted number.
+\subsection{Expected runtime}
+Pretensorise ~10 min, baseline ~60 min, tuned ~60 min, cleaned ~60 min,
+census ~100 min, batteries ~90 min on the reference sandbox.
+
+\section{Configuration-by-configuration analysis}
+\subsection{CNN core, baseline (72.12\% / 0.9331)}
+The weakest shipped configuration; the class imbalance dominates its
+decision threshold (near-perfect sensitivity, poor specificity).
+\subsection{RegionGCN, baseline (79.01\% / 0.9514)}
++6.9 points from the region head alone --- spatial reasoning earns its
+parameters on radiographs.
+\subsection{CNN core, class-weighted (81.73\% / 0.9174)}
+Class weighting fixes the threshold imbalance at a small AUC cost; the
+right deployment choice when false-normal reads are expensive.
+\subsection{RegionGCN, class-weighted (84.13\% / 0.9471)}
+Combines both gains; second-best overall.
+\subsection{CNN core, census-cleaned (79.81\%)}
+Cleaning recovers most of the weighting gain without touching the loss.
+\subsection{RegionGCN, census-cleaned (84.94\% / 0.9514)}
+The best configuration in the study; cleaning + region reasoning stack.
