@@ -267,6 +267,18 @@ dataset objects (singleton cache), after diagnosing page-cache thrash
 epoch. This cut epoch time by $3\times$ and removed disk variance from the
 training loop, at the cost of a documented memory ceiling that we manage with
 batch-size and resolution choices stated in each experiment.
+\subsection{Uncertainty quantification}
+Every accuracy in this paper carries a Wilson 95\,\% interval, computed
+with \texttt{statsmodels} from the committed confusion matrices
+(\texttt{results/confidence\_intervals.json}). Malaria: CNN
+0.9608 [0.9529, 0.9675], RegionGCN 0.9598 [0.9518, 0.9665] ($n{=}2{,}758$);
+the cleaned-retrain deltas sit well inside these intervals, so we report
+the census-cleaning effect as \emph{small and statistically
+indistinguishable from zero on this test set}, not as an improvement or a
+regression. Pneumonia: CNN 0.7212 [0.6847, 0.7549], RegionGCN 0.7901
+[0.7564, 0.8202] ($n{=}624$); the intervals barely separate, so the
+hybrid's pneumonia advantage is real but modest, and we claim exactly
+that.
 \subsection{Malaria census findings}
 The census of the NIH malaria training partition (22{,}046 cells) estimates
 a label-noise rate of 11.44\,\% (2{,}522 estimated errors; Table

@@ -1,0 +1,56 @@
+{
+  "malaria/baseline_results/cnn": {
+    "correct": 2650,
+    "n": 2758,
+    "accuracy": 0.9608411892675852,
+    "wilson95": [
+      0.9529,
+      0.9675
+    ]
+  },
+  "malaria/baseline_results/gcn": {
+    "correct": 2647,
+    "n": 2758,
+    "accuracy": 0.9597534445250181,
+    "wilson95": [
+      0.9518,
+      0.9665
+    ]
+  },
+  "malaria/cleaned_results/cnn": {
+    "correct": 2634,
+    "n": 2758,
+    "accuracy": 0.9550398839738942,
+    "wilson95": [
+      0.9467,
+      0.9622
+    ]
+  },
+  "malaria/cleaned_results/gcn": {
+    "correct": 2632,
+    "n": 2758,
+    "accuracy": 0.9543147208121827,
+    "wilson95": [
+      0.9459,
+      0.9615
+    ]
+  },
+  "pneumonia/baseline_results/cnn": {
+    "correct": 450,
+    "n": 624,
+    "accuracy": 0.7211538461538461,
+    "wilson95": [
+      0.6847,
+      0.7549
+    ]
+  },
+  "pneumonia/baseline_results/gcn": {
+    "correct": 493,
+    "n": 624,
+    "accuracy": 0.7900641025641025,
+    "wilson95": [
+      0.7564,
+      0.8202
+    ]
+  }
+}
