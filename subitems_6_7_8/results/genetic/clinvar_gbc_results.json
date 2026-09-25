@@ -1,0 +1,22 @@
+{
+ "dataset": "clinvar_subset (unique VariationIDs)",
+ "model": "sklearn HistGradientBoosting on HGVS-parse + locus + leakage-safe gene target encoding",
+ "n_train": 240000,
+ "n_test": 60000,
+ "test_acc": 0.9122,
+ "test_auc": 0.9536,
+ "test_bacc": 0.8352,
+ "wilson95": [
+  0.9099,
+  0.9144
+ ],
+ "prevalence_pathogenic": 0.2069,
+ "vs_floor": "trivial locus/allele floor was 43.2% acc (tool_battery_1)",
+ "tools": [
+  "scikit-learn",
+  "statsmodels",
+  "numpy",
+  "re"
+ ],
+ "train_seconds": 3.4
+}

@@ -91,6 +91,7 @@ def train_pcam(cap_tr=8192, cap_te=8192, epochs=4, bs=64, lr=1e-3):
                    "benchmark_to_beat": "published PCam CNN ~0.90+ AUC (Veeling et al. arXiv:1806.03962)",
                    "history": hist}, open(OUT / "cancer" / "pcam_cnn_train.json", "w"), indent=1)
         torch.save(model.state_dict(), OUT / "cancer" / "pcam_cnn.pt")
+        np.savez(OUT / "cancer" / "pcam_cnn_probs.npz", y_true=yte, prob_pos=probs)
     print("PCAM CNN DONE", flush=True)
 
 
@@ -146,6 +147,7 @@ def fit_eval(Xtr, ytr, Xte, yte, n_classes, size, epochs, bs, lr, out_json, out_
                    "benchmark_to_beat": bench_note, "history": hist},
                   open(out_json, "w"), indent=1)
         torch.save(model.state_dict(), out_pt)
+        np.savez(str(out_json).replace("_train.json", "_probs.npz"), y_true=yte, probs=probs)
     print(ds_name, "CNN DONE", flush=True)
 
 
@@ -168,13 +170,22 @@ def train_breakhis(size=96, epochs=4, bs=64, lr=1e-3):
         with open(OUT / "cancer" / "breakhis_accessions.csv") as f:
             rows = list(csv.DictReader(f))
         split_of = {r["image_id"]: "train" for r in rows}
-    tr, te = [], []
+    # stream-and-resize: never hold full-res arrays (OOM guard)
+    from PIL import Image
+    n_tr = sum(1 for v in split_of.values() if v == "train")
+    n_te = len(split_of) - n_tr
+    Xtr = np.empty((n_tr, 3, size, size), dtype=np.uint8)
+    Xte = np.empty((max(n_te, 1), 3, size, size), dtype=np.uint8)
+    ytr = np.empty(n_tr, dtype=np.int64)
+    yte = np.empty(max(n_te, 1), dtype=np.int64)
+    i_tr = i_te = 0
     for r in loaders.iter_breakhis():
-        s = split_of.get(r["image_id"], "train")
-        (tr if s == "train" else te if s in ("val", "test") else tr).append(r)
-    # val+test pooled as held-out for this first pass
-    Xtr, ytr = harvest_images(tr, size)
-    Xte, yte = harvest_images(te, size)
+        im = np.asarray(Image.fromarray(r["image"]).resize((size, size), Image.BILINEAR), dtype=np.uint8).transpose(2, 0, 1)
+        if split_of.get(r["image_id"], "train") == "train" and i_tr < n_tr:
+            Xtr[i_tr] = im; ytr[i_tr] = r["label"]; i_tr += 1
+        elif i_te < n_te:
+            Xte[i_te] = im; yte[i_te] = r["label"]; i_te += 1
+    Xtr, ytr, Xte, yte = Xtr[:i_tr], ytr[:i_tr], Xte[:i_te], yte[:i_te]
     print(f"breakhis harvest train={len(ytr)} heldout={len(yte)}", flush=True)
     fit_eval(Xtr, ytr, Xte, yte, 2, size, epochs, bs, lr,
              OUT / "cancer" / "breakhis_cnn_train.json", OUT / "cancer" / "breakhis_cnn.pt",
@@ -183,15 +194,22 @@ def train_breakhis(size=96, epochs=4, bs=64, lr=1e-3):
 
 
 def train_neuro(size=96, epochs=4, bs=64, lr=1e-3):
-    recs = []
-    for r in loaders.iter_neuro():
-        recs.append(r)
-    idx = np.random.RandomState(42).permutation(len(recs))
-    k = int(0.8 * len(recs))
-    tr = [recs[i] for i in idx[:k]]
-    te = [recs[i] for i in idx[k:]]
-    Xtr, ytr = harvest_images(tr, size)
-    Xte, yte = harvest_images(te, size)
+    from PIL import Image
+    import pyarrow.parquet as pq
+    n_all = len(pq.read_table(loaders.DATA / "neuro" / "brain_tumor_mri_train.parquet", columns=["label"]).column("label"))
+    idx = set(np.random.RandomState(42).permutation(n_all)[: int(0.8 * n_all)].tolist())
+    k = int(0.8 * n_all)
+    Xtr = np.empty((k, 3, size, size), dtype=np.uint8)
+    Xte = np.empty((n_all - k, 3, size, size), dtype=np.uint8)
+    ytr = np.empty(k, dtype=np.int64)
+    yte = np.empty(n_all - k, dtype=np.int64)
+    i_tr = i_te = 0
+    for i, r in enumerate(loaders.iter_neuro()):
+        im = np.asarray(Image.fromarray(r["image"]).resize((size, size), Image.BILINEAR), dtype=np.uint8).transpose(2, 0, 1)
+        if i in idx:
+            Xtr[i_tr] = im; ytr[i_tr] = r["label"]; i_tr += 1
+        else:
+            Xte[i_te] = im; yte[i_te] = r["label"]; i_te += 1
     print(f"neuro harvest train={len(ytr)} test={len(yte)}", flush=True)
     fit_eval(Xtr, ytr, Xte, yte, 4, size, epochs, bs, lr,
              OUT / "neuro" / "brain_mri_cnn_train.json", OUT / "neuro" / "brain_mri_cnn.pt",
