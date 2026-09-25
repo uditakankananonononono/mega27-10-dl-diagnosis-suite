@@ -1,0 +1,11 @@
+{
+  "htmldate_provenance": {
+    "url": "https://lhncbc.nlm.nih.gov/LHC-research/LHC-projects/image-processing/malaria-datasheet.html",
+    "original_date": "2020-03-16",
+    "latest_date": "2020-03-16",
+    "question": "when was the NIH malaria dataset record published/updated?"
+  },
+  "reportlab_card": {
+    "artifact": "results/census_review_card.pdf"
+  }
+}

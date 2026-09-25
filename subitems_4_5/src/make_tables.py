@@ -111,6 +111,8 @@ def main():
         ("BeautifulSoup (bs4)", "structured NIH LHC dataset-table extraction (smear series identification)"),
         ("pdfplumber", "paper-vs-data audit: rendered table numbers checked against committed JSONs"),
         ("PyMuPDF", "page rendering for visual verification of the built paper"),
+        ("htmldate", "publication-date evidence for the NIH malaria dataset record (2020-03-16)"),
+        ("ReportLab", "generated census review card PDF for reviewers"),
     ]
     # Infrastructure is used but deliberately NOT counted, per program
     # convention: git, GitHub, pytest, TeX Live, pandoc, curl, sha256sum.
