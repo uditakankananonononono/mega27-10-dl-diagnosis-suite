@@ -1,0 +1,1055 @@
+# ISEF Judge Loop - Malaria (item 10.4) - Round 1
+Chat: https://chatgpt.com/c/6ab6a0d2-d9c4-83e9-b475-f82b35bbeb81
+Account: user's ChatGPT Free tier (signed in as her), 2026-09-25 ~21:59 IST
+
+## Question (verbatim)
+I'm preparing a science fair project and need brutally honest judging feedback. Project title: "A Label-Noise Census of the NIH Malaria Benchmark: One-Directional Contamination, an Admissibility Gate, and a Compact Verified Diagnostic." What I did: (1) Performed the first confident-learning label-noise census of the NIH Lister Hill cell_images malaria dataset (27,558 cell images) - a literature screen of 197 individually fetched PubMed records found zero prior label audits of this benchmark. Found 11.44% estimated label noise and published 249 specific image filenames as falsifiable flags anyone can check. (2) Discovered the contamination is one-directional: parasitized-labeled cells cross-validate as uninfected at a 14:1 ratio over the reverse direction (2,358 vs 164). The dataset's published 13,779/13,779 class parity hides this directional contamination, which bounds what any model can score on it. (3) Built an admissibility gate that refuses to emit a census when the out-of-fold probe model is too weak (OOF accuracy >= max(0.60, majority+0.05), >=250 optimizer steps per fold) - I demonstrate that without the gate the estimator fabricates noise rates on real collapse cases. The gate is enforced in shipped code, not just the paper. (4) Trained a compact 140k-parameter CNN and a CNN+graph hybrid (RegionGCN, 159k params) from scratch under a strict patient-level no-leak protocol: 96.08% test accuracy, AUC 0.9929 on 2,758 held-out cells, beating the source-verified published benchmark (94.0%, Rajaraman et al.) and an ImageNet-pretrained ResNet-18 linear probe (91.84%) with ~1000x fewer parameters than typical published models. (5) Honest negative result kept and analyzed: retraining on census-cleaned data did NOT improve accuracy (95.50% vs 96.08%) - I argue the noise acts as a regularizer and the expert-audited test set shares no contamination with training. (6) Shipped a working CLI tool (dxtool: dx-malaria predict, dx-census) that performs inference and label-noise census on real images. Everything is reproducible: 40 external research tools/libraries genuinely used with committed evidence JSONs, 240 accession-level dataset records individually fetched, metrics cross-verified against independent libraries, bootstrap confidence intervals, statistical forensics on the flagged images (Mann-Whitney tests). Question 1: If this were entered at ISEF in the computational biology/bioinformatics category, would it win? Why or why not? Question 2: List EVERY weakness a top ISEF judge would find - methodological, statistical, novelty, presentation, anything. Be harsh and specific. Question 3: What concrete fixes would most raise its chances of winning?
+
+## Answer (verbatim)
+Show more
+
+Brutally honest: the project itself is potentially very strong, but the current framing contains one major novelty problem that a top ISEF judge could attack immediately. If you fix that—and substantially strengthen validation—the project could become genuinely competitive. As written, I would not predict a win.
+
+ISEF's science judging explicitly emphasizes research question, methodology, execution/statistics, creativity/impact, and especially presentation/interview; presentation + interview alone are 35/100 points. 
+Society for Science
+
+1. Would it win?
+
+Potentially, but I would not enter the judging room expecting it to win.
+
+I'd currently put it in roughly this conceptual position:
+
+Research question: very strong
+
+Technical execution: potentially excellent
+
+Statistical thinking: strong, assuming your implementation is exactly as described
+
+Software/reproducibility: unusually strong for a high-school project
+
+Novelty: currently much weaker than your title/abstract imply
+
+Biological validation: biggest weakness
+
+External generalization: biggest scientific gap
+
+Presentation potential: extremely high if simplified
+
+Risk of a devastating judge question: high
+
+The reason is important.
+
+Your biggest problem: the "first label-noise census" claim appears indefensible.
+
+I searched the literature specifically for this issue. A 2020 paper already reported that researchers examined this exact 27,558-image dataset, consulted an expert, identified 647 falsely labeled/suspicious parasitized images and 750 falsely labeled/suspicious uninfected images, and produced a reduced dataset of 26,161 images. 
+PubMed Central (PMC)
+
+Subsequent papers explicitly describe this as the previously identified labeling problem, and a systematic review says Fuhad et al.'s expert examination eliminated those 647 + 750 images. 
+PubMed Central (PMC)
++1
+
+That means a judge can ask:
+
+"You say this is the first label-noise audit. What about the 2020 paper that already identified approximately 1,400 suspicious/mislabeled images?"
+
+If your answer is merely "my PubMed search found zero," that is not enough.
+
+Your literature-search claim is therefore much more dangerous than any model-performance issue.
+
+But this does NOT kill the project.
+
+It actually gives you a potentially better scientific story:
+
+Previous work identified suspicious/mislabeled images through expert review. I developed an automated, confidence-calibrated, reproducible statistical census of the original benchmark and independently quantified directional label disagreement at scale.
+
+That is a much more defensible contribution.
+
+Your contribution would then be automation + statistical quantification + directionality + admissibility control + reproducibility, rather than "nobody ever discovered the labels were wrong."
+
+And that is still interesting.
+
+2. Every major weakness I would expect a top judge to probe
+
+I'm going to be deliberately adversarial here.
+
+A. Novelty weakness #1 — the prior mislabeled-data discovery
+
+This is the biggest one.
+
+The literature already reports:
+
+647 false/suspicious parasitized examples
+
+750 false/suspicious uninfected examples
+
+expert examination
+
+a corrected dataset
+
+That work predates yours by years. 
+PubMed Central (PMC)
++1
+
+So "first label-noise census" needs to disappear unless you can define it extremely narrowly and defend that definition.
+
+Instead distinguish:
+
+Prior work: expert/manual identification of suspicious labels.
+
+Your work: automated confident-learning estimate + directionality analysis + image-level flags + admissibility gate + reproducible diagnostic system.
+
+That distinction is scientifically much stronger.
+
+B. "11.44% label noise" is an estimate, not ground truth
+
+This is another major issue.
+
+A judge will ask:
+
+"How do you know 11.44% is actually noise?"
+
+Confident learning does not magically reveal ground truth.
+
+It estimates label errors under assumptions about:
+
+model calibration
+
+class-conditional behavior
+
+separability
+
+probability estimates
+
+representativeness
+
+model adequacy
+
+So you should never present:
+
+"The dataset contains 11.44% mislabeled images."
+
+as though you established that fact experimentally.
+
+Say:
+
+"The confident-learning estimator identified an estimated 11.44% label-noise rate."
+
+Then distinguish:
+
+estimated noise ≠ confirmed noise.
+
+This distinction matters enormously.
+
+C. Your 249 "falsifiable flags" aren't necessarily 249 mislabeled images
+
+This is related.
+
+A flag means:
+
+"This image satisfies the statistical criterion for being suspicious."
+
+It does not mean:
+
+"A microscopist has confirmed this image is mislabeled."
+
+Your wording should therefore be:
+
+249 candidate label-noise flags
+
+rather than:
+
+249 mislabeled images.
+
+That sounds like semantics, but a judge in computational biology will notice immediately.
+
+D. Your 14:1 directional contamination result needs a null model
+
+This is one of the most interesting findings—but also one of the easiest to overstate.
+
+You have:
+
+2,358 versus 164.
+
+That's dramatically asymmetric.
+
+But a judge can ask:
+
+"Why should I believe the asymmetry is biological/data-generation contamination rather than an artifact of the classifier, threshold, class morphology, or confident-learning assumptions?"
+
+You need to demonstrate that the asymmetry survives:
+
+different classifiers
+
+different probability thresholds
+
+different random seeds
+
+different folds
+
+different architectures
+
+different preprocessing
+
+ideally a different noise-estimation method
+
+If 14:1 persists across those, then it becomes a much stronger result.
+
+I'd actually make this one of the central experiments.
+
+E. Your CNN result may be less impressive than "96.08% vs 94%" sounds
+
+This is a classic science-fair trap.
+
+You have:
+
+96.08% versus published 94.0%.
+
+A judge may say:
+
+"Are those numbers directly comparable?"
+
+Probably not perfectly.
+
+The published studies can differ in:
+
+train/test partition
+
+patient partition
+
+preprocessing
+
+augmentation
+
+image resolution
+
+hyperparameters
+
+random seed
+
+evaluation protocol
+
+whether suspicious images were removed
+
+whether the exact same test set was used
+
+The original dataset itself consists of 27,558 images with 13,779 per class, and its patient structure is nontrivial. 
+PubMed Central (PMC)
++1
+
+Therefore:
+
+96.08% > 94.0% numerically does not automatically mean your model is better.
+
+Your strongest comparison is actually:
+
+same dataset + same patient-level protocol + independently reproduced baselines + same held-out test set
+
+If you can do that, your performance claim becomes much more persuasive.
+
+F. You need a genuinely independent external test set
+
+This is probably the single most important scientific improvement.
+
+Your 2,758 held-out cells are still from the same underlying benchmark.
+
+A model can be excellent at NIH malaria images while failing on:
+
+another microscope
+
+another camera
+
+another staining protocol
+
+another laboratory
+
+another country
+
+different image resolution
+
+different slide preparation
+
+Medical ML judges know this problem extremely well.
+
+A recent systematic review of malaria diagnostic ML specifically emphasizes external validation and found it relatively uncommon in the literature. 
+MDPI
+
+So if you can legitimately test the frozen model on a completely independent public malaria microscopy dataset, that would materially strengthen the project.
+
+Even if accuracy falls from 96% to 88%, that result can be scientifically more impressive than another 0.5 percentage-point gain on NIH.
+
+G. Your "patient-level no-leak" claim needs extraordinary documentation
+
+This is good methodology—but judges will interrogate it.
+
+The dataset contains images from 150 infected and 50 uninfected patients, and NLM provides patient-to-cell mappings. 
+Lister Hill Center
+
+You should be able to show:
+
+patient IDs → folds → images
+
+and prove:
+
+no patient occurs in both training and test.
+
+Not merely:
+
+"I used GroupKFold."
+
+Show the actual counts.
+
+Ideally:
+
+Split	Patients	Images
+Train	X	X
+Validation	X	X
+Test	X	2,758
+
+And explicitly state that all cells from a patient remain in one partition.
+
+H. 2,758 cells is not the same as 2,758 independent biological observations
+
+This is subtle and important.
+
+Your images are nested within patients.
+
+Therefore, treating every cell as independent for confidence intervals can underestimate uncertainty.
+
+Your statistical unit should often be the patient, not the cell.
+
+A sophisticated judge could ask:
+
+"Did your bootstrap resample individual cells or patients?"
+
+If you bootstrapped cells, redo it with patient-level bootstrap.
+
+That's a significant improvement.
+
+I. AUC = 0.9929 may be misleadingly precise
+
+AUC to four decimal places looks impressive, but it can communicate false precision.
+
+You should report:
+
+AUC + 95% CI
+
+preferably with patient-level resampling.
+
+Likewise:
+
+sensitivity
+
+specificity
+
+PPV
+
+NPV
+
+balanced accuracy
+
+calibration
+
+confusion matrix
+
+And preferably confidence intervals.
+
+J. Your "noise acts as a regularizer" explanation is not established
+
+This sentence is scientifically risky:
+
+"the noise acts as a regularizer"
+
+You observed:
+
+training on cleaned data → 95.50%
+original data → 96.08%
+
+That's a real observation.
+
+But the mechanism is not automatically established.
+
+Alternative explanations include:
+
+different sample size
+
+altered class distribution
+
+removal of hard examples
+
+changed morphology distribution
+
+optimization effects
+
+stochastic training variation
+
+cleaning criterion itself
+
+altered patient composition
+
+So phrase it as:
+
+"The results are consistent with—but do not establish—the hypothesis that the retained noisy examples provide a regularizing or diversity effect."
+
+Then test that hypothesis experimentally.
+
+K. The cleaned-vs-original experiment needs repeated trials
+
+One training run giving:
+
+95.50 vs 96.08
+
+isn't enough to establish a meaningful difference.
+
+You want something like:
+
+20 independent seeds × identical protocol
+
+and report:
+
+mean
+
+SD
+
+confidence interval
+
+paired difference
+
+If original consistently beats cleaned, then you've got a genuinely interesting result.
+
+You could even plot:
+
+noise removal fraction → performance
+
+That would be much more compelling.
+
+L. Your admissibility gate is interesting—but could look arbitrary
+
+The judge will immediately ask:
+
+"Why 0.60?"
+
+and:
+
+"Why majority + 0.05?"
+
+and:
+
+"Why 250 optimizer steps?"
+
+If those thresholds were selected after observing your data, you have a potential researcher degrees-of-freedom problem.
+
+You need to justify them before evaluation or derive them from a separate calibration set.
+
+Otherwise the gate can look like:
+
+"I tried thresholds until the estimator behaved."
+
+The gate is potentially one of your coolest contributions, but it needs a principled derivation.
+
+M. The gate itself requires adversarial testing
+
+You claim:
+
+without the gate the estimator fabricates noise rates on collapse cases.
+
+Excellent.
+
+Now prove it systematically.
+
+Construct controlled failure conditions:
+
+random labels
+
+single-class labels
+
+untrained model
+
+near-random model
+
+intentionally corrupted features
+
+extreme class imbalance
+
+shuffled images/labels
+
+Then show:
+
+ungated estimator → nonsensical noise estimate
+
+gated estimator → refuses to report
+
+That could turn the gate from "engineering safeguard" into a scientifically compelling contribution.
+
+N. The "40 external tools" number isn't inherently impressive
+
+I'd actually remove that from the headline.
+
+Judges don't care that you used 40 libraries.
+
+They care that:
+
+each tool was scientifically necessary and correctly used.
+
+Saying "40 tools" can accidentally make the project sound like a giant software pipeline rather than a scientific investigation.
+
+Same with:
+
+240 accession-level records individually fetched.
+
+That's good reproducibility evidence, but not itself scientific novelty.
+
+O. "Compact" needs a fair definition
+
+140k parameters sounds impressive.
+
+But parameter count alone doesn't establish efficiency.
+
+Compare:
+
+parameters
+
+FLOPs
+
+inference latency
+
+RAM
+
+model size
+
+CPU inference time
+
+GPU inference time
+
+accuracy
+
+AUC
+
+Then you can make a genuine efficiency argument.
+
+Otherwise a judge may ask:
+
+"Why does 140k parameters matter?"
+
+P. CNN+graph hybrid could look like complexity for complexity's sake
+
+The RegionGCN is potentially interesting, but the judge will ask:
+
+"What biological or image-topological hypothesis requires a graph?"
+
+If the answer is merely:
+
+"It improved/well-performing."
+
+that's weak.
+
+You need an ablation:
+
+CNN → CNN + graph
+
+and show exactly what the graph contributes.
+
+If RegionGCN does not materially improve anything, consider making it a secondary experiment rather than a central contribution.
+
+Q. Your model is not diagnosing malaria in the clinical sense
+
+Be careful with terminology.
+
+The model classifies cell images.
+
+That is different from diagnosing a patient.
+
+Your tool is therefore closer to:
+
+automated malaria-cell image classification
+
+than:
+
+malaria diagnosis.
+
+This matters because clinical claims invite much higher standards of validation.
+
+R. The dataset itself is highly artificial compared with clinical deployment
+
+The NIH dataset is curated and balanced.
+
+The real-world prevalence of infected cells isn't necessarily 50%.
+
+Therefore:
+
+96% accuracy on a balanced benchmark ≠ 96% clinical diagnostic accuracy.
+
+You should explicitly discuss prevalence shift and spectrum bias.
+
+S. The dataset's "ground truth" isn't necessarily absolute
+
+This is especially important because your entire project questions the labels.
+
+If labels can be wrong, then:
+
+"test accuracy"
+
+is accuracy against dataset labels, not necessarily biological truth.
+
+That produces a beautiful conceptual problem:
+
+You are evaluating a classifier against a potentially corrupted reference standard.
+
+That's actually a strength if you acknowledge it.
+
+Your project could say:
+
+"Benchmark performance is conditional on label integrity."
+
+That's more scientifically sophisticated than pretending the benchmark is ground truth.
+
+T. Your literature-search methodology needs to be much more rigorous
+
+"197 individually fetched PubMed records" sounds impressive but doesn't prove:
+
+zero prior label audits.
+
+PubMed isn't the entire literature.
+
+A judge can ask:
+
+Google Scholar?
+
+Web of Science?
+
+Scopus?
+
+Crossref?
+
+citation chaining?
+
+papers citing the dataset?
+
+papers citing the original dataset paper?
+
+conference proceedings?
+
+preprints?
+
+non-PubMed biomedical venues?
+
+And, crucially, you actually found one.
+
+So don't say:
+
+"197 records proved nobody had done this."
+
+Say:
+
+"Our predefined PubMed search did not identify prior work matching our operational definition..."
+
+Then list the operational definition.
+
+U. Your title is too dense
+
+Current:
+
+A Label-Noise Census of the NIH Malaria Benchmark: One-Directional Contamination, an Admissibility Gate, and a Compact Verified Diagnostic
+
+That's intellectually sophisticated but terrible for a poster header.
+
+A judge walking past has ~10 seconds.
+
+I'd simplify to something like:
+
+Auditing the NIH Malaria Benchmark: Directional Label Noise and a Robust Compact Classifier
+
+Then subtitle:
+
+Automated noise estimation, failure-gated inference, and patient-level validation
+
+Much easier to understand.
+
+V. "Contamination" may be the wrong word
+
+This is important.
+
+"Contamination" commonly implies contamination of experimental samples or data leakage.
+
+You're describing label noise / annotation errors.
+
+I'd strongly prefer:
+
+directional label noise
+
+or
+
+asymmetric label disagreement
+
+rather than "contamination."
+
+Unless you've established a precise contamination mechanism.
+
+W. The project currently contains too many projects
+
+You effectively have:
+
+literature census
+
+label-noise estimator
+
+directional-noise analysis
+
+admissibility gate
+
+CNN
+
+graph neural network
+
+patient-level evaluation
+
+baseline comparison
+
+noise-removal experiment
+
+CLI software
+
+reproducibility framework
+
+That's a lot.
+
+A judge may leave thinking:
+
+"What is the actual scientific question?"
+
+You need one spine.
+
+I'd make it:
+
+Can the NIH malaria benchmark be trusted as a machine-learning ground truth, and how should models behave when its labels are demonstrably unreliable?
+
+Then everything follows naturally:
+
+Audit → directionality → gate → model → cleaned/noisy comparison → validation.
+
+That's an excellent scientific narrative.
+
+3. What would most increase your chances?
+Fix #1 — Rewrite the novelty claim immediately
+
+This is non-negotiable.
+
+Do not claim:
+
+"first label-noise discovery."
+
+The literature contradicts that. 
+PubMed Central (PMC)
++1
+
+Claim something like:
+
+"We present an automated, confidence-gated label-noise census of the original NIH malaria cell benchmark, extending prior expert/manual identification of suspicious labels with image-level statistical flags and quantitative analysis of noise directionality."
+
+That is defensible.
+
+Fix #2 — Reconcile your 11.44% estimate against the known expert-audited set
+
+This could become your killer experiment.
+
+You already have a historical expert-audited subset.
+
+Treat it as an external reference.
+
+Ask:
+
+How well does your method recover the previously identified suspicious/incorrect images?
+
+Calculate:
+
+precision
+
+recall
+
+F1
+
+AUROC
+
+PR-AUC
+
+enrichment over random sampling
+
+And separately analyze:
+
+known 647 direction
+
+vs.
+
+known 750 direction.
+
+Then your paper becomes much stronger.
+
+You're no longer saying:
+
+"My algorithm says 11.44%."
+
+You're saying:
+
+"Our automated census independently recovers known expert-identified errors and identifies additional candidates."
+
+That is a huge difference.
+
+Fix #3 — Make the 249 flags scientifically meaningful
+
+Don't just provide filenames.
+
+For each:
+
+original label
+
+model probability
+
+confidence
+
+fold
+
+patient
+
+image
+
+direction of disagreement
+
+confidence interval/score
+
+whether previously expert-flagged
+
+whether independently confirmed
+
+Then you have a real audit resource.
+
+Fix #4 — Do patient-level statistical inference
+
+This is probably essential.
+
+Bootstrap patients, not individual images.
+
+Report:
+
+Accuracy = 96.08% (95% CI ...)
+
+and
+
+AUC = 0.9929 (95% CI ...)
+
+with the patient as the resampling unit.
+
+Fix #5 — Repeat the noisy-vs-clean experiment
+
+Do 10–20 seeds.
+
+Then test multiple noise-removal levels:
+
+0% → 2% → 5% → 8% → 11.44% → 15%
+
+Plot performance.
+
+This could reveal something genuinely interesting:
+
+performance initially improves/degrades/remains stable as estimated label noise is removed.
+
+That is much stronger than one before/after comparison.
+
+Fix #6 — Attack your own estimator
+
+This is where your admissibility gate could become exceptional.
+
+Build a formal stress-test matrix:
+
+Condition	Expected behavior
+Good classifier	Estimate
+Near-random classifier	Refuse
+Collapsed classifier	Refuse
+Random labels	Refuse
+Class imbalance	Refuse/adjust
+Shuffled labels	Refuse
+Different architectures	Stable estimate
+Different seeds	Stable estimate
+
+Then quantify false-estimate frequency.
+
+That is science, not just software engineering.
+
+Fix #7 — Validate externally
+
+This would probably give you the biggest boost after fixing novelty.
+
+Frozen model.
+
+No retraining.
+
+Independent dataset.
+
+Report performance.
+
+If it works reasonably well, excellent.
+
+If it fails, don't hide it.
+
+Analyze why:
+
+staining
+
+resolution
+
+camera
+
+morphology
+
+prevalence
+
+acquisition domain
+
+A negative external-validation result can actually make the project more sophisticated.
+
+Fix #8 — Add ablations
+
+At minimum:
+
+Model ablation
+
+simple CNN
+
+CNN + graph
+
+baseline architecture
+
+Noise ablation
+
+original labels
+
+expert-cleaned labels
+
+your estimated-clean labels
+
+Gate ablation
+
+no gate
+
+gate
+
+Split ablation
+
+image-level split
+
+patient-level split
+
+This gives you a matrix of evidence rather than one headline accuracy.
+
+Fix #9 — Compare against the same protocol, not literature numbers
+
+Instead of:
+
+"I beat Rajaraman's 94%."
+
+Do:
+
+"Under an identical patient-level evaluation protocol, our reproduced baseline achieved X and our compact CNN achieved Y."
+
+That's far more defensible.
+
+Fix #10 — Make the project about benchmark reliability, not another malaria CNN
+
+This is perhaps the most important strategic change.
+
+There are already enormous numbers of malaria CNN papers. The NLM dataset has been repeatedly used for automated malaria classification. 
+PubMed Central (PMC)
++1
+
+A tiny CNN getting 96% isn't enough by itself.
+
+Your genuinely interesting scientific question is:
+
+What happens when a benchmark widely treated as ground truth contains systematic, directional label noise?
+
+That's much more intellectually interesting.
+
+What I think a very strong final project would look like
+
+I'd structure it like this:
+
+Question
+
+Can automated label-noise estimation reveal systematic annotation errors in a widely used biomedical benchmark, and can an admissibility-controlled workflow prevent unreliable estimates from being reported?
+
+Discovery 1
+
+Automated census estimates 11.44% label noise, with uncertainty.
+
+Discovery 2
+
+Noise is strongly asymmetric:
+
+parasitized → uninfected ≫ uninfected → parasitized
+
+but demonstrate robustness across models/seeds.
+
+Discovery 3
+
+The method recovers previously expert-identified suspicious labels.
+
+Discovery 4
+
+It identifies additional candidates.
+
+Discovery 5
+
+Removing estimated noise does not necessarily improve predictive performance.
+
+Discovery 6
+
+Therefore:
+
+benchmark label quality and benchmark predictive performance are not equivalent.
+
+Engineering contribution
+
+A compact classifier + admissibility-gated auditing CLI.
+
+That's a coherent story.
+
+My honest assessment
+
+If you walked into ISEF tomorrow with exactly what you've described, my concern wouldn't be:
+
+"This isn't sophisticated enough."
+
+It absolutely is sophisticated enough.
+
+My concern would be:
+
+"The student has a very sophisticated project, but the headline novelty claim is contradicted by prior literature, and some of the strongest conclusions aren't yet sufficiently independently validated."
+
+That's fixable.
+
+And importantly, the underlying project has something many "96% accuracy" ISEF projects lack: a genuine scientific question that can produce an interesting answer even if the model doesn't improve.
+
+The negative result is potentially valuable.
+
+The admissibility gate is potentially valuable.
+
+The directional-noise finding is potentially valuable.
+
+The reproducible image-level audit is potentially valuable.
+
+The compact model is secondary.
+
+If I were optimizing this specifically for top-tier ISEF judging, my priority order would be:
+
+1. Kill/rewrite the "first audit" claim.
+2. Validate your estimator against the known expert-audited errors.
+3. Add patient-level uncertainty.
+4. Stress-test the admissibility gate.
+5. Repeat cleaned-vs-original across many seeds/noise fractions.
+6. Add a genuinely independent external dataset.
+7. Reproduce baselines under exactly your protocol.
+8. Simplify the scientific narrative and title.
+
+If you accomplish those, I would regard this as a genuinely serious ISEF-level computational-biology project, rather than merely a sophisticated ML benchmark exercise.
+
+And one particularly important point: the 2020 expert-audit paper does not make your project worthless—it gives you an unusually useful validation target. The strongest version of your work is not "I discovered the dataset is mislabeled." It's "I built and rigorously validated an automated system that can audit biomedical benchmarks for directional label noise, knows when its own estimate is untrustworthy, and demonstrates experimentally why benchmark accuracy can survive substantial label corruption." That is a substantially better scientific claim. 
+PubMed Central (PMC)
++1
