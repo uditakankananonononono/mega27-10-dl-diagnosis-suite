@@ -1,0 +1,29 @@
+{
+ "n_train": 22046,
+ "mean_nll_flagged249": 3.6003,
+ "mean_nll_unflagged": 0.0905,
+ "mean_nll_consensus85": 3.6221,
+ "flagged_share_of_train": 0.0113,
+ "flagged_share_of_top10pct_loss": 0.1129,
+ "consensus_share_of_top10pct_loss": 0.0385,
+ "enrichment_ratio_flagged": 10.0,
+ "enrichment_ratio_consensus": 10.0,
+ "protocol": "per-image OOF NLL from committed results/malaria/oof_probs_train.json (same rows as split.json train indices); top-decile-loss enrichment vs share of train",
+ "cross_architecture": {
+  "gcn_only_flags_in_cnn_loss": {
+   "n": 68,
+   "share_of_train": 0.00308,
+   "share_of_cnn_top10pct_loss": 0.0304,
+   "enrichment_ratio": 9.85,
+   "mean_cnn_oof_nll": 2.0243
+  },
+  "consensus85_in_cnn_loss": {
+   "n": 85,
+   "share_of_train": 0.00386,
+   "share_of_cnn_top10pct_loss": 0.0385,
+   "enrichment_ratio": 10.0,
+   "mean_cnn_oof_nll": 3.6221
+  },
+  "note": "GCN-only flags are derived WITHOUT the CNN auditor, so their enrichment inside the CNN top-decile-loss stratum is a cross-architecture, non-circular check: do images one architecture suspects also give the other architecture trouble out-of-fold? The flagged-vs-unflagged NLL gap for CNN flags is partly by construction and is reported only as a sanity check, not as evidence."
+ }
+}
