@@ -1,0 +1,34 @@
+{
+  "malaria/cnn": {
+    "torchmetrics_acc": 0.960841,
+    "sklearn_acc": 0.960841,
+    "torchmetrics_auc": 0.992907,
+    "sklearn_auc": 0.992907,
+    "acc_match": true,
+    "auc_match": true
+  },
+  "malaria/gcn": {
+    "torchmetrics_acc": 0.959753,
+    "sklearn_acc": 0.959753,
+    "torchmetrics_auc": 0.991751,
+    "sklearn_auc": 0.991751,
+    "acc_match": true,
+    "auc_match": true
+  },
+  "pneumonia/cnn": {
+    "torchmetrics_acc": 0.721154,
+    "sklearn_acc": 0.721154,
+    "torchmetrics_auc": 0.933125,
+    "sklearn_auc": 0.933125,
+    "acc_match": true,
+    "auc_match": true
+  },
+  "pneumonia/gcn": {
+    "torchmetrics_acc": 0.790064,
+    "sklearn_acc": 0.790064,
+    "torchmetrics_auc": 0.951403,
+    "sklearn_auc": 0.951403,
+    "acc_match": true,
+    "auc_match": true
+  }
+}

@@ -408,7 +408,12 @@ question.}\label{tab:tools}\\
 \end{longtable}
 \section{Reproducibility}
 Commit-pinned code, hermetic pytest suite (13 tests, no network), fixed
-seeds, committed splits and probability files.
+seeds, committed splits and probability files. Every headline metric is
+computed twice with independent implementations (scikit-learn and
+torchmetrics) over the committed probability files; all eight agree
+exactly (\texttt{results/metrics\_crossverify.json}). Layer-level
+architecture dumps (torchinfo) are committed as
+\texttt{results/model\_architectures.txt}.
 \appendix
 \section{Flagged identifiers}
 % generated list of census-flagged image IDs (both datasets)
