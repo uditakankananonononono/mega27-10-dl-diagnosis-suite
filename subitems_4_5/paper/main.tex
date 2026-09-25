@@ -223,6 +223,20 @@ Parasitized are cross-validated as Uninfected, vs 164 in the opposite
 direction.}
 \end{figure}
 
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.72\textwidth]{../figures/pneumonia_training_curves.png}
+\caption{Pneumonia baseline training and validation loss, CNN core vs
+RegionGCN hybrid (committed history in
+\texttt{results/pneumonia/baseline\_results.json}).}
+\end{figure}
+\begin{figure}[h]\centering
+\includegraphics[width=0.6\textwidth]{../figures/pneumonia_confusion.png}
+\caption{Pneumonia test-set confusion, RegionGCN (624 held-out official
+test images). Sensitivity is near-perfect; errors concentrate on the
+normal class.}
+\end{figure}
+
 \section{Discussion}
 \subsection{What the census is and is not}
 The label-noise census estimates \emph{statistical} label inconsistency: an
@@ -268,6 +282,29 @@ cases (Appendix A). An independent cross-check with the published
 conservative flags are a strict subset of the reference library's, which
 strengthens the claim that the flagged set is a property of the data, not
 of our estimator.
+\subsection{Pneumonia: an honest gap, and where it lives}
+Our from-scratch models underperform the published Kermany et al.\ number
+(92.8\,\%, Inception-v3 transfer from ImageNet) by 13--21 accuracy points
+(CNN 72.1\,\%, RegionGCN 79.0\,\%; Table \ref{tab:benchmark}). The gap
+decomposes cleanly: sensitivity is 99\,\%+ on the official test set for
+both models, while specificity is 45--55\,\% --- the models catch
+pneumonia but over-call normals. Two causes are quantified in this study:
+(i) the training split is 74\,\% pneumonia, so an unweighted loss rewards
+over-calling (addressed in the tuned iteration by class-weighted loss);
+(ii) the label-noise census (Section census results) measures how much of
+the residual is annotation noise. We also note the comparison is
+asymmetric by construction: Kermany et al.\ initialised from ImageNet
+features, we train from random initialisation on 2 CPU cores; the honest
+statement is that a from-scratch small model reaches 79\,\% on this
+benchmark, and the published 92.8\,\% is not a from-scratch number.
+\subsection{The hybrid's value is dataset-dependent}
+The RegionGCN hybrid loses slightly to the CNN core on malaria
+($-$0.10 pts) but wins clearly on pneumonia (+7.9 pts accuracy,
++1.8 pts AUC). Chest X-rays have large-scale spatial structure (heart
+border, costophrenic angles) that region-level graph reasoning can
+exploit; 48\,px cell crops do not. A hybrid head is therefore not a
+uniform upgrade; it should be adopted per-dataset, with the delta
+measured, exactly as reported here.
 \subsection{Honest negatives}
 \begin{itemize}
 \item The RegionGCN hybrid did \emph{not} beat the plain CNN core on
