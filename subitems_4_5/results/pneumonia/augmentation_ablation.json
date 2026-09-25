@@ -1,0 +1,11 @@
+{
+ "flips_current": {
+  "val_auc": 0.9454,
+  "secs": 121.8
+ },
+ "albumentations_richer": {
+  "val_auc": 0.9374,
+  "secs": 120.1
+ },
+ "note": "quarter-subsample, 2 epochs/arm (speed directive)"
+}

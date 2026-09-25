@@ -182,7 +182,7 @@ if __name__ == '__main__':
         write(R(f'paper_{d}/sec_flagged.tex'), flagged(d))
     write(R('paper_malaria/sec_refs.tex'), REFS_MAL)
     write(R('paper_pneumonia/sec_refs.tex'), REFS_PNE)
-    common_tail = ['sec_fig_interp_disc_lim', 'sec_rocfig', 'sec_landscape', 'sec_validity', 'sec_error_analysis', 'sec_forensics', '../paper_shared/discussion_extra', 'sec_tables', 'sec_dynamics', 'sec_batteries', 'sec_batteries_late', 'sec_eng_formulas', 'sec_env_notation_theory', 'sec_ledgers', 'sec_flagged', 'sec_refs']
+    common_tail = ['sec_fig_interp_disc_lim', 'sec_rocfig', 'sec_landscape', 'sec_validity', 'sec_error_analysis', 'sec_forensics', '../paper_shared/discussion_extra', 'sec_tables', 'sec_dynamics', 'sec_repro_config', 'sec_batteries', 'sec_batteries_late', 'sec_eng_formulas', 'sec_env_notation_theory', 'sec_ledgers', 'sec_flagged', 'sec_refs']
     write(R('paper_malaria/main.tex'), main_tex(
         'malaria',
         'Malaria Parasite Detection with a CNN--GNN Hybrid: Benchmark Win, Label-Noise Census, and a Verified Diagnostic Tool',
