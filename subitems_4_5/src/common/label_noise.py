@@ -57,3 +57,15 @@ def noise_summary(probs: np.ndarray, labels: np.ndarray) -> dict:
         "thresholds": confident_thresholds(probs, labels).tolist(),
         "n": n,
     }
+
+
+def admissibility_gate(probs: np.ndarray, labels: np.ndarray) -> dict:
+    """Paper gate: a census is admissible only if the OOF auditor separates
+    the classes: oof_acc >= max(0.60, majority + 0.05). Undertrained OOF
+    models make confident-learning estimates invalid, so inadmissible runs
+    report the gate failure instead of a noise rate."""
+    oof_acc = float((probs.argmax(1) == labels).mean())
+    majority = float(np.bincount(labels).max() / len(labels))
+    return {"oof_accuracy": oof_acc, "majority_rate": majority,
+            "admissible": oof_acc >= max(0.60, majority + 0.05),
+            "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05)"}

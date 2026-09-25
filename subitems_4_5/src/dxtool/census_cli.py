@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from src.common.data import ImageFolderDataset
 from src.common.models import GlobalCNNClassifier
 from src.common.train import train_model, predict_proba
-from src.common.label_noise import noise_summary, flag_label_errors
+from src.common.label_noise import noise_summary, flag_label_errors, admissibility_gate
 from src.common.train import save_json
 
 
@@ -50,18 +50,27 @@ def main():
         probs[va] = p
         print(f"fold {f} done", flush=True)
 
+    gate = admissibility_gate(probs, labels)
     summary = noise_summary(probs, labels)
     flags = flag_label_errors(probs, labels)
     flagged = [ds_eval.sample_id(i) for i in np.where(flags)[0]]
-    out = {"summary": summary, "flagged_ids": flagged}
+    out = {**gate,
+           "summary": summary if gate["admissible"] else None,
+           "flagged_ids": flagged if gate["admissible"] else []}
     save_json(out, folder / "label_noise_census.json")
     with open(folder / "label_noise_census.csv", "w") as fh:
         fh.write("sample_id,given_label,p_class0,p_class1\n")
-        for i in np.where(flags)[0]:
-            fh.write(f"{ds_eval.sample_id(i)},{labels[i]},{probs[i,0]:.4f},{probs[i,1]:.4f}\n")
-    print(f"noise rate estimate: {summary['estimated_noise_rate']:.4f} "
-          f"({summary['estimated_label_errors']}/{summary['n']}); "
-          f"{len(flagged)} IDs written")
+        if gate["admissible"]:
+            for i in np.where(flags)[0]:
+                fh.write(f"{ds_eval.sample_id(i)},{labels[i]},{probs[i,0]:.4f},{probs[i,1]:.4f}\n")
+    if gate["admissible"]:
+        print(f"noise rate estimate: {summary['estimated_noise_rate']:.4f} "
+              f"({summary['estimated_label_errors']}/{summary['n']}); "
+              f"{len(flagged)} IDs written")
+    else:
+        print(f"CENSUS INADMISSIBLE: OOF accuracy {gate['oof_accuracy']:.3f} "
+              f"fails the gate ({gate['admissibility_rule']}); "
+              f"train the auditor longer before trusting any estimate")
 
 
 if __name__ == "__main__":
