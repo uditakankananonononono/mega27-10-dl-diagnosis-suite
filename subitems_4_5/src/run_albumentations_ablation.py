@@ -2,7 +2,7 @@
 Question: does a richer augmentation policy (shift/scale/rotate +
 brightness/contrast) beat the committed flips+rot90 policy?
 Arms: no-aug | flips+rot90 (current) | albumentations pipeline.
-3 epochs each; committed: results/malaria/augmentation_ablation.json
+2 epochs each (speed directive); committed: results/malaria/augmentation_ablation.json
 """
 import json, sys, time
 from pathlib import Path
@@ -50,7 +50,7 @@ class NoAug(Dataset):
         return torch.from_numpy(np.ascontiguousarray(arr)), int(self.base.y[j])
 
 
-def main(epochs=3):
+def main(epochs=2):
     import albumentations as A
     raw = NpyDataset(str(ROOT / "data" / "malaria" / "malaria48"), train=False)
     ev = NpyDataset(str(ROOT / "data" / "malaria" / "malaria48"), train=False)

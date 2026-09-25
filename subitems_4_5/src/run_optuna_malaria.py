@@ -1,7 +1,7 @@
 """Optuna hyperparameter search for the malaria GCN head.
 Question: do the hand-chosen GCN hyperparameters leave accuracy on the table?
 Objective: validation AUC on a held-out slice of the train split.
-12 trials x 3 epochs, CPU-bounded. Committed: results/malaria/optuna_gcn.json
+8 trials x 2 epochs (speed directive), CPU-bounded. Committed: results/malaria/optuna_gcn.json
 """
 import json, sys, time
 from pathlib import Path
@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "results" / "malaria"
 
 
-def main(n_trials=12, epochs=3):
+def main(n_trials=8, epochs=2):
     import optuna
     optuna.logging.set_verbosity(optuna.logging.WARNING)
     ds = NpyDataset(str(ROOT / "data" / "malaria" / "malaria48"), train=True, seed=0)

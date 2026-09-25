@@ -56,7 +56,7 @@ class MedMNISTDataset(Dataset):
         return torch.from_numpy(np.ascontiguousarray(arr)), int(self.y[i])
 
 
-def census_one(name, epochs=3, folds=2, seed=0, max_train=8000):
+def census_one(name, epochs=3, folds=2, seed=0, max_train=5000):
     t0 = time.time()
     ds_eval = MedMNISTDataset(name, "train", train=False, max_n=max_train)
     n, K = len(ds_eval), ds_eval.n_classes
