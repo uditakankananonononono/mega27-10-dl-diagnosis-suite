@@ -31,7 +31,7 @@ def main(n_trials=8, epochs=2):
 
     def objective(trial):
         hidden = trial.suggest_categorical("hidden", [32, 64, 128])
-        grid = trial.suggest_categorical("grid", [3, 4, 6])
+        grid = trial.suggest_categorical("grid", [3, 6])  # 48px trunk fmap is 6x6: grid must divide 6
         lr = trial.suggest_float("lr", 1e-4, 3e-3, log=True)
         torch.manual_seed(0)
         model = RegionGCNClassifier(3, grid=grid, hidden=hidden)
