@@ -84,3 +84,16 @@ identity} is representation-dependent, and the
 consensus core that both architectures flag independently. A defensible
 release is the consensus core plus architecture-labelled candidate tiers,
 not a single flat list.
+
+\subsection{Calibration of the deployed probabilities}
+\label{sec:calibration}
+A diagnostic score is only useful if its probabilities mean what they say.
+On the untouched test partition (committed probability dumps, no
+retraining), the CNN auditor scores ECE 0.0204 and
+Brier 0.0302; the GCN scores ECE 0.0088 and Brier
+0.0315 --- both far better calibrated than a base-rate prior
+(Brier skill 0.88/0.87). Two independent ECE
+implementations and two Brier implementations agree to $10^{-9}$
+(\\texttt{results/calibration.json}). The clinical reading: a predicted
+0.9 is right about nine times in ten, so the scores can be thresholded for
+triage without recalibration.

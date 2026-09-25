@@ -1,0 +1,37 @@
+{
+ "malaria": {
+  "cnn": {
+   "ece_10bin": 0.0204,
+   "brier": 0.0302,
+   "brier_skill_vs_prior": 0.8791,
+   "n": 2758
+  },
+  "gcn": {
+   "ece_10bin": 0.0088,
+   "brier": 0.0315,
+   "brier_skill_vs_prior": 0.874,
+   "n": 2758
+  }
+ },
+ "pneumonia": {
+  "cnn_tuned": {
+   "ece_10bin": 0.1253,
+   "brier": 0.1339,
+   "brier_skill_vs_prior": 0.4285,
+   "n": 624
+  },
+  "gcn_tuned": {
+   "ece_10bin": 0.1413,
+   "brier": 0.1215,
+   "brier_skill_vs_prior": 0.4818,
+   "n": 624
+  },
+  "torchxrayvision_zero_shot": {
+   "ece_10bin": 0.6126,
+   "brier": 0.6051,
+   "brier_skill_vs_prior": -1.5817,
+   "n": 624
+  }
+ },
+ "protocol": "ECE: 10 equal-width bins on positive-class probability, two independent implementations agree to 1e-9; Brier via sklearn cross-checked against closed-form MSE; skill vs base-rate prior predictor. Computed from committed test probability dumps; no retraining."
+}
