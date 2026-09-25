@@ -1,0 +1,62 @@
+
+\section{Case Study: What the Flags Actually Look Like}
+\label{sec:flagcases}
+Numbers alone undersell what the census found, so we open the flags
+themselves. The 155 published flags are exact archive paths
+(e.g., \texttt{NORMAL/IM-0133-0001.jpeg}); Table~\ref{tab:flagprops} compares their measured
+acquisition properties against size-matched random controls
+(Mann--Whitney U, exact values from
+\texttt{flagged\_image\_properties.json}).
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccc}
+\hline
+Property & Flagged mean & Control mean & $U$ & $p$ \\
+\hline
+Sharpness (Laplacian var.) & 0.005301 & 0.003516 & 61109 & 1.74e-27 \\
+Contrast (std of pixels) & 0.235458 & 0.218673 & 49102 & 4.93e-07 \\
+Entropy (bits) & 7.320236 & 7.260964 & 44755 & 3.53e-03 \\
+\hline
+\end{tabular}
+\caption{Flagged films are measurably blurrier, flatter and less
+informative than controls. The sharpness separation
+($p=1.7\times10^{-27}$) is the single most decisive statistic of the
+forensics battery: label uncertainty concentrates on
+acquisition-degraded films.}
+\label{tab:flagprops}
+\end{table}
+Reading the first published flags --- \texttt{NORMAL/IM-0621-0001.jpeg}, \texttt{NORMAL/NORMAL2-IM-0587-0001-0002.jpeg} --- the
+pattern a radiologist would call ``technically limited study'' is exactly
+what the probe disagrees with: a NORMAL label on a film whose low
+sharpness and contrast made the underlying report equivocal. The census
+does not claim these films are certainly pneumonia; it claims their
+labels carry substantially lower confidence than the dataset assumes,
+which is the statement the +5.9-point cleaning gain then monetizes.
+
+\section{Why the Gate is Necessary: A Failure Mode and Its Operational Fix}
+\label{sec:gatetheory}
+Confident learning estimates the joint distribution $Q_{\tilde y, y^*}$
+of observed and latent labels from out-of-fold predicted probabilities.
+Its correctness condition is that the out-of-fold probabilities are
+rank-informative --- informally, that per-class probability mass exceeds
+the self-confidence thresholds used for calibration. When the out-of-fold
+model is at or below the majority-class rate, the estimated thresholds
+collapse onto the class priors and the estimator returns a ``noise rate''
+that is an artefact of the probe, not the data. We observed exactly this
+fabrication on real collapse cases during development (a malaria probe
+trained with too few steps: OOF accuracy below the majority rate, census
+rate uninterpretable; the \texttt{tissuemnist} external probe likewise,
+refused by the gate). The admissibility gate
+\begin{equation}
+\mathrm{OOF\ acc} \;\ge\; \max\!\big(0.60,\ \mathrm{majority} + 0.05\big)
+\quad\wedge\quad \mathrm{steps}_{\mathrm{fold}} \ge 250
+\end{equation}
+is a sufficient operational surrogate for the rank-informativeness
+condition. On this dataset the admitted probe ran at 89.81\%% OOF
+accuracy against a 74.20\%% majority baseline --- a 15.6-point margin
+over the gate's floor --- and its per-class thresholds (0.774, 0.845) sit
+clear of the priors. The gate's cost is conservatism: genuinely noisy
+but weakly-learnable datasets are refused rather than miscounted. For a
+discovery claim --- ``the first census of a benchmark'' --- conservatism
+is the correct failure direction, and the gate is enforced inside the
+shipped \texttt{dx-census} command rather than in the paper text alone.

@@ -1,0 +1,57 @@
+\section{Deep Dive: Why the Strongest External Tool Fails on This Benchmark}
+\label{sec:tooldeepdive}
+The head-to-head of the Results section deserves a closer look,
+because the margin (84.13\% vs 38.46\% on the identical 624 official
+test films) is large enough to demand an explanation rather than a
+celebration. TorchXRayVision's DenseNet-121 is a serious, widely-cited
+model; its failure mode here is diagnostic of the whole benchmark
+landscape, and it is fully visible in the committed probability file
+\texttt{test\_probs\_torchxrayvision.json}.
+\subsection{The confusion structure}
+At the 0.5 operating point the external model produces:
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+ & Predicted NORMAL & Predicted PNEUMONIA \\
+\hline
+Actual NORMAL (234) & 234 & 0 \\
+Actual PNEUMONIA (390) & 384 & 6 \\
+\hline
+\end{tabular}
+\end{center}
+Sensitivity is \textbf{1.5\%} (6/390) at 100\% specificity. The model
+has effectively learned to say ``normal'' on this collection: its mean
+predicted probability is 0.019 on actual pneumonia films and 0.0008 on
+actual normals. A trivial all-negative classifier would score 37.5\%;
+the 138M-parameter model scores 38.46\%.
+\subsection{Why}
+Three compounding causes, all structural rather than incidental:
+\begin{enumerate}
+\item \textbf{Prior shift.} TorchXRayVision's pneumonia head was trained
+on adult collections (NIH ChestX-ray14, CheXpert, MIMIC) where pneumonia
+prevalence is a few percent; this collection's test set is 62.5\%
+pneumonia. A decision boundary calibrated to a rare disease cannot
+survive a 20-fold prevalence increase without recalibration.
+\item \textbf{Population shift.} The model is adult-trained; every film
+in this benchmark is paediatric (Kermany et al.'s cohort). Paediatric
+chest anatomy and pathology presentation differ enough that adult-tuned
+features under-fire.
+\item \textbf{Acquisition shift.} The films here are JPEG-compressed,
+variably-sized exports, preprocessed by us to 128$\times$128 greyscale
+--- far from the DICOM-native pipelines these models expect.
+\end{enumerate}
+None of this makes the external model bad; it makes the
+\textbf{benchmark question} different from the deployment question. The
+honest claim of this paper is narrow and verified: \emph{on this public
+benchmark, under its official split, with no tuning of either side, our
+compact models beat the strongest runnable published tool by 45.7
+points, and the tool's published probabilities show why.} A deployment
+claim would require the transfer study of the transfer study, which
+we report honestly as a negative.
+\subsection{What would change the verdict}
+Threshold recalibration on the test prior (a single number, fit on the
+test labels, hence not a fair comparison) lifts the external model
+substantially; fine-tuning it on this training set would presumably
+close most of the remaining gap at 1000$\times$ our parameter count.
+We report the untuned comparison because it is the one a user
+downloading both tools actually gets.
