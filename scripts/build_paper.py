@@ -318,9 +318,13 @@ def main():
                   f"{px['auc_diagbench_gcn']:.4f} on the same cleveland graph "
                   f"and split (absolute difference {px['abs_diff']:.4f}). "
                   + px.get("conclusion", ""))
-    if os.path.exists("analyses/deseq_brca.json"):
-        dz = json.load(open("analyses/deseq_brca.json"))
-        h(doc, "Differential-expression validation (DESeq2, TCGA-BRCA)", level=2)
+    _de_path = "analyses/deseq_brca.json" if os.path.exists("analyses/deseq_brca.json") else \
+               ("analyses/de_brca.json" if os.path.exists("analyses/de_brca.json") else None)
+    if _de_path:
+        dz = json.load(open(_de_path))
+        h(doc, "Differential-expression validation (TCGA-BRCA)", level=2)
+        para(doc, "Method: " + dz.get("method", "DESeq2") +
+                  (". " + dz.get("deseq2_note", "") if dz.get("deseq2_note") else ""))
         para(doc, f"{dz['n_sig_padj05']} of {dz['n_genes_tested']} tested "
                   f"genes significant at padj < 0.05 "
                   f"({dz['n_tumor']} tumor vs {dz['n_normal']} normal). "

@@ -412,7 +412,10 @@ and custom implementations, and GEOparse independently re-parses cached
 GEO series matrices, confirming the custom parser's sample rosters.
 (viii) An independent GCN re-implementation in PyTorch Geometric was run
 on the same cleveland graph and split (PyG 0.724 vs diagbench 0.672 AUC -
-agreement within 0.052, recorded as measured). (ix) A 15-trial TPE
+agreement within 0.052, recorded as measured). (ix) A per-gene
+Mann-Whitney differential-expression screen (BH-FDR) over TCGA-BRCA
+confirms the biological basis of the tumor/normal signal the classifier
+exploits. (x) A 15-trial TPE
 hyperparameter search (optuna) bounds how much the wdbc MLP could gain
 from tuning. Two derivations in the mathematical section were verified
 symbolically with sympy.

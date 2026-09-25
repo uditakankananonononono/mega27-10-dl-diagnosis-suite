@@ -4,14 +4,20 @@ os.environ.setdefault("OMP_NUM_THREADS", "2")
 warnings.filterwarnings("ignore")
 d = pickle.load(open("data_cache/xena/deseq_input.pkl", "rb"))
 counts, meta = d["counts"], d["meta"]
+print("loaded", counts.shape, flush=True)
 y = (meta["condition"] == "tumor").astype(int).values
 from pydeseq2.dds import DeseqDataSet
 from pydeseq2.ds import DeseqStats
 dds = DeseqDataSet(counts=counts, metadata=meta, design="~condition",
-                   refit_cooks=False, quiet=True, n_cpus=1)
+                   refit_cooks=False, quiet=True, n_cpus=1,
+                   size_factors_fit_type="ratio")
+print("dds created", flush=True)
 dds.deseq2()
+print("deseq2 fit done", flush=True)
 st = DeseqStats(dds, contrast=["condition", "tumor", "normal"], quiet=True, n_cpus=1)
+print("stats created", flush=True)
 st.summary()
+print("summary done", flush=True)
 res = st.results_df.sort_values("padj")
 sig = res[res["padj"] < 0.05]
 top = [{"gene": g, "log2fc": float(r["log2FoldChange"]),

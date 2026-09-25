@@ -1,0 +1,116 @@
+{
+ "tool": "scipy + statsmodels",
+ "method": "per-gene Mann-Whitney U on log2(count+1), Benjamini-Hochberg FDR",
+ "dataset": "TCGA-BRCA (Xena GDC star counts)",
+ "contrast": "primary tumor (01) vs solid tissue normal (11)",
+ "n_tumor": 200,
+ "n_normal": 113,
+ "n_genes_tested": 1000,
+ "runtime_subsample": "top-1000 variable genes, 200 tumor + all 113 normal (seed 0)",
+ "n_sig_padj05": 789,
+ "frac_sig": 0.789,
+ "top20_genes": [
+  {
+   "gene": "ENSG00000167434",
+   "log2fc": -1.8328244183916413,
+   "padj": 3.779803647292756e-44
+  },
+  {
+   "gene": "ENSG00000091704",
+   "log2fc": -1.608614833210568,
+   "padj": 1.4265175530952561e-43
+  },
+  {
+   "gene": "ENSG00000248869",
+   "log2fc": -1.6448671060191418,
+   "padj": 3.669141837096461e-43
+  },
+  {
+   "gene": "ENSG00000034971",
+   "log2fc": -2.054451593654732,
+   "padj": 1.1060071077258662e-42
+  },
+  {
+   "gene": "ENSG00000153822",
+   "log2fc": -1.4727683692929319,
+   "padj": 1.8666315243389116e-41
+  },
+  {
+   "gene": "ENSG00000253434",
+   "log2fc": -1.8887962124131472,
+   "padj": 2.1781570731057811e-41
+  },
+  {
+   "gene": "ENSG00000181234",
+   "log2fc": -1.2179334853574302,
+   "padj": 5.418187096803729e-41
+  },
+  {
+   "gene": "ENSG00000232079",
+   "log2fc": -1.4598818250466525,
+   "padj": 5.96819096740202e-41
+  },
+  {
+   "gene": "ENSG00000278928",
+   "log2fc": -1.6623208477517555,
+   "padj": 7.836226093182771e-41
+  },
+  {
+   "gene": "ENSG00000165478",
+   "log2fc": -1.668873506946724,
+   "padj": 1.1683593737309977e-40
+  },
+  {
+   "gene": "ENSG00000224958",
+   "log2fc": -1.642412341362033,
+   "padj": 1.9291344246735273e-40
+  },
+  {
+   "gene": "ENSG00000187758",
+   "log2fc": -1.6817671101332248,
+   "padj": 2.0555490812319145e-40
+  },
+  {
+   "gene": "ENSG00000171819",
+   "log2fc": -1.6029562720351294,
+   "padj": 2.7285067436206255e-40
+  },
+  {
+   "gene": "ENSG00000250961",
+   "log2fc": -1.5528103718299853,
+   "padj": 7.677443771639906e-40
+  },
+  {
+   "gene": "ENSG00000186466",
+   "log2fc": -1.6635457994555414,
+   "padj": 8.892167433699578e-40
+  },
+  {
+   "gene": "ENSG00000224525",
+   "log2fc": -1.789734412754576,
+   "padj": 8.892167433699578e-40
+  },
+  {
+   "gene": "ENSG00000286322",
+   "log2fc": -1.7189519742888444,
+   "padj": 3.27657225940141e-39
+  },
+  {
+   "gene": "ENSG00000246022",
+   "log2fc": -1.736679205933446,
+   "padj": 5.7609720776558407e-39
+  },
+  {
+   "gene": "ENSG00000236333",
+   "log2fc": -1.5765058979520528,
+   "padj": 6.855705695557304e-39
+  },
+  {
+   "gene": "ENSG00000277737",
+   "log2fc": -1.9371828248653178,
+   "padj": 7.044659369036487e-39
+  }
+ ],
+ "deseq2_note": "pydeseq2 GLM fit could not complete on this hardware (documented); non-parametric screen reported instead",
+ "conclusion": "widespread significant DE confirms the tumor/normal signal the BRCA classifier (AUC 0.9993) exploits"
+}
