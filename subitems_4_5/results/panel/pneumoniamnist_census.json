@@ -1,0 +1,92 @@
+{
+  "dataset": "pneumoniamnist",
+  "n": 4708,
+  "n_classes": 2,
+  "epochs": 3,
+  "folds": 2,
+  "max_train": 8000,
+  "oof_accuracy": 0.9575191163976211,
+  "majority_rate": 0.7421410365335599,
+  "admissible": true,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05); undertrained OOF models make confident-learning estimates invalid, so inadmissible datasets report the gate failure instead of a noise rate",
+  "summary": {
+    "confident_joint": [
+      [
+        1201,
+        13
+      ],
+      [
+        409,
+        3085
+      ]
+    ],
+    "estimated_label_errors": 422,
+    "estimated_noise_rate": 0.08963466440101954,
+    "per_class_error": {
+      "class0_labelled_pred1": 13,
+      "class1_labelled_pred0": 409
+    },
+    "thresholds": [
+      0.9211858217825014,
+      0.952753661161842
+    ],
+    "n": 4708
+  },
+  "flagged_ids": [
+    "idx11#md5:f09c48828eed#label:1",
+    "idx67#md5:4a0e5ab7f64c#label:0",
+    "idx119#md5:0edde238d458#label:0",
+    "idx165#md5:ffa41d118a64#label:1",
+    "idx208#md5:d0672c87038a#label:1",
+    "idx251#md5:be1e8d69d9de#label:1",
+    "idx269#md5:09609569d9fa#label:1",
+    "idx426#md5:76f816830a0b#label:0",
+    "idx597#md5:fd180032cc47#label:0",
+    "idx699#md5:394b0f4b90c7#label:1",
+    "idx843#md5:e47baf37c739#label:1",
+    "idx894#md5:0a9f47017ff5#label:0",
+    "idx953#md5:0cd3548c1c62#label:1",
+    "idx1014#md5:ef19b2a04de8#label:1",
+    "idx1149#md5:8ca2011cee62#label:0",
+    "idx1211#md5:1c2afe4267dd#label:1",
+    "idx1223#md5:419b26c04de8#label:1",
+    "idx1228#md5:9e23902ee4f3#label:0",
+    "idx1271#md5:4f05b8d63c89#label:1",
+    "idx1842#md5:c8f32bc8a4a8#label:1",
+    "idx1913#md5:5837d344b6a7#label:1",
+    "idx1962#md5:96417a4a5f00#label:1",
+    "idx2138#md5:aac3bea8ee92#label:1",
+    "idx2155#md5:b7b921e5fc7c#label:1",
+    "idx2158#md5:eab2f0767683#label:1",
+    "idx2366#md5:94ecbf5255c2#label:1",
+    "idx2425#md5:e70fcfefe7c3#label:1",
+    "idx2436#md5:286215729978#label:1",
+    "idx2524#md5:7c456d924fa5#label:1",
+    "idx2685#md5:09972afc0f0a#label:1",
+    "idx2782#md5:afd2cbf68e2b#label:1",
+    "idx3084#md5:5f8e04434a27#label:0",
+    "idx3349#md5:2dae46b7d00a#label:1",
+    "idx3411#md5:b435694aef7c#label:1",
+    "idx3452#md5:68383c5f4e2a#label:1",
+    "idx3453#md5:79d7d1de7668#label:0",
+    "idx3525#md5:2d43c9eb4fac#label:1",
+    "idx3659#md5:02a4ad5aad75#label:1",
+    "idx3748#md5:eed995a3ad95#label:1",
+    "idx3774#md5:9b0a462712f9#label:0",
+    "idx3936#md5:a17d27c40b66#label:1",
+    "idx4162#md5:112abaf61aef#label:1",
+    "idx4177#md5:cfe25b272101#label:0",
+    "idx4180#md5:04dc9739b757#label:1",
+    "idx4250#md5:dcf870390643#label:1",
+    "idx4298#md5:543ae456182f#label:1",
+    "idx4324#md5:acb8721d7918#label:1",
+    "idx4355#md5:e3d9a184e2a1#label:1",
+    "idx4383#md5:8ac0b61d7446#label:1",
+    "idx4430#md5:0f3ceaaafb19#label:0",
+    "idx4453#md5:9b5df56d91ac#label:1",
+    "idx4601#md5:a8e685c33e15#label:0",
+    "idx4641#md5:2830767a58bd#label:1",
+    "idx4644#md5:e45abb1b9118#label:1"
+  ],
+  "secs": 1083.1
+}

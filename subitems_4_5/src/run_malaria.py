@@ -41,7 +41,15 @@ def oof_probabilities(train_idx, labels_all, *, kind, folds, epochs, seed, batch
         pos = np.where(sorted_labels == c)[0]
         rng.shuffle(pos)
         fold_of[pos] = np.arange(len(pos)) % folds
+    ckpt_dir = ROOT / "results" / "malaria" / "oof_ckpt"
+    ckpt_dir.mkdir(parents=True, exist_ok=True)
     for f in range(folds):
+        ckpt = ckpt_dir / f"fold{f}_probs.npy"
+        pos = order[np.where(fold_of == f)[0]]
+        if ckpt.exists():
+            probs[pos] = np.load(ckpt)
+            print(f"[oof fold {f}] loaded from checkpoint", flush=True)
+            continue
         tr = sorted_idx[fold_of != f]; va = sorted_idx[fold_of == f]
         tr_ds = Subset(NpyDataset(str(ROOT / 'data' / 'malaria' / 'malaria48'), train=True, seed=seed + f), tr)
         va_ds = Subset(NpyDataset(str(ROOT / 'data' / 'malaria' / 'malaria48'), train=False), va)
@@ -49,8 +57,10 @@ def oof_probabilities(train_idx, labels_all, *, kind, folds, epochs, seed, batch
         model, hist, best = train_model(model, tr_ds, va_ds, epochs=epochs,
                                         batch=batch, seed=seed + f, patience=3)
         p, _ = predict_proba(model, va_ds)
-        probs[order[np.where(fold_of == f)[0]]] = p
-        print(f"[oof fold {f}] val_loss={best['val_loss']:.4f}", flush=True)
+        np.save(ckpt, p)
+        probs[pos] = p
+        print(f"[oof fold {f}] val_loss={best['val_loss']:.4f} (checkpointed)", flush=True)
+        del model, tr_ds, va_ds, p
     return probs
 
 
@@ -85,6 +95,7 @@ def main():
             results[kind] = m
             save_json({"probs": probs.tolist(), "labels": y.tolist()},
                       OUT / f"test_probs_{kind}.json")
+            torch.save(model.state_dict(), OUT / f"model_{kind}_baseline.pt")
             print(f"[baseline {kind}] acc={m['accuracy']:.4f} auc={m['roc_auc']:.4f}", flush=True)
         save_json(results, OUT / "baseline_results.json")
         print("BASELINE_DONE", flush=True)
@@ -117,6 +128,7 @@ def main():
             probs, y = predict_proba(model, te_ds)
             m = full_metrics(probs, y)
             results[kind] = m
+            torch.save(model.state_dict(), OUT / f"model_{kind}.pt")
             print(f"[cleaned {kind}] acc={m['accuracy']:.4f} auc={m['roc_auc']:.4f}", flush=True)
         results["removed"] = len(flagged)
         save_json(results, OUT / "cleaned_results.json")

@@ -1,0 +1,10 @@
+{
+  "pneumoniamnist": {
+    "noise_rate": 0.08963466440101954,
+    "flagged": 54,
+    "n": 4708,
+    "K": 2,
+    "oof_accuracy": 0.9575191163976211,
+    "admissible": true
+  }
+}

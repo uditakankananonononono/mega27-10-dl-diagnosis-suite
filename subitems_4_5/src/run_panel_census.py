@@ -103,8 +103,16 @@ NAMES = ["pneumoniamnist", "breastmnist", "retinamnist", "dermamnist", "octmnist
 
 if __name__ == "__main__":
     which = sys.argv[1:] or NAMES
-    atlas = {}
+    # resume: keep previously completed entries, only compute missing/failed
+    prev = OUT / "atlas_summary.json"
+    atlas = json.load(open(prev)) if prev.exists() else {}
+    for name in list(atlas):
+        if name not in which or "error" in (atlas[name] or {}):
+            del atlas[name]
     for name in which:
+        if name in atlas:
+            print(f"[{name}] resume: already complete, skipping", flush=True)
+            continue
         try:
             r = census_one(name)
             atlas[name] = {"noise_rate": (r["summary"] or {}).get("estimated_noise_rate"),

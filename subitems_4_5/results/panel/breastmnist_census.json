@@ -1,0 +1,15 @@
+{
+  "dataset": "breastmnist",
+  "n": 546,
+  "n_classes": 2,
+  "epochs": 3,
+  "folds": 2,
+  "max_train": 8000,
+  "oof_accuracy": 0.2692307692307692,
+  "majority_rate": 0.7307692307692307,
+  "admissible": false,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05); undertrained OOF models make confident-learning estimates invalid, so inadmissible datasets report the gate failure instead of a noise rate",
+  "summary": null,
+  "flagged_ids": [],
+  "secs": 16.6
+}
