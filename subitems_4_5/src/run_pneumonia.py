@@ -8,10 +8,10 @@ import torch
 from torch.utils.data import Subset
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from src.common.data import ImageFolderDataset
+from src.common.data import ImageFolderDataset, NpyDataset
 from src.common.models import GlobalCNNClassifier, RegionGCNClassifier, param_count
 from src.common.train import train_model, predict_proba, full_metrics, save_json
-from src.common.label_noise import noise_summary, flag_label_errors
+from src.common.label_noise import noise_summary, flag_label_errors, admissibility_gate
 
 ROOT = Path(__file__).resolve().parent.parent
 TRAIN_DIR = ROOT / "data" / "pneumonia" / "chest_xray" / "train"
@@ -45,10 +45,10 @@ def oof_probabilities(train_idx, labels_all, *, folds, epochs, seed, batch=32):
         fold_of[pos] = np.arange(len(pos)) % folds
     for f in range(folds):
         tr = sorted_idx[fold_of != f]; va = sorted_idx[fold_of == f]
-        tr_ds = Subset(ImageFolderDataset(TRAIN_DIR, IMG, grayscale=True,
-                                          train=True, seed=seed + f), tr)
-        va_ds = Subset(ImageFolderDataset(TRAIN_DIR, IMG, grayscale=True,
-                                          train=False), va)
+        tr_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
+                                  train=True, seed=seed + f), tr)
+        va_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
+                                  train=False), va)
         model = GlobalCNNClassifier(1)
         model, hist, best = train_model(model, tr_ds, va_ds, epochs=epochs,
                                         batch=batch, seed=seed + f, patience=2)
@@ -60,14 +60,14 @@ def oof_probabilities(train_idx, labels_all, *, folds, epochs, seed, batch=32):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--phase", required=True, choices=["baseline", "census", "cleaned"])
+    ap.add_argument("--phase", required=True, choices=["baseline", "census", "cleaned", "tuned"])
     ap.add_argument("--epochs", type=int, default=8)
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
 
-    train_eval = ImageFolderDataset(TRAIN_DIR, IMG, grayscale=True, train=False)
-    test_ds = ImageFolderDataset(TEST_DIR, IMG, grayscale=True, train=False)
-    labels_all = np.array([y for _, y in train_eval.samples])
+    train_eval = NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"), train=False)
+    test_ds = NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_test"), train=False)
+    labels_all = np.asarray(train_eval.y)
     tr_i, va_i = stratified_val(labels_all, args.seed)
     save_json({"train": tr_i.tolist(), "val": va_i.tolist(), "seed": args.seed,
                "classes": train_eval.classes,
@@ -76,9 +76,9 @@ def main():
 
     if args.phase == "baseline":
         results = {}
-        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", RegionGCNClassifier)]:
-            tr_ds = Subset(ImageFolderDataset(TRAIN_DIR, IMG, grayscale=True,
-                                              train=True, seed=args.seed), tr_i)
+        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", lambda in_ch: RegionGCNClassifier(in_ch, grid=4))]:
+            tr_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
+                                      train=True, seed=args.seed), tr_i)
             va_ds = Subset(train_eval, va_i)
             model = cls(1)
             t0 = time.time()
@@ -92,6 +92,7 @@ def main():
             results[kind] = m
             save_json({"probs": probs.tolist(), "labels": y.tolist()},
                       OUT / f"test_probs_{kind}.json")
+            torch.save(model.state_dict(), OUT / f"model_{kind}_baseline.pt")
             print(f"[baseline {kind}] acc={m['accuracy']:.4f} auc={m['roc_auc']:.4f}", flush=True)
         save_json(results, OUT / "baseline_results.json")
         print("BASELINE_DONE", flush=True)
@@ -101,11 +102,18 @@ def main():
                                   epochs=args.epochs, seed=args.seed)
         y = labels_all[tr_i]
         save_json({"probs": probs.tolist()}, OUT / "oof_probs_train.json")
+        gate = admissibility_gate(probs, y)
         summary = noise_summary(probs, y)
         flags = flag_label_errors(probs, y)
         flagged = [train_eval.sample_id(int(tr_i[i])) for i in np.where(flags)[0]]
-        save_json({"summary": summary, "flagged_ids": flagged},
+        save_json({**gate,
+                   "summary": summary if gate["admissible"] else None,
+                   "flagged_ids": flagged if gate["admissible"] else []},
                   OUT / "label_noise_census.json")
+        if not gate["admissible"]:
+            print(f"[census] INADMISSIBLE oof_acc={gate['oof_accuracy']:.4f}", flush=True)
+            print("CENSUS_DONE", flush=True)
+            return
         print(f"[census] noise_rate={summary['estimated_noise_rate']:.4f} "
               f"flagged={len(flagged)}", flush=True)
         print("CENSUS_DONE", flush=True)
@@ -115,9 +123,9 @@ def main():
         flagged = set(census["flagged_ids"])
         keep = [i for i in tr_i if train_eval.sample_id(int(i)) not in flagged]
         results = {}
-        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", RegionGCNClassifier)]:
-            tr_ds = Subset(ImageFolderDataset(TRAIN_DIR, IMG, grayscale=True,
-                                              train=True, seed=args.seed), keep)
+        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", lambda in_ch: RegionGCNClassifier(in_ch, grid=4))]:
+            tr_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
+                                      train=True, seed=args.seed), keep)
             va_ds = Subset(train_eval, va_i)
             model = cls(1)
             model, hist, best = train_model(model, tr_ds, va_ds,
@@ -126,11 +134,42 @@ def main():
             probs, y = predict_proba(model, test_ds)
             m = full_metrics(probs, y)
             results[kind] = m
+            torch.save(model.state_dict(), OUT / f"model_{kind}.pt")
             print(f"[cleaned {kind}] acc={m['accuracy']:.4f} auc={m['roc_auc']:.4f}", flush=True)
         results["removed"] = len(flagged)
         save_json(results, OUT / "cleaned_results.json")
         print("CLEANED_DONE", flush=True)
 
+    elif args.phase == "tuned":
+        # documented iteration after the weak baseline: lower LR, longer
+        # patience, class-weighted loss (train split is pneumonia-heavy)
+        cls_count = np.bincount(labels_all[tr_i])
+        cw = len(tr_i) / (2.0 * cls_count).astype(float)  # per-class inverse frequency
+        results = {}
+        for kind, cls in [("cnn", GlobalCNNClassifier), ("gcn", lambda in_ch: RegionGCNClassifier(in_ch, grid=4))]:
+            tr_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
+                                      train=True, seed=args.seed), tr_i)
+            va_ds = Subset(train_eval, va_i)
+            model = cls(1)
+            t0 = time.time()
+            model, hist, best = train_model(model, tr_ds, va_ds,
+                                            epochs=args.epochs, batch=32, lr=5e-4,
+                                            seed=args.seed, patience=5,
+                                            sample_weight=cw)
+            probs, y = predict_proba(model, test_ds)
+            m = full_metrics(probs, y)
+            m["params"] = param_count(model); m["train_secs"] = round(time.time() - t0, 1)
+            m["history"] = hist
+            m["recipe"] = {"lr": 5e-4, "patience": 5, "class_weight": cw.tolist()}
+            results[kind] = m
+            save_json({"probs": probs.tolist(), "labels": y.tolist()},
+                      OUT / f"test_probs_{kind}_tuned.json")
+            torch.save(model.state_dict(), OUT / f"model_{kind}_tuned.pt")
+            print(f"[tuned {kind}] acc={m['accuracy']:.4f} auc={m['roc_auc']:.4f}", flush=True)
+        save_json(results, OUT / "tuned_results.json")
+        print("TUNED_DONE", flush=True)
 
+
+    # placeholder
 if __name__ == "__main__":
     main()

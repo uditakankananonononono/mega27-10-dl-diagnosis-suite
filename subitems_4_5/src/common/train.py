@@ -39,7 +39,7 @@ def train_model(model, train_ds, val_ds, *, epochs: int, batch: int = 64,
             else:
                 loss = nn.functional.cross_entropy(
                     logits, yb, reduction="none")
-                loss = (loss * weights[yb.new_tensor if False else torch.arange(len(yb))]).mean()
+                loss = (loss * weights[yb]).mean()   # per-class weights
             loss.backward()
             opt.step()
             running += loss.item(); nb += 1
