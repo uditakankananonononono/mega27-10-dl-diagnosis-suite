@@ -1,0 +1,122 @@
+{
+  "dataset": "bloodmnist",
+  "n": 5000,
+  "n_classes": 8,
+  "epochs": 3,
+  "folds": 2,
+  "max_train": 5000,
+  "oof_accuracy": 0.8904,
+  "majority_rate": 0.1888,
+  "admissible": true,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05); undertrained OOF models make confident-learning estimates invalid, so inadmissible datasets report the gate failure instead of a noise rate",
+  "summary": {
+    "confident_joint": [
+      [
+        374,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        136,
+        762,
+        0,
+        4,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        112,
+        0,
+        307,
+        25,
+        4,
+        1,
+        2,
+        0
+      ],
+      [
+        265,
+        0,
+        2,
+        591,
+        1,
+        6,
+        0,
+        0
+      ],
+      [
+        131,
+        0,
+        3,
+        9,
+        201,
+        0,
+        0,
+        0
+      ],
+      [
+        140,
+        0,
+        0,
+        31,
+        0,
+        248,
+        0,
+        0
+      ],
+      [
+        162,
+        0,
+        5,
+        5,
+        0,
+        0,
+        772,
+        0
+      ],
+      [
+        116,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        580
+      ]
+    ],
+    "estimated_label_errors": 136,
+    "estimated_noise_rate": 0.0272,
+    "per_class_error": {
+      "class0_labelled_pred1": 0,
+      "class1_labelled_pred0": 136
+    },
+    "thresholds": [
+      0.9016159811407012,
+      0.9459157186098281,
+      0.751921546137059,
+      0.7756536204152541,
+      0.6417575464907967,
+      0.6457182686514197,
+      0.9228767351268582,
+      0.9769575808668274
+    ],
+    "n": 5000
+  },
+  "flagged_ids": [
+    "idx2001#md5:adb02c3a4d2e#label:6",
+    "idx2154#md5:06eac6367fc7#label:6",
+    "idx2526#md5:6684efa27a90#label:6",
+    "idx3063#md5:b55439f80d62#label:1",
+    "idx3224#md5:7608460c266b#label:6",
+    "idx4717#md5:db4cd8227585#label:6"
+  ],
+  "secs": 628.5
+}

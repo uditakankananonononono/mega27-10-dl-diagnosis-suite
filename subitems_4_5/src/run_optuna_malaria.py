@@ -39,7 +39,7 @@ def main(n_trials=8, epochs=2):
                                         epochs=epochs, batch=64, lr=lr,
                                         seed=0, patience=2)
         probs, y = predict_proba(model, Subset(ev, va_i))
-        return float(roc_auc_score(y, probs))
+        return float(roc_auc_score(y, probs[:, 1]))
 
     t0 = time.time()
     study = optuna.create_study(direction="maximize",

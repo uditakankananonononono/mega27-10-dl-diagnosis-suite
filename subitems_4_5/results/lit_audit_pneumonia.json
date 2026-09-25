@@ -1,0 +1,2086 @@
+{
+ "source": "NCBI E-utilities esearch+esummary, individually fetched per PMID",
+ "n_accessions": 150,
+ "disease": "pneumonia",
+ "records": [
+  {
+   "pmid": "30457988",
+   "title": "Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists.",
+   "journal": "PLoS medicine",
+   "date": "2018 Nov",
+   "authors": [
+    "Rajpurkar P",
+    "Irvin J",
+    "Ball RL"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "29474911",
+   "title": "Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning.",
+   "journal": "Cell",
+   "date": "2018 Feb 22",
+   "authors": [
+    "Kermany DS",
+    "Goldbaum M",
+    "Cai W"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36465274",
+   "title": "Deep Learning Models to Predict Fatal Pneumonia Using Chest X-Ray Images.",
+   "journal": "Canadian respiratory journal",
+   "date": "2022",
+   "authors": [
+    "Anai S",
+    "Hisasue J",
+    "Takaki Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33859385",
+   "title": "A deep-learning pipeline for the diagnosis and discrimination of viral, non-viral and COVID-19 pneumonia from chest X-ray images.",
+   "journal": "Nature biomedical engineering",
+   "date": "2021 Jun",
+   "authors": [
+    "Wang G",
+    "Liu X",
+    "Shen J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34492046",
+   "title": "Pneumonia detection in chest X-ray images using an ensemble of deep learning models.",
+   "journal": "PloS one",
+   "date": "2021",
+   "authors": [
+    "Kundu R",
+    "Das R",
+    "Geem ZW"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39212565",
+   "title": "Deep Learning-Based System Combining Chest X-Ray and Computerized Tomography Images for COVID-19 Diagnosis.",
+   "journal": "British journal of hospital medicine (London, England : 2005)",
+   "date": "2024 Aug 30",
+   "authors": [
+    "Ding H",
+    "Fan L",
+    "Zhang J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32768045",
+   "title": "Accuracy of deep learning for automated detection of pneumonia using chest X-Ray images: A systematic review and meta-analysis.",
+   "journal": "Computers in biology and medicine",
+   "date": "2020 Aug",
+   "authors": [
+    "Li Y",
+    "Zhang Z",
+    "Dai C"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39557737",
+   "title": "Pneumonia Detection from Chest X-Ray Images Using Deep Learning and Transfer Learning for Imbalanced Datasets.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2025 Aug",
+   "authors": [
+    "Alshanketi F",
+    "Alharbi A",
+    "Kuruvilla M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36719562",
+   "title": "PneuNet: deep learning for COVID-19 pneumonia diagnosis on chest X-ray image analysis using Vision Transformer.",
+   "journal": "Medical & biological engineering & computing",
+   "date": "2023 Jun",
+   "authors": [
+    "Wang T",
+    "Nie Z",
+    "Wang R"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34314362",
+   "title": "Deep Supervised Domain Adaptation for Pneumonia Diagnosis From Chest X-Ray Images.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2022 Mar",
+   "authors": [
+    "Feng Y",
+    "Xu X",
+    "Wang Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40039772",
+   "title": "Improving Pediatric Pneumonia Diagnosis with Adult Chest X-ray Images Utilizing Contrastive Learning and Embedding Similarity.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2024 Jul",
+   "authors": [
+    "Zunaed M",
+    "Hasan A",
+    "Hasant T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39529076",
+   "title": "Image-based deep learning in diagnosing mycoplasma pneumonia on pediatric chest X-rays.",
+   "journal": "BMC pediatrics",
+   "date": "2024 Nov 11",
+   "authors": [
+    "Lan XH",
+    "Zhang YX",
+    "Yuan WH"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41238604",
+   "title": "Trustworthy pneumonia detection in chest X-ray imaging through attention-guided deep learning.",
+   "journal": "Scientific reports",
+   "date": "2025 Nov 14",
+   "authors": [
+    "Slimi H",
+    "Balti A",
+    "Abid S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37991696",
+   "title": "A deep learning feature extraction-based hybrid approach for detecting pediatric pneumonia in chest X-ray images.",
+   "journal": "Physical and engineering sciences in medicine",
+   "date": "2024 Mar",
+   "authors": [
+    "Bal U",
+    "Bal A",
+    "Moral \u00d6T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34101042",
+   "title": "Deep Learning on Chest X-ray Images to Detect and Evaluate Pneumonia Cases at the Era of COVID-19.",
+   "journal": "Journal of medical systems",
+   "date": "2021 Jun 8",
+   "authors": [
+    "Hammoudi K",
+    "Benhabiles H",
+    "Melkemi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35864468",
+   "title": "Automated diagnosis and prognosis of COVID-19 pneumonia from initial ER chest X-rays using deep learning.",
+   "journal": "BMC infectious diseases",
+   "date": "2022 Jul 21",
+   "authors": [
+    "Chamberlin JH",
+    "Aquino G",
+    "Nance S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37930411",
+   "title": "A comprehensive segmentation of chest X-ray improves deep learning-based WHO radiologically confirmed pneumonia diagnosis in children.",
+   "journal": "European radiology",
+   "date": "2024 May",
+   "authors": [
+    "Li Y",
+    "Zhang L",
+    "Yu H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33861150",
+   "title": "Automated detection of pneumonia cases using deep transfer learning with paediatric chest X-ray images.",
+   "journal": "The British journal of radiology",
+   "date": "2021 May 1",
+   "authors": [
+    "Salehi M",
+    "Mohammadi R",
+    "Ghaffari H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36350854",
+   "title": "CXR-Net: A Multitask Deep Learning Network for Explainable and Accurate Diagnosis of COVID-19 Pneumonia From Chest X-Ray Images.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2023 Feb",
+   "authors": [
+    "Zhang X",
+    "Han L",
+    "Sobeih T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39191941",
+   "title": "COVID-19 severity detection using chest X-ray segmentation and deep learning.",
+   "journal": "Scientific reports",
+   "date": "2024 Aug 27",
+   "authors": [
+    "Singh T",
+    "Mishra S",
+    "Kalra R"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37923762",
+   "title": "How intra-source imbalanced datasets impact the performance of deep learning for COVID-19 diagnosis using chest X-ray images.",
+   "journal": "Scientific reports",
+   "date": "2023 Nov 3",
+   "authors": [
+    "Zhang Z",
+    "Zhang X",
+    "Ichiji K"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38302850",
+   "title": "Validating the accuracy of deep learning for the diagnosis of pneumonia on chest x-ray against a robust multimodal reference diagnosis: a post hoc analysis of two prospective studies.",
+   "journal": "European radiology experimental",
+   "date": "2024 Feb 2",
+   "authors": [
+    "Hofmeister J",
+    "Garin N",
+    "Montet X"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35263458",
+   "title": "A radiomics-boosted deep-learning model for COVID-19 and non-COVID-19 pneumonia classification using chest x-ray images.",
+   "journal": "Medical physics",
+   "date": "2022 May",
+   "authors": [
+    "Hu Z",
+    "Yang Z",
+    "Lafata KJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36201483",
+   "title": "Deep learning models for COVID-19 chest x-ray classification: Preventing shortcut learning using feature disentanglement.",
+   "journal": "PloS one",
+   "date": "2022",
+   "authors": [
+    "Trivedi A",
+    "Robinson C",
+    "Blazes M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33018440",
+   "title": "Classifying Pneumonia among Chest X-Rays Using Transfer Learning.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2020 Jul",
+   "authors": [
+    "Irfan A",
+    "Adivishnu AL",
+    "Sze-To A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41067063",
+   "title": "Multi-class deep learning architecture for COVID-19, tuberculosis, and pneumonia classification using chest X-ray images.",
+   "journal": "Journal of medical imaging and radiation sciences",
+   "date": "2025 Dec",
+   "authors": [
+    "Srivastava S",
+    "Ghosh E",
+    "Kumar A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35161958",
+   "title": "Chest X-ray Classification for the Detection of COVID-19 Using Deep Learning Techniques.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2022 Feb 5",
+   "authors": [
+    "Khan E",
+    "Rehman MZU",
+    "Ahmed F"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37845348",
+   "title": "Computer-aided diagnosis of chest X-ray for COVID-19 diagnosis in external validation study by radiologists with and without deep learning system.",
+   "journal": "Scientific reports",
+   "date": "2023 Oct 16",
+   "authors": [
+    "Miyazaki A",
+    "Ikejima K",
+    "Nishio M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34231311",
+   "title": "Deep learning applied to automatic disease detection using chest X-rays.",
+   "journal": "Journal of medical imaging and radiation oncology",
+   "date": "2021 Aug",
+   "authors": [
+    "Moses DA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35692156",
+   "title": "A Deep Learning Model for Diagnosing COVID-19 and Pneumonia through X-ray.",
+   "journal": "Current medical imaging",
+   "date": "2023",
+   "authors": [
+    "Liu X",
+    "Wu W",
+    "Chun-Wei Lin J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36767399",
+   "title": "COVID-19 Classification on Chest X-ray Images Using Deep Learning Methods.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2023 Jan 22",
+   "authors": [
+    "Constantinou M",
+    "Exarchos T",
+    "Vrahatis AG"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34864714",
+   "title": "UBNet: Deep learning-based approach for automatic X-ray image detection of pneumonia and COVID-19 patients.",
+   "journal": "Journal of X-ray science and technology",
+   "date": "2022",
+   "authors": [
+    "Widodo CS",
+    "Naba A",
+    "Mahasin MM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38589723",
+   "title": "Lung pneumonia severity scoring in chest X-ray images using transformers.",
+   "journal": "Medical & biological engineering & computing",
+   "date": "2024 Aug",
+   "authors": [
+    "Slika B",
+    "Dornaika F",
+    "Merdji H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38773161",
+   "title": "COVID\u201119 detection from chest X-ray images using transfer learning.",
+   "journal": "Scientific reports",
+   "date": "2024 May 21",
+   "authors": [
+    "El Houby EMF"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35062629",
+   "title": "Using a Deep Learning Model to Explore the Impact of Clinical Data on COVID-19 Diagnosis Using Chest X-ray.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2022 Jan 16",
+   "authors": [
+    "Khan IU",
+    "Aslam N",
+    "Anwar T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35915789",
+   "title": "Deep Learning-Based Networks for Detecting Anomalies in Chest X-Rays.",
+   "journal": "BioMed research international",
+   "date": "2022",
+   "authors": [
+    "Badr M",
+    "Al-Otaibi S",
+    "Alturki N"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37399055",
+   "title": "Machine and Deep Learning for Tuberculosis Detection on Chest X-Rays: Systematic Literature Review.",
+   "journal": "Journal of medical Internet research",
+   "date": "2023 Jul 3",
+   "authors": [
+    "Hansun S",
+    "Argha A",
+    "Liaw ST"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38387203",
+   "title": "Triplet-constrained deep hashing for chest X-ray image retrieval in COVID-19 assessment.",
+   "journal": "Neural networks : the official journal of the International Neural Network Society",
+   "date": "2024 May",
+   "authors": [
+    "Wang L",
+    "Wang Q",
+    "Wang X"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34795794",
+   "title": "Deep Learning Algorithm for COVID-19 Classification Using Chest X-Ray Images.",
+   "journal": "Computational and mathematical methods in medicine",
+   "date": "2021",
+   "authors": [
+    "V J S",
+    "D JF"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34194535",
+   "title": "An Overview of Deep Learning Techniques on Chest X-Ray and CT Scan Identification of COVID-19.",
+   "journal": "Computational and mathematical methods in medicine",
+   "date": "2021",
+   "authors": [
+    "Serena Low WC",
+    "Chuah JH",
+    "Tee CATH"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35872406",
+   "title": "An efficient deep learning-based framework for tuberculosis detection using chest X-ray images.",
+   "journal": "Tuberculosis (Edinburgh, Scotland)",
+   "date": "2022 Sep",
+   "authors": [
+    "Iqbal A",
+    "Usman M",
+    "Ahmed Z"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32781377",
+   "title": "Deep-COVID: Predicting COVID-19 from chest X-ray images using deep transfer learning.",
+   "journal": "Medical image analysis",
+   "date": "2020 Oct",
+   "authors": [
+    "Minaee S",
+    "Kafieh R",
+    "Sonka M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38660365",
+   "title": "Artificial intelligence in the healthcare sector: comparison of deep learning networks using chest X-ray images.",
+   "journal": "Frontiers in public health",
+   "date": "2024",
+   "authors": [
+    "Yenikaya MA",
+    "Kerse G",
+    "Oktaysoy O"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35585732",
+   "title": "Automatic detection of pneumonia in chest X-ray images using textural features.",
+   "journal": "Computers in biology and medicine",
+   "date": "2022 Jun",
+   "authors": [
+    "Ortiz-Toro C",
+    "Garc\u00eda-Pedrero A",
+    "Lillo-Saavedra M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34090971",
+   "title": "Learning from imbalanced COVID-19 chest X-ray (CXR) medical imaging data.",
+   "journal": "Methods (San Diego, Calif.)",
+   "date": "2022 Jun",
+   "authors": [
+    "Chan JH",
+    "Li C"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37270553",
+   "title": "Pneumonia detection with QCSA network on chest X-ray.",
+   "journal": "Scientific reports",
+   "date": "2023 Jun 3",
+   "authors": [
+    "Singh S",
+    "Kumar M",
+    "Kumar A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34373530",
+   "title": "Validating deep learning inference during chest X-ray classification for COVID-19 screening.",
+   "journal": "Scientific reports",
+   "date": "2021 Aug 9",
+   "authors": [
+    "Sadre R",
+    "Sundaram B",
+    "Majumdar S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36243705",
+   "title": "Computer-aided diagnostic for classifying chest X-ray images using deep ensemble learning.",
+   "journal": "BMC medical imaging",
+   "date": "2022 Oct 15",
+   "authors": [
+    "Visu\u00f1a L",
+    "Yang D",
+    "Garcia-Blas J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40674439",
+   "title": "FLPneXAINet: Federated deep learning and explainable AI for improved pneumonia prediction utilizing GAN-augmented chest X-ray data.",
+   "journal": "PloS one",
+   "date": "2025",
+   "authors": [
+    "Biswas S",
+    "Mostafiz R",
+    "Uddin MS"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37369941",
+   "title": "COVID-19 Severity Prediction from Chest X-ray Images Using an Anatomy-Aware Deep Learning Model.",
+   "journal": "Journal of digital imaging",
+   "date": "2023 Oct",
+   "authors": [
+    "Nizam NB",
+    "Siddiquee SM",
+    "Shirin M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35991297",
+   "title": "Pneumonia Detection in Chest X-Ray Images Using Enhanced Restricted Boltzmann Machine.",
+   "journal": "Journal of healthcare engineering",
+   "date": "2022",
+   "authors": [
+    "Wahid F",
+    "Azhar S",
+    "Ali S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36901338",
+   "title": "Deep Learning Algorithms with LIME and Similarity Distance Analysis on COVID-19 Chest X-ray Dataset.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2023 Feb 28",
+   "authors": [
+    "Chen KY",
+    "Lee HC",
+    "Lin TC"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36103285",
+   "title": "Prescreening and Triage of COVID-19 Patients Through Chest X-Ray Images Using Deep Learning Model.",
+   "journal": "Big data",
+   "date": "2023 Dec",
+   "authors": [
+    "Rajendran S",
+    "Panneerselvam RK",
+    "Kumar PJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33201919",
+   "title": "An efficient mixture of deep and machine learning models for COVID-19 diagnosis in chest X-ray images.",
+   "journal": "PloS one",
+   "date": "2020",
+   "authors": [
+    "Wang D",
+    "Mo J",
+    "Zhou G"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35484483",
+   "title": "Does imbalance in chest X-ray datasets produce biased deep learning approaches for COVID-19 screening?",
+   "journal": "BMC medical research methodology",
+   "date": "2022 Apr 28",
+   "authors": [
+    "\u00c1lvarez-Rodr\u00edguez L",
+    "Moura J",
+    "Novo J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35537296",
+   "title": "Study on transfer learning capabilities for pneumonia classification in chest-x-rays images.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2022 Jun",
+   "authors": [
+    "Avola D",
+    "Bacciu A",
+    "Cinque L"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36931951",
+   "title": "Deep Learning-Based Computer-Aided Detection System for Preoperative Chest Radiographs to Predict Postoperative Pneumonia.",
+   "journal": "Academic radiology",
+   "date": "2023 Dec",
+   "authors": [
+    "Lee T",
+    "Hwang EJ",
+    "Park CM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33360271",
+   "title": "Lightweight deep learning models for detecting COVID-19 from chest X-ray images.",
+   "journal": "Computers in biology and medicine",
+   "date": "2021 Mar",
+   "authors": [
+    "Karakanis S",
+    "Leontidis G"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36639173",
+   "title": "Utilisation of deep learning for COVID-19 diagnosis.",
+   "journal": "Clinical radiology",
+   "date": "2023 Feb",
+   "authors": [
+    "Aslani S",
+    "Jacob J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34097708",
+   "title": "COVID-19 pneumonia on chest X-rays: Performance of a deep learning-based computer-aided detection system.",
+   "journal": "PloS one",
+   "date": "2021",
+   "authors": [
+    "Hwang EJ",
+    "Kim KB",
+    "Kim JY"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36084812",
+   "title": "A hybrid explainable ensemble transformer encoder for pneumonia identification from chest X-ray images.",
+   "journal": "Journal of advanced research",
+   "date": "2023 Jun",
+   "authors": [
+    "Ukwuoma CC",
+    "Qin Z",
+    "Belal Bin Heyat M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35779478",
+   "title": "Multi-branch fusion auxiliary learning for the detection of pneumonia from chest X-ray images.",
+   "journal": "Computers in biology and medicine",
+   "date": "2022 Aug",
+   "authors": [
+    "Liu J",
+    "Qi J",
+    "Chen W"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35206201",
+   "title": "An Efficient Deep Learning Model to Detect COVID-19 Using Chest X-ray Images.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2022 Feb 11",
+   "authors": [
+    "Chakraborty S",
+    "Murali B",
+    "Mitra AK"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36188684",
+   "title": "Automatic Detection of Cases of COVID-19 Pneumonia from Chest X-ray Images and Deep Learning Approaches.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Hajjej F",
+    "Ayouni S",
+    "Hasan M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35415768",
+   "title": "Detection of COVID-19 from CT and Chest X-ray Images Using Deep Learning Models.",
+   "journal": "Annals of biomedical engineering",
+   "date": "2022 Jul",
+   "authors": [
+    "Zouch W",
+    "Sagga D",
+    "Echtioui A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35845911",
+   "title": "COVID-19 Classification from Chest X-Ray Images: A Framework of Deep Explainable Artificial Intelligence.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Khan MA",
+    "Azhar M",
+    "Ibrar K"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34780042",
+   "title": "Potential diagnosis of COVID-19 from chest X-ray and CT findings using semi-supervised learning.",
+   "journal": "Physical and engineering sciences in medicine",
+   "date": "2022 Mar",
+   "authors": [
+    "Sahoo P",
+    "Roy I",
+    "Ahlawat R"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36050406",
+   "title": "Deep learning-based patient re-identification is able to exploit the biometric nature of medical chest X-ray data.",
+   "journal": "Scientific reports",
+   "date": "2022 Sep 1",
+   "authors": [
+    "Packh\u00e4user K",
+    "G\u00fcndel S",
+    "M\u00fcnster N"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33331678",
+   "title": "Image-based deep learning in diagnosing the etiology of pneumonia on pediatric chest X-rays.",
+   "journal": "Pediatric pulmonology",
+   "date": "2021 May",
+   "authors": [
+    "E L",
+    "Zhao B",
+    "Liu H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36242040",
+   "title": "Deep learning of longitudinal chest X-ray and clinical variables predicts duration on ventilator and mortality in COVID-19 patients.",
+   "journal": "Biomedical engineering online",
+   "date": "2022 Oct 14",
+   "authors": [
+    "Duanmu H",
+    "Ren T",
+    "Li H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37161395",
+   "title": "Deep learning approach for early prediction of COVID-19 mortality using chest X-ray and electronic health records.",
+   "journal": "BMC bioinformatics",
+   "date": "2023 May 9",
+   "authors": [
+    "Baik SM",
+    "Hong KS",
+    "Park DJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39138748",
+   "title": "Ensemble of Deep Learning Architectures with Machine Learning for Pneumonia Classification Using Chest X-rays.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2025 Apr",
+   "authors": [
+    "Vyas R",
+    "Khadatkar DR"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39177127",
+   "title": "Classification of Pneumonia via a Hybrid ZFNet-Quantum Neural Network Using a Chest X-ray Dataset.",
+   "journal": "Current medical imaging",
+   "date": "2024",
+   "authors": [
+    "Shahwar T",
+    "Mallek F",
+    "Rehman AU"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36074872",
+   "title": "Semantic-Powered Explainable Model-Free Few-Shot Learning Scheme of Diagnosing COVID-19 on Chest X-Ray.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2022 Dec",
+   "authors": [
+    "Wang Y",
+    "Jiang C",
+    "Wu Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "31715332",
+   "title": "Deep learning, reusable and problem-based architectures for detection of consolidation on chest X-ray images.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2020 Mar",
+   "authors": [
+    "Behzadi-Khormouji H",
+    "Rostami H",
+    "Salehi S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32815519",
+   "title": "Determination of disease severity in COVID-19 patients using deep learning in chest X-ray images.",
+   "journal": "Diagnostic and interventional radiology (Ankara, Turkey)",
+   "date": "2021 Jan",
+   "authors": [
+    "Blain M",
+    "Kassin MT",
+    "Varble N"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34960313",
+   "title": "Diagnostic Approach for Accurate Diagnosis of COVID-19 Employing Deep Learning and Transfer Learning Techniques through Chest X-ray Images Clinical Data in E-Healthcare.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2021 Dec 9",
+   "authors": [
+    "Haq AU",
+    "Li JP",
+    "Ahmad S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36085636",
+   "title": "Wasserstein GAN based Chest X-Ray Dataset Augmentation for Deep Learning Models: COVID-19 Detection Use-Case.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2022 Jul",
+   "authors": [
+    "Hussain BZ",
+    "Andleeb I",
+    "Ansari MS"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "31270968",
+   "title": "Using deep-learning techniques for pulmonary-thoracic segmentations and improvement of pneumonia diagnosis in pediatric chest radiographs.",
+   "journal": "Pediatric pulmonology",
+   "date": "2019 Oct",
+   "authors": [
+    "E L",
+    "Zhao B",
+    "Guo Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35013680",
+   "title": "A Novel Framework Based on Deep Learning and ANOVA Feature Selection Method for Diagnosis of COVID-19 Cases from Chest X-Ray Images.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Nasiri H",
+    "Alavi SA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33774272",
+   "title": "Deep-chest: Multi-classification deep learning model for diagnosing COVID-19, pneumonia, and lung cancer chest diseases.",
+   "journal": "Computers in biology and medicine",
+   "date": "2021 May",
+   "authors": [
+    "Ibrahim DM",
+    "Elshennawy NM",
+    "Sarhan AM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32971995",
+   "title": "Unveiling COVID-19 from CHEST X-Ray with Deep Learning: A Hurdles Race with Small Data.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2020 Sep 22",
+   "authors": [
+    "Tartaglione E",
+    "Barbano CA",
+    "Berzovini C"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32534344",
+   "title": "CoroNet: A deep neural network for detection and diagnosis of COVID-19 from chest x-ray images.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2020 Nov",
+   "authors": [
+    "Khan AI",
+    "Shah JL",
+    "Bhat MM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34891829",
+   "title": "Deep Learning and Binary Relevance Classification of Multiple Diseases using Chest X-Ray images().",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2021 Nov",
+   "authors": [
+    "Blais MA",
+    "Akhloufi MA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35379856",
+   "title": "Tracking and predicting COVID-19 radiological trajectory on chest X-rays using deep learning.",
+   "journal": "Scientific reports",
+   "date": "2022 Apr 4",
+   "authors": [
+    "Gourdeau D",
+    "Potvin O",
+    "Archambault P"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40037168",
+   "title": "Deep learning models for early and accurate diagnosis of ventilator-associated pneumonia in mechanically ventilated neonates.",
+   "journal": "Computers in biology and medicine",
+   "date": "2025 May",
+   "authors": [
+    "Hsu JF",
+    "Lin YC",
+    "Lin CY"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "31841881",
+   "title": "Artificial intelligence applications for thoracic imaging.",
+   "journal": "European journal of radiology",
+   "date": "2020 Feb",
+   "authors": [
+    "Chassagnon G",
+    "Vakalopoulou M",
+    "Paragios N"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40038588",
+   "title": "Automated classification of chest X-rays: a deep learning approach with attention mechanisms.",
+   "journal": "BMC medical imaging",
+   "date": "2025 Mar 4",
+   "authors": [
+    "Oltu B",
+    "G\u00fcney S",
+    "Yuksel SE"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35789159",
+   "title": "Self-evolving vision transformer for chest X-ray diagnosis through knowledge distillation.",
+   "journal": "Nature communications",
+   "date": "2022 Jul 4",
+   "authors": [
+    "Park S",
+    "Kim G",
+    "Oh Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35634810",
+   "title": "An interpretable multi-task system for clinically applicable COVID-19 diagnosis using CXR.",
+   "journal": "Journal of X-ray science and technology",
+   "date": "2022",
+   "authors": [
+    "Zhuang Y",
+    "Rahman MF",
+    "Wen Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36266320",
+   "title": "Deep learning-based classification for lung opacities in chest x-ray radiographs through batch control and sensitivity regulation.",
+   "journal": "Scientific reports",
+   "date": "2022 Oct 20",
+   "authors": [
+    "Chang IY",
+    "Huang TY"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35026573",
+   "title": "Bayesian-based optimized deep learning model to detect COVID-19 patients using chest X-ray image data.",
+   "journal": "Computers in biology and medicine",
+   "date": "2022 Mar",
+   "authors": [
+    "Loey M",
+    "El-Sappagh S",
+    "Mirjalili S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33672585",
+   "title": "COVID-19 Detection from Chest X-ray Images Using Feature Fusion and Deep Learning.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2021 Feb 20",
+   "authors": [
+    "Alam NA",
+    "Ahsan M",
+    "Based MA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38594085",
+   "title": "CovMediScanX: A medical imaging solution for COVID-19 diagnosis from chest X-ray images.",
+   "journal": "Journal of medical imaging and radiation sciences",
+   "date": "2024 Jun",
+   "authors": [
+    "Nair SSK",
+    "David LR",
+    "Shariff A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33420641",
+   "title": "Chest X-ray image phase features for improved diagnosis of COVID-19 using convolutional neural network.",
+   "journal": "International journal of computer assisted radiology and surgery",
+   "date": "2021 Feb",
+   "authors": [
+    "Qi X",
+    "Brown LG",
+    "Foran DJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33387306",
+   "title": "A machine learning-based framework for diagnosis of COVID-19 from chest X-ray images.",
+   "journal": "Interdisciplinary sciences, computational life sciences",
+   "date": "2021 Mar",
+   "authors": [
+    "Rasheed J",
+    "Hameed AA",
+    "Djeddi C"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33527198",
+   "title": "Machine learning applied on chest x-ray can aid in the diagnosis of COVID-19: a first experience from Lombardy, Italy.",
+   "journal": "European radiology experimental",
+   "date": "2021 Feb 2",
+   "authors": [
+    "Castiglioni I",
+    "Ippolito D",
+    "Interlenghi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35058196",
+   "title": "COVID-19 detection using chest X-ray images based on a developed deep neural network.",
+   "journal": "SLAS technology",
+   "date": "2022 Feb",
+   "authors": [
+    "Mousavi Z",
+    "Shahini N",
+    "Sheykhivand S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34373554",
+   "title": "Explainable DCNN based chest X-ray image analysis and classification for COVID-19 pneumonia detection.",
+   "journal": "Scientific reports",
+   "date": "2021 Aug 9",
+   "authors": [
+    "Hou J",
+    "Gao T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36081225",
+   "title": "COVID-19 diagnosis via chest X-ray image classification based on multiscale class residual attention.",
+   "journal": "Computers in biology and medicine",
+   "date": "2022 Oct",
+   "authors": [
+    "Liu S",
+    "Cai T",
+    "Tang X"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40039689",
+   "title": "Automatic COVID-19 Detection from Chest X-ray using Deep MobileNet Convolutional Neural Network.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2024 Jul",
+   "authors": [
+    "Al-Qazzaz NK",
+    "Aldoori AA",
+    "Ali SHBM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39724901",
+   "title": "DEEP LEARNING-BASED FRAMEWORK TO DETERMINE THE DEGREE OF COVID-19 INFECTIONS FROM CHEST X-RAY.",
+   "journal": "Georgian medical news",
+   "date": "2024 Oct",
+   "authors": [
+    "Kummari S",
+    "Zope A",
+    "Juyal P"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33190102",
+   "title": "Deep learning analysis provides accurate COVID-19 diagnosis on chest computed tomography.",
+   "journal": "European journal of radiology",
+   "date": "2020 Dec",
+   "authors": [
+    "Javor D",
+    "Kaplan H",
+    "Kaplan A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32397844",
+   "title": "Using X-ray images and deep learning for automated detection of coronavirus disease.",
+   "journal": "Journal of biomolecular structure & dynamics",
+   "date": "2021 Jul",
+   "authors": [
+    "El Asnaoui K",
+    "Chawki Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33862337",
+   "title": "BS-Net: Learning COVID-19 pneumonia severity on a large chest X-ray dataset.",
+   "journal": "Medical image analysis",
+   "date": "2021 Jul",
+   "authors": [
+    "Signoroni A",
+    "Savardi M",
+    "Benini S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39370946",
+   "title": "DeepCOVIDNet-CXR: deep learning strategies for identifying COVID-19 on enhanced chest X-rays.",
+   "journal": "Biomedizinische Technik. Biomedical engineering",
+   "date": "2025 Feb 25",
+   "authors": [
+    "Altan G",
+    "Narli SS"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32622747",
+   "title": "Pneumonia Detection in Chest X-Ray Dose-Equivalent CT: Impact of Dose Reduction on Detectability by Artificial Intelligence.",
+   "journal": "Academic radiology",
+   "date": "2021 Aug",
+   "authors": [
+    "Schwyzer M",
+    "Martini K",
+    "Skawran S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35309201",
+   "title": "COVID-19 Identification System Using Transfer Learning Technique With Mobile-NetV2 and Chest X-Ray Images.",
+   "journal": "Frontiers in public health",
+   "date": "2022",
+   "authors": [
+    "Ragab M",
+    "Alshehri S",
+    "Azim GA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36304775",
+   "title": "Artificial Intelligence and Deep Learning Assisted Rapid Diagnosis of COVID-19 from Chest Radiographical Images: A Survey.",
+   "journal": "Contrast media & molecular imaging",
+   "date": "2022",
+   "authors": [
+    "Sinwar D",
+    "Dhaka VS",
+    "Tesfaye BA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35687646",
+   "title": "CX-DaGAN: Domain Adaptation for Pneumonia Diagnosis on a Small Chest X-Ray Dataset.",
+   "journal": "IEEE transactions on medical imaging",
+   "date": "2022 Nov",
+   "authors": [
+    "Sanchez K",
+    "Hinojosa C",
+    "Arguello H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36649367",
+   "title": "Automated grading of chest x-ray images for viral pneumonia with convolutional neural networks ensemble and region of interest localization.",
+   "journal": "PloS one",
+   "date": "2023",
+   "authors": [
+    "Khan A",
+    "Akram MU",
+    "Nazir S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41714360",
+   "title": "Pneumonia detection from enhanced chest X-Ray images based on Double SGAN model.",
+   "journal": "Scientific reports",
+   "date": "2026 Feb 19",
+   "authors": [
+    "Xu Z",
+    "Zhang H"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36420865",
+   "title": "A systematic review: Chest radiography images (X-ray images) analysis and COVID-19 categorization diagnosis using artificial intelligence techniques.",
+   "journal": "Network (Bristol, England)",
+   "date": "2023 Feb-Feb",
+   "authors": [
+    "Suba S",
+    "Muthulakshmi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37315015",
+   "title": "A Deep Learning Model Using Chest Radiographs for Prediction of 30-Day Mortality in Patients With Community-Acquired Pneumonia: Development and External Validation.",
+   "journal": "AJR. American journal of roentgenology",
+   "date": "2023 Nov",
+   "authors": [
+    "Kim C",
+    "Hwang EJ",
+    "Choi YR"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "33974652",
+   "title": "COVID-19 diagnosis from CT scans and chest X-ray images using low-cost Raspberry Pi.",
+   "journal": "PloS one",
+   "date": "2021",
+   "authors": [
+    "Hosny KM",
+    "Darwish MM",
+    "Li K"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38552452",
+   "title": "Automatic ARDS surveillance with chest X-ray recognition using convolutional neural networks.",
+   "journal": "Journal of critical care",
+   "date": "2024 Aug",
+   "authors": [
+    "Ye RZ",
+    "Lipatov K",
+    "Diedrich D"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37322450",
+   "title": "COV-MobNets: a mobile networks ensemble model for diagnosis of COVID-19 based on chest X-ray images.",
+   "journal": "BMC medical imaging",
+   "date": "2023 Jun 15",
+   "authors": [
+    "Eshraghi MA",
+    "Ayatollahi A",
+    "Shokouhi SB"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32604701",
+   "title": "An Efficient Method to Predict Pneumonia from Chest X-Rays Using Deep Learning Approach.",
+   "journal": "Studies in health technology and informatics",
+   "date": "2020 Jun 26",
+   "authors": [
+    "Shah U",
+    "Abd-Alrazeq A",
+    "Alam T"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35368940",
+   "title": "Machine Learning with Quantum Seagull Optimization Model for COVID-19 Chest X-Ray Image Classification.",
+   "journal": "Journal of healthcare engineering",
+   "date": "2022",
+   "authors": [
+    "Ragab M",
+    "Alshehri S",
+    "Alhakamy NA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34781234",
+   "title": "A deep learning approach using effective preprocessing techniques to detect COVID-19 from chest CT-scan and X-ray images.",
+   "journal": "Computers in biology and medicine",
+   "date": "2021 Dec",
+   "authors": [
+    "Ahamed KU",
+    "Islam M",
+    "Uddin A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34971978",
+   "title": "A computer-aided diagnosis system for the classification of COVID-19 and non-COVID-19 pneumonia on chest X-ray images by integrating CNN with sparse autoencoder and feed forward neural network.",
+   "journal": "Computers in biology and medicine",
+   "date": "2022 Feb",
+   "authors": [
+    "J L G",
+    "Abraham B",
+    "M S S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34639450",
+   "title": "Detection of COVID-19 in Chest X-ray Images: A Big Data Enabled Deep Learning Approach.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2021 Sep 27",
+   "authors": [
+    "Awan MJ",
+    "Bilal MH",
+    "Yasin A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36772394",
+   "title": "CNN-RNN Network Integration for the Diagnosis of COVID-19 Using Chest X-ray and CT Images.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2023 Jan 25",
+   "authors": [
+    "Kanjanasurat I",
+    "Tenghongsakul K",
+    "Purahong B"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38480869",
+   "title": "Enhancing pediatric pneumonia diagnosis through masked autoencoders.",
+   "journal": "Scientific reports",
+   "date": "2024 Mar 14",
+   "authors": [
+    "Yoon T",
+    "Kang D"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36433595",
+   "title": "Deep Learning-Based Computer-Aided Diagnosis (CAD): Applications for Medical Image Datasets.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2022 Nov 21",
+   "authors": [
+    "Kadhim YA",
+    "Khan MU",
+    "Mishra A"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38253758",
+   "title": "Pneumonia detection based on RSNA dataset and anchor-free deep learning detector.",
+   "journal": "Scientific reports",
+   "date": "2024 Jan 22",
+   "authors": [
+    "Wu L",
+    "Zhang J",
+    "Wang Y"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40198984",
+   "title": "Detection of COVID-19, lung opacity, and viral pneumonia via X-ray using machine learning and deep learning.",
+   "journal": "Computers in biology and medicine",
+   "date": "2025 Jun",
+   "authors": [
+    "Lamouadene H",
+    "El Kassaoui M",
+    "El Yadari M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35724281",
+   "title": "Integrated CNN and Federated Learning for COVID-19 Detection on Chest X-Ray Images.",
+   "journal": "IEEE/ACM transactions on computational biology and bioinformatics",
+   "date": "2024 Jul-Aug",
+   "authors": [
+    "Li Z",
+    "Xu X",
+    "Cao X"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34348186",
+   "title": "Coronavirus disease analysis using chest X-ray images and a novel deep convolutional neural network.",
+   "journal": "Photodiagnosis and photodynamic therapy",
+   "date": "2021 Sep",
+   "authors": [
+    "Khan SH",
+    "Sohail A",
+    "Zafar MM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34853342",
+   "title": "Validation of expert system enhanced deep learning algorithm for automated screening for COVID-Pneumonia on chest X-rays.",
+   "journal": "Scientific reports",
+   "date": "2021 Dec 1",
+   "authors": [
+    "Gidde PS",
+    "Prasad SS",
+    "Singh AP"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36408000",
+   "title": "COVID-19 classification using chest X-ray images based on fusion-assisted deep Bayesian optimization and Grad-CAM visualization.",
+   "journal": "Frontiers in public health",
+   "date": "2022",
+   "authors": [
+    "Hamza A",
+    "Attique Khan M",
+    "Wang SH"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37027681",
+   "title": "Interpretable CNN-Multilevel Attention Transformer for Rapid Recognition of Pneumonia From Chest X-Ray Images.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2024 Feb",
+   "authors": [
+    "Chen S",
+    "Ren S",
+    "Wang G"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36502692",
+   "title": "Automatic diagnosis of COVID-19 with MCA-inspired TQWT-based classification of chest X-ray images.",
+   "journal": "Computers in biology and medicine",
+   "date": "2023 Jan",
+   "authors": [
+    "Jyoti K",
+    "Sushma S",
+    "Yadav S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "38389381",
+   "title": "A Novel Approach to the Technique of Lung Region Segmentation Based on a Deep Learning Model to Diagnose COVID-19 X-ray Images.",
+   "journal": "Current medical imaging",
+   "date": "2024",
+   "authors": [
+    "Ding X",
+    "Zhou Q",
+    "Liu Z"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "39973798",
+   "title": "An effective COVID-19 classification in X-ray images using a new deep learning framework.",
+   "journal": "Journal of X-ray science and technology",
+   "date": "2025 Mar",
+   "authors": [
+    "Thilagavathi P",
+    "Geetha R",
+    "Jothi Shri S"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "36324135",
+   "title": "A novel deep learning-based method for COVID-19 pneumonia detection from CT images.",
+   "journal": "BMC medical informatics and decision making",
+   "date": "2022 Nov 2",
+   "authors": [
+    "Luo J",
+    "Sun Y",
+    "Chi J"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "40454498",
+   "title": "A Deep Neural Network Framework for the Detection of Bacterial Diseases from Chest X-Ray Scans.",
+   "journal": "Infectious disorders drug targets",
+   "date": "2025",
+   "authors": [
+    "Jain S",
+    "Jindal H",
+    "Bharti M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "32617690",
+   "title": "A deep learning approach to characterize 2019 coronavirus disease (COVID-19) pneumonia in chest CT images.",
+   "journal": "European radiology",
+   "date": "2020 Dec",
+   "authors": [
+    "Ni Q",
+    "Sun ZY",
+    "Qi L"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "31262537",
+   "title": "A transfer learning method with deep residual network for pediatric pneumonia diagnosis.",
+   "journal": "Computer methods and programs in biomedicine",
+   "date": "2020 Apr",
+   "authors": [
+    "Liang G",
+    "Zheng L"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35936981",
+   "title": "Deep Learning-Aided Automated Pneumonia Detection and Classification Using CXR Scans.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Jain DK",
+    "Singh T",
+    "Saurabh P"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37027655",
+   "title": "A Deep Learning Method for Pneumonia Detection Based on Fuzzy Non-Maximum Suppression.",
+   "journal": "IEEE/ACM transactions on computational biology and bioinformatics",
+   "date": "2024 Jul-Aug",
+   "authors": [
+    "Wu H",
+    "Lu H",
+    "Ping M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "37074075",
+   "title": "Pneumonia Detection Using Enhanced Convolutional Neural Network Model on Chest X-Ray Images.",
+   "journal": "Big data",
+   "date": "2025 Feb",
+   "authors": [
+    "Aljawarneh SA",
+    "Al-Quraan R"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34010794",
+   "title": "Deep learning model for distinguishing novel coronavirus from other chest related infections in X-ray images.",
+   "journal": "Computers in biology and medicine",
+   "date": "2021 Jul",
+   "authors": [
+    "Ahmad F",
+    "Ghani Khan MU",
+    "Javed K"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41468639",
+   "title": "Segmentation-enhanced multi-scale deep hashing for chest X-ray image retrieval.",
+   "journal": "Medical image analysis",
+   "date": "2026 Mar",
+   "authors": [
+    "Wang L",
+    "Wang Q",
+    "Wang X"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41820212",
+   "title": "XceptRf-Net: A Novel Deep Learning and Machine Learning Approach for Pneumonia Diagnosis.",
+   "journal": "Current medical imaging",
+   "date": "2026",
+   "authors": [
+    "Tanveer MU",
+    "Munir K",
+    "Zaidi SAJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35800685",
+   "title": "PCA-Based Incremental Extreme Learning Machine (PCA-IELM) for COVID-19 Patient Diagnosis Using Chest X-Ray Images.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Kumar V",
+    "Biswas S",
+    "Rajput DS"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "34365278",
+   "title": "Fully automated unified prognosis of Covid-19 chest X-ray/CT scan images using Deep Covix-Net model.",
+   "journal": "Computers in biology and medicine",
+   "date": "2021 Sep",
+   "authors": [
+    "Vinod DN",
+    "Jeyavadhanam BR",
+    "Zungeru AM"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41327770",
+   "title": "Spatial Attention-guided Hybrid Deep Learning with Sharpened Cosine Similarity for Accurate Chest X-ray Interpretation.",
+   "journal": "Current medical imaging",
+   "date": "2026",
+   "authors": [
+    "Saraniya O",
+    "Elakkiya B",
+    "Gurre NSA"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "35672437",
+   "title": "Deep learning-based lesion subtyping and prediction of clinical outcomes in COVID-19 pneumonia using chest CT.",
+   "journal": "Scientific reports",
+   "date": "2022 Jun 7",
+   "authors": [
+    "Bermejo-Pel\u00e1ez D",
+    "San Jos\u00e9 Est\u00e9par R",
+    "Fern\u00e1ndez-Velilla M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  },
+  {
+   "pmid": "41326879",
+   "title": "Lung Disease Classification with Deep Learning Enhanced CNN Architecture in Chest X-Ray Imaging.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2026 Aug",
+   "authors": [
+    "Slimani FAA",
+    "Bentourkia M"
+   ],
+   "roles": [
+    "related-work audit for item 10.5 (pneumonia)"
+   ]
+  }
+ ]
+}

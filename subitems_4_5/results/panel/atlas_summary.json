@@ -6,5 +6,88 @@
     "K": 2,
     "oof_accuracy": 0.9575191163976211,
     "admissible": true
+  },
+  "breastmnist": {
+    "noise_rate": 0.28205128205128205,
+    "flagged": 59,
+    "n": 546,
+    "K": 2,
+    "oof_accuracy": 0.7985347985347986,
+    "admissible": true
+  },
+  "retinamnist": {
+    "noise_rate": null,
+    "flagged": 0,
+    "n": 1080,
+    "K": 5,
+    "oof_accuracy": 0.4962962962962963,
+    "admissible": false
+  },
+  "dermamnist": {
+    "noise_rate": 0.0216,
+    "flagged": 410,
+    "n": 5000,
+    "K": 7,
+    "oof_accuracy": 0.7324,
+    "admissible": true
+  },
+  "octmnist": {
+    "noise_rate": 0.0486,
+    "flagged": 610,
+    "n": 5000,
+    "K": 4,
+    "oof_accuracy": 0.793,
+    "admissible": true
+  },
+  "bloodmnist": {
+    "noise_rate": 0.0272,
+    "flagged": 6,
+    "n": 5000,
+    "K": 8,
+    "oof_accuracy": 0.8904,
+    "admissible": true
+  },
+  "organamnist": {
+    "noise_rate": 0.011,
+    "flagged": 576,
+    "n": 5000,
+    "K": 11,
+    "oof_accuracy": 0.7412,
+    "admissible": true
+  },
+  "organcmnist": {
+    "noise_rate": 0.013,
+    "flagged": 817,
+    "n": 5000,
+    "K": 11,
+    "oof_accuracy": 0.7546,
+    "admissible": true
+  },
+  "organsmnist": {
+    "noise_rate": 0.0084,
+    "flagged": 830,
+    "n": 5000,
+    "K": 11,
+    "oof_accuracy": 0.7124,
+    "admissible": true
+  },
+  "pathmnist": {
+    "noise_rate": 0.0214,
+    "flagged": 466,
+    "n": 5000,
+    "K": 9,
+    "oof_accuracy": 0.7186,
+    "admissible": true
+  },
+  "chestmnist": {
+    "error": "index 78577 is out of bounds for axis 0 with size 78468"
+  },
+  "tissuemnist": {
+    "noise_rate": null,
+    "flagged": 0,
+    "n": 5000,
+    "K": 8,
+    "oof_accuracy": 0.5054,
+    "admissible": false
   }
 }

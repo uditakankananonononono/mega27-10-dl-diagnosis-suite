@@ -1,0 +1,2750 @@
+{
+ "source": "NCBI E-utilities esearch+esummary, individually fetched per PMID",
+ "n_accessions": 197,
+ "disease": "malaria",
+ "records": [
+  {
+   "pmid": "40107120",
+   "title": "Deep learning method for malaria parasite evaluation from microscopic blood smear.",
+   "journal": "Artificial intelligence in medicine",
+   "date": "2025 May",
+   "authors": [
+    "Dahiya A",
+    "Raghuvanshi D",
+    "Sharma C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31545747",
+   "title": "Deep Learning for Smartphone-Based Malaria Parasite Detection in Thick Blood Smears.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2020 May",
+   "authors": [
+    "Yang F",
+    "Poostchi M",
+    "Yu H"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "32443868",
+   "title": "Deep Learning Based Automatic Malaria Parasite Detection from Blood Smear and its Smartphone Based Application.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2020 May 20",
+   "authors": [
+    "Fuhad KMF",
+    "Tuba JF",
+    "Sarker MRA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38858481",
+   "title": "Efficient deep learning-based approach for malaria detection using red blood cell smears.",
+   "journal": "Scientific reports",
+   "date": "2024 Jun 10",
+   "authors": [
+    "Mujahid M",
+    "Rustam F",
+    "Shafique R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37650409",
+   "title": "An automated malaria cells detection from thin blood smear images using deep learning.",
+   "journal": "Tropical biomedicine",
+   "date": "2023 Jun 1",
+   "authors": [
+    "Sukumarran D",
+    "Hasikin K",
+    "Mohd Khairuddin AS"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39682645",
+   "title": "An Efficient Deep Learning Approach for Malaria Parasite Detection in Microscopic Images.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2024 Dec 5",
+   "authors": [
+    "Boit S",
+    "Patil R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36772541",
+   "title": "Malaria Detection Using Advanced Deep Learning Architecture.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2023 Jan 29",
+   "authors": [
+    "Si\u0142ka W",
+    "Wieczorek M",
+    "Si\u0142ka J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33685401",
+   "title": "Malaria parasite detection in thick blood smear microscopic images using modified YOLOV3 and YOLOV4 models.",
+   "journal": "BMC bioinformatics",
+   "date": "2021 Mar 8",
+   "authors": [
+    "Abdurahman F",
+    "Fante KA",
+    "Aliy M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36483328",
+   "title": "Deep Learning-Based Cell Detection and Extraction in Thin Blood Smears for Malaria Diagnosis.",
+   "journal": "IEEE Applied Imagery Pattern Recognition Workshop : [proceedings]. IEEE Applied Imagery Pattern Recognition Workshop",
+   "date": "2021 Apr 26",
+   "authors": [
+    "Ufuktepe DK",
+    "Yang F",
+    "Kassim YM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31179181",
+   "title": "Performance evaluation of deep neural ensembles toward malaria parasite detection in thin-blood smear images.",
+   "journal": "PeerJ",
+   "date": "2019",
+   "authors": [
+    "Rajaraman S",
+    "Jaeger S",
+    "Antani SK"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36359544",
+   "title": "Evaluating the Performance of Deep Learning Frameworks for Malaria Parasite Detection Using Microscopic Images of Peripheral Blood Smears.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2022 Nov 5",
+   "authors": [
+    "Uzun Ozsahin D",
+    "Mustapha MT",
+    "Bartholomew Duwa B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42469842",
+   "title": "Detection of malaria infection from parasite-free blood smears.",
+   "journal": "Malaria journal",
+   "date": "2026 Jul 17",
+   "authors": [
+    "Bourriez N",
+    "Mahanta SK",
+    "Svatko I"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39719819",
+   "title": "Malaria parasite detection in Red Blood Cells with rouleaux formation morphology using YOLOv9.",
+   "journal": "Tissue & cell",
+   "date": "2025 Apr",
+   "authors": [
+    "Muhammad FA",
+    "Sudirman R",
+    "Zakaria NA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38627870",
+   "title": "An optimised YOLOv4 deep learning model for efficient malarial cell detection in thin blood smear images.",
+   "journal": "Parasites & vectors",
+   "date": "2024 Apr 16",
+   "authors": [
+    "Sukumarran D",
+    "Hasikin K",
+    "Khairuddin ASM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39885248",
+   "title": "Deep learning-based malaria parasite detection: convolutional neural networks model for accurate species identification of Plasmodium falciparum and Plasmodium vivax.",
+   "journal": "Scientific reports",
+   "date": "2025 Jan 30",
+   "authors": [
+    "Ramos-Brice\u00f1o DA",
+    "Flammia-D'Aleo A",
+    "Fern\u00e1ndez-L\u00f3pez G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38132684",
+   "title": "YOLO-PAM: Parasite-Attention-Based Model for Efficient Malaria Detection.",
+   "journal": "Journal of imaging",
+   "date": "2023 Nov 30",
+   "authors": [
+    "Zedda L",
+    "Loddo A",
+    "Di Ruberto C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35655511",
+   "title": "Detection of Peripheral Malarial Parasites in Blood Smears Using Deep Learning Models.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Alharbi AH",
+    "V AC",
+    "Lin M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35694571",
+   "title": "Barnacles Mating Optimizer with Deep Transfer Learning Enabled Biomedical Malaria Parasite Detection and Classification.",
+   "journal": "Computational intelligence and neuroscience",
+   "date": "2022",
+   "authors": [
+    "Dutta AK",
+    "Mageswari RU",
+    "Gayathri A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34604441",
+   "title": "Malaria detection through digital microscopic imaging using Deep Greedy Network with transfer learning.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2021 Sep",
+   "authors": [
+    "Dey S",
+    "Nath P",
+    "Biswas S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38868293",
+   "title": "Exploring the Impact of Batch Size on Deep Learning Artificial Intelligence Models for Malaria Detection.",
+   "journal": "Cureus",
+   "date": "2024 May",
+   "authors": [
+    "Muralidhar R",
+    "Demory ML",
+    "Kesselman MM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37937045",
+   "title": "Application of Deep Learning in Clinical Settings for Detecting and Classifying Malaria Parasites in Thin Blood Smears.",
+   "journal": "Open forum infectious diseases",
+   "date": "2023 Nov",
+   "authors": [
+    "Wang G",
+    "Luo G",
+    "Lian H"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42645802",
+   "title": "Deep Learning-Based Malaria Parasite Image Classification on Real Microscopy Data.",
+   "journal": "Infectious disease reports",
+   "date": "2026 Jul 27",
+   "authors": [
+    "Branda F",
+    "Andriani L",
+    "Lucis R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38611603",
+   "title": "Supporting Malaria Diagnosis Using Deep Learning and Data Augmentation.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2024 Mar 25",
+   "authors": [
+    "Hoyos K",
+    "Hoyos W"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39173888",
+   "title": "Image cropping for malaria parasite detection on heterogeneous data.",
+   "journal": "Journal of microbiological methods",
+   "date": "2024 Oct",
+   "authors": [
+    "Chaharou IML",
+    "Lawani I",
+    "Dagba T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29360430",
+   "title": "Image analysis and machine learning for detecting malaria.",
+   "journal": "Translational research : the journal of laboratory and clinical medicine",
+   "date": "2018 Apr",
+   "authors": [
+    "Poostchi M",
+    "Silamut K",
+    "Maude RJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40078448",
+   "title": "A 5G network based conceptual framework for real-time malaria parasite detection from thick and thin blood smear slides using modified YOLOv5 model.",
+   "journal": "Digital health",
+   "date": "2025 Jan-Dec",
+   "authors": [
+    "Lipsa S",
+    "Kumar Dash R",
+    "Cengiz K"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36766640",
+   "title": "Performance Analysis of Deep Learning Algorithms in Diagnosis of Malaria Disease.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2023 Feb 1",
+   "authors": [
+    "Hemachandran K",
+    "Alasiry A",
+    "Marzougui M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42072439",
+   "title": "CT-Malaria Detection via Adaptive-Weighted Deep Learning Models.",
+   "journal": "Biomedicines",
+   "date": "2026 Apr 15",
+   "authors": [
+    "Gasmi K",
+    "Krichen M",
+    "Alanazi A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41463565",
+   "title": "Malaria Parasite Cell Classification Using Transfer Learning with State-of-the-Art CNN Architectures.",
+   "journal": "Biology",
+   "date": "2025 Dec 16",
+   "authors": [
+    "Laghari AA",
+    "Muhammad W",
+    "Memon ML"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35991917",
+   "title": "Automated wide-field malaria parasite infection detection using Fourier ptychography on stain-free thin-smears.",
+   "journal": "Biomedical optics express",
+   "date": "2022 Jul 1",
+   "authors": [
+    "Akcak\u0131r O",
+    "Celebi LK",
+    "Kamil M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41021108",
+   "title": "Leveraging MobileNetV2 and deep learning innovation for high accuracy Plasmodium Vivax detection in blood smears.",
+   "journal": "Saudi pharmaceutical journal : SPJ : the official publication of the Saudi Pharmaceutical Society",
+   "date": "2025 Sep 29",
+   "authors": [
+    "Prathap VM",
+    "Yadav S",
+    "Qidwai T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29682411",
+   "title": "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images.",
+   "journal": "PeerJ",
+   "date": "2018",
+   "authors": [
+    "Rajaraman S",
+    "Antani SK",
+    "Poostchi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36949382",
+   "title": "Tile-based microscopic image processing for malaria screening using a deep learning approach.",
+   "journal": "BMC medical imaging",
+   "date": "2023 Mar 22",
+   "authors": [
+    "Shewajo FA",
+    "Fante KA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42449873",
+   "title": "Image Processing and Deep Convolutional Neural Network Method for Automated Malaria Parasite Detection in Thin Blood Slide Images.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2026 Jul 3",
+   "authors": [
+    "Kumari K",
+    "Kaura T",
+    "Mewara A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41120358",
+   "title": "DANet a lightweight dilated attention network for malaria parasite detection.",
+   "journal": "Scientific reports",
+   "date": "2025 Oct 21",
+   "authors": [
+    "Ali A",
+    "Pal R",
+    "Dey I"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39170127",
+   "title": "Biophysical profiling of red blood cells from thin-film blood smears using deep learning.",
+   "journal": "Heliyon",
+   "date": "2024 Aug 15",
+   "authors": [
+    "Lamoureux ES",
+    "Cheng Y",
+    "Islamzada E"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40465684",
+   "title": "Application of ConvNeXt with transfer learning and data augmentation for malaria parasite detection in resource-limited settings using microscopic images.",
+   "journal": "PloS one",
+   "date": "2025",
+   "authors": [
+    "Mmileng OP",
+    "Whata A",
+    "Olusanya M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41281309",
+   "title": "An optimized transfer learning approach integrating deep convolutional feature extractors for malaria parasite classification in erythrocyte microscopy.",
+   "journal": "Frontiers in medicine",
+   "date": "2025",
+   "authors": [
+    "Reddy CKK",
+    "Anisha PR",
+    "Almushharaf A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39105953",
+   "title": "Application of image recognition technology in pathological diagnosis of blood smears.",
+   "journal": "Clinical and experimental medicine",
+   "date": "2024 Aug 6",
+   "authors": [
+    "Cheng W",
+    "Liu J",
+    "Wang C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31974686",
+   "title": "Real-time Malaria Parasite Screening in Thick Blood Smears for Low-Resource Setting.",
+   "journal": "Journal of digital imaging",
+   "date": "2020 Jun",
+   "authors": [
+    "Chibuta S",
+    "Acar AC"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35640304",
+   "title": "Malaria parasite classification framework using a novel channel squeezed and boosted CNN.",
+   "journal": "Microscopy (Oxford, England)",
+   "date": "2022 Oct 6",
+   "authors": [
+    "Khan SH",
+    "Shah NS",
+    "Nuzhat R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30035153",
+   "title": "Understanding the learned behavior of customized convolutional neural networks toward malaria parasite detection in thin blood smear images.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2018 Jul",
+   "authors": [
+    "Rajaraman S",
+    "Silamut K",
+    "Hossain MA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38171008",
+   "title": "Automatic patient-level recognition of four Plasmodium species on thin blood smear by a real-time detection transformer (RT-DETR) object detection algorithm: a proof-of-concept and evaluation.",
+   "journal": "Microbiology spectrum",
+   "date": "2024 Feb 6",
+   "authors": [
+    "Guemas E",
+    "Routier B",
+    "Ghelfenstein-Ferreira T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38977858",
+   "title": "Pursuing the elusive footsteps of malaria in peripheral blood smears utilizing artificial intelligence.",
+   "journal": "British journal of haematology",
+   "date": "2024 Aug",
+   "authors": [
+    "Katz BZ",
+    "Karny S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40463611",
+   "title": "Trials and tribulations: Developing an artificial intelligence for screening malaria parasite from peripheral blood smears.",
+   "journal": "Medical journal, Armed Forces India",
+   "date": "2025 May-Jun",
+   "authors": [
+    "Saxena S",
+    "Sanyal P",
+    "Bajpai M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41249779",
+   "title": "Optimized CNN framework for malaria detection using Otsu thresholding-based image segmentation.",
+   "journal": "Scientific reports",
+   "date": "2025 Nov 17",
+   "authors": [
+    "Singh R",
+    "Prabha C",
+    "Abdulla S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35800239",
+   "title": "Computational Models-Based Detection of Peripheral Malarial Parasites in Blood Smears.",
+   "journal": "Contrast media & molecular imaging",
+   "date": "2022",
+   "authors": [
+    "Alharbi AH",
+    "Aravinda CV",
+    "Shetty J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39860759",
+   "title": "Image-Based Detection and Classification of Malaria Parasites and Leukocytes with Quality Assessment of Romanowsky-Stained Blood Smears.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2025 Jan 10",
+   "authors": [
+    "Sora-Cardenas J",
+    "Fong-Amaris WM",
+    "Salazar-Centeno CA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36458185",
+   "title": "Advances and challenges in automated malaria diagnosis using digital microscopy imaging with artificial intelligence tools: A review.",
+   "journal": "Frontiers in microbiology",
+   "date": "2022",
+   "authors": [
+    "Maturana CR",
+    "de Oliveira AD",
+    "Nadal S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41892929",
+   "title": "Automated Malaria Ring Form Classification in Blood Smear Images Using Ensemble Parallel Neural Networks.",
+   "journal": "Journal of imaging",
+   "date": "2026 Mar 12",
+   "authors": [
+    "Pongpanitanont P",
+    "Suttidate N",
+    "Nuinoon M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36976115",
+   "title": "Autokeras Approach: A Robust Automated Deep Learning Network for Diagnosis Disease Cases in Medical Images.",
+   "journal": "Journal of imaging",
+   "date": "2023 Mar 8",
+   "authors": [
+    "Alaiad A",
+    "Migdady A",
+    "Al-Khatib RM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33201905",
+   "title": "A novel deep learning-based point-of-care diagnostic method for detecting Plasmodium falciparum with fluorescence digital microscopy.",
+   "journal": "PloS one",
+   "date": "2020",
+   "authors": [
+    "Holmstr\u00f6m O",
+    "Stenman S",
+    "Suutala A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35324621",
+   "title": "An Empirical Evaluation of Convolutional Networks for Malaria Diagnosis.",
+   "journal": "Journal of imaging",
+   "date": "2022 Mar 7",
+   "authors": [
+    "Loddo A",
+    "Fadda C",
+    "Di Ruberto C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39633208",
+   "title": "A Robust Malaria Cell Detection Framework Using Adaptive and Atrous Convolution-Based Recurrent Mobilenetv2 with Trans-MobileUNet\u2009+ +\u2009-Based Abnormality Segmentation.",
+   "journal": "Journal of imaging informatics in medicine",
+   "date": "2025 Aug",
+   "authors": [
+    "Pandiaraj A",
+    "Kshirsagar PR",
+    "Thiagarajan R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "32832279",
+   "title": "Convolutional neural networks to automate the screening of malaria in low-resource countries.",
+   "journal": "PeerJ",
+   "date": "2020",
+   "authors": [
+    "Zhao OS",
+    "Kolluri N",
+    "Anand A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41244694",
+   "title": "Rapid and accurate recognition of erythrocytic stage parasites of Plasmodium falciparum via a deep learning-based YOLOv3 platform.",
+   "journal": "Frontiers in microbiology",
+   "date": "2025",
+   "authors": [
+    "He W",
+    "Zhu H",
+    "Geng J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34370724",
+   "title": "Label-free imaging and classification of live P. falciparum enables high performance parasitemia quantification without fixation or staining.",
+   "journal": "PLoS computational biology",
+   "date": "2021 Aug",
+   "authors": [
+    "Lebel P",
+    "Dial R",
+    "Vemuri VNP"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34096621",
+   "title": "Optical mesoscopy, machine learning, and computational microscopy enable high information content diagnostic imaging of blood films.",
+   "journal": "The Journal of pathology",
+   "date": "2021 Sep",
+   "authors": [
+    "Shaw M",
+    "Claveau R",
+    "Manescu P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42298122",
+   "title": "A scoping review of traditional and artificial intelligence methods in malaria diagnostics.",
+   "journal": "NPJ digital medicine",
+   "date": "2026 Jun 15",
+   "authors": [
+    "Xing F",
+    "Lazarev S",
+    "Woo J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41491600",
+   "title": "Automated microscopy for malaria diagnosis in a reference laboratory in nonendemic settings.",
+   "journal": "Parasites & vectors",
+   "date": "2026 Jan 5",
+   "authors": [
+    "Mart\u00edn-Ram\u00edrez A",
+    "Lanza-Su\u00e1rez M",
+    "Berzosa D\u00edaz P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "32282969",
+   "title": "Expert-level automated malaria diagnosis on routine blood films with deep neural networks.",
+   "journal": "American journal of hematology",
+   "date": "2020 Aug",
+   "authors": [
+    "Manescu P",
+    "Shaw MJ",
+    "Elmi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30253764",
+   "title": "Automated microscopy for routine malaria diagnosis: a field comparison on Giemsa-stained blood films in Peru.",
+   "journal": "Malaria journal",
+   "date": "2018 Sep 25",
+   "authors": [
+    "Torres K",
+    "Bachman CM",
+    "Delahunt CB"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37554627",
+   "title": "Two-stage automated diagnosis framework for urogenital schistosomiasis in microscopy images from low-resource settings.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2023 Jul",
+   "authors": [
+    "Oyibo P",
+    "Meulah B",
+    "Bengtson M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38075929",
+   "title": "iMAGING: a novel automated system for malaria diagnosis by using artificial intelligence tools and a universal low-cost robotized microscope.",
+   "journal": "Frontiers in microbiology",
+   "date": "2023",
+   "authors": [
+    "Maturana CR",
+    "de Oliveira AD",
+    "Nadal S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30670023",
+   "title": "Evaluation of automated malaria diagnosis using the Sysmex XN-30 analyser in a clinical setting.",
+   "journal": "Malaria journal",
+   "date": "2019 Jan 22",
+   "authors": [
+    "Pillay E",
+    "Khodaiji S",
+    "Bezuidenhout BC"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37168772",
+   "title": "An automated neural network-based stage-specific malaria detection software using dimension reduction: The malaria microscopy classifier.",
+   "journal": "MethodsX",
+   "date": "2023",
+   "authors": [
+    "Katharina P",
+    "Istv\u00e1n K",
+    "J\u00e1nos T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "10583325",
+   "title": "Diagnosis of malaria: a review of alternatives to conventional microscopy.",
+   "journal": "Clinical and laboratory haematology",
+   "date": "1999 Aug",
+   "authors": [
+    "H\u00e4nscheid T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33632222",
+   "title": "Performance of a fully-automated system on a WHO malaria microscopy evaluation slide set.",
+   "journal": "Malaria journal",
+   "date": "2021 Feb 25",
+   "authors": [
+    "Horning MP",
+    "Delahunt CB",
+    "Bachman CM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30207623",
+   "title": "Microscopic malaria parasitemia diagnosis and grading on benchmark datasets.",
+   "journal": "Microscopy research and technique",
+   "date": "2018 Sep",
+   "authors": [
+    "Rehman A",
+    "Abbas N",
+    "Saba T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39857500",
+   "title": "Evaluation of an Artificial Intelligence-Based Tool and a Universal Low-Cost Robotized Microscope for the Automated Diagnosis of Malaria.",
+   "journal": "International journal of environmental research and public health",
+   "date": "2024 Dec 31",
+   "authors": [
+    "Rubio Maturana C",
+    "de Oliveira AD",
+    "Zarzuela F"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40042316",
+   "title": "The Diagnostic Performance of a Sysmex XN-31 Automated Malaria Analyzer vs. Expert Microscopy.",
+   "journal": "International journal of laboratory hematology",
+   "date": "2025 Aug",
+   "authors": [
+    "Onsongo S",
+    "Otieno K",
+    "Mathenge L"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "19594927",
+   "title": "Computer vision for microscopy diagnosis of malaria.",
+   "journal": "Malaria journal",
+   "date": "2009 Jul 13",
+   "authors": [
+    "Tek FB",
+    "Dempster AG",
+    "Kale I"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28479922",
+   "title": "Laboratory Diagnosis of Malaria: Comparison of Manual and Automated Diagnostic Tests.",
+   "journal": "The Canadian journal of infectious diseases & medical microbiology = Journal canadien des maladies infectieuses et de la microbiologie medicale",
+   "date": "2017",
+   "authors": [
+    "Mukry SN",
+    "Saud M",
+    "Sufaida G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33176716",
+   "title": "Malaria Screener: a smartphone application for automated malaria screening.",
+   "journal": "BMC infectious diseases",
+   "date": "2020 Nov 11",
+   "authors": [
+    "Yu H",
+    "Yang F",
+    "Rajaraman S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24959331",
+   "title": "Automated Hematology Analyzers in Diagnosis of Plasmodium vivax Malaria: an Adjunct to Conventional Microscopy.",
+   "journal": "Mediterranean journal of hematology and infectious diseases",
+   "date": "2014",
+   "authors": [
+    "Mubeen KH",
+    "Devadoss CW",
+    "Rangan RA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39100623",
+   "title": "Embedded-deep-learning-based sample-to-answer device for on-site malaria diagnosis.",
+   "journal": "Frontiers in bioengineering and biotechnology",
+   "date": "2024",
+   "authors": [
+    "Bae CY",
+    "Shin YM",
+    "Kim M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42145676",
+   "title": "Magneto-optical microscopy platform for quantitative imaging of hemozoin in blood for malaria diagnosis.",
+   "journal": "Biomedical optics express",
+   "date": "2026 May 1",
+   "authors": [
+    "Kinyua DM",
+    "Kotar J",
+    "Cicuta P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "21118557",
+   "title": "Automated haematology analysis to diagnose malaria.",
+   "journal": "Malaria journal",
+   "date": "2010 Nov 30",
+   "authors": [
+    "Campuzano-Zuluaga G",
+    "H\u00e4nscheid T",
+    "Grobusch MP"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38768107",
+   "title": "Cost analyses for malaria molecular diagnosis for research planners in India and beyond.",
+   "journal": "Expert review of molecular diagnostics",
+   "date": "2024 Jun",
+   "authors": [
+    "Panwar V",
+    "Bansal S",
+    "Chauhan C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41466282",
+   "title": "Performance evaluation of the automated haematology analyzer XN-31 for malaria diagnosis in Plasmodium vivax-dominant regions of Thailand.",
+   "journal": "Malaria journal",
+   "date": "2025 Dec 29",
+   "authors": [
+    "Kawaguchi M",
+    "Komaki-Yasuda K",
+    "Nakatsu M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "11463119",
+   "title": "Automated detection of malaria pigment in white blood cells for the diagnosis of malaria in Portugal.",
+   "journal": "The American journal of tropical medicine and hygiene",
+   "date": "2001 May-Jun",
+   "authors": [
+    "H\u00e4nscheid T",
+    "Melo-Cristino J",
+    "Pinto BG"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "21499691",
+   "title": "Clinical practice: the diagnosis of imported malaria in children.",
+   "journal": "European journal of pediatrics",
+   "date": "2011 Jul",
+   "authors": [
+    "Maltha J",
+    "Jacobs J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "20456124",
+   "title": "Laboratory diagnosis of malaria in nonhuman primates.",
+   "journal": "Veterinary clinical pathology",
+   "date": "2010 Mar",
+   "authors": [
+    "Ameri M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "14708867",
+   "title": "Methods used in the diagnosis of malaria: where do we stand?",
+   "journal": "Journal of the Egyptian Society of Parasitology",
+   "date": "2003 Dec",
+   "authors": [
+    "Zakai HA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41419508",
+   "title": "Trustworthy deep learning for malaria diagnosis using explainable artificial intelligence.",
+   "journal": "Scientific reports",
+   "date": "2025 Dec 19",
+   "authors": [
+    "Parveen R",
+    "Qui B",
+    "Song W"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33809642",
+   "title": "An Automated Microscopic Malaria Parasite Detection System Using Digital Image Analysis.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "date": "2021 Mar 16",
+   "authors": [
+    "Yoon J",
+    "Jang WS",
+    "Nam J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40385718",
+   "title": "PERCEPTION OF HEALTH CARE WORKERS ON ARTIFICIAL INTELLIGENCE BASED MALARIA DIAGNOSIS IN SOUTHWESTERN NIGERIA.",
+   "journal": "Annals of Ibadan postgraduate medicine",
+   "date": "2024 Dec 31",
+   "authors": [
+    "Michael OS",
+    "Bukoye E",
+    "Whiley P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42143374",
+   "title": "A hybrid machine learning approach for automated malaria diagnosis from thin blood smear images.",
+   "journal": "Parasites & vectors",
+   "date": "2026 May 16",
+   "authors": [
+    "Siddiqui GA",
+    "Bera A",
+    "Lhila A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28061871",
+   "title": "LAMP kit for diagnosis of non-falciparum malaria in Plasmodium ovale infected patients.",
+   "journal": "Malaria journal",
+   "date": "2017 Jan 7",
+   "authors": [
+    "Cuadros J",
+    "Martin Ram\u00edrez A",
+    "Gonz\u00e1lez IJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28442456",
+   "title": "The Malaria System MicroApp: A New, Mobile Device-Based Tool for Malaria Diagnosis.",
+   "journal": "JMIR research protocols",
+   "date": "2017 Apr 25",
+   "authors": [
+    "Oliveira AD",
+    "Prats C",
+    "Espasa M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "26047029",
+   "title": "Computational microscopic imaging for malaria parasite detection: a systematic review.",
+   "journal": "Journal of microscopy",
+   "date": "2015 Oct",
+   "authors": [
+    "Das DK",
+    "Mukherjee R",
+    "Chakraborty C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "16038359",
+   "title": "Contribution of PCR-based methods to diagnosis and management of imported malaria.",
+   "journal": "Medecine tropicale : revue du Corps de sante colonial",
+   "date": "2005",
+   "authors": [
+    "Berry A",
+    "Fabre R",
+    "Benoit-Vical F"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38291833",
+   "title": "An automated slide scanning system for membrane filter imaging in diagnosis of urogenital schistosomiasis.",
+   "journal": "Journal of microscopy",
+   "date": "2024 Apr",
+   "authors": [
+    "Oyibo P",
+    "Agbana T",
+    "van Lieshout L"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39394413",
+   "title": "Development of intelligent suite for malaria pathogen detection in microscopy images.",
+   "journal": "Scientific reports",
+   "date": "2024 Oct 11",
+   "authors": [
+    "Koirala A",
+    "Jha M",
+    "Chetty G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28879175",
+   "title": "Computer Vision Malaria Diagnostic Systems-Progress and Prospects.",
+   "journal": "Frontiers in public health",
+   "date": "2017",
+   "authors": [
+    "Pollak JJ",
+    "Houri-Yafin A",
+    "Salpeter SJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "16772002",
+   "title": "Automated detection of malaria pigment: feasibility for malaria diagnosing in an area with seasonal malaria in northern Namibia.",
+   "journal": "Tropical medicine & international health : TM & IH",
+   "date": "2006 Jun",
+   "authors": [
+    "de Langen AJ",
+    "van Dillen J",
+    "de Witte P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36707822",
+   "title": "Patient-level performance evaluation of a smartphone-based malaria diagnostic application.",
+   "journal": "Malaria journal",
+   "date": "2023 Jan 27",
+   "authors": [
+    "Yu H",
+    "Mohammed FO",
+    "Abdel Hamid M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40962162",
+   "title": "Insights into AI-Driven malaria diagnosis: A systematic review with implications for Plasmodium knowlesi.",
+   "journal": "Acta tropica",
+   "date": "2025 Nov",
+   "authors": [
+    "Tiong JY",
+    "Hasikin K",
+    "Ngui R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38943203",
+   "title": "Diagnostic accuracy of an automated microscope solution (miLab\u2122) in detecting malaria parasites in symptomatic patients at point-of-care in Sudan: a case-control study.",
+   "journal": "Malaria journal",
+   "date": "2024 Jun 28",
+   "authors": [
+    "Hamid MMA",
+    "Mohamed AO",
+    "Mohammed FO"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38930432",
+   "title": "The Impact of Artificial Intelligence on Microbial Diagnosis.",
+   "journal": "Microorganisms",
+   "date": "2024 May 23",
+   "authors": [
+    "Alsulimani A",
+    "Akhter N",
+    "Jameela F"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34558082",
+   "title": "Evaluation of the Sysmex XN-31 automated analyser for blood donor malaria screening at Malawi Blood Transfusion Services.",
+   "journal": "Vox sanguinis",
+   "date": "2022 Mar",
+   "authors": [
+    "M'baya B",
+    "Mfune T",
+    "Samon A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39655938",
+   "title": "Diagnosis of Plasmodium infections using artificial intelligence techniques versus standard microscopy in a reference laboratory.",
+   "journal": "Journal of clinical microbiology",
+   "date": "2025 Jan 31",
+   "authors": [
+    "Nagendra S",
+    "Hayes R",
+    "Bae D"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30840746",
+   "title": "Malaria parasite detection and cell counting for human and mouse using thin blood smear microscopy.",
+   "journal": "Journal of medical imaging (Bellingham, Wash.)",
+   "date": "2018 Oct",
+   "authors": [
+    "Poostchi M",
+    "Ersoy I",
+    "McMenamin K"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36297240",
+   "title": "Malaria Detection Accelerated: Combing a High-Throughput NanoZoomer Platform with a ParasiteMacro Algorithm.",
+   "journal": "Pathogens (Basel, Switzerland)",
+   "date": "2022 Oct 14",
+   "authors": [
+    "Ashraf S",
+    "Khalid A",
+    "de Vos AL"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "19121281",
+   "title": "Automated detection of haemozoin-containing monocytes for the diagnosis of malaria in microscopically negative cases during pregnancy.",
+   "journal": "Acta tropica",
+   "date": "2009 Mar",
+   "authors": [
+    "H\u00e4nscheid T",
+    "L\u00e4ngin M",
+    "Codices V"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36941226",
+   "title": "[Contribution of hematology analyzers (Sysmex XN-Series) in the rapid diagnosis of malaria: case reports].",
+   "journal": "Annales de biologie clinique",
+   "date": "2023 Mar 21",
+   "authors": [
+    "Pitti P",
+    "Tassin F",
+    "Keutgens A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31146732",
+   "title": "The XN-30 hematology analyzer for rapid sensitive detection of malaria: a diagnostic accuracy study.",
+   "journal": "BMC medicine",
+   "date": "2019 May 31",
+   "authors": [
+    "Post A",
+    "Kabor\u00e9 B",
+    "Reuling IJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35957519",
+   "title": "Automated Recognition of Plasmodium falciparum Parasites from Portable Blood Levitation Imaging.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "date": "2022 Oct",
+   "authors": [
+    "Deshmukh SS",
+    "Byaruhanga O",
+    "Tumwebaze P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "12641610",
+   "title": "Automated detection of malaria-associated intraleucocytic haemozoin by Cell-Dyn CD4000 depolarization analysis.",
+   "journal": "Clinical and laboratory haematology",
+   "date": "2003 Apr",
+   "authors": [
+    "Scott CS",
+    "van Zyl D",
+    "Ho E"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23134943",
+   "title": "Automated detection of malaria with haematology analyzer Sysmex XE-2100.",
+   "journal": "Indian journal of medical sciences",
+   "date": "2011 Jan",
+   "authors": [
+    "Mohapatra S",
+    "Samantaray JC",
+    "Arulselvi S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42313826",
+   "title": "Intelligent automation cognitive system for accurate malaria diagnosis using digital blood smears.",
+   "journal": "PloS one",
+   "date": "2026",
+   "authors": [
+    "Malaekah E",
+    "Saied H",
+    "Alfahad O"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29843721",
+   "title": "Comparison of visual and automated Deki Reader interpretation of malaria rapid diagnostic tests in rural Tanzanian military health facilities.",
+   "journal": "Malaria journal",
+   "date": "2018 May 29",
+   "authors": [
+    "Kalinga AK",
+    "Mwanziva C",
+    "Chiduo S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34553808",
+   "title": "Extrinsic parameter's adjustment and potential implications in Plasmodium falciparum malaria diagnosis.",
+   "journal": "Microscopy research and technique",
+   "date": "2022 Feb",
+   "authors": [
+    "A V",
+    "B RK",
+    "C V"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28934170",
+   "title": "Mobile-Based Analysis of Malaria-Infected Thin Blood Smears: Automated Species and Life Cycle Stage Determination.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2017 Sep 21",
+   "authors": [
+    "Rosado L",
+    "da Costa JMC",
+    "Elias D"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29763668",
+   "title": "Evaluation of automated loop-mediated amplification (LAMP) for routine malaria detection in blood samples of German travelers - A cross-sectional study.",
+   "journal": "Travel medicine and infectious disease",
+   "date": "2018 Jul-Aug",
+   "authors": [
+    "Frickmann H",
+    "Hinz R",
+    "Rojak S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37591916",
+   "title": "Intelligent diagnostic model for malaria parasite detection and classification using imperative inception-based capsule neural networks.",
+   "journal": "Scientific reports",
+   "date": "2023 Aug 17",
+   "authors": [
+    "Madhu G",
+    "Mohamed AW",
+    "Kautish S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23455960",
+   "title": "Staining-free malaria diagnostics by multispectral and multimodality light-emitting-diode microscopy.",
+   "journal": "Journal of biomedical optics",
+   "date": "2013 Mar",
+   "authors": [
+    "Merdasa A",
+    "Brydegaard M",
+    "Svanberg S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24102561",
+   "title": "Automatic diagnosis of malaria based on complete circle-ellipse fitting search algorithm.",
+   "journal": "Journal of microscopy",
+   "date": "2013 Dec",
+   "authors": [
+    "Sheikhhosseini M",
+    "Rabbani H",
+    "Zekri M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "12358891",
+   "title": "Thrombocytopenia in patients with malaria: automated analysis of optical platelet counts and platelet clumps with the Cell Dyn CD4000 analyser.",
+   "journal": "Clinical and laboratory haematology",
+   "date": "2002 Oct",
+   "authors": [
+    "Scott CS",
+    "Van Zyl D",
+    "Ho E"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23550616",
+   "title": "An automatic vision-based malaria diagnosis system.",
+   "journal": "Journal of microscopy",
+   "date": "2013 Jun",
+   "authors": [
+    "Vink JP",
+    "Laubscher M",
+    "Vlutters R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24781199",
+   "title": "A paper microfluidic cartridge for automated staining of malaria parasites with an optically transparent microscopy window.",
+   "journal": "Lab on a chip",
+   "date": "2014 Jun 21",
+   "authors": [
+    "Horning MP",
+    "Delahunt CB",
+    "Singh SR"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36379305",
+   "title": "Application of machine and deep learning algorithms in optical microscopic detection of Plasmodium: A malaria diagnostic tool for the future.",
+   "journal": "Photodiagnosis and photodynamic therapy",
+   "date": "2022 Dec",
+   "authors": [
+    "Ikerionwu C",
+    "Ugwuishiwu C",
+    "Okpala I"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "26559606",
+   "title": "A diagnostic tool for malaria based on computer software.",
+   "journal": "Scientific reports",
+   "date": "2015 Nov 12",
+   "authors": [
+    "Kotepui M",
+    "Uthaisar K",
+    "Phunphuech B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "27570702",
+   "title": "Automated Fourier space region-recognition filtering for off-axis digital holographic microscopy.",
+   "journal": "Biomedical optics express",
+   "date": "2016 Aug 1",
+   "authors": [
+    "He X",
+    "Nguyen CV",
+    "Pratap M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29469543",
+   "title": "[Advances in automatic detection technology for images of thin blood film of malaria parasite].",
+   "journal": "Zhongguo xue xi chong bing fang zhi za zhi = Chinese journal of schistosomiasis control",
+   "date": "2017 May 5",
+   "authors": [
+    "Juan-Sheng Z",
+    "Di-Qiang Z",
+    "Wei W"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36050757",
+   "title": "Potential application of the haematology analyser XN-31 prototype for field malaria surveillance in Kenya.",
+   "journal": "Malaria journal",
+   "date": "2022 Sep 1",
+   "authors": [
+    "Kagaya W",
+    "Takehara I",
+    "Kurihara K"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33582593",
+   "title": "A deep learning approach to the screening of malaria infection: Automated and rapid cell counting, object detection and instance segmentation using Mask R-CNN.",
+   "journal": "Computerized medical imaging and graphics : the official journal of the Computerized Medical Imaging Society",
+   "date": "2021 Mar",
+   "authors": [
+    "Loh R",
+    "Yong WX",
+    "Yapeter J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42264066",
+   "title": "Field diagnostic performance of the Sysmex XN31 automated hematology analyser for malaria screening among febrile children in a sentinel site for malaria surveillance site in Libreville, Gabon.",
+   "journal": "International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases",
+   "date": "2026 Sep",
+   "authors": [
+    "Moutombi-Ditombi BC",
+    "M'Bondoukw\u00e9 NP",
+    "Bedrich PN"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "12367581",
+   "title": "Analyzing red blood cell-deformability distributions.",
+   "journal": "Blood cells, molecules & diseases",
+   "date": "2002 May-Jun",
+   "authors": [
+    "Dobbe JG",
+    "Hardeman MR",
+    "Streekstra GJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40350582",
+   "title": "Diagnosis On-Demand: Field Evaluation of Microfluidic Paper Device for the Detection of Asymptomatic Malaria.",
+   "journal": "Analytical chemistry",
+   "date": "2025 Jun 10",
+   "authors": [
+    "Seth A",
+    "Lee S",
+    "Muralikrishnan G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "34625963",
+   "title": "Fast, high-precision autofocus on a motorised microscope: Automating blood sample imaging on the OpenFlexure Microscope.",
+   "journal": "Journal of microscopy",
+   "date": "2022 Jan",
+   "authors": [
+    "Knapper J",
+    "Collins JT",
+    "Stirling J"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29391022",
+   "title": "An automated haematology analyzer XN-30 distinguishes developmental stages of falciparum malaria parasite cultured in vitro.",
+   "journal": "Malaria journal",
+   "date": "2018 Feb 2",
+   "authors": [
+    "Tougan T",
+    "Suzuki Y",
+    "Itagaki S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39152149",
+   "title": "Motion blur microscopy: in vitro imaging of cell adhesion dynamics in whole blood flow.",
+   "journal": "Nature communications",
+   "date": "2024 Aug 16",
+   "authors": [
+    "Goreke U",
+    "Gonzales A",
+    "Shipley B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35413904",
+   "title": "Field evaluation of the diagnostic performance of EasyScan GO: a digital malaria microscopy device based on machine-learning.",
+   "journal": "Malaria journal",
+   "date": "2022 Apr 12",
+   "authors": [
+    "Das D",
+    "Vongpromek R",
+    "Assawariyathipat T"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35638753",
+   "title": "Diagnostic accuracy of fluorescence flow-cytometry technology using Sysmex XN-31 for imported malaria in a non-endemic setting.",
+   "journal": "Parasite (Paris, France)",
+   "date": "2022",
+   "authors": [
+    "Picot S",
+    "Perpoint T",
+    "Chidiac C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41490467",
+   "title": "AI-Supported Digital Microscopy Diagnostics in Primary Health Care Laboratories: Scoping Review.",
+   "journal": "Journal of medical Internet research",
+   "date": "2026 Jan 5",
+   "authors": [
+    "von Bahr J",
+    "Suutala A",
+    "Diwan V"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24739286",
+   "title": "Limitations of haemozoin-based diagnosis of Plasmodium falciparum using dark-field microscopy.",
+   "journal": "Malaria journal",
+   "date": "2014 Apr 17",
+   "authors": [
+    "Delahunt C",
+    "Horning MP",
+    "Wilson BK"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42185576",
+   "title": "Association between thrombocytopaenia and Plasmodium falciparum infection in Ghana.",
+   "journal": "Scientific reports",
+   "date": "2026 May 25",
+   "authors": [
+    "Duneeh RV",
+    "Amoada ST",
+    "Yankey E"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38523360",
+   "title": "Evaluation of new haematology analyser, XN-31, for malaria detection in blood donors: A single-centre study from India.",
+   "journal": "Vox sanguinis",
+   "date": "2024 Jun",
+   "authors": [
+    "Tiwari AK",
+    "Goel S",
+    "Singh G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30601655",
+   "title": "Malaria Detection by Third-Harmonic Generation Image Scanning Cytometry.",
+   "journal": "Analytical chemistry",
+   "date": "2019 Feb 5",
+   "authors": [
+    "Kazarine A",
+    "Baakdah F",
+    "Gopal AA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41562666",
+   "title": "Diagnostic Accuracy of Utilizing Artificial Intelligence for Malaria Diagnostic: A Systematic Review and Meta-Analysis.",
+   "journal": "Infectious disease reports",
+   "date": "2026 Jan 13",
+   "authors": [
+    "Faratisha IFD",
+    "Yunita KC",
+    "Rahmawati HR"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38098124",
+   "title": "Prediction of malaria positivity using patients' demographic and environmental features and clinical symptoms to complement parasitological confirmation before treatment.",
+   "journal": "Tropical diseases, travel medicine and vaccines",
+   "date": "2023 Dec 15",
+   "authors": [
+    "Ojurongbe TA",
+    "Afolabi HA",
+    "Bashiru KA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33180439",
+   "title": "Hematological Profiles of Malaria Infected Adult Patients in Raya Alamata Hospital, Northeast Ethiopia.",
+   "journal": "Clinical laboratory",
+   "date": "2020 Nov 1",
+   "authors": [
+    "Asmerom H",
+    "Yalew A",
+    "Getaneh Z"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23218914",
+   "title": "Machine learning approach for automated screening of malaria parasite using light microscopic images.",
+   "journal": "Micron (Oxford, England : 1993)",
+   "date": "2013 Feb",
+   "authors": [
+    "Das DK",
+    "Ghosh M",
+    "Pal M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "15837355",
+   "title": "Performance evaluation of automated depolarization analysis for detecting clinically unsuspected malaria in endemic countries.",
+   "journal": "Transactions of the Royal Society of Tropical Medicine and Hygiene",
+   "date": "2005 Jun",
+   "authors": [
+    "Dromigny JA",
+    "Jambou R",
+    "Scott CS"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23617722",
+   "title": "Clinical performance of an automated reader in interpreting malaria rapid diagnostic tests in Tanzania.",
+   "journal": "Malaria journal",
+   "date": "2013 Apr 24",
+   "authors": [
+    "Shekalaghe S",
+    "Cancino M",
+    "Mavere C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24695479",
+   "title": "Comparative evaluation of two flowcytometric analysers as diagnostic tools for the automated detection of malaria.",
+   "journal": "Annals of clinical and laboratory science",
+   "date": "2014 Winter",
+   "authors": [
+    "Mohapatra S",
+    "Samantaray JC",
+    "Arulselvi S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "25990413",
+   "title": "Automated quantitative cytological analysis using portable microfluidic microscopy.",
+   "journal": "Journal of biophotonics",
+   "date": "2016 Jun",
+   "authors": [
+    "Jagannadh VK",
+    "Murthy RS",
+    "Srinivasan R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "23473482",
+   "title": "An automated live imaging platform for studying merozoite egress-invasion in malaria cultures.",
+   "journal": "Biophysical journal",
+   "date": "2013 Mar 5",
+   "authors": [
+    "Crick AJ",
+    "Tiffert T",
+    "Shah SM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "25523795",
+   "title": "Automated system for characterization and classification of malaria-infected stages using light microscopic images of thin blood smears.",
+   "journal": "Journal of microscopy",
+   "date": "2015 Mar",
+   "authors": [
+    "Das DK",
+    "Maiti AK",
+    "Chakraborty C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35104964",
+   "title": "autohaem: 3D printed devices for automated preparation of blood smears.",
+   "journal": "The Review of scientific instruments",
+   "date": "2022 Jan 1",
+   "authors": [
+    "McDermott S",
+    "Kim J",
+    "Leledaki AA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24110533",
+   "title": "Automated detection of malaria in Giemsa-stained thin blood smears.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "date": "2013",
+   "authors": [
+    "Mushabe MC",
+    "Dendere R",
+    "Douglas TS"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38768243",
+   "title": "A digital microscope for the diagnosis of Plasmodium falciparum and Plasmodium vivax, including P. falciparum with hrp2/hrp3 deletion.",
+   "journal": "PLOS global public health",
+   "date": "2024",
+   "authors": [
+    "Ewnetu Y",
+    "Badu K",
+    "Carlier L"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28603136",
+   "title": "Report: Unsupervised identification of malaria parasites using computer vision.",
+   "journal": "Pakistan journal of pharmaceutical sciences",
+   "date": "2017 Jan",
+   "authors": [
+    "Khan NA",
+    "Pervaz H",
+    "Latif A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40489474",
+   "title": "Performance of a smartphone-based malaria screener in detecting malaria in people living with Sickle cell disease.",
+   "journal": "PLOS digital health",
+   "date": "2025 Jun",
+   "authors": [
+    "Obeng DNS",
+    "Osei S",
+    "Brown NK"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38113371",
+   "title": "Detection and quantification of Babesia species intraerythrocytic parasites by flow cytometry.",
+   "journal": "American journal of clinical pathology",
+   "date": "2024 May 2",
+   "authors": [
+    "Vanderboom PM",
+    "Misra A",
+    "Rodino KG"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29115991",
+   "title": "Evaluation of the Deki Reader\u2122, an automated RDT reader and data management device, in a household survey setting in low malaria endemic southwestern Uganda.",
+   "journal": "Malaria journal",
+   "date": "2017 Nov 7",
+   "authors": [
+    "Oyet C",
+    "Roh ME",
+    "Kiwanuka GN"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39869986",
+   "title": "A deep architecture based on attention mechanisms for effective end-to-end detection of early and mature malaria parasites in a realistic scenario.",
+   "journal": "Computers in biology and medicine",
+   "date": "2025 Mar",
+   "authors": [
+    "Zedda L",
+    "Loddo A",
+    "Di Ruberto C"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29796511",
+   "title": "Label-free, high-throughput detection of P. falciparum infection in sphered erythrocytes with digital holographic microscopy.",
+   "journal": "Lab on a chip",
+   "date": "2018 Jun 12",
+   "authors": [
+    "Ugele M",
+    "Weniger M",
+    "Leidenberger M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "36252803",
+   "title": "Performance Evaluation of the Schistoscope 5.0 for (Semi-)automated Digital Detection and Quantification of Schistosoma haematobium Eggs in Urine: A Field-based Study in Nigeria.",
+   "journal": "The American journal of tropical medicine and hygiene",
+   "date": "2022 Nov 14",
+   "authors": [
+    "Meulah B",
+    "Oyibo P",
+    "Bengtson M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "40841541",
+   "title": "Enhanced detection of malaria infected red blood cells through phase driven classification.",
+   "journal": "Scientific reports",
+   "date": "2025 Aug 21",
+   "authors": [
+    "Kyeremah C",
+    "Paul AS",
+    "Haehn D"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "28789644",
+   "title": "Hydrophilic-treated plastic plates for wide-range analysis of Giemsa-stained red blood cells and automated Plasmodium infection rate counting.",
+   "journal": "Malaria journal",
+   "date": "2017 Aug 8",
+   "authors": [
+    "Hashimoto M",
+    "Yatsushiro S",
+    "Yamamura S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35390054",
+   "title": "A portable brightfield and fluorescence microscope toward automated malarial parasitemia quantification in thin blood smears.",
+   "journal": "PloS one",
+   "date": "2022",
+   "authors": [
+    "Gordon PD",
+    "De Ville C",
+    "Sacchettini JC"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24989601",
+   "title": "High-throughput ultrasensitive molecular techniques for quantifying low-density malaria parasitemias.",
+   "journal": "Journal of clinical microbiology",
+   "date": "2014 Sep",
+   "authors": [
+    "Imwong M",
+    "Hanchana S",
+    "Malleret B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "19402894",
+   "title": "Towards high-throughput molecular detection of Plasmodium: new approaches and molecular markers.",
+   "journal": "Malaria journal",
+   "date": "2009 Apr 29",
+   "authors": [
+    "Steenkeste N",
+    "Incardona S",
+    "Chy S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "22567592",
+   "title": "Toward fast malaria detection by secondary speckle sensing microscopy.",
+   "journal": "Biomedical optics express",
+   "date": "2012 May 1",
+   "authors": [
+    "Cojoc D",
+    "Finaurini S",
+    "Livshits P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "32179558",
+   "title": "Sequential classification system for recognition of malaria infection using peripheral blood cell images.",
+   "journal": "Journal of clinical pathology",
+   "date": "2020 Oct",
+   "authors": [
+    "Molina A",
+    "Alf\u00e9rez S",
+    "Bold\u00fa L"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "12886809",
+   "title": "Differences in automated depolarization patterns of Plasmodium falciparum and P. vivax malaria infections defined by the Cell-Dyn CD4000 haematology analyser.",
+   "journal": "Transactions of the Royal Society of Tropical Medicine and Hygiene",
+   "date": "2003 Jan-Feb",
+   "authors": [
+    "Fawzi ZO",
+    "Fakhro NA",
+    "Nabhan RA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "29464900",
+   "title": "Abnormal scattergrams and cell population data generated by fully automated hematological analyzers: New tools for screening malaria infection?",
+   "journal": "International journal of laboratory hematology",
+   "date": "2018 Jun",
+   "authors": [
+    "Buoro S",
+    "Manenti B",
+    "Seghezzi M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30274514",
+   "title": "Next Generation Histology-Directed Imaging Mass Spectrometry Driven by Autofluorescence Microscopy.",
+   "journal": "Analytical chemistry",
+   "date": "2018 Nov 6",
+   "authors": [
+    "Patterson NH",
+    "Tuck M",
+    "Lewis A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "37765989",
+   "title": "Investigating the Joint Amplitude and Phase Imaging of Stained Samples in Automatic Diagnosis.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2023 Sep 16",
+   "authors": [
+    "Hassini H",
+    "Dorizzi B",
+    "Thellier M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33664389",
+   "title": "Performance of the hematology analyzer XN-31 prototype in the detection of Plasmodium infections in an endemic region of Colombia.",
+   "journal": "Scientific reports",
+   "date": "2021 Mar 4",
+   "authors": [
+    "Zuluaga-Id\u00e1rraga L",
+    "Rios A",
+    "Sierra-Cifuentes V"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "16010653",
+   "title": "The current status and potential role of laboratory testing to prevent transfusion-transmitted malaria.",
+   "journal": "Transfusion medicine reviews",
+   "date": "2005 Jul",
+   "authors": [
+    "Seed CR",
+    "Kitchen A",
+    "Davis TM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31776516",
+   "title": "Structure and drug resistance of the Plasmodium falciparum transporter PfCRT.",
+   "journal": "Nature",
+   "date": "2019 Dec",
+   "authors": [
+    "Kim J",
+    "Tan YZ",
+    "Wicht KJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "20113492",
+   "title": "A semi-automated method for counting fluorescent malaria oocysts increases the throughput of transmission blocking studies.",
+   "journal": "Malaria journal",
+   "date": "2010 Jan 29",
+   "authors": [
+    "Delves MJ",
+    "Sinden RE"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "42122610",
+   "title": "Evaluating the Adversarial Robustness and Clinical Safety of Quantized Hierarchical Transformers for Edge-Based Malaria Microscopy.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "date": "2026 May 5",
+   "authors": [
+    "Hasan U",
+    "Alghamdi TG",
+    "Nayeem MA"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "39716256",
+   "title": "Automated total nucleic acid extraction with magnetic beads for the detection of Plasmodium falciparum in large study cohorts.",
+   "journal": "Malaria journal",
+   "date": "2024 Dec 23",
+   "authors": [
+    "Inoue J",
+    "Huber N",
+    "Fendel R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "24612585",
+   "title": "Field evaluation of an automated RDT reader and data management device for Plasmodium falciparum/Plasmodium vivax malaria in endemic areas of Colombia.",
+   "journal": "Malaria journal",
+   "date": "2014 Mar 10",
+   "authors": [
+    "Herrera S",
+    "Vallejo AF",
+    "Quintero JP"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "22165867",
+   "title": "Automated and unsupervised detection of malarial parasites in microscopic images.",
+   "journal": "Malaria journal",
+   "date": "2011 Dec 13",
+   "authors": [
+    "Purwar Y",
+    "Shah SL",
+    "Clarke G"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "27090910",
+   "title": "ARAM: an automated image analysis software to determine rosetting parameters and parasitaemia in Plasmodium samples.",
+   "journal": "Malaria journal",
+   "date": "2016 Apr 18",
+   "authors": [
+    "Kudella PW",
+    "Moll K",
+    "Wahlgren M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "27071693",
+   "title": "High resolution FTIR imaging provides automated discrimination and detection of single malaria parasite infected erythrocytes on glass.",
+   "journal": "Faraday discussions",
+   "date": "2016 Jun 23",
+   "authors": [
+    "Perez-Guaita D",
+    "Andrew D",
+    "Heraud P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "15847353",
+   "title": "Thrombocytopenia in malaria--correlation with type and severity of malaria.",
+   "journal": "The Journal of the Association of Physicians of India",
+   "date": "2004 Aug",
+   "authors": [
+    "Jadhav UM",
+    "Patkar VS",
+    "Kadam NN"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41291252",
+   "title": "Mobile phone-based plasmodium parasites stage detection from Giemsa stained blood smear by convolutional neural networks.",
+   "journal": "Parasitology research",
+   "date": "2025 Nov 25",
+   "authors": [
+    "Bedir H",
+    "Arslan M\u00d6",
+    "Ak\u0131ner MM"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "16244659",
+   "title": "An Anopheles transgenic sexing strain for vector control.",
+   "journal": "Nature biotechnology",
+   "date": "2005 Nov",
+   "authors": [
+    "Catteruccia F",
+    "Benton JP",
+    "Crisanti A"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "18549498",
+   "title": "Full blood count and haemozoin-containing leukocytes in children with malaria: diagnostic value and association with disease severity.",
+   "journal": "Malaria journal",
+   "date": "2008 Jun 12",
+   "authors": [
+    "H\u00e4nscheid T",
+    "L\u00e4ngin M",
+    "Lell B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "12949959",
+   "title": "Sensitivity of hemozoin detection by automated flow cytometry in non- and semi-immune malaria patients.",
+   "journal": "Cytometry. Part B, Clinical cytometry",
+   "date": "2003 Sep",
+   "authors": [
+    "Grobusch MP",
+    "H\u00e4nscheid T",
+    "Kr\u00e4mer B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41680805",
+   "title": "Evaluating the diagnostic performance of miLab\u2122 for detection of malaria parasites using nPCR as reference standard.",
+   "journal": "Malaria journal",
+   "date": "2026 Feb 12",
+   "authors": [
+    "Addae EK",
+    "Awortwe-Quaicoe T",
+    "Sackey B"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33119516",
+   "title": "Clustering-Based Dual Deep Learning Architecture for Detecting Red Blood Cells in Malaria Diagnostic Smears.",
+   "journal": "IEEE journal of biomedical and health informatics",
+   "date": "2021 May",
+   "authors": [
+    "Kassim YM",
+    "Palaniappan K",
+    "Yang F"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "22727184",
+   "title": "Severe and uncomplicated falciparum malaria in children from three regions and three ethnic groups in Cameroon: prospective study.",
+   "journal": "Malaria journal",
+   "date": "2012 Jun 24",
+   "authors": [
+    "Achidi EA",
+    "Apinjoh TO",
+    "Anchang-Kimbi JK"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "33823594",
+   "title": "Morphology and Composition of Immunodiffusion Precipitin Complexes Evaluated via Microscopy and Proteomics.",
+   "journal": "Journal of proteome research",
+   "date": "2021 May 7",
+   "authors": [
+    "Jayawardena I",
+    "Wilson K",
+    "Plebanski M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "26983695",
+   "title": "Efficient monitoring of the blood-stage infection in a malaria rodent model by the rotating-crystal magneto-optical method.",
+   "journal": "Scientific reports",
+   "date": "2016 Mar 17",
+   "authors": [
+    "Orb\u00e1n \u00c1",
+    "Rebelo M",
+    "Moln\u00e1r P"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "38829858",
+   "title": "Evaluating Plasmodium falciparum automatic detection and parasitemia estimation: A comparative study on thin blood smear images.",
+   "journal": "PloS one",
+   "date": "2024",
+   "authors": [
+    "Acherar A",
+    "Tannier X",
+    "Tantaoui I"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41709048",
+   "title": "Enhanced YOLO-based framework and benchmarking for automated Plasmodium vivax detection.",
+   "journal": "Parasitology research",
+   "date": "2026 Feb 19",
+   "authors": [
+    "Prathap VM",
+    "Yadav S"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "41221751",
+   "title": "A Case of Plasmodium Identification in Peripheral Blood Smears based on the DeepSeek Intelligent Algorithm.",
+   "journal": "Clinical laboratory",
+   "date": "2025 Nov 1",
+   "authors": [
+    "Zheng Z",
+    "Lu M"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "35410230",
+   "title": "Fast detection and quantification of Plasmodium species infected erythrocytes in a non-endemic region by using the Sysmex XN-31 analyzer.",
+   "journal": "Malaria journal",
+   "date": "2022 Apr 11",
+   "authors": [
+    "Khartabil TA",
+    "de Rijke YB",
+    "Koelewijn R"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "30985081",
+   "title": "Rapid Quantification of NETs In Vitro and in Whole Blood Samples by Imaging Flow Cytometry.",
+   "journal": "Cytometry. Part A : the journal of the International Society for Analytical Cytology",
+   "date": "2019 May",
+   "authors": [
+    "Lelliott PM",
+    "Momota M",
+    "Lee MSJ"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  },
+  {
+   "pmid": "31307160",
+   "title": "Interferents of Automated Reticulocyte Analysis Integrated with Relevant Clinical Cases.",
+   "journal": "Clinical laboratory",
+   "date": "2019 Jul 1",
+   "authors": [
+    "Jiang H",
+    "Wang J",
+    "Wang K"
+   ],
+   "roles": [
+    "related-work audit for item 10.4 (malaria)"
+   ]
+  }
+ ]
+}

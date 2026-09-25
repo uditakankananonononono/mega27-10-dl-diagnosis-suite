@@ -14,8 +14,7 @@ from torch.utils.data import Dataset, Subset
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.common.data import NpyDataset
 from src.common.models import GlobalCNNClassifier
-from src.common.train import train_model, predict_proba
-from src.common.metrics import full_metrics
+from src.common.train import train_model, predict_proba, full_metrics
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "results" / "malaria"

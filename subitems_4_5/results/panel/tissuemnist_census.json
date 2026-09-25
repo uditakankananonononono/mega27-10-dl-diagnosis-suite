@@ -1,0 +1,15 @@
+{
+  "dataset": "tissuemnist",
+  "n": 5000,
+  "n_classes": 8,
+  "epochs": 3,
+  "folds": 2,
+  "max_train": 5000,
+  "oof_accuracy": 0.5054,
+  "majority_rate": 0.3162,
+  "admissible": false,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05); undertrained OOF models make confident-learning estimates invalid, so inadmissible datasets report the gate failure instead of a noise rate",
+  "summary": null,
+  "flagged_ids": [],
+  "secs": 140.9
+}
