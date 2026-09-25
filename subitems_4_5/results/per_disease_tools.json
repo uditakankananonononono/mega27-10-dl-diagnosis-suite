@@ -1,12 +1,7 @@
 {
- "malaria_tools": 39,
- "pneumonia_tools": 36,
- "pending_evidence": [
-  "optuna",
-  "albumentations",
-  "torchxrayvision",
-  "kornia"
- ],
+ "malaria_tools": 41,
+ "pneumonia_tools": 40,
+ "pending_evidence": [],
  "tools": [
   {
    "name": "Mendeley public API",
