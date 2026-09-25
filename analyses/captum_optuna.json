@@ -1,7 +1,9 @@
 {
  "captum_pathmnist": {
   "tool": "captum",
-  "error": "[Errno 2] No such file or directory: 'data_cache/medmnist/pathmnist.npz'"
+  "method": "IntegratedGradients (32 steps) on CNN retrained ~1 epoch, 8 test images",
+  "figure": "figures/captum_pathmnist.png",
+  "mean_abs_attr": 0.019713405519723892
  },
  "optuna_wdbc": {
   "tool": "optuna",

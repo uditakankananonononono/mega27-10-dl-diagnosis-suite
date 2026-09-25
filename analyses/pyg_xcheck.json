@@ -1,0 +1,9 @@
+{
+ "tool": "torch_geometric",
+ "dataset": "cleveland",
+ "split": "70/30 stratified, seed 0, same kNN graph",
+ "auc_pyg_gcn": 0.7240038872691934,
+ "auc_diagbench_gcn": 0.6720116618075802,
+ "abs_diff": 0.051992225461613195,
+ "conclusion": "implementations diverge - investigated"
+}

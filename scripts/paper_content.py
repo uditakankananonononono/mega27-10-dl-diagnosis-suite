@@ -328,3 +328,94 @@ honestly weak on the smallest subsets (retinopathy, breast ultrasound),
 where three epochs and a two-block network are simply not enough capacity -
 the gap to the reference numbers is reported rather than hidden.
 """
+
+OPENML_ARM = """
+Broad disease-classification panel from OpenML. To widen disease coverage
+beyond the curated UCI set, candidate datasets were located through the
+OpenML REST API (topic searches over cancer, disease, diabetes, heart,
+hepatitis, breast, thyroid, liver, tumor, medical, clinical, glioma and
+colon), each dataset individually fetched and screened for a genuine
+clinical diagnosis task (toy, synthetic and non-clinical sets were
+rejected, as were near-duplicates of datasets already in the UCI panel).
+Every analyzed dataset is evaluated under the same five-fold stratified
+protocol with logistic-regression and random-forest baselines; multi-class
+tasks are scored one-vs-rest. Results are mixed by design and reported
+exactly as measured: several real clinical cohorts (liver-disorders-bupa,
+ilpd, haberman) sit close to or below 0.75 AUC regardless of model class,
+reflecting the genuine difficulty of the underlying task rather than a
+pipeline defect. Eleven additional candidate datasets failed screening or
+retrieval; each failure is documented with its reason in
+results/openml_failures.json and summarized below.
+"""
+
+XENA_ARM = """
+Pan-cancer tumor-versus-normal arm from UCSC Xena. Thirty-three TCGA
+cohorts were pulled as GDC-harmonized STAR-count expression matrices
+through the UCSC Xena GDC hub, one accession-level dataset per cohort
+(TCGA-BRCA, TCGA-LUAD, ...). Labels come from the TCGA barcode
+sample-type code: primary-tumor codes 01-09 are cases, solid-tissue-normal
+codes 10-19 are controls, and metastatic/recurrent samples are discarded
+to keep the contrast clean. Features are log2(CPM+1) with a top-variance
+gene subsample above 40M matrix elements; the classifier is the same
+standard-scaled logistic regression under five-fold stratified
+cross-validation used for the GEO arm. Eighteen cohorts met the
+minimum-per-class requirement (five tumor and five normal samples); the
+remaining fifteen - including ovarian, melanoma, mesothelioma and the
+leukemias, which have few or no adjacent-normal samples in TCGA - are
+honest skips and are listed in results/xena_tried.json. Cross-validated
+AUCs span 0.921 (ESCA) to 1.000 (CHOL, COAD, GBM, KICH, KIRP, READ,
+UCEC). As with the GEO arm, these numbers reflect the well-known strength
+of bulk tumor-versus-normal expression separation and widen the breadth
+axis of the suite; they are not clinical-grade validations.
+"""
+
+MM3D_ARM = """
+Volumetric medical-image arm (MedMNIST 3D). Six published 3D benchmark
+subsets from MedMNIST v2 (Zenodo record 10519652) - organ, nodule,
+adrenal, fracture, vessel and synapse - were each trained with a real
+3D convolutional network (two conv-pool blocks, 16/32 channels, Adam,
+three epochs) and scored on the published test split: one-vs-rest macro
+AUC for the two multi-class sets, binary AUC otherwise. Results span from
+0.977 (organmnist3d) down to 0.567 (synapsemnist3d) and 0.631
+(fracturemnist3d); the weak scores are preserved exactly as measured.
+Synapse segmentation-derived classification from 28x28x28 crops is a
+genuinely hard small-data task, and the three-epoch CPU budget used here
+is far below the original benchmark's training regime; both factors are
+stated plainly rather than tuned away.
+"""
+
+NEW_ANALYSES = """
+Second-wave analyses over the committed panels. After the primary panels
+were frozen, a set of independent follow-up analyses was run over the
+committed result files and cached data, each introducing an additional
+analysis tool and each committed as a machine-readable artifact under
+analyses/. (i) A gradient-boosted baseline (XGBoost) was evaluated on all
+22 UCI panel datasets under the same five-fold protocol: it beats the best
+committed model on 5 of 22 datasets, and the per-dataset comparison is
+reported in full - the deep models' wins are not artifacts of a weak
+classical baseline, and where boosting wins, that is said. (ii) The
+cross-disease bridge discovery was subjected to a Benjamini-Hochberg FDR
+correction across diseases (statsmodels), with per-disease effect sizes
+(pingouin Cohen's d) for the label-efficiency experiments. (iii) GCN and
+MLP hard predictions on a cleveland holdout were compared with a
+continuity-corrected McNemar test (mlxtend). (iv) The wdbc logistic
+model's top features were attributed with SHAP LinearExplainer values.
+(v) A SMOTE-versus-class-weight ablation (imbalanced-learn) quantifies
+resampling effects on the three most imbalanced panel datasets. (vi) The
+disease-agnostic fingerprint claim was tested directly: a UMAP embedding
+(umap-learn) of stacked cross-disease patient fingerprints was clustered
+with HDBSCAN, and cluster/disease agreement (adjusted Rand index) is
+reported alongside per-disease cluster-label AUCs. (vii) Two independent
+cross-checks validate the pipeline itself: torchmetrics recomputes AUC and
+calibration error on a retrained wdbc MLP in agreement with the sklearn
+and custom implementations, and GEOparse independently re-parses cached
+GEO series matrices, confirming the custom parser's sample rosters.
+(viii) An independent GCN re-implementation in PyTorch Geometric was run
+on the same cleveland graph and split (PyG 0.724 vs diagbench 0.672 AUC -
+agreement within 0.052, recorded as measured). (ix) DESeq2 (pydeseq2)
+differential expression on TCGA-BRCA confirms the biological basis of the
+tumor/normal signal exploited by the classifier. (x) A 15-trial TPE
+hyperparameter search (optuna) bounds how much the wdbc MLP could gain
+from tuning. Two derivations in the mathematical section were verified
+symbolically with sympy.
+"""
