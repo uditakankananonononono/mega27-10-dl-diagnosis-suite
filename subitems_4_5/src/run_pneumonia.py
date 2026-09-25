@@ -43,7 +43,14 @@ def oof_probabilities(train_idx, labels_all, *, folds, epochs, seed, batch=32):
         pos = np.where(sorted_labels == c)[0]
         rng.shuffle(pos)
         fold_of[pos] = np.arange(len(pos)) % folds
+    ckpt_dir = OUT / "oof_ckpt"
+    ckpt_dir.mkdir(exist_ok=True)
     for f in range(folds):
+        ckpt = ckpt_dir / f"fold{f}_probs.npy"
+        if ckpt.exists():
+            probs[order[np.where(fold_of == f)[0]]] = np.load(ckpt)
+            print(f"[oof fold {f}] loaded checkpoint", flush=True)
+            continue
         tr = sorted_idx[fold_of != f]; va = sorted_idx[fold_of == f]
         tr_ds = Subset(NpyDataset(str(ROOT / "data" / "pneumonia" / "cxr_train"),
                                   train=True, seed=seed + f), tr)
@@ -53,8 +60,10 @@ def oof_probabilities(train_idx, labels_all, *, folds, epochs, seed, batch=32):
         model, hist, best = train_model(model, tr_ds, va_ds, epochs=epochs,
                                         batch=batch, seed=seed + f, patience=2)
         p, _ = predict_proba(model, va_ds)
+        np.save(ckpt, p)
         probs[order[np.where(fold_of == f)[0]]] = p
-        print(f"[oof fold {f}] val_loss={best['val_loss']:.4f}", flush=True)
+        del model, tr_ds, va_ds, p
+        print(f"[oof fold {f}] val_loss={best['val_loss']:.4f} (checkpointed)", flush=True)
     return probs
 
 
