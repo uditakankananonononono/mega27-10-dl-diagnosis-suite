@@ -189,11 +189,11 @@ if __name__ == '__main__':
         'MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\\_images)',
         ABS_MAL,
         ['sec_intro_data_methods', '../paper_shared/math_foundations',
-         'sec_results', 'lit_survey_malaria'] + common_tail))
+         'sec_results', 'sec_verification', 'lit_survey_malaria'] + common_tail))
     write(R('paper_pneumonia/main.tex'), main_tex(
         'pneumonia',
         'Pneumonia Detection in Chest Radiographs with a CNN--GNN Hybrid: Head-to-Head Tool Win, Label-Noise Census, and a Verified Diagnostic Tool',
         'MEGA-PROGRAM-27, Item 10.5 (pneumonia, Kermany ChestXRay2017)',
         ABS_PNE,
         ['sec_intro_data_methods', '../paper_shared/math_foundations',
-         'sec_results', 'lit_survey_pneumonia'] + common_tail))
+         'sec_results', 'sec_verification', 'lit_survey_pneumonia'] + common_tail))

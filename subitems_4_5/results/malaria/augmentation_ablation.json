@@ -1,0 +1,17 @@
+{
+  "no_aug": {
+    "val_auc": 0.9815661276210639,
+    "val_acc": 0.9313725490196079,
+    "train_secs": 393.5
+  },
+  "flips_rot90_current": {
+    "val_auc": 0.9835106155752061,
+    "val_acc": 0.944081336238199,
+    "train_secs": 402.0
+  },
+  "albumentations": {
+    "val_auc": 0.9892620702494397,
+    "val_acc": 0.9469862018881626,
+    "train_secs": 403.8
+  }
+}

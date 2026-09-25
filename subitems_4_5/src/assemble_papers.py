@@ -74,7 +74,7 @@ METHODS_MAL = r"""
 CNN core (140{,}322 parameters): three convolution--batchnorm--ReLU blocks
 with max pooling, global head. RegionGCN hybrid (158{,}786 parameters): the
 CNN trunk's final feature map is pooled onto a $g{\times}g$ region grid
-($g{=}4$ for the 48-pixel malaria trunk, whose final map is $6{\times}6$
+($g{=}3$ for the 48-pixel malaria trunk, whose final map is $6{\times}6$
 and requires $g \mid 6$), nodes joined by 8-neighbour adjacency, two GCN
 layers, hidden width $d{=}64$.
 \subsection{Training protocol}
@@ -155,7 +155,7 @@ METHODS_PNE = r"""
 \section{Methods}
 \subsection{Models}
 CNN core (140{,}322 parameters) and RegionGCN hybrid (158{,}786
-parameters), grid $g{=}4$ on the $8{\times}8$ final feature map of the
+parameters), grid $g{=}4$ on the $16{\times}16$ final feature map of the
 128-pixel trunk, hidden $d{=}64$, two GCN layers.
 \subsection{Training protocol}
 Adam $\alpha{=}10^{-3}$, batch 32, early stopping on validation loss,
