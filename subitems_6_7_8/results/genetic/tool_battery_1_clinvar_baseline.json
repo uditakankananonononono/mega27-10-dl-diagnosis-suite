@@ -1,0 +1,19 @@
+{
+ "dataset": "clinvar_subset",
+ "model": "sklearn LogisticRegression on locus/allele features",
+ "n_train": 32000,
+ "n_test": 8000,
+ "test_accuracy": 0.4315,
+ "wilson95": [
+  0.4207,
+  0.4424
+ ],
+ "prevalence_pathogenic": 0.7391,
+ "tools": [
+  "scikit-learn",
+  "statsmodels",
+  "numpy"
+ ],
+ "note": "trivial-feature floor, NOT the sequence-model number",
+ "wall_seconds": 1.41
+}

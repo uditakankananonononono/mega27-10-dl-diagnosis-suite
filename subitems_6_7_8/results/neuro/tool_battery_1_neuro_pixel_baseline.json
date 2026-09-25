@@ -1,0 +1,19 @@
+{
+ "dataset": "brain_mri stratified80/20",
+ "model": "sklearn LogisticRegression on 32x32 px",
+ "n_train": 200,
+ "n_test": 48,
+ "test_accuracy": 0.8542,
+ "wilson95": [
+  0.7283,
+  0.9275
+ ],
+ "tools": [
+  "scikit-learn",
+  "statsmodels",
+  "Pillow",
+  "numpy"
+ ],
+ "note": "downsampled-pixel baseline, NOT the CNN benchmark number",
+ "wall_seconds": 16.39
+}

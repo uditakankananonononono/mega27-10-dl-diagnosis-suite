@@ -1,0 +1,28 @@
+{
+ "dataset": "brain_mri",
+ "n_images": 200,
+ "wall_seconds": 8.93,
+ "tools": [
+  "scikit-image",
+  "scipy",
+  "Pillow",
+  "numpy"
+ ],
+ "thumb": [
+  64,
+  64
+ ],
+ "class0_sharp_mean": 0.01602,
+ "class0_ent_mean": 5.31297,
+ "class0_n": 50,
+ "class1_sharp_mean": 0.0218,
+ "class1_ent_mean": 5.74933,
+ "class1_n": 50,
+ "class2_sharp_mean": 0.05407,
+ "class2_ent_mean": 5.8159,
+ "class2_n": 50,
+ "class3_sharp_mean": 0.02414,
+ "class3_ent_mean": 6.19391,
+ "class3_n": 50,
+ "sharpness_kruskal_p": 2.703818725862115e-24
+}

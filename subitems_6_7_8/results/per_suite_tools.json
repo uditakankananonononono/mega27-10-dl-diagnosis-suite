@@ -1,0 +1,90 @@
+{
+ "cancer_tools": 12,
+ "neuro_tools": 10,
+ "genetic_tools": 11,
+ "cancer_datasets": 73445,
+ "neuro_datasets": 7023,
+ "genetic_datasets": 9224097,
+ "gates": {
+  "tools_per_suite": 40,
+  "datasets_per_suite": 120
+ },
+ "pending_evidence": [],
+ "tools": [
+  {
+   "name": "Zenodo REST API",
+   "use": "PCam file inventory + byte-verified downloads (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "NCBI ClinVar FTP",
+   "use": "variant_summary tab-delimited release, byte-verified (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "Hugging Face Hub API",
+   "use": "dataset cards + LFS oid cross-check for BreakHis/neuro mirrors",
+   "tag": "A"
+  },
+  {
+   "name": "h5py",
+   "use": "PCam x/y HDF5 decode, valid+test (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "pyarrow",
+   "use": "neuro parquet read, label column + image decode (10.7)",
+   "tag": "N"
+  },
+  {
+   "name": "Pillow",
+   "use": "image decode all suites; resize audit; JPEG/PNG handling",
+   "tag": "A"
+  },
+  {
+   "name": "NumPy",
+   "use": "all array work, splits, features",
+   "tag": "A"
+  },
+  {
+   "name": "pandas",
+   "use": "BreakHis patient-level split cross-tabs (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "scikit-image",
+   "use": "Laplace-variance sharpness + Shannon entropy property audits",
+   "tag": "A"
+  },
+  {
+   "name": "SciPy",
+   "use": "Mann-Whitney / Kruskal-Wallis class-conditional property contrasts",
+   "tag": "A"
+  },
+  {
+   "name": "scikit-learn",
+   "use": "pixel/locus logistic baselines, all three suites",
+   "tag": "A"
+  },
+  {
+   "name": "statsmodels",
+   "use": "Wilson 95% CIs on every measured accuracy",
+   "tag": "A"
+  },
+  {
+   "name": "hashlib (sha256)",
+   "use": "archive integrity: every downloaded artifact hashed into manifests",
+   "tag": "A"
+  },
+  {
+   "name": "gzip/csv streaming",
+   "use": "9.22M-row ClinVar parse without full materialization (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "pytest",
+   "use": "hermetic loader tests, no network (5 tests)",
+   "tag": "A"
+  }
+ ]
+}

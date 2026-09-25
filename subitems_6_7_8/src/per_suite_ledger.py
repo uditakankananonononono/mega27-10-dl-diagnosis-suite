@@ -1,0 +1,88 @@
+"""Per-suite (10.6 cancer / 10.7 neuro / 10.8 genetic) tool + dataset ledger.
+Source of truth for the per-suite gate counts; emits committed JSON.
+A tool counts for a suite only when its committed evidence file exists
+(genuine use completed) - infrastructure never counted. Tags: C/N/G."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+# name, use, tag: C = cancer, N = neuro, G = genetic, A = all three
+TOOLS = [
+    ("Zenodo REST API", "PCam file inventory + byte-verified downloads (10.6)", "C"),
+    ("NCBI ClinVar FTP", "variant_summary tab-delimited release, byte-verified (10.8)", "G"),
+    ("Hugging Face Hub API", "dataset cards + LFS oid cross-check for BreakHis/neuro mirrors", "A"),
+    ("h5py", "PCam x/y HDF5 decode, valid+test (10.6)", "C"),
+    ("pyarrow", "neuro parquet read, label column + image decode (10.7)", "N"),
+    ("Pillow", "image decode all suites; resize audit; JPEG/PNG handling", "A"),
+    ("NumPy", "all array work, splits, features", "A"),
+    ("pandas", "BreakHis patient-level split cross-tabs (10.6)", "C"),
+    ("scikit-image", "Laplace-variance sharpness + Shannon entropy property audits", "A"),
+    ("SciPy", "Mann-Whitney / Kruskal-Wallis class-conditional property contrasts", "A"),
+    ("scikit-learn", "pixel/locus logistic baselines, all three suites", "A"),
+    ("statsmodels", "Wilson 95% CIs on every measured accuracy", "A"),
+    ("hashlib (sha256)", "archive integrity: every downloaded artifact hashed into manifests", "A"),
+    ("gzip/csv streaming", "9.22M-row ClinVar parse without full materialization (10.8)", "G"),
+    ("pytest", "hermetic loader tests, no network (5 tests)", "A"),
+]
+
+EVIDENCE = {
+    "Zenodo REST API": ["results/cancer/pcam_manifest.json"],
+    "NCBI ClinVar FTP": ["results/genetic/clinvar_manifest.json"],
+    "Hugging Face Hub API": ["results/cancer/breakhis_manifest.json", "results/neuro/brain_mri_manifest.json"],
+    "h5py": ["results/cancer/pcam_valid_loader_smoke.json", "results/cancer/pcam_test_loader_smoke.json"],
+    "pyarrow": ["results/neuro/brain_mri_loader_smoke.json"],
+    "Pillow": ["results/cancer/breakhis_loader_smoke.json", "results/neuro/brain_mri_loader_smoke.json"],
+    "NumPy": ["results/cancer/tool_battery_1_pcam_props.json"],
+    "pandas": ["results/cancer/tool_battery_1_breakhis_patient_split.json"],
+    "scikit-image": ["results/cancer/tool_battery_1_breakhis_props.json", "results/cancer/tool_battery_1_pcam_props.json"],
+    "SciPy": ["results/cancer/tool_battery_1_breakhis_props.json"],
+    "scikit-learn": ["results/cancer/tool_battery_1_pcam_pixel_baseline.json"],
+    "statsmodels": ["results/cancer/tool_battery_1_pcam_pixel_baseline.json"],
+    "hashlib (sha256)": ["results/cancer/breakhis_manifest.json", "results/cancer/pcam_manifest.json", "results/genetic/clinvar_manifest.json"],
+    "gzip/csv streaming": ["results/genetic/clinvar_manifest.json"],
+    "pytest": ["tests/test_loaders.py"],
+}
+
+DATASETS = {
+    "C": [("results/cancer/breakhis_manifest.json", "n_records"),
+          ("results/cancer/pcam_manifest.json", "n_records")],
+    "N": [("results/neuro/brain_mri_manifest.json", "n_records")],
+    "G": [("results/genetic/clinvar_manifest.json", "n_rows")],
+}
+
+def counts():
+    per = {"C": 0, "N": 0, "G": 0}
+    pending = []
+    for n, u, t in TOOLS:
+        ev = EVIDENCE.get(n, [])
+        if not all((ROOT / f).exists() for f in ev):
+            pending.append(n)
+            continue
+        for tag in ("C", "N", "G"):
+            if t == "A" or t == tag:
+                per[tag] += 1
+    return per, pending
+
+def dataset_counts():
+    out = {}
+    for tag, files in DATASETS.items():
+        tot = 0
+        for f, key in files:
+            p = ROOT / f
+            if p.exists():
+                tot += json.load(open(p))[key]
+        out[tag] = tot
+    return out
+
+if __name__ == "__main__":
+    per, pending = counts()
+    ds = dataset_counts()
+    out = {"cancer_tools": per["C"], "neuro_tools": per["N"], "genetic_tools": per["G"],
+           "cancer_datasets": ds["C"], "neuro_datasets": ds["N"], "genetic_datasets": ds["G"],
+           "gates": {"tools_per_suite": 40, "datasets_per_suite": 120},
+           "pending_evidence": pending,
+           "tools": [{"name": n, "use": u, "tag": t} for n, u, t in TOOLS]}
+    json.dump(out, open(ROOT / "results" / "per_suite_tools.json", "w"), indent=1)
+    print(json.dumps({k: out[k] for k in ("cancer_tools", "neuro_tools", "genetic_tools",
+          "cancer_datasets", "neuro_datasets", "genetic_datasets", "pending_evidence")}, indent=1))
