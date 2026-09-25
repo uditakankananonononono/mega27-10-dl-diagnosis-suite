@@ -1,0 +1,17 @@
+{
+ "experiment": "negctrl",
+ "n": 11023,
+ "seed": 42,
+ "folds": 3,
+ "epochs": 3,
+ "subsample": 2,
+ "gate": {
+  "oof_accuracy": 0.4923342102875805,
+  "majority_rate": 0.5051256463757597,
+  "admissible": false,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05)"
+ },
+ "ungated_estimated_noise_rate": 0.507212192688016,
+ "expected": "gate.admissible == False on shuffled labels; ungated rate shows the failure mode the gate blocks",
+ "secs": 916.5
+}
