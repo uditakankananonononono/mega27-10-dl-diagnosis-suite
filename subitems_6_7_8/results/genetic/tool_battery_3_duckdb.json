@@ -1,0 +1,39 @@
+{
+ "tool": "DuckDB",
+ "file": "clinvar_classification_subset.tsv.gz",
+ "significance_counts": {
+  "Likely benign": 2173682,
+  "Benign": 327994,
+  "Pathogenic": 158771,
+  "Benign/Likely benign": 155469,
+  "Likely pathogenic": 146313,
+  "Pathogenic/Likely pathogenic": 58544
+ },
+ "top_pathogenic_genes": {
+  "FBN1": 4672,
+  "TTN": 4660,
+  "NF1": 3615,
+  "SCN1A": 2868,
+  "BRCA2": 2539,
+  "ATM": 2432,
+  "USH2A": 2214,
+  "ABCA4": 2180,
+  "LDLR": 2150,
+  "DMD": 2141,
+  "COL4A5": 2112,
+  "BRCA1": 1951,
+  "PKD1": 1780,
+  "COL1A1": 1758,
+  "COL2A1": 1569
+ },
+ "top_chromosomes": {
+  "2": 289827,
+  "1": 268002,
+  "17": 177478,
+  "11": 170126,
+  "3": 162006,
+  "16": 159265,
+  "19": 158988,
+  "7": 147744
+ }
+}

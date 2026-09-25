@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import loaders
 
 OUT = Path(__file__).resolve().parent.parent / "results"
-torch.set_num_threads(2)
+torch.set_num_threads(1)
 
 
 def small_cnn(in_ch=3, n_classes=2, size=96):
@@ -203,4 +203,5 @@ if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "breakhis":
     train_breakhis()
 elif __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "neuro":
     train_neuro()
+
 

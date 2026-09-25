@@ -51,3 +51,4 @@ if __name__ == "__main__":
              "wall_seconds": round(time.time() - t0, 2)}
         json.dump(d, open(OUT / "genetic" / "clinvar_loader_smoke.json", "w"), indent=1)
     print(which, "done")
+

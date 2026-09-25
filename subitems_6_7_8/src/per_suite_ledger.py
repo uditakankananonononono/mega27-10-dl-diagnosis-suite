@@ -28,6 +28,13 @@ TOOLS = [
     ("matplotlib", "committed class-distribution figures, all suites", "A"),
     ("NCBI E-utilities", "novelty/benchmark literature audits with PMIDs", "A"),
     ("CrossRef API", "DOI/title verification of dataset papers (mismatches corrected)", "A"),
+    ("trafilatura", "provenance capture of all 4 dataset source pages", "A"),
+    ("htmldate", "publication-date evidence on source index pages", "A"),
+    ("BeautifulSoup (bs4)", "structured Zenodo record-page extraction (10.6)", "C"),
+    ("lxml", "HTML parse backend for the Zenodo extraction (10.6)", "C"),
+    ("requests", "HTTP fetches for provenance/verification calls", "A"),
+    ("DuckDB", "SQL cross-tabs over the 3.02M-row ClinVar subset (10.8)", "G"),
+    ("openpyxl", "accession registry workbook across suites", "A"),
 ]
 
 EVIDENCE = {
@@ -50,6 +57,13 @@ EVIDENCE = {
     "matplotlib": ["results/cancer/tool_battery_2_figures.json", "results/neuro/tool_battery_2_figures.json", "results/genetic/tool_battery_2_figures.json"],
     "NCBI E-utilities": ["results/cancer/tool_battery_2_lit_audit.json", "results/neuro/tool_battery_2_lit_audit.json", "results/genetic/tool_battery_2_lit_audit.json"],
     "CrossRef API": ["results/cancer/tool_battery_2_doi_verify.json", "results/genetic/tool_battery_2_doi_verify.json"],
+    "trafilatura": ["results/tool_battery_3_provenance.json"],
+    "htmldate": ["results/tool_battery_3_provenance.json"],
+    "BeautifulSoup (bs4)": ["results/cancer/tool_battery_3_zenodo_bs4.json"],
+    "lxml": ["results/cancer/tool_battery_3_zenodo_bs4.json"],
+    "requests": ["results/cancer/tool_battery_3_zenodo_bs4.json"],
+    "DuckDB": ["results/genetic/tool_battery_3_duckdb.json"],
+    "openpyxl": ["results/tool_battery_3_registry.json"],
 }
 
 DATASETS = {
@@ -94,3 +108,4 @@ if __name__ == "__main__":
     json.dump(out, open(ROOT / "results" / "per_suite_tools.json", "w"), indent=1)
     print(json.dumps({k: out[k] for k in ("cancer_tools", "neuro_tools", "genetic_tools",
           "cancer_datasets", "neuro_datasets", "genetic_datasets", "pending_evidence")}, indent=1))
+

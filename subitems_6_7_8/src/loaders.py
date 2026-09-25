@@ -96,3 +96,4 @@ def iter_clinvar_subset(path=None):
                 "chrom": parts[idx["Chromosome"]],
                 "name": parts[idx["Name"]],
             }
+

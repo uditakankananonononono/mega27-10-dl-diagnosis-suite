@@ -1,0 +1,36 @@
+{
+ "tools": [
+  "trafilatura",
+  "htmldate"
+ ],
+ "pages": {
+  "pcam_zenodo": {
+   "url": "https://zenodo.org/records/2546921",
+   "fetched": true,
+   "text_chars": 1965,
+   "text_head": "Published September 26, 2018\n                      \n                       | Version v1\n                    \n                    \n                      \n                      \n                        \n                          \n                        \n                        \n                          \n                        \n                        \n                          Dataset\n           ",
+   "htmldate": null
+  },
+  "neuro_hf_card": {
+   "url": "https://huggingface.co/datasets/Hemg/Brain-Tumor-MRI-Dataset",
+   "fetched": true,
+   "text_chars": 1791,
+   "text_head": "Search is not available for this dataset\n| image  imagewidth (px) 150 1.92k | label  class label 4 \t\t\t\tclasses | \n|---|---|\n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  | 0glioma | \n|  |",
+   "htmldate": null
+  },
+  "breakhis_hf_card": {
+   "url": "https://huggingface.co/datasets/hirundo-io/BreaKHis-original",
+   "fetched": true,
+   "text_chars": 3308,
+   "text_head": "Dataset Viewer\n The dataset viewer is not available for this subset.\nCannot get the split names for the config 'default' of the dataset.\n Exception:    SplitsNotFoundError\nMessage:      The split names could not be parsed from the dataset config.\nTraceback:    Traceback (most recent call last):\n                File \"/src/services/worker/src/worker/job_runners/config/split_names.py\", line 153, in c",
+   "htmldate": null
+  },
+  "clinvar_ftp_index": {
+   "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/",
+   "fetched": true,
+   "text_chars": 1936,
+   "text_head": "| Parent Directory | - |  |  | \n| supplements/ | - |  | 2021-12-03 09:41:31 | \n| special_requests/ | - |  | 2021-12-03 09:41:31 | \n| archive/ | - |  | 2026-09-03 00:05:44 | \n| allele_gene.txt.gz | 92,883,116 | 2024-03-31 05:31:50 | 2026-09-23 07:53:44 | \n| allele_gene.txt.gz.md5 | 87 | 2024-03-31 19:46:12 | 2026-09-24 05:06:47 | \n| cross_references.txt | 111,555,929 | 2024-03-31 04:43:28 | 2026-09",
+   "htmldate": "2021-12-03"
+  }
+ }
+}

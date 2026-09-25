@@ -156,3 +156,4 @@ if __name__ == "__main__":
         json.dump(doi_verify(["10.1093/nar/gkx1153"]),
                   open(OUT / "genetic" / "tool_battery_2_doi_verify.json", "w"), indent=1)
     print(which, "battery2 done")
+

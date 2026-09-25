@@ -1,0 +1,5 @@
+{
+ "tool": "openpyxl",
+ "workbook": "results/accession_registry.xlsx",
+ "rows": 4
+}

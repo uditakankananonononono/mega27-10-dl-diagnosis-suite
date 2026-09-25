@@ -1,7 +1,7 @@
 {
- "cancer_tools": 16,
- "neuro_tools": 14,
- "genetic_tools": 15,
+ "cancer_tools": 22,
+ "neuro_tools": 18,
+ "genetic_tools": 20,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -104,6 +104,41 @@
   {
    "name": "CrossRef API",
    "use": "DOI/title verification of dataset papers (mismatches corrected)",
+   "tag": "A"
+  },
+  {
+   "name": "trafilatura",
+   "use": "provenance capture of all 4 dataset source pages",
+   "tag": "A"
+  },
+  {
+   "name": "htmldate",
+   "use": "publication-date evidence on source index pages",
+   "tag": "A"
+  },
+  {
+   "name": "BeautifulSoup (bs4)",
+   "use": "structured Zenodo record-page extraction (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "lxml",
+   "use": "HTML parse backend for the Zenodo extraction (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "requests",
+   "use": "HTTP fetches for provenance/verification calls",
+   "tag": "A"
+  },
+  {
+   "name": "DuckDB",
+   "use": "SQL cross-tabs over the 3.02M-row ClinVar subset (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "openpyxl",
+   "use": "accession registry workbook across suites",
    "tag": "A"
   }
  ]

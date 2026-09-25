@@ -102,3 +102,4 @@ def test_manifests_schema():
         d = json.load(open(m))
         assert d["n_records"] > 0, m
         assert "source" in d and "suite" in d, m
+

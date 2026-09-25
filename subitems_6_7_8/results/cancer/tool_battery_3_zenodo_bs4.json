@@ -1,0 +1,10 @@
+{
+ "tools": [
+  "BeautifulSoup (bs4)",
+  "lxml"
+ ],
+ "url": "https://zenodo.org/records/2546921",
+ "http_status": 200,
+ "page_title": "Rotation Equivariant CNNs for Digital Pathology | Zenodo",
+ "n_links": 56
+}

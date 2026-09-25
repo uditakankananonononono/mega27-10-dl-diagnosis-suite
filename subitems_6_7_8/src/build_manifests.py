@@ -226,3 +226,4 @@ if __name__ == "__main__":
         if which in ("all", name):
             m = fn()
             print(f"[{name}] n_records={m.get('n_records') or m.get('n_rows')}")
+
