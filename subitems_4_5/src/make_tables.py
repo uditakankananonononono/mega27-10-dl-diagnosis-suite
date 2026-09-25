@@ -88,7 +88,7 @@ def main():
         ("SciPy", "statistical helpers"),
         ("Mendeley public API", "file manifest + publisher-stated hashes"),
         ("cleanlab (Northcutt et al.)", "independent cross-validation of the label-noise census"),
-        ("statsmodels", "Wilson 95% intervals for every reported accuracy"),
+        ("statsmodels", "Wilson 95\\% intervals for every reported accuracy"),
         ("Captum (Integrated Gradients)", "saliency verification of the malaria model"),
         ("scikit-image", "Laplace-variance sharpness + Shannon entropy of flagged images"),
         ("torchmetrics", "independent cross-verification of every reported metric"),
@@ -107,17 +107,21 @@ def main():
         ("Plotly", "interactive property-scatter artifact"),
         ("openpyxl", "flagged-image registry workbook"),
         ("trafilatura", "provenance capture of the NIH malaria dataset record"),
+        ("xmltodict", "independent re-parse of the Rajaraman JATS tables (reproduces lxml numbers)"),
+        ("BeautifulSoup (bs4)", "structured NIH LHC dataset-table extraction (smear series identification)"),
+        ("pdfplumber", "paper-vs-data audit: rendered table numbers checked against committed JSONs"),
+        ("PyMuPDF", "page rendering for visual verification of the built paper"),
     ]
     # Infrastructure is used but deliberately NOT counted, per program
     # convention: git, GitHub, pytest, TeX Live, pandoc, curl, sha256sum.
     (PAPER / "tools_table_body.tex").write_text(
-        "\n".join(f"{a} & {b} \\\\" for a, b in tools) + "\n")
+        "%\n".join(f"{a} & {b} \\\\" for a, b in tools) + "%\n\\hline%\n")
     dsets = [
-        ("NIH malaria cell_images (Lister Hill, 2018)", "10.4 training/benchmark; 27,558 images, 2 classes"),
+        ("NIH malaria cell\\_images (Lister Hill, 2018)", "10.4 training/benchmark; 27,558 images, 2 classes"),
         ("Kermany ChestXRay2017 (Mendeley rscbjbr9sj v2)", "10.5 training/benchmark; 5,232 train / 624 test, patient-level split"),
     ]
     (PAPER / "datasets_table_body.tex").write_text(
-        "\n".join(f"{a} & {b} \\\\" for a, b in dsets) + "\n")
+        "%\n".join(f"{a} & {b} \\\\" for a, b in dsets) + "%\n\\hline%\n")
     flagged = []
     for disease in ("malaria", "pneumonia"):
         c = load(f"results/{disease}/label_noise_census.json")

@@ -1,0 +1,77 @@
+{
+  "xmltodict_crossparse": {
+    "custom_cell_acc": {
+      "needle": "0.940",
+      "present": true
+    },
+    "vgg16_acc": {
+      "needle": "0.945",
+      "present": true
+    },
+    "patient_level_acc": {
+      "needle": "0.959",
+      "present": true
+    },
+    "alexnet_auc": {
+      "needle": "0.981",
+      "present": true
+    },
+    "matches_lxml_extraction": true
+  },
+  "bs4_nih_table": {
+    "url": "https://lhncbc.nlm.nih.gov/LHC-research/LHC-projects/image-processing/malaria-datasheet.html",
+    "n_tables": 1,
+    "mentions_thin_smear": true,
+    "mentions_27558_or_27558": false,
+    "first_table_head": [
+      [
+        "Dataset",
+        "Number of patients",
+        "Annotations",
+        "Publications",
+        "Links",
+        "Format"
+      ],
+      [
+        "Thick Smears",
+        "Falciparum",
+        "150 infected patients",
+        "Parasites, White blood cells",
+        "1. Yang F, Poostchi M, Yu H, Zhou Z, Silamut K, Yu J,Maude RJ, Jaeger S, Antani S. Deep Learning for Smartphone-Based Malaria Parasite Detection in Thick Blood Smears. IEEE J Biomed Health Inform. 2020 May;24(5):1427-1438. ( URL: https://ieeexplore.ieee.org/document/8846750 ) 2. Yu H, Yang F, Rajaraman S, Ersoy I, Moallem G, Poostchi M, Palaniappan K, Antani S, Maude RJ, Jaeger S. Malaria Screener: a smartphone application for automated malaria screening. BMC Infect Dis. 2020 Nov 11;20(1):825. (URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7656677/ ) see also Ref. 3 below.",
+        "NLM-Falciparum-Thick-150Patients IEEE-Falciparum-Thick-150Patients",
+        "3024 x 4032 JPEG"
+      ]
+    ],
+    "question": "which smear datasets does the NIH LHC page list, and is ours the thin-smear release?"
+  },
+  "pdfplumber_audit": {
+    "malaria_cnn_acc_in_pdf": {
+      "json": 0.9608411892675852,
+      "present": true
+    },
+    "malaria_noise_rate_in_pdf": {
+      "json": 0.11439716955456772,
+      "present": true
+    },
+    "pneumonia_n_flagged_in_pdf": {
+      "json": 155,
+      "present": true
+    },
+    "n_pages": 29,
+    "all_present": true
+  },
+  "pymupdf_render": {
+    "rendered": "figures/paper_page1_render.png",
+    "n_pages": 29,
+    "fonts_first5": [
+      "GZNHON+MSBM10",
+      "IDKRIV+CMEX10",
+      "LCQCWV+StandardSymL-Slant_167",
+      "LQPZDB+CMTT10",
+      "NBOAVV+NimbusRomNo9L-Regu",
+      "SOSTRQ+CMR10",
+      "SQFKPP+StandardSymL",
+      "TPBVWL+NimbusRomNo9L-ReguItal"
+    ]
+  }
+}
