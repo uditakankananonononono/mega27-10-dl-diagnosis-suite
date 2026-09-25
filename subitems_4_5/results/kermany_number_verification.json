@@ -1,0 +1,7 @@
+{
+ "verifier_pmcid": "PMC10660141",
+ "passage": "reaches 94.2%. Also, in [ 9 ], Kermany et al . applied transfer learning to train a CNN model in order to differentiate between normal, viral, or bacterial pneumonia CXR images using a binary classification, and the experimental results reached an accuracy of 92.8%. An approximately similar result is obtained by a shallow CNN model proposed by [ 10 ]. In [ 11 ], the authors proposed a computer-aided diagnosis (CAD) system to detect pneumonia using 3 classification methodologies including a hybrid CNN (VGG-16 and VGG-19",
+ "claim": "Kermany 2018 pneumonia CXR: 92.8% accuracy",
+ "sens_spec_verifier_pmcid": "PMC11759907",
+ "sens_spec_passage": "PT results are subpar. ChatGPT\u2019s best accuracy was 61.2% (ChatGPT-4o) in this study, compared to 92.8%. ChatGPT-4o\u2019s sensitivity and specificity were also lower in this study: 85% and 38% compared to 93.2% and 90.1%, respectively. Noticeably, ChatGPT-4o\u2019s specificity was very low comparatively. ChatGPT-4 Turbo\u2019s sensitivity and specificity results were nearly reversed compared to its successor, indicating a substantial shift in predictive behavior. O"
+}
