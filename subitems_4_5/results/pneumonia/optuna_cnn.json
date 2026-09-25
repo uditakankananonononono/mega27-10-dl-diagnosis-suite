@@ -1,0 +1,37 @@
+{
+ "n_trials": 4,
+ "epochs_per_trial": 1,
+ "subsample": "eighth of train, quarter val, batch 32; one fresh subprocess per trial (memory ceiling)",
+ "best_val_auc": 0.5554881746513038,
+ "best_params": {
+  "lr": 0.0004130399570052625
+ },
+ "committed_tuned_cnn_test_auc": 0.917422748191979,
+ "trials": [
+  {
+   "value": 0.5554881746513038,
+   "params": {
+    "lr": 0.0004130399570052625
+   }
+  },
+  {
+   "value": 0.510915706488781,
+   "params": {
+    "lr": 0.0011587950184865049
+   }
+  },
+  {
+   "value": 0.38386901152213454,
+   "params": {
+    "lr": 0.00010003890870040013
+   }
+  },
+  {
+   "value": 0.44996967859308673,
+   "params": {
+    "lr": 0.0002796287807245627
+   }
+  }
+ ],
+ "secs": 139.5
+}
