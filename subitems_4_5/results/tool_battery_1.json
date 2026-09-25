@@ -1,0 +1,56 @@
+{
+  "sympy_gcn_norm_grid2": {
+    "symbolic_matches_numpy": true,
+    "symmetric": true,
+    "spectral_range": [
+      -4.9244525261732104e-33,
+      1.0
+    ],
+    "spectrum_in_bound": true
+  },
+  "sympy_gcn_norm_grid3": {
+    "symbolic_matches_numpy": true,
+    "symmetric": true,
+    "spectral_range": [
+      -0.1666666666666667,
+      1.0
+    ],
+    "spectrum_in_bound": true
+  },
+  "networkx_grid3": {
+    "n_nodes": 9,
+    "diameter": 2,
+    "algebraic_connectivity": 2.267949,
+    "avg_clustering": 0.75873,
+    "two_layer_full_mixing": true,
+    "mixing_note": "diameter 2: two GCN layers mix all region pairs"
+  },
+  "networkx_grid4": {
+    "n_nodes": 16,
+    "diameter": 3,
+    "algebraic_connectivity": 1.436427,
+    "avg_clustering": 0.657143,
+    "two_layer_full_mixing": false,
+    "mixing_note": "diameter 3: two GCN layers leave farthest region pairs unmixed (grid=4 limitation)"
+  },
+  "cv2_resize_robustness": {
+    "n": 200,
+    "max_abs_prob_delta": 0.25343,
+    "mean_abs_prob_delta": 0.02515,
+    "note": "native-resolution PNGs downsized to 48px with two cv2 interpolations; answers whether resizer choice moves committed-model confidence"
+  },
+  "seaborn_oof_malaria": {
+    "figure": "figures/malaria_oof_distributions.png",
+    "tail_mass_wrong_side": {
+      "Parasitized": 0.02331,
+      "Uninfected": 0.00898
+    }
+  },
+  "seaborn_oof_pneumonia": {
+    "figure": "figures/pneumonia_oof_distributions.png",
+    "tail_mass_wrong_side": {
+      "NORMAL": 0.00988,
+      "PNEUMONIA": 0.0123
+    }
+  }
+}

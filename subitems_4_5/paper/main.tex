@@ -257,6 +257,16 @@ images labelled \emph{pneumonia} cross-validate as \emph{normal}, vs 23
 in the opposite direction.}
 \end{figure}
 
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.62\textwidth]{../figures/malaria_oof_distributions.png}
+\includegraphics[width=0.62\textwidth]{../figures/pneumonia_oof_distributions.png}
+\caption{Out-of-fold confidence by true label (seaborn KDE). The
+one-directional label-noise mass is visible as the heavy wrong-side
+tails: Parasitized-labelled cells with near-zero parasite confidence,
+and PNEUMONIA-labelled films with near-zero pneumonia confidence.}
+\end{figure}
+
 \section{Discussion}
 \subsection{What the census is and is not}
 The label-noise census estimates \emph{statistical} label inconsistency: an
@@ -308,6 +318,21 @@ parasites frequently sit at the cell periphery, the mean central-mass
 fraction is 0.219 --- slightly \emph{below} the 0.25 a uniform map
 would give on the central half --- a useful reminder that centre-crop
 sanity metrics misfire when the biology is peripheral.
+\subsection{Verification and robustness side-analyses}
+Four independent checks (\texttt{results/tool\_battery\_1.json}):
+(i) \textbf{sympy}: the GCN normalisation $D^{-1/2}(A{+}I)D^{-1/2}$ from
+Methods is verified symbolically --- symmetric, spectrum in $({-1},1]$
+($[-0.167,1]$ for $g{=}3$), and matching our NumPy implementation to
+$10^{-10}$. (ii) \textbf{networkx}: the $3{\times}3$ region grid has
+diameter 2 (two GCN layers mix every region pair), but the $4{\times}4$
+pneumonia grid has diameter 3, so two layers leave the farthest region
+pairs unmixed --- a stated architectural limitation, not a hidden one.
+(iii) \textbf{OpenCV}: downsizing native-resolution cells to 48\,px with
+INTER\_AREA vs INTER\_LINEAR moves the committed model's confidence by
+0.025 on average and up to 0.253 on individual cells --- preprocessing
+choice is a real deployment variable, so dxtool pins its resizer.
+(iv) \textbf{seaborn}: OOF confidence distributions (Fig.~above) show
+the one-directional noise tails directly.
 \subsection{Flagged images are measurably atypical}
 If the census flags a property of the images rather than an artefact of
 the estimator, flagged images should differ measurably from unflagged
