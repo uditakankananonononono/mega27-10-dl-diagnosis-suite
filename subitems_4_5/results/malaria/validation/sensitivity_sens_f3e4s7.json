@@ -1,0 +1,19 @@
+{
+ "experiment": "sensitivity",
+ "kind": "cnn",
+ "n": 11023,
+ "seed": 7,
+ "folds": 3,
+ "epochs": 4,
+ "subsample": 2,
+ "gate": {
+  "oof_accuracy": 0.9541867005352445,
+  "majority_rate": 0.5000453597024404,
+  "admissible": true,
+  "admissibility_rule": "oof_acc >= max(0.60, majority + 0.05)"
+ },
+ "estimated_noise_rate": 0.10614170371042365,
+ "n_flagged": 115,
+ "overlap_with_cnn_249": 78,
+ "secs": 984.3
+}
