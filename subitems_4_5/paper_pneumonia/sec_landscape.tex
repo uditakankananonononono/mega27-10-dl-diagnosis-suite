@@ -1,0 +1,60 @@
+
+\section{Methods landscape and positioning}
+\begin{table}[h]\centering\small
+\begin{tabular}{p{4.6cm} p{2.4cm} r r r l}
+\hline
+Method & Regime & Params & Input & Acc.\ \% & Verified? \\
+\hline
+Kermany Inception-v3 transfer (published) & official split & 24M & 299px & 92.8 & paywalled; 2 corroborating sources \\
+TorchXRayVision DenseNet-121 (same films) & official split & 8M & 224px & 38.5 & measured, committed JSON \\
+\textbf{CNN core, cleaned (this paper)} & official split & \textbf{140k} & 128px & \textbf{79.81} & measured, committed JSON \\
+\textbf{RegionGCN, cleaned (this paper)} & official split & \textbf{159k} & 128px & \textbf{84.94} & measured, committed JSON \\
+\hline
+\end{tabular}
+\caption{Verified-numbers-only landscape. The Kermany number is
+cross-regime (see the verification chapter); the TorchXRayVision row is
+the same-split like-for-like comparison.}
+\label{tab:landscape}
+\end{table}
+The honest reading: (i) on identical films and split, our compact models
+beat the strongest runnable external tool by +46.5 points --- the
+like-for-like tool-quality claim. (ii) The published 92.8\% stands
+cross-regime; the sandbox-budget transfer shot (69.39\%) shows the gap
+does not close cheaply, and we do not claim it does. (iii) The
+cleaning-driven +5.9-point gain and the 21.15\% census estimate suggest a
+large share of the remaining gap is label-side, not model-side: decontaminated
+retraining at scale is the highest-value follow-up the data supports.
+
+\section{Further formulas}
+\subsection{Matthews correlation coefficient}
+\begin{equation}
+\mathrm{MCC} = \frac{TP \cdot TN - FP \cdot FN}
+{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+\end{equation}
+reported as the single-number balanced summary where class imbalance
+makes accuracy misleading.
+\subsection{Precision--recall AUC}
+\begin{equation}
+\mathrm{AP} = \sum_k (R_k - R_{k-1})\, P_k ,
+\end{equation}
+the average-precision step approximation to the precision--recall curve.
+\subsection{Calibration (expected calibration error)}
+With $B$ bins over confidence,
+\begin{equation}
+\mathrm{ECE} = \sum_{b=1}^{B} \frac{n_b}{N}
+\left| \mathrm{acc}(b) - \mathrm{conf}(b) \right| .
+\end{equation}
+\subsection{Bayes error under label noise}
+If labels flip with class-conditional rates $\epsilon_{ij}$, the observed
+class conditionals mix:
+\begin{equation}
+\tilde p(y = j \mid x) = \sum_i \epsilon_{ij}\, p(y = i \mid x),
+\end{equation}
+so any achievable accuracy is bounded by the mixture's Bayes rate ---
+the formal statement behind the `label-noise-bound ceiling' claim.
+\subsection{Bootstrap confidence interval}
+For statistic $T$ and resamples $b = 1 \dots B$,
+\begin{equation}
+\mathrm{CI}_{1-\alpha} = \big[ T^{*}_{(\alpha/2)},\; T^{*}_{(1-\alpha/2)} \big],
+\end{equation}
+the percentile interval used alongside the Wilson intervals.

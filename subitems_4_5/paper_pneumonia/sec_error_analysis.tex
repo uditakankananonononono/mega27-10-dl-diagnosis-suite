@@ -1,0 +1,17 @@
+
+\section{Error analysis}
+\subsection{Confusion structure, CNN core}
+On the 624 held-out films:
+TN=63, FP=171, FN=3, TP=387 (normal/pneumonia).
+Errors concentrate on one side:
+171 false-pneumonia vs 3 missed-pneumonia.
+\subsection{Confusion structure, RegionGCN}
+TN=105, FP=129, FN=2, TP=388.
+The GCN head shifts error mass toward fewer false positives.
+\subsection{Head-to-head: global pooling vs region-graph reasoning}
+Identical trunk, identical protocol; the only difference is the readout.
+CNN: 72.12\% / 0.9331.
+GCN: 79.01\% / 0.9514.
+Delta: +6.89 points,
++0.0183 AUC, for
++18{,}464 parameters. The region graph buys a real margin here; combined with the census-cleaning interaction (cleaned GCN is the best configuration), spatial region reasoning earns its parameters on radiographs.

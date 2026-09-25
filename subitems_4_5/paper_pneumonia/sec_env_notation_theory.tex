@@ -1,0 +1,101 @@
+
+\section{Compute environment and package versions}
+All experiments ran on a 2-core CPU sandbox with 2\,GB RAM and no swap
+(Linux, Python 3.10). Package versions at paper-assembly time (live
+\texttt{pip list} capture; the honest environment record):
+\begin{longtable}{l l}
+\hline Package & Version \\ \hline \endhead
+torch & 2.14.0+cpu \\
+torchvision & 0.29.0+cpu \\
+numpy & 2.2.6 \\
+pandas & 2.3.3 \\
+scikit-learn & 1.7.2 \\
+scipy & 1.15.3 \\
+matplotlib & 3.10.0 \\
+seaborn & 0.13.2 \\
+pillow & 12.3.0 \\
+cleanlab & 2.9.0 \\
+statsmodels & 0.15.0 \\
+captum & 0.9.0 \\
+shap & 0.49.1 \\
+optuna & 5.0.0 \\
+albumentations & 2.0.8 \\
+timm & 1.0.30 \\
+umap-learn & 0.5.12 \\
+pingouin & 0.6.1 \\
+ydata-profiling & 4.18.4 \\
+kornia & 0.8.2 \\
+simpleitk & 2.5.6 \\
+duckdb & 1.5.5 \\
+plotly & 6.9.0 \\
+openpyxl & 3.1.5 \\
+trafilatura & 2.2.0 \\
+xmltodict & 1.0.4 \\
+beautifulsoup4 & 4.15.0 \\
+pdfplumber & 0.11.10 \\
+pymupdf & 1.28.2 \\
+htmldate & 1.10.0 \\
+reportlab & 3.6.8 \\
+imageio & 2.37.4 \\
+lxml & 6.1.1 \\
+networkx & 3.4.2 \\
+sympy & 1.14.0 \\
+formulaic & 1.2.2 \\
+scikit-optimize & 0.10.2 \\
+torchxrayvision & 1.5.4 \\
+pytorch-grad-cam & not installed \\
+medmnist & 3.0.2 \\
+torchmetrics & 1.9.0 \\
+torchinfo & 1.8.0 \\
+opencv-python & not installed \\
+\hline
+\end{longtable}
+The memory ceiling shaped the engineering: single-process sequential
+training, singleton-shared tensors, $\leq$200\,MB resident arrays, and
+checkpoint-resumable phases. Three OOM kills occurred during the program
+(dmesg-recorded); each produced a documented fix (batch caps, inter-stage
+garbage collection, sequential chain discipline) rather than a silent
+retry.
+
+\section{Notation}
+\begin{longtable}{l p{9cm}}
+\hline Symbol & Meaning \\ \hline \endhead
+$x$ & input image, $C_0 \times H_0 \times W_0$ \\
+$F$ & CNN feature map, $C \times H \times W$ \\
+$g$ & region-grid side ($g=3$ malaria, $g=4$ pneumonia) \\
+$A$, $\tilde A$, $\hat A$ & adjacency, with self-loops, normalised \\
+$H^{(l)}$ & node embeddings after layer $l$ \\
+$\hat p_k(x)$ & predicted probability of class $k$ \\
+$t_k$ & class-$k$ self-confidence threshold (census) \\
+$C_{ij}$ & confident joint entry \\
+$n$, $n_+$, $n_-$ & sample counts (total, positive, negative) \\
+$\alpha$, $\beta_1$, $\beta_2$ & Adam learning rate and moments \\
+$w_k$ & class weight (tuned configuration) \\
+$\epsilon$ & numerical-stability constant \\
+\hline
+\end{longtable}
+
+\section{GCN behaviour at our graph scale}
+\subsection{Receptive field}
+Two GCN layers propagate information across $2$ hops. On the $g=3$
+malaria grid (diameter 2, NetworkX-verified) every node sees every other
+node exactly; on the $g=4$ pneumonia grid (diameter 3) corner-to-corner
+information needs 3 hops and is therefore attenuated --- a known,
+measurable limitation of the shipped configuration, and the reason the
+Optuna search over grid size matters: the best found grid for pneumonia
+is reported in the search chapter.
+\subsection{Over-smoothing bound}
+Repeated application of $\hat A$ contracts node embeddings toward the
+dominant eigenvector; with two layers and $\lambda_2 < 1$ (spectral
+lemma), the contraction per layer is bounded by
+$|\lambda_2|$ and over-smoothing cannot occur at our depth. Formally,
+for $H^{(2)} = \hat A^2 H^{(0)} W^{(0)} W^{(1)}$ the component along
+eigenvector $u_i$ is scaled by $\lambda_i^2 \le 1$, with strict
+contraction for $|\lambda_i| < 1$.
+\subsection{Why a graph head at all}
+The global-pooling head discards spatial layout; the region graph keeps
+a coarse layout and lets evidence move between regions. On malaria the
+heads tie (error-analysis chapter) --- parasite evidence is local and the
+global pool suffices; on pneumonia the graph wins --- consolidation is a
+spatially extended pattern. The architecture choice is thus empirically
+justified per disease, not dogmatically hybrid.

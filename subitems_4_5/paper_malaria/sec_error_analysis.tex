@@ -1,0 +1,17 @@
+
+\section{Error analysis}
+\subsection{Confusion structure, CNN core}
+On the 2758 held-out cells:
+TN=1304, FP=75, FN=33, TP=1346 (uninfected/parasitised).
+Errors concentrate on one side:
+75 false-parasitised vs 33 missed-parasitised.
+\subsection{Confusion structure, RegionGCN}
+TN=1309, FP=70, FN=41, TP=1338.
+The GCN head shifts error mass toward fewer false positives.
+\subsection{Head-to-head: global pooling vs region-graph reasoning}
+Identical trunk, identical protocol; the only difference is the readout.
+CNN: 96.08\% / 0.9929.
+GCN: 95.98\% / 0.9918.
+Delta: -0.11 points,
+-0.0012 AUC, for
++18{,}464 parameters. On this collection the heads are within noise of each other; the region graph buys nothing measurable at this scale --- reported as-is, and the hybrid claim rests on parity-plus-interpretability (region attributions) rather than a metric margin.
