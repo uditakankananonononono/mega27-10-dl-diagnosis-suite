@@ -48,5 +48,15 @@
   "auc": 0.8327502229539687,
   "url": "https://zenodo.org/records/10519652/files/vesselmnist3d.npz?download=1",
   "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
+ },
+ "synapsemnist3d": {
+  "subset": "synapsemnist3d",
+  "task": "binary-class",
+  "n_classes": 2,
+  "n_train": 1230,
+  "n_test": 352,
+  "auc": 0.5665779234077412,
+  "url": "https://zenodo.org/records/10519652/files/synapsemnist3d.npz?download=1",
+  "source": "MedMNIST v2 (Yang et al., Scientific Data 2023), Zenodo record 10519652"
  }
 }

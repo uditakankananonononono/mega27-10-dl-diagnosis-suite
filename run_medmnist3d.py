@@ -4,7 +4,8 @@ Same protocol as the 2D arm (run_medmnist.py): small CNN, 3 epochs, Adam 1e-3,
 test-set AUC (macro OvR for multi-class). Datasets from MedMNIST v2 Zenodo
 record 10519652. Resume-safe via results/medmnist3d.json.
 """
-import json, os, sys, time, warnings, urllib.request
+import json, os, socket, sys, time, warnings, urllib.request
+socket.setdefaulttimeout(120)
 os.environ.setdefault("OMP_NUM_THREADS", "2")
 warnings.filterwarnings("ignore")
 import numpy as np
