@@ -1,0 +1,39 @@
+{
+  "ncbi_esearch": {
+    "malaria_cell_images_label_noise": "0",
+    "chestxray2017_label_noise": "0",
+    "confident_learning_medical": "1"
+  },
+  "europepmc": {
+    "malaria_label_noise": {
+      "hitCount": 7,
+      "top": [
+        "An optimized transfer learning approach integrating deep convolutional feature extractors for malaria parasite classific",
+        "Automatic patient-level recognition of four &lt;i&gt;Plasmodium&lt;/i&gt; species on thin blood smear by a real-time det",
+        "Explainable Transformer-Based Deep Learning Model for the Detection of Malaria Parasites from Blood Cell Images."
+      ]
+    },
+    "kermany_label_noise": {
+      "hitCount": 12,
+      "top": [
+        "HybridCATNet: an explainable CNN-Transformer framework with early multi-channel fusion and uncertainty estimation for pn",
+        "Interpretable machine learning via symbolic classification of radiomic texture and morphological features for pediatric ",
+        "Ensemble localized patch residual convolution neural networks for pneumonia detection using chest X-ray."
+      ]
+    }
+  },
+  "crossref": {
+    "10.7717/peerj.4568": {
+      "title": "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood",
+      "journal": "PeerJ",
+      "year": 2018,
+      "doi": "10.7717/peerj.4568"
+    },
+    "10.1016/j.cell.2018.02.010": {
+      "title": "Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning",
+      "journal": "Cell",
+      "year": 2018,
+      "doi": "10.1016/j.cell.2018.02.010"
+    }
+  }
+}
