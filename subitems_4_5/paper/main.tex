@@ -396,6 +396,25 @@ JSONs; \textbf{PyMuPDF} renders pages for visual inspection.
 property-scatter and the flagged-image registry workbook shipped with
 the results; \textbf{ReportLab} generates the one-page census review
 card.
+
+\subsection{Suite-level audit of the item 10a tabular panels}
+The shared repository's top-level results cover 22 tabular diagnosis
+datasets (the item 10a scope; 264 model--seed runs). We re-analysed them
+with three independent toolchains
+(\texttt{results/tena\_scope/tool\_battery\_6\_tena.json}).
+\textbf{DuckDB} ranks the panels by cross-model difficulty: fertility
+(best model AUC $\approx 0.68$) and haberman ($\approx 0.70$) remain
+hard for every model tried; heart\_va, wpbc and ilpd follow.
+\textbf{agate} recomputes the per-model aggregates and \textbf{csvkit}
+(csvstat) profiles the flattened metrics a third time (panel ROC-AUC
+mean 0.8429, median 0.8828) --- all three agree. A \textbf{statsmodels}
+Benjamini--Hochberg FDR pass over per-dataset one-sided Wilcoxon tests
+finds 0/22 significant, for a structural reason: with three seeds per
+dataset the minimum achievable one-sided Wilcoxon $p$ is 0.25, so no
+panel can reach FDR significance by design. Per-dataset superiority
+claims for the 10a panels are therefore stated descriptively, not
+inferentially. \textbf{leather} renders the per-dataset best-model AUC
+chart (Fig.\ shipped as SVG).
 \subsection{Flagged images are measurably atypical}
 If the census flags a property of the images rather than an artefact of
 the estimator, flagged images should differ measurably from unflagged
