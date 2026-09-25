@@ -27,12 +27,20 @@ visual confusability (parasitized-looking artefacts in ``uninfected''
 cells); (b) part of our asymmetry is model bias. We report both; the
 crosscheck model (independent architecture, Jaccard 0.841 on flags)
 supports (a) for the flagged subset.
-\item \textbf{Overlap experiment (committed, in progress).} Reconciling
-flag-by-flag against Fuhad's published correction list is the decisive
-validation. At assembly time the list's hosting location (their
-reference [41]) has been identified but not yet mirrored into this
-repository; the reconciliation script and results will be committed when
-the mirror completes. We say this plainly rather than imply it is done.
+\item \textbf{Overlap experiment (attempted; blocked upstream, and the
+block is itself a finding).} Fuhad's correction list lives at their
+reference [41]: \texttt{github.com/gracelynxs/malaria-detection-model}.
+That URL now returns 404, and the Internet Archive's last capture
+(2022-01-31) shows a repository containing only \texttt{README.md},
+\texttt{build\_dataset.py}, \texttt{train\_model.py} --- no
+correction list, no per-image flags. The prior audit's flags are
+therefore \emph{unrecoverable}: a flag-by-flag overlap is impossible
+because the flags no longer exist in any durable, inspectable form. We
+document the dead pointer and the archive inspection rather than imply
+the comparison was run. The methodological moral lands directly on this
+paper's design: an audit whose flags are not committed durably with the
+claim is an audit that cannot be checked, reused, or reconciled --- our
+249 flags are committed, hashed, and regenerable.
 \end{enumerate}
 The corrected novelty claim, stated precisely: \textbf{this is the first
 automated, gate-enforced, per-image-falsifiable label-noise census of the
