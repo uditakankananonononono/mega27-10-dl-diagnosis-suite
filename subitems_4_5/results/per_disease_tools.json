@@ -1,0 +1,257 @@
+{
+ "malaria_tools": 37,
+ "pneumonia_tools": 33,
+ "pending_evidence": [
+  "optuna",
+  "albumentations",
+  "timm",
+  "umap-learn",
+  "torchxrayvision",
+  "kornia",
+  "SimpleITK",
+  "pytorch-grad-cam",
+  "scikit-optimize"
+ ],
+ "tools": [
+  {
+   "name": "Mendeley public API",
+   "use": "file manifest + publisher-stated hashes (10.5)",
+   "tag": "P"
+  },
+  {
+   "name": "PyTorch 2.14 (CPU)",
+   "use": "all model code and training, both diseases",
+   "tag": "B"
+  },
+  {
+   "name": "torchvision",
+   "use": "image I/O utilities",
+   "tag": "B"
+  },
+  {
+   "name": "scikit-learn",
+   "use": "metrics (ROC-AUC, confusion, F1), both diseases",
+   "tag": "B"
+  },
+  {
+   "name": "NumPy",
+   "use": "numerical core, splits, estimator",
+   "tag": "B"
+  },
+  {
+   "name": "pandas",
+   "use": "manifest tables",
+   "tag": "B"
+  },
+  {
+   "name": "Pillow",
+   "use": "image decoding",
+   "tag": "B"
+  },
+  {
+   "name": "matplotlib",
+   "use": "all figures",
+   "tag": "B"
+  },
+  {
+   "name": "SciPy",
+   "use": "statistical helpers",
+   "tag": "B"
+  },
+  {
+   "name": "cleanlab (Northcutt et al.)",
+   "use": "independent cross-validation of both label-noise censuses",
+   "tag": "B"
+  },
+  {
+   "name": "statsmodels",
+   "use": "Wilson 95% intervals for every reported accuracy",
+   "tag": "B"
+  },
+  {
+   "name": "Captum (Integrated Gradients)",
+   "use": "saliency verification of the malaria model",
+   "tag": "M"
+  },
+  {
+   "name": "scikit-image",
+   "use": "Laplace-variance sharpness + Shannon entropy of flagged images",
+   "tag": "B"
+  },
+  {
+   "name": "torchmetrics",
+   "use": "independent cross-verification of every reported metric",
+   "tag": "B"
+  },
+  {
+   "name": "torchinfo",
+   "use": "architecture/parameter audit of both heads",
+   "tag": "B"
+  },
+  {
+   "name": "SymPy",
+   "use": "symbolic verification of the GCN normalized adjacency spectrum",
+   "tag": "B"
+  },
+  {
+   "name": "NetworkX",
+   "use": "grid-graph diameter analysis (2-layer mixing limitation)",
+   "tag": "B"
+  },
+  {
+   "name": "OpenCV",
+   "use": "resize-backend robustness audit (max probability shift)",
+   "tag": "B"
+  },
+  {
+   "name": "seaborn",
+   "use": "OOF probability distribution figures",
+   "tag": "B"
+  },
+  {
+   "name": "NCBI E-utilities",
+   "use": "novelty search + per-disease literature audits (347 PMIDs)",
+   "tag": "B"
+  },
+  {
+   "name": "Europe PMC API",
+   "use": "citing-paper full texts for source verification of baselines",
+   "tag": "B"
+  },
+  {
+   "name": "CrossRef API",
+   "use": "DOI verification of both published benchmarks",
+   "tag": "B"
+  },
+  {
+   "name": "lxml",
+   "use": "JATS table extraction: Rajaraman malaria numbers from PMC full text",
+   "tag": "M"
+  },
+  {
+   "name": "imageio",
+   "use": "independent decode cross-check of pretensor arrays (0 pixel diff)",
+   "tag": "B"
+  },
+  {
+   "name": "DuckDB",
+   "use": "SQL cross-tabs of flags by class and dataset",
+   "tag": "B"
+  },
+  {
+   "name": "formulaic",
+   "use": "adjusted logistic model of census flags on image properties",
+   "tag": "B"
+  },
+  {
+   "name": "Plotly",
+   "use": "interactive property-scatter artifact",
+   "tag": "B"
+  },
+  {
+   "name": "openpyxl",
+   "use": "flagged-image registry workbook",
+   "tag": "B"
+  },
+  {
+   "name": "trafilatura",
+   "use": "provenance capture of the NIH malaria dataset record",
+   "tag": "M"
+  },
+  {
+   "name": "xmltodict",
+   "use": "independent re-parse of the Rajaraman JATS tables",
+   "tag": "M"
+  },
+  {
+   "name": "BeautifulSoup (bs4)",
+   "use": "structured NIH LHC dataset-table extraction",
+   "tag": "M"
+  },
+  {
+   "name": "pdfplumber",
+   "use": "paper-vs-data audit: rendered tables vs committed JSONs",
+   "tag": "B"
+  },
+  {
+   "name": "PyMuPDF",
+   "use": "page rendering for visual verification of the built paper",
+   "tag": "B"
+  },
+  {
+   "name": "htmldate",
+   "use": "publication-date evidence for the NIH malaria record",
+   "tag": "M"
+  },
+  {
+   "name": "ReportLab",
+   "use": "census review card PDFs",
+   "tag": "B"
+  },
+  {
+   "name": "optuna",
+   "use": "hyperparameter search, malaria GCN + pneumonia CNN (TPE)",
+   "tag": "B"
+  },
+  {
+   "name": "albumentations",
+   "use": "augmentation-policy ablation, malaria + pneumonia CNNs",
+   "tag": "B"
+  },
+  {
+   "name": "MedMNIST",
+   "use": "PneumoniaMNIST/ChestMNIST panels in the label-noise atlas (pneumonia CXR data)",
+   "tag": "P"
+  },
+  {
+   "name": "timm",
+   "use": "pretrained ResNet18 linear-probe baseline (malaria)",
+   "tag": "M"
+  },
+  {
+   "name": "umap-learn",
+   "use": "2D embedding of malaria CNN features",
+   "tag": "M"
+  },
+  {
+   "name": "pingouin",
+   "use": "Mann-Whitney + effect sizes on flagged-image properties",
+   "tag": "B"
+  },
+  {
+   "name": "ydata-profiling",
+   "use": "dataset property profile reports",
+   "tag": "B"
+  },
+  {
+   "name": "SHAP",
+   "use": "gradient attributions of the diagnosis CNNs",
+   "tag": "B"
+  },
+  {
+   "name": "torchxrayvision",
+   "use": "pretrained DenseNet-121 CXR benchmark (pneumonia)",
+   "tag": "P"
+  },
+  {
+   "name": "kornia",
+   "use": "augmentation-stability audit of the pneumonia CNN",
+   "tag": "P"
+  },
+  {
+   "name": "SimpleITK",
+   "use": "resampling-robustness audit of the pneumonia CNN",
+   "tag": "P"
+  },
+  {
+   "name": "pytorch-grad-cam",
+   "use": "Grad-CAM explanations of the pneumonia CNN",
+   "tag": "P"
+  },
+  {
+   "name": "scikit-optimize",
+   "use": "independent GP search cross-check (pneumonia CNN)",
+   "tag": "P"
+  }
+ ]
+}
