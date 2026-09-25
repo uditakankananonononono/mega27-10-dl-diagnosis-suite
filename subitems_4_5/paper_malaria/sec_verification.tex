@@ -1,0 +1,20 @@
+
+\section{Source verification of the Rajaraman benchmark}
+\subsection{Bibliographic verification}
+PubMed record verified: PMID 29682411,
+\emph{PeerJ} (2018),
+title as cited (\texttt{results/pubmed\_verification.json}).
+\subsection{Full-text number extraction}
+The numbers this paper compares against were extracted from the PMC full
+text (JATS XML) twice, with independent parsers (lxml primary, xmltodict
+cross-parse; \texttt{results/tool\_battery\_4.json}): cell-level accuracy
+0.940, VGG-16 feature extractor 0.945, patient-level 0.959, AlexNet AUC
+0.981 --- all present in the source tables, both parsers agreeing.
+\subsection{Claim provenance}
+7 verbatim source passages are committed in
+\texttt{results/rajaraman\_source\_claims.json}, including the acquisition
+and prior-work context. Two memory-level misquotes were caught and removed
+during the audit: (i) 95.9\% is the \emph{patient}-level number, not
+cell-level; (ii) there is no VGG-19 result in the paper --- a figure of
+``97.4\%'' circulating in secondary summaries does not exist in the source.
+The comparison table in this paper uses only the double-extracted numbers.

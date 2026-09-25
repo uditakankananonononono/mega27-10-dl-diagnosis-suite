@@ -77,7 +77,7 @@ for col in ["sharpness", "contrast", "entropy"]:
     a = df.loc[df["flagged"], col]; b = df.loc[~df["flagged"], col]
     if len(a) > 5 and len(b) > 5:
         mw = pg.mwu(a, b)
-        stats[col] = {"mwu_p": float(mw["p-val"].iloc[0]),
+        stats[col] = {"mwu_p": float(mw["p_val"].iloc[0]),
                       "effect_rbc": float(mw["RBC"].iloc[0])}
 res["pingouin_property_tests"] = stats
 print("pingouin done", flush=True)

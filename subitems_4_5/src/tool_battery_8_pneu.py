@@ -86,10 +86,10 @@ def obj(params):
     probs, yy = predict_proba(m, Subset(ev, va_i))
     return -roc_auc_score(yy, probs[:, 1])
 r = gp_minimize(obj, [Real(1e-4, 2e-3, prior="log-uniform", name="lr")],
-                n_calls=4, random_state=0)
+                n_calls=10, n_initial_points=5, random_state=0)
 res["skopt_search"] = {"best_lr": float(r.x[0]),
-    "best_val_auc": round(float(-r.fun), 4), "n_calls": 4,
-    "note": "1-epoch quarter-subsample search (speed directive)",
+    "best_val_auc": round(float(-r.fun), 4), "n_calls": 10,
+    "note": "1-epoch quarter-subsample search; 5 random + 5 GP-guided calls",
     "secs": round(time.time() - t0, 1)}
 print("skopt done", flush=True)
 

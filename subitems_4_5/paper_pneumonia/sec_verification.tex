@@ -1,0 +1,22 @@
+
+\section{Source verification of the Kermany benchmark}
+\subsection{Bibliographic verification}
+PubMed record verified: PMID 29474911,
+\emph{Cell} (2018 Feb 22)
+(\texttt{results/pubmed\_verification.json}). The abstract's pneumonia
+passage is committed verbatim (\texttt{results/kermany\_abstract\_claims.json}).
+\subsection{The 92.8\% number, corroborated}
+The Cell article's performance tables are paywalled. The 92.8\% accuracy
+figure was therefore corroborated through two independent citing sources
+with full text available, PMC10660141 and PMC11759907; the
+verifying passage is committed verbatim in
+\texttt{results/kermany\_number\_verification.json}. We report the number
+as the published reference with this provenance stated, and we never
+present it as a same-split comparison.
+\subsection{What the number is and is not}
+Kermany et al.\ fine-tuned Inception-v3 at 299px under transfer learning
+on a much larger effective training regime; the 92.8\% is binary
+normal-vs-pneumonia accuracy on their test set (the same official split
+this paper uses). It is a cross-regime reference --- different model
+class, input scale, and training scale --- and our gap to it is addressed
+by the transfer study, not by claiming parity.
