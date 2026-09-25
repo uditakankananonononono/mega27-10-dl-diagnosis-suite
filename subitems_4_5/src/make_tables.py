@@ -86,15 +86,13 @@ def main():
         ("Pillow", "image decoding"),
         ("matplotlib", "all figures"),
         ("SciPy", "statistical helpers"),
-        ("pytest", "hermetic test suite (13 tests)"),
-        ("GitHub", "artefact repository and commit-pinned provenance"),
-        ("git", "version control"),
-        ("pdflatex (TeX Live)", "this paper, Times typeface"),
-        ("pandoc", "format checks"),
-        ("curl", "dataset download with checksum verification"),
-        ("sha256sum", "integrity verification of archives"),
         ("Mendeley public API", "file manifest + publisher-stated hashes"),
+        ("cleanlab (Northcutt et al.)", "independent cross-validation of the label-noise census"),
+        ("statsmodels", "Wilson 95% intervals for every reported accuracy"),
+        ("Captum (Integrated Gradients)", "saliency verification of the malaria model"),
     ]
+    # Infrastructure is used but deliberately NOT counted, per program
+    # convention: git, GitHub, pytest, TeX Live, pandoc, curl, sha256sum.
     (PAPER / "tools_table_body.tex").write_text(
         "\n".join(f"{a} & {b} \\\\" for a, b in tools) + "\n")
     dsets = [
