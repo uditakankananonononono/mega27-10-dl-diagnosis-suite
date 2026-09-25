@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Scope and items 10.4--10.5}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Claims audited}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Contribution}{3}{}%
+\contentsline {section}{\numberline {2}Mathematical foundations}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Convolutional feature extraction}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Region-graph construction}{3}{}%
+\contentsline {subsection}{\numberline {2.3}GCN propagation and spectrum}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Objective and optimisation}{4}{}%
+\contentsline {subsection}{\numberline {2.5}Confident learning for label noise}{4}{}%
+\contentsline {subsection}{\numberline {2.6}Evaluation metrics}{5}{}%
+\contentsline {section}{\numberline {3}Data}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Malaria (item 10.4)}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Pneumonia (item 10.5)}{5}{}%
+\contentsline {subsection}{\numberline {3.3}Provenance and integrity}{5}{}%
+\contentsline {section}{\numberline {4}Methods}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Models}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Training protocol}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Census protocol}{5}{}%
+\contentsline {section}{\numberline {5}Results}{5}{}%
+\contentsline {section}{\numberline {6}Discussion}{6}{}%
+\contentsline {subsection}{\numberline {6.1}What the census is and is not}{6}{}%
+\contentsline {subsection}{\numberline {6.2}The admissibility gate}{6}{}%
+\contentsline {subsection}{\numberline {6.3}Engineering for a two-core sandbox}{6}{}%
+\contentsline {subsection}{\numberline {6.4}Uncertainty quantification}{6}{}%
+\contentsline {subsection}{\numberline {6.5}Interpretability check}{7}{}%
+\contentsline {subsection}{\numberline {6.6}Verification and robustness side-analyses}{7}{}%
+\contentsline {subsection}{\numberline {6.7}Flagged images are measurably atypical}{8}{}%
+\contentsline {subsection}{\numberline {6.8}Malaria census findings}{8}{}%
+\contentsline {subsection}{\numberline {6.9}Pneumonia census findings}{8}{}%
+\contentsline {subsection}{\numberline {6.10}Pneumonia: an honest gap, and where it lives}{9}{}%
+\contentsline {subsection}{\numberline {6.11}The hybrid's value is dataset-dependent}{9}{}%
+\contentsline {subsection}{\numberline {6.12}Honest negatives}{10}{}%
+\contentsline {section}{\numberline {7}External tools and datasets}{11}{}%
+\contentsline {section}{\numberline {8}Reproducibility}{11}{}%
+\contentsline {section}{\numberline {A}Flagged identifiers}{12}{}%
