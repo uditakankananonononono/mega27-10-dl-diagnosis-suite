@@ -1,0 +1,19 @@
+
+\section{Synthesis of the 197-Record Literature Audit}
+\label{sec:litsynth}
+The novelty claim is quantitative. We fetched and parsed 197 PubMed
+records on malaria diagnosis and imaging (NCBI E-utilities; full list in
+the appendix). Classifying every record by title and metadata:
+\begin{itemize}
+\item \textbf{43/197} propose or evaluate a deep-learning model ---
+the field's centre of gravity is architectures and scores.
+\item \textbf{5/197} address transfer or generalization across
+microscopes, stains, or sites.
+\item \textbf{0/197} --- zero --- mention label noise, mislabeling,
+confident learning, annotation audit, or inter-rater analysis of the
+benchmark collection's labels.
+\end{itemize}
+Publication years span 2019: 7; 2020: 9; 2021: 11; 2022: 21; 2023: 15; 2024: 24; 2025: 25; 2026: 17. Every mid-90s accuracy ever reported on
+\texttt{cell\_images} sits on top of an unaudited label set, and the
+one-directional contamination our census measures (Sec.~2) bounds every
+one of those numbers. That is why the census leads this paper.

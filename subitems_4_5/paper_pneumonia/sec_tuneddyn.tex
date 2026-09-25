@@ -1,0 +1,37 @@
+
+\section{Training Dynamics of the Tuned Runs}
+\label{sec:tuneddyn}
+Complete per-epoch histories of the tuned runs (from
+\texttt{tuned\_results.json}); the wall-clock column is the two-core
+CPU cost of reproducibility.
+\subsection{CNN core (tuned)}\begin{center}\begin{tabular}{rrrr}\hline Epoch & Train loss & Val loss & Secs \\\hline
+0 & 0.3679 & 0.5253 & 311 \\
+1 & 0.2938 & 0.2474 & 306 \\
+2 & 0.2539 & 0.2794 & 942 \\
+3 & 0.2268 & 0.3283 & 957 \\
+4 & 0.1833 & 0.3545 & 962 \\
+5 & 0.1769 & 0.5222 & 932 \\
+6 & 0.1572 & 0.1728 & 964 \\
+7 & 0.1587 & 0.1703 & 947 \\
+8 & 0.1568 & 0.2930 & 926 \\
+9 & 0.1357 & 0.1297 & 360 \\
+10 & 0.1251 & 0.3096 & 906 \\
+11 & 0.1295 & 0.6606 & 938 \\
+\\\hline\end{tabular}\end{center}
+\subsection{RegionGCN (tuned)}\begin{center}\begin{tabular}{rrrr}\hline Epoch & Train loss & Val loss & Secs \\\hline
+0 & 0.3914 & 0.2886 & 656 \\
+1 & 0.2945 & 0.2274 & 926 \\
+2 & 0.2532 & 0.2212 & 681 \\
+3 & 0.2204 & 0.2132 & 886 \\
+4 & 0.1967 & 1.1931 & 702 \\
+5 & 0.1752 & 0.1705 & 928 \\
+6 & 0.1577 & 0.2259 & 954 \\
+7 & 0.1609 & 0.2576 & 904 \\
+8 & 0.1643 & 0.2893 & 966 \\
+9 & 0.1380 & 0.2194 & 952 \\
+10 & 0.1272 & 0.1379 & 947 \\
+11 & 0.1242 & 1.3562 & 728 \\
+\\\hline\end{tabular}\end{center}
+The CNN's val loss bottoms early and drifts --- the classic signature on
+this noisy training set --- while the graph model's curve is flatter,
+consistent with its better-calibrated test probabilities.

@@ -201,11 +201,11 @@ if __name__ == '__main__':
         'MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\\_images)',
         ABS_MAL,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',
-         'sec_results', 'sec_verification', 'sec_bbbc', 'lit_survey_malaria'] + common_tail))
+         'sec_results', 'sec_verification', 'sec_bbbc', 'lit_survey_malaria', 'sec_litsynth_mal'] + common_tail))
     write(R('paper_pneumonia/main.tex'), main_tex(
         'pneumonia',
         'A Label-Noise Census of ChestXRay2017: Directional Contamination from Report Parsing, a Cleaning Gain of +5.9 Points, and a Compact Verified Diagnostic',
         'MEGA-PROGRAM-27, Item 10.5 (pneumonia, Kermany ChestXRay2017)',
         ABS_PNE,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',
-         'sec_results', 'sec_verification', 'lit_survey_pneumonia', 'sec_atlas', 'sec_discussion_ext', 'sec_erroran2', 'sec_litsynth', 'sec_tooldeepdive', 'sec_walkthrough', 'sec_flagcases_gate', 'sec_census_tool_falsify_discussion'] + common_tail + ['sec_flags_appendix']))
+         'sec_results', 'sec_verification', 'lit_survey_pneumonia', 'sec_atlas', 'sec_worked', 'sec_tuneddyn', 'sec_discussion_ext', 'sec_erroran2', 'sec_litsynth', 'sec_tooldeepdive', 'sec_walkthrough', 'sec_flagcases_gate', 'sec_census_tool_falsify_discussion'] + common_tail + ['sec_flags_appendix']))

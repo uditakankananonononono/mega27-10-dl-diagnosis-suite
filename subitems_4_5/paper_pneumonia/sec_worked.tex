@@ -1,0 +1,29 @@
+
+\section{Worked Numerical Examples}
+\label{sec:worked}
+Every quantitative claim in this paper reduces to arithmetic a reader
+can check from the committed JSONs. We work three examples end to end.
+\subsection{Census rate from the confident joint}
+The out-of-fold confident joint (counts) is
+\begin{equation}
+Q = \begin{pmatrix} 1192 & 23 \\ 973 & 2522 \end{pmatrix},
+\end{equation}
+rows = observed label, columns = latent label. Off-diagonal mass:
+$23+973=996$ of $n=4710$, giving the census rate
+$996/4710 = 0.2115$ --- the 21.15\% headline. The one-directional asymmetry
+is the ratio 973:23 $\approx$ 42:1.
+\subsection{Cleaning gain in counts, not points}
+The tuned RegionGCN confusion matrix is [[140, 94],[5, 385]]
+(acc.\ 84.13\%). The cleaned retrain's gain of +5.9 points on 624 films
+is $\approx 37$ films moving from wrong to right --- an effect far
+larger than the binomial standard error
+$\sqrt{0.85\cdot0.15/624}\approx 1.4$ points, which is why we report it
+as a finding rather than noise (while still flagging the single-seed
+caveat).
+\subsection{Graph size at $g=4$}
+The RegionGCN partitions the $16\times16$ feature map into a $4\times4$
+grid of regions; 4-connectivity gives
+$|E| = 4g^2-6g+2 = 4(16)-24+2 = 42$ directed edges over 16 nodes ---
+sparse enough that the graph head adds 18{,}464 parameters over the
+CNN core, the entire model staying under 160k parameters against the
+external tool's 138M.
