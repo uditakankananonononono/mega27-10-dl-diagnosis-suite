@@ -1,0 +1,23 @@
+{
+ "dataset": "neuro",
+ "n_decoded": 200,
+ "wall_seconds": 1.06,
+ "first_ids": [
+  "btmri_00000",
+  "btmri_00001",
+  "btmri_00002",
+  "btmri_00003",
+  "btmri_00004"
+ ],
+ "label_counts": {
+  "0": 200
+ },
+ "unique_shapes": [
+  [
+   512,
+   512,
+   3
+  ]
+ ],
+ "n_unique_shapes": 1
+}

@@ -1,0 +1,34 @@
+{
+ "suite": "10.6-cancer",
+ "dataset": "BreaKHis v1 (hirundo-io HF mirror)",
+ "source": {
+  "url": "https://huggingface.co/datasets/hirundo-io/BreaKHis-original/resolve/main/breakhis.zip",
+  "lfs_size": 223947830,
+  "note": "Mirror of BreakHis v1 (Spanhol et al. 2016, UFPR). Official host http://www.inf.ufpr.br/vri/BreaKHis_v1.tar.gz 404s at fetch time; mirror verified against published structure: 7,909 images, 8 subclasses, 4 magnifications, patient IDs. CAVEAT: mirror images are JPG resized to 224x224 (verified on random sample of 12 across mags), not the original 700x460 PNGs - benchmark comparisons must state this."
+ },
+ "archive_sha256": "e8f2bdaa4f16d0c8febed6acf6a434ef996025993e2fa748a972b789e6b06dbf",
+ "archive_bytes": 223947830,
+ "n_records": 7909,
+ "n_patients": 82,
+ "class_distribution": {
+  "benign": 2480,
+  "malignant": 5429
+ },
+ "magnification_distribution": {
+  "100X": 2081,
+  "200X": 2013,
+  "400X": 1820,
+  "40X": 1995
+ },
+ "subclass_distribution": {
+  "benign/A": 444,
+  "benign/F": 1014,
+  "benign/PT": 453,
+  "benign/TA": 569,
+  "malignant/DC": 3451,
+  "malignant/LC": 626,
+  "malignant/MC": 792,
+  "malignant/PC": 560
+ },
+ "image_shape": "224x224x3 (resized JPG mirror)"
+}

@@ -1,0 +1,54 @@
+{
+ "suite": "10.6-cancer",
+ "dataset": "PatchCamelyon (PCam), valid+test splits",
+ "source": {
+  "url_base": "https://zenodo.org/records/2546921/files/",
+  "record": "https://zenodo.org/records/2546921",
+  "note": "PatchCamelyon official Zenodo mirror (Veeling et al. 2018)"
+ },
+ "n_records": 65536,
+ "records_per_split": {
+  "valid": 32768,
+  "test": 32768
+ },
+ "label_distribution_valid": {
+  "True": 16458,
+  "False": 16310
+ },
+ "label_distribution_test": {
+  "False": 16294,
+  "True": 16474
+ },
+ "n_unique_wsi_valid": 54,
+ "n_unique_wsi_test": 129,
+ "files": {
+  "camelyonpatch_level_2_split_valid_x.h5.gz": {
+   "bytes": 805965320,
+   "download_complete": true,
+   "zenodo_listed_bytes": 805965320,
+   "sha256": "f82ee1670d027b4ec388048d9eabc2186b77c009655dae76d624c0ecb053ccb2"
+  },
+  "camelyonpatch_level_2_split_valid_y.h5.gz": {
+   "bytes": 3038,
+   "sha256": "ce1ae30f08feb468447971cfd0472e7becd0ad96d877c64120c72571439ae48c"
+  },
+  "camelyonpatch_level_2_split_valid_meta.csv": {
+   "bytes": 1850810,
+   "sha256": "8ea89aed388b946c2e869db3dc2f3c0816b643247a830a838ce47e74dfbcd82b"
+  },
+  "camelyonpatch_level_2_split_test_x.h5.gz": {
+   "bytes": 800875929,
+   "download_complete": true,
+   "zenodo_listed_bytes": 800875929,
+   "sha256": "79174c2201ad521602a5888be8f36ee10875f37403dd3f2086caf2182ef87245"
+  },
+  "camelyonpatch_level_2_split_test_y.h5.gz": {
+   "bytes": 3040,
+   "sha256": "0a522005fccc8bbd04c5a117bfaf81d8da2676f03a29d7499f71d0a0bd6068ef"
+  },
+  "camelyonpatch_level_2_split_test_meta.csv": {
+   "bytes": 1608584,
+   "sha256": "88872bc3dd1c6e0eb42b383aae696bf6bf08629589265e570beb269e7119ded0"
+  }
+ }
+}

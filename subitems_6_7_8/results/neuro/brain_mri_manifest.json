@@ -1,0 +1,18 @@
+{
+ "suite": "10.7-neuro",
+ "dataset": "Brain Tumor MRI (Masoud Nickparvar), HF mirror Hemg/Brain-Tumor-MRI-Dataset",
+ "source": {
+  "url": "https://huggingface.co/datasets/Hemg/Brain-Tumor-MRI-Dataset/resolve/main/data/train-00000-of-00001.parquet",
+  "lfs_size": 155450982,
+  "note": "Mirror of the Masoud Nickparvar Brain Tumor MRI dataset (7,023 images; glioma/meningioma/notumor/pituitary), public HF dataset card verified at fetch time."
+ },
+ "parquet_sha256": "d6869dd8c23ea6dc9f485feec5ed6a35d27b8c7004c400cf71a9895bb038c899",
+ "parquet_bytes": 155450982,
+ "n_records": 7023,
+ "class_distribution": {
+  "glioma": 1621,
+  "meningioma": 1645,
+  "notumor": 2000,
+  "pituitary": 1757
+ }
+}

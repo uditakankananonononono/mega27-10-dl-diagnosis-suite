@@ -1,0 +1,23 @@
+{
+ "dataset": "breakhis",
+ "n_decoded": 200,
+ "wall_seconds": 0.32,
+ "first_ids": [
+  "benign/SOB/adenosis/SOB_B_A_14-22549AB/100X/SOB_B_A-14-22549AB-100-001.jpg",
+  "benign/SOB/adenosis/SOB_B_A_14-22549AB/100X/SOB_B_A-14-22549AB-100-002.jpg",
+  "benign/SOB/adenosis/SOB_B_A_14-22549AB/100X/SOB_B_A-14-22549AB-100-003.jpg",
+  "benign/SOB/adenosis/SOB_B_A_14-22549AB/100X/SOB_B_A-14-22549AB-100-004.jpg",
+  "benign/SOB/adenosis/SOB_B_A_14-22549AB/100X/SOB_B_A-14-22549AB-100-005.jpg"
+ ],
+ "label_counts": {
+  "0": 200
+ },
+ "unique_shapes": [
+  [
+   224,
+   224,
+   3
+  ]
+ ],
+ "n_unique_shapes": 1
+}
