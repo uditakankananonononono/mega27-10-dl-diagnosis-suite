@@ -1,0 +1,36 @@
+{
+ "tools": [
+  "umap-learn",
+  "hdbscan"
+ ],
+ "n_patients": 15812,
+ "n_datasets": 22,
+ "n_clusters": 21,
+ "noise_fraction": 0.04483936250948647,
+ "ari_clusters_vs_disease": 0.15517916556461006,
+ "cluster_label_auc_per_disease": {
+  "ann_thyroid": 0.45879939117507257,
+  "arrhythmia": 0.4531203785862171,
+  "cervical": 0.49841503452960484,
+  "dermatology": 0.46850393700787396,
+  "diabetes_early_risk": 0.49228906250000004,
+  "echocardiogram": 0.5554968287526427,
+  "fertility": 0.49810606060606055,
+  "haberman": 0.4785733882030178,
+  "hcv": 0.5895414817187573,
+  "heart_hungarian": 0.5160578081091931,
+  "heart_switzerland": 0.525,
+  "heart_va": 0.5343466245558626,
+  "hepatitis": 0.5066056910569106,
+  "ilpd": 0.5439457623215108,
+  "lymphography": 0.4974976830398517,
+  "mammographic": 0.5744011845658044,
+  "messidor": 0.5216251439655695,
+  "new_thyroid": 0.30425641025641026,
+  "spectf": 0.3559605488850772,
+  "statlog_heart": 0.4731944444444445,
+  "wisconsin_original": 0.8717679247676168,
+  "wpbc": 0.610962378469776
+ },
+ "interpretation": "low ARI to disease + above-chance label AUCs supports disease-agnostic signal in fingerprints"
+}

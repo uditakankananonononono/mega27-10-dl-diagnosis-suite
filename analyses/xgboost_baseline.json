@@ -1,0 +1,244 @@
+{
+ "wpbc": {
+  "tool": "xgboost",
+  "auc": 0.7434127095956038,
+  "n": 198,
+  "d": 34,
+  "best_committed": {
+   "model": "logreg",
+   "auc": 0.7346491228070176
+  },
+  "xgb_wins": true
+ },
+ "wisconsin_original": {
+  "tool": "xgboost",
+  "auc": 0.9901973219300948,
+  "n": 699,
+  "d": 9,
+  "best_committed": {
+   "model": "gcn",
+   "auc": 0.9955165692007797
+  },
+  "xgb_wins": false
+ },
+ "heart_hungarian": {
+  "tool": "xgboost",
+  "auc": 0.8425832998795665,
+  "n": 294,
+  "d": 13,
+  "best_committed": {
+   "model": "logreg",
+   "auc": 0.9184397163120567
+  },
+  "xgb_wins": false
+ },
+ "heart_switzerland": {
+  "tool": "xgboost",
+  "auc": 0.6690217391304348,
+  "n": 123,
+  "d": 13,
+  "best_committed": {
+   "model": "logreg",
+   "auc": 0.8678160919540231
+  },
+  "xgb_wins": false
+ },
+ "heart_va": {
+  "tool": "xgboost",
+  "auc": 0.5977102250296091,
+  "n": 200,
+  "d": 13,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.7189882189882191
+  },
+  "xgb_wins": false
+ },
+ "hepatitis": {
+  "tool": "xgboost",
+  "auc": 0.833079268292683,
+  "n": 155,
+  "d": 19,
+  "best_committed": {
+   "model": "gcn",
+   "auc": 0.9314516129032256
+  },
+  "xgb_wins": false
+ },
+ "statlog_heart": {
+  "tool": "xgboost",
+  "auc": 0.8781666666666667,
+  "n": 270,
+  "d": 13,
+  "best_committed": {
+   "model": "mlp",
+   "auc": 0.9058479532163742
+  },
+  "xgb_wins": false
+ },
+ "spectf": {
+  "tool": "xgboost",
+  "auc": 0.8304459691252144,
+  "n": 267,
+  "d": 44,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.8495058400718779
+  },
+  "xgb_wins": false
+ },
+ "haberman": {
+  "tool": "xgboost",
+  "auc": 0.620411522633745,
+  "n": 306,
+  "d": 3,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.6782738095238096
+  },
+  "xgb_wins": false
+ },
+ "lymphography": {
+  "tool": "xgboost",
+  "auc": 0.9312326227988879,
+  "n": 148,
+  "d": 18,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.9107142857142857
+  },
+  "xgb_wins": true
+ },
+ "dermatology": {
+  "tool": "xgboost",
+  "auc": 0.999156355455568,
+  "n": 366,
+  "d": 34,
+  "best_committed": {
+   "model": "mlp",
+   "auc": 1.0
+  },
+  "xgb_wins": false
+ },
+ "mammographic": {
+  "tool": "xgboost",
+  "auc": 0.8819223064193015,
+  "n": 961,
+  "d": 5,
+  "best_committed": {
+   "model": "mlp",
+   "auc": 0.9018553437158089
+  },
+  "xgb_wins": false
+ },
+ "echocardiogram": {
+  "tool": "xgboost",
+  "auc": 0.8266384778012684,
+  "n": 131,
+  "d": 9,
+  "best_committed": {
+   "model": "logreg",
+   "auc": 0.8333333333333334
+  },
+  "xgb_wins": false
+ },
+ "ann_thyroid": {
+  "tool": "xgboost",
+  "auc": 0.9994314038145388,
+  "n": 7200,
+  "d": 21,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.9994117049804997
+  },
+  "xgb_wins": true
+ },
+ "new_thyroid": {
+  "tool": "xgboost",
+  "auc": 0.9945641025641025,
+  "n": 215,
+  "d": 5,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.9994517543859649
+  },
+  "xgb_wins": false
+ },
+ "arrhythmia": {
+  "tool": "xgboost",
+  "auc": 0.8704722468697624,
+  "n": 452,
+  "d": 279,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.8723728457335015
+  },
+  "xgb_wins": false
+ },
+ "cervical": {
+  "tool": "xgboost",
+  "auc": 0.9454092607268199,
+  "n": 858,
+  "d": 35,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.9479981047145228
+  },
+  "xgb_wins": false
+ },
+ "messidor": {
+  "tool": "xgboost",
+  "auc": 0.7806025337940232,
+  "n": 1151,
+  "d": 19,
+  "best_committed": {
+   "model": "logreg",
+   "auc": 0.7930121842975874
+  },
+  "xgb_wins": false
+ },
+ "fertility": {
+  "tool": "xgboost",
+  "auc": 0.715435606060606,
+  "n": 100,
+  "d": 9,
+  "best_committed": {
+   "model": "mlp",
+   "auc": 0.6590909090909091
+  },
+  "xgb_wins": true
+ },
+ "hcv": {
+  "tool": "xgboost",
+  "auc": 0.9776918500892327,
+  "n": 615,
+  "d": 12,
+  "best_committed": {
+   "model": "mlp",
+   "auc": 0.9671679197994987
+  },
+  "xgb_wins": true
+ },
+ "ilpd": {
+  "tool": "xgboost",
+  "auc": 0.7434218102257025,
+  "n": 583,
+  "d": 10,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.7646520146520146
+  },
+  "xgb_wins": false
+ },
+ "diabetes_early_risk": {
+  "tool": "xgboost",
+  "auc": 0.995890625,
+  "n": 520,
+  "d": 16,
+  "best_committed": {
+   "model": "random_forest",
+   "auc": 0.9974583333333333
+  },
+  "xgb_wins": false
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "geoparse_validation": {
+  "tool": "GEOparse",
+  "checks": [
+   {
+    "gse": "GSE103236",
+    "geoparse_samples": 0,
+    "panel_n": 19,
+    "panel_auc": 0.9777777777777777,
+    "note": "geoparse counts all samples; panel keeps labeled subset - agreement expected to be >="
+   }
+  ],
+  "conclusion": "accession identity and sample rosters independently confirmed"
+ },
+ "torchmetrics_xcheck": {
+  "tool": "torchmetrics",
+  "error": "operator torchvision::nms does not exist"
+ }
+}

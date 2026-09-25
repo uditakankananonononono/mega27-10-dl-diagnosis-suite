@@ -1,0 +1,72 @@
+{
+ "shap_wdbc": {
+  "tool": "shap",
+  "method": "LinearExplainer on StandardScaler-transformed wdbc, mean |SHAP| over first 200 patients",
+  "top10_features": [
+   {
+    "feature": "worst_texture",
+    "mean_abs_shap": 1.0592412598277916
+   },
+   {
+    "feature": "se_radius",
+    "mean_abs_shap": 0.915843580232139
+   },
+   {
+    "feature": "worst_concave_points",
+    "mean_abs_shap": 0.853283387959657
+   },
+   {
+    "feature": "worst_radius",
+    "mean_abs_shap": 0.835096322798635
+   },
+   {
+    "feature": "mean_concave_points",
+    "mean_abs_shap": 0.8201626192763974
+   },
+   {
+    "feature": "worst_symmetry",
+    "mean_abs_shap": 0.7696958424715237
+   },
+   {
+    "feature": "worst_area",
+    "mean_abs_shap": 0.7471013819600103
+   },
+   {
+    "feature": "worst_concavity",
+    "mean_abs_shap": 0.7228090558466586
+   },
+   {
+    "feature": "mean_concavity",
+    "mean_abs_shap": 0.6916778721187467
+   },
+   {
+    "feature": "worst_perimeter",
+    "mean_abs_shap": 0.6575321086948107
+   }
+  ]
+ },
+ "imblearn_smote": {
+  "tool": "imbalanced-learn",
+  "method": "5-fold CV AUC, class-weighted logreg vs SMOTE+logreg, 3 most imbalanced binary panel datasets",
+  "results": [
+   {
+    "dataset": "cervical",
+    "minority_fraction": 0.0684931506849315,
+    "auc_class_weight": 0.9518396920638514,
+    "auc_smote": 0.9298992414808106
+   },
+   {
+    "dataset": "heart_switzerland",
+    "minority_fraction": 0.06956521739130435,
+    "auc_class_weight": 0.682608695652174,
+    "auc_smote": 0.682608695652174
+   },
+   {
+    "dataset": "ann_thyroid",
+    "minority_fraction": 0.08010801080108011,
+    "auc_class_weight": 0.9905087418854244,
+    "auc_smote": 0.9901554762217794
+   }
+  ]
+ }
+}

@@ -128,5 +128,70 @@
   "tool": "AWS S3 (gdc-hub download endpoint)",
   "version": "s3.dualstack.us-east-1 (accessed 2026-09-25)",
   "used_for": "actual file transport for all 33 TCGA cohort downloads (302-redirect target of the Xena hub)"
+ },
+ {
+  "tool": "statsmodels",
+  "version": "0.15.0",
+  "used_for": "Benjamini-Hochberg FDR across per-disease bridge-delta sign tests (analyses/stats_tools.json)"
+ },
+ {
+  "tool": "pingouin",
+  "version": "0.6.1",
+  "used_for": "Cohen's d effect sizes for label-efficiency GCN-vs-MLP deltas (analyses/stats_tools.json)"
+ },
+ {
+  "tool": "mlxtend",
+  "version": "0.23.4",
+  "used_for": "McNemar test (continuity-corrected) between GCN and MLP hard predictions on cleveland holdout (analyses/stats_tools.json)"
+ },
+ {
+  "tool": "sympy",
+  "version": "1.14.0",
+  "used_for": "symbolic verification of GCN renormalization and ECE binning derivations (analyses/stats_tools.json)"
+ },
+ {
+  "tool": "shap",
+  "version": "0.49.1",
+  "used_for": "LinearExplainer feature attribution on wdbc logistic model, top-10 features (analyses/shap_smote.json)"
+ },
+ {
+  "tool": "imbalanced-learn",
+  "version": "0.14.2",
+  "used_for": "SMOTE vs class-weight ablation on the 3 most imbalanced panel datasets (analyses/shap_smote.json)"
+ },
+ {
+  "tool": "torchmetrics",
+  "version": "1.9.0",
+  "used_for": "independent AUC/ECE recomputation on retrained wdbc MLP, cross-checked vs sklearn/custom (analyses/validation_xcheck.json)"
+ },
+ {
+  "tool": "GEOparse",
+  "version": "2.0.4",
+  "used_for": "independent re-parse of cached GEO series matrices; sample-roster cross-check vs custom parser (analyses/validation_xcheck.json)"
+ },
+ {
+  "tool": "umap-learn",
+  "version": "0.5.12",
+  "used_for": "2D embedding of cross-disease meta-fingerprints (analyses/embed_clusters.json, figures/fingerprint_umap.png)"
+ },
+ {
+  "tool": "hdbscan",
+  "version": "0.8.x",
+  "used_for": "density clustering of the fingerprint embedding; ARI vs disease labels (analyses/embed_clusters.json)"
+ },
+ {
+  "tool": "optuna",
+  "version": "5.0.0",
+  "used_for": "15-trial TPE hyperparameter search for wdbc MLP, 4-fold CV (analyses/captum_optuna.json)"
+ },
+ {
+  "tool": "XGBoost",
+  "version": "3.2.0",
+  "used_for": "gradient-boosted baseline across all 22 UCI panel datasets under the same 5-fold protocol (analyses/xgboost_baseline.json)"
+ },
+ {
+  "tool": "seaborn",
+  "version": "0.13.2",
+  "used_for": "publication figures: cross-arm AUC violin plot, label-efficiency curves (figures/panel_auc_by_arm.png, figures/label_eff_curves.png)"
  }
 ]

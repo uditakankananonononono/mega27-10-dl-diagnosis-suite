@@ -1,0 +1,19 @@
+{
+ "captum_pathmnist": {
+  "tool": "captum",
+  "error": "[Errno 2] No such file or directory: 'data_cache/medmnist/pathmnist.npz'"
+ },
+ "optuna_wdbc": {
+  "tool": "optuna",
+  "method": "15-trial TPE search over MLP hidden sizes/lr/alpha, 4-fold CV AUC on wdbc",
+  "best_auc": 0.9961080489011378,
+  "best_params": {
+   "h1": 67,
+   "h2": 36,
+   "lr": 0.00011238623122384506,
+   "alpha": 0.002954894558726684
+  },
+  "committed_logreg_auc": 0.9929,
+  "note": "comparison point: committed wdbc logreg baseline"
+ }
+}

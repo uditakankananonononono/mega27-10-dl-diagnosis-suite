@@ -1,0 +1,15 @@
+{
+ "tool": "seaborn",
+ "figures": [
+  "figures/panel_auc_by_arm.png",
+  "figures/label_eff_curves.png"
+ ],
+ "arm_medians": {
+  "GEO": 0.9889,
+  "MedMNIST 2D": 0.905,
+  "MedMNIST 3D": 0.8161,
+  "OpenML": 0.8908,
+  "TCGA (Xena)": 0.9993
+ },
+ "n_datasets": 103
+}

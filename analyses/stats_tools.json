@@ -1,0 +1,165 @@
+{
+ "statsmodels_fdr": {
+  "tool": "statsmodels",
+  "method": "per-disease exact sign test on bridge delta AUC across seeds, Benjamini-Hochberg FDR across diseases",
+  "per_disease": [
+   {
+    "dataset": "wdbc",
+    "delta_auc": 0.00062,
+    "seeds_positive": "3/5",
+    "p_raw": 0.5,
+    "p_bh": 0.5,
+    "sig_fdr05": false
+   },
+   {
+    "dataset": "cleveland",
+    "delta_auc": 0.0037600000000000003,
+    "seeds_positive": "3/5",
+    "p_raw": 0.5,
+    "p_bh": 0.5,
+    "sig_fdr05": false
+   },
+   {
+    "dataset": "pima",
+    "delta_auc": 0.00864,
+    "seeds_positive": "4/5",
+    "p_raw": 0.1875,
+    "p_bh": 0.5,
+    "sig_fdr05": false
+   },
+   {
+    "dataset": "parkinsons",
+    "delta_auc": -0.0018000000000000002,
+    "seeds_positive": "3/5",
+    "p_raw": 0.5,
+    "p_bh": 0.5,
+    "sig_fdr05": false
+   }
+  ]
+ },
+ "pingouin_effect_sizes": {
+  "tool": "pingouin",
+  "method": "Cohen's d between GCN and MLP AUCs across seeds at each label fraction",
+  "effect_sizes": [
+   {
+    "dataset": "wdbc",
+    "label_fraction": "0.1",
+    "gcn_mean": 0.9823616705533178,
+    "mlp_mean": 0.9714649141403434,
+    "cohens_d": 0.6083159727573132
+   },
+   {
+    "dataset": "wdbc",
+    "label_fraction": "0.25",
+    "gcn_mean": 0.9884248463006149,
+    "mlp_mean": 0.9883400466398132,
+    "cohens_d": 0.007723216710022077
+   },
+   {
+    "dataset": "wdbc",
+    "label_fraction": "0.5",
+    "gcn_mean": 0.9883824464702142,
+    "mlp_mean": 0.9922832308670765,
+    "cohens_d": -0.6063006138133963
+   },
+   {
+    "dataset": "cleveland",
+    "label_fraction": "0.1",
+    "gcn_mean": 0.8616724738675957,
+    "mlp_mean": 0.8022299651567945,
+    "cohens_d": 2.0288831472200486
+   },
+   {
+    "dataset": "cleveland",
+    "label_fraction": "0.25",
+    "gcn_mean": 0.8837630662020907,
+    "mlp_mean": 0.849616724738676,
+    "cohens_d": 0.9989707706614473
+   },
+   {
+    "dataset": "cleveland",
+    "label_fraction": "0.5",
+    "gcn_mean": 0.8730313588850175,
+    "mlp_mean": 0.8558885017421604,
+    "cohens_d": 0.5493590193456774
+   },
+   {
+    "dataset": "pima",
+    "label_fraction": "0.1",
+    "gcn_mean": 0.7842865671641792,
+    "mlp_mean": 0.7231044776119404,
+    "cohens_d": 1.0807261312935865
+   },
+   {
+    "dataset": "pima",
+    "label_fraction": "0.25",
+    "gcn_mean": 0.7989253731343283,
+    "mlp_mean": 0.7907582089552239,
+    "cohens_d": 0.4039484738846407
+   },
+   {
+    "dataset": "pima",
+    "label_fraction": "0.5",
+    "gcn_mean": 0.8061850746268657,
+    "mlp_mean": 0.7953432835820896,
+    "cohens_d": 0.9821612770244781
+   },
+   {
+    "dataset": "parkinsons",
+    "label_fraction": "0.1",
+    "gcn_mean": 0.7918918918918919,
+    "mlp_mean": 0.8004504504504505,
+    "cohens_d": -0.07638981880437166
+   },
+   {
+    "dataset": "parkinsons",
+    "label_fraction": "0.25",
+    "gcn_mean": 0.8738738738738739,
+    "mlp_mean": 0.8752252252252252,
+    "cohens_d": -0.021932309253782326
+   },
+   {
+    "dataset": "parkinsons",
+    "label_fraction": "0.5",
+    "gcn_mean": 0.8427927927927927,
+    "mlp_mean": 0.9013513513513514,
+    "cohens_d": -0.8758628454345531
+   }
+  ]
+ },
+ "mlxtend_mcnemar": {
+  "tool": "mlxtend",
+  "dataset": "cleveland",
+  "split": "70/30 stratified holdout, seed 0",
+  "mlp_auc": 0.8095238095238095,
+  "gcn_auc": 0.6496598639455782,
+  "mcnemar_table": [
+   [
+    52,
+    22
+   ],
+   [
+    8,
+    9
+   ]
+  ],
+  "chi2_corrected": 5.633333333333334,
+  "p": 0.017622090962324415,
+  "method": "McNemar with continuity correction on GCN vs MLP hard predictions"
+ },
+ "sympy_verification": {
+  "tool": "sympy",
+  "checks": [
+   {
+    "derivation": "GCN renormalization adds exactly self-loop degree",
+    "result": "D~_ii - D_ii = 1",
+    "verified": true
+   },
+   {
+    "derivation": "ECE weights sum to n over bins",
+    "result": "sum_b |S_b| = n holds by construction (partition property), symbolic form retained",
+    "verified": true
+   }
+  ]
+ }
+}
