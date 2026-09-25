@@ -77,8 +77,8 @@ def main(epochs=2):
                                         patience=2, threads=1)
         probs, y = predict_proba(model, Subset(ev, va_i))
         from sklearn.metrics import roc_auc_score, accuracy_score
-        out[name] = {"val_auc": float(roc_auc_score(y, probs)),
-                     "val_acc": float(accuracy_score(y, probs > 0.5)),
+        out[name] = {"val_auc": float(roc_auc_score(y, probs[:, 1])),
+                     "val_acc": float(accuracy_score(y, probs[:, 1] > 0.5)),
                      "train_secs": round(time.time() - t0, 1)}
         print(name, out[name], flush=True)
     json.dump(out, open(OUT / "augmentation_ablation.json", "w"), indent=2)

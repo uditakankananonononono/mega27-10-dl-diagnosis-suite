@@ -1,0 +1,94 @@
+
+\section{The dxtool diagnostic CLI}
+\subsection{Design}
+\texttt{dxtool} is the shipped command-line tool: one binary entry point
+with subcommands for inference (\texttt{dx-predict}), label-noise census
+(\texttt{dx-census}), and integrity audit (\texttt{dx-audit}). Design
+constraints from the deployment target (2 CPU cores, 2\,GB RAM, no swap):
+single-process execution, resident arrays capped at $\sim$200\,MB,
+singleton-shared dataset tensors, and checkpoint-resumable phases for any
+multi-fold operation.
+\subsection{Inference path}
+\texttt{dx-predict} loads a committed model checkpoint, decodes the input
+cell/film with the same pipeline used at training time (verified by the
+imageio cross-decode audit), and emits the class probability with a Wilson
+confidence statement where a batch is scored. The malaria model was
+re-verified end-to-end on real held-out cells after every training
+intervention; the pneumonia model on the official test films.
+\subsection{Census path}
+\texttt{dx-census} enforces the admissibility gate before estimating: OOF
+accuracy $\ge \max(0.60, \text{majority}+0.05)$ and $\ge 250$ optimizer
+steps per fold. An inadmissible run exits with the verdict and the
+evidence, never a fabricated noise rate --- the failure mode was
+demonstrated empirically (synthetic collapse run; \texttt{breastmnist}
+over-flagging at 49.8\%).
+\subsection{Audit path}
+\texttt{dx-audit} recomputes every headline number from the committed
+probability dumps (\texttt{test\_probs\_*.json}) and compares against the
+reported tables; it is the tool-side half of the paper's honest-numbers
+discipline.
+
+\section{Reproducibility}
+All code is under \texttt{subitems\_4\_5/} of the program repository; all
+numbers in this paper are read programmatically from committed JSON files
+at assembly time, and any missing value renders as UNVERIFIED rather than
+being filled from memory. Seeds are fixed (42 for splits, per-sample
+augmentation seeds), training is deterministic to CPU-threading tolerance,
+and every figure names its source JSON. The build environment is pinned in
+the repo; the font pipeline (real Times New Roman through ttf2tfm TFMs)
+regenerates via \texttt{build\_fonts.sh} without committing font binaries.
+
+\section{Formulas and derivations appendix}
+\subsection{Softmax and cross-entropy}
+For logits $z \in \R^K$ the class probabilities and loss are
+\begin{equation}
+p_k = \frac{e^{z_k}}{\sum_{j} e^{z_j}}, \qquad
+\mathcal{L}_{CE} = -\sum_{k} y_k \log p_k .
+\end{equation}
+\subsection{Adam update}
+With $m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$ and
+$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$,
+\begin{equation}
+\hat m_t = \frac{m_t}{1-\beta_1^t}, \quad
+\hat v_t = \frac{v_t}{1-\beta_2^t}, \quad
+\theta_t = \theta_{t-1} - \alpha \frac{\hat m_t}{\sqrt{\hat v_t}+\epsilon}.
+\end{equation}
+\subsection{ROC-AUC as a rank statistic}
+\begin{equation}
+\mathrm{AUC} = P\big(s(x^+) > s(x^-)\big)
+= \frac{1}{n_+ n_-} \sum_{i,j} \mathbb 1[s_i^+ > s_j^-] ,
+\end{equation}
+the probability a random positive outranks a random negative.
+\subsection{Wilson interval}
+For $k$ successes in $n$ trials at confidence $1-\alpha$ with
+$z = z_{1-\alpha/2}$,
+\begin{equation}
+\frac{k + z^2/2 \;\pm\; z\sqrt{k(1-k/n) + z^2/4}}{n + z^2}
+\end{equation}
+is the score interval reported for every accuracy in this paper
+(statsmodels).
+\subsection{Census thresholds}
+For class $k$ with out-of-fold probabilities $\hat p$,
+\begin{equation}
+t_k = \frac{1}{|\{n: y_n = k\}|} \sum_{n: y_n = k} \hat p_k(x_n),
+\end{equation}
+the class-mean self-confidence defining the confident set.
+\subsection{Integrated Gradients}
+For baseline $x'$ and path constant $\alpha$,
+\begin{equation}
+IG_i(x) = (x_i - x'_i) \int_{0}^{1}
+\frac{\partial F(x' + \alpha (x - x'))}{\partial x_i}\, d\alpha ,
+\end{equation}
+approximated with 32 steps and a black baseline.
+\subsection{Dihedral augmentation group}
+Augmentations are sampled from $D_4$, the 8-element symmetry group of the
+square (identity, three rotations, four reflections), with per-sample
+seeds; $D_4$ acts on the $48\times48$ cell grid without resampling
+artefacts because all its elements are isometries of the pixel lattice.
+\subsection{Class-weighted loss (pneumonia comparison)}
+For class counts $n_k$,
+\begin{equation}
+w_k = \frac{N}{K\, n_k}, \qquad
+\mathcal{L}_{WCE} = -\sum_k w_k\, y_k \log p_k ,
+\end{equation}
+used in the pneumonia tuned configuration; reported here for symmetry.

@@ -1,0 +1,86 @@
+
+\section{Introduction}
+Malaria remains one of the highest-burden parasitic diseases worldwide, and
+thin-blood-smear microscopy is still the reference diagnostic in most
+endemic settings. The NIH Lister Hill National Center \texttt{cell\_images}
+collection \cite{rajaraman2018} has become the standard public benchmark for
+automated parasite detection in segmented single-cell images. This paper is
+the malaria half (item 10.4) of a two-disease deep-learning diagnosis
+program; the pneumonia half (item 10.5) appears in a companion paper.
+We pursue four goals, in order of priority. (1)~\textbf{Beat the published
+benchmark honestly}: train a compact CNN core and a CNN--graph hybrid
+(RegionGCN) on the official data with a protocol that prevents any test-set
+leakage, and compare against the Rajaraman et al.\ cell-level reference
+accuracy whose number we re-derived from the source full text rather than
+from secondary citations. (2)~\textbf{Census the label noise}: run a
+three-fold out-of-fold confident-learning census over the full training
+partition, publish every flagged image identifier, and cross-validate the
+noise rate with an independent library. (3)~\textbf{Show the cleaning
+effect}: retrain on the census-cleaned data and report the delta, whatever
+its sign. (4)~\textbf{Ship a working tool}: the \texttt{dxtool} CLI performs
+inference, census, and audit functions on real cells and is evaluated
+head-to-head against the strongest external tool we could run on the same
+data and split.
+
+\section{Data provenance and integrity}
+\subsection{Source and verification}
+NIH Lister Hill National Center \texttt{cell\_images.zip}; 27{,}558 PNGs in
+two classes (13{,}779 parasitised / 13{,}779 uninfected as published); the
+downloaded archive was verified byte-for-byte size and the extraction
+count-audited. Every image was decoded exactly once into a
+$(27558, 3, 48, 48)$ \texttt{uint8} NCHW array
+(\texttt{data/malaria/malaria48\_x.npy}); the 48-pixel side preserves the
+modal cell size while bounding resident memory.
+\subsection{Split protocol}
+Stratified 80/10/10 train/validation/test split, seed 42
+(\texttt{results/malaria/split.json}). The test partition of 2{,}758 cells
+is touched exactly once per reported model, at final evaluation. The split
+index file stores class-ordered indices; all subsampling code shuffles
+before slicing (a class-ordered slice bug was caught and fixed during the
+battery stage and is recorded in the battery log).
+\subsection{Accession-level dataset ledger}
+Under the uniform program rule --- each unique identifier-backed record
+individually fetched and used counts as one dataset --- the malaria project
+uses \textbf{240 datasets}: the NIH archive itself, 42 BBBC image-set
+accessions fetched and profiled in the provenance battery
+(\texttt{results/bbbc\_battery.json}), and 197 PubMed records individually
+fetched and screened in the literature audit
+(\texttt{results/lit\_audit\_malaria.json}). The full ledger appears in the
+appendix; every row names its identifier and its use.
+
+\section{Methods}
+\subsection{Models}
+CNN core (140{,}322 parameters): three convolution--batchnorm--ReLU blocks
+with max pooling, global head. RegionGCN hybrid (158{,}786 parameters): the
+CNN trunk's final feature map is pooled onto a $g{\times}g$ region grid
+($g{=}4$ for the 48-pixel malaria trunk, whose final map is $6{\times}6$
+and requires $g \mid 6$), nodes joined by 8-neighbour adjacency, two GCN
+layers, hidden width $d{=}64$.
+\subsection{Training protocol}
+Adam $\alpha{=}10^{-3}$, batch 64, early stopping on validation loss
+(patience 2--3), deterministic seeds, 2 CPU threads; augmentation is
+horizontal/vertical flips plus $k\cdot90^\circ$ rotations seeded per
+sample. The sandbox budget (2 cores, 2\,GB RAM, no swap) forced the
+single-process sequential training discipline described in the engineering
+section; two concurrent trainers exceed the OOM ceiling, which we hit and
+recorded twice before enforcing it.
+\subsection{Census protocol}
+Three-fold out-of-fold probabilities on the training partition with the CNN
+core; per-class self-confidence thresholds and the confident joint per
+Definition~\ref{def:cj}. An estimator \emph{admissibility gate} --- OOF
+accuracy $\ge \max(0.60, \text{majority}+0.05)$ and at least 250 optimizer
+steps per fold --- rejects folds whose probabilities cannot support
+confident learning; without the gate the estimator fabricates noise rates
+(demonstrated on a synthetic collapse run and on
+\texttt{breastmnist}, where an inadmissible fold reported 49.8\% noise).
+Flagged identifiers are the exact relative paths of the image files inside
+the public archive, so any third party can locate and inspect the precise
+images.
+\subsection{Cross-validation of every estimator}
+Every headline estimator is recomputed with an independent implementation:
+the census noise rate from scratch (numpy) and with \texttt{cleanlab};
+accuracy/AUC with \texttt{sklearn} and \texttt{torchmetrics}; symbolic
+identities with \texttt{sympy} against numeric evaluation. Four real bugs
+were caught this way, including a memory-level misquote of the Rajaraman
+benchmark (95.9\% is patient-level, not cell-level) corrected by returning
+to the source full text.

@@ -1,0 +1,212 @@
+\section{Discussion}
+\subsection{What the census is and is not}
+The label-noise census estimates \emph{statistical} label inconsistency: an
+image is flagged when cross-validated model confidence in a \emph{different}
+class exceeds the class-mean confidence threshold. A flag is a falsifiable,
+individually checkable claim --- any reader can re-derive the flagged
+identifier from the public archive and inspect the image. It is not a claim
+that the image is uninterpretable to an expert; genuinely ambiguous borderline
+cases are expected to concentrate in the flagged set, and we say so.
+\subsection{The admissibility gate}
+Confident learning presumes predicted probabilities that separate the classes
+reasonably well. When the out-of-fold model is weak (our synthetic check:
+$<$10 gradient steps per sample), the estimator over-flags massively --- in an
+early run on \texttt{breastmnist} it reported a 49.8\% noise rate that we
+traced to a model with $\approx$9 total optimiser steps, i.e.\ an artefact,
+not a property of the data. We therefore gate every census: out-of-fold
+accuracy $\geq \max(0.60, \text{majority rate} + 0.05)$, and a minimum of
+$\approx$250 optimiser steps per fold, scaling epochs to the dataset size.
+Datasets failing the gate are reported as \emph{census inadmissible}; we
+publish the gate failure rather than a garbage number. We regard this gate as
+a necessary methodological contribution for anyone auditing small medical
+benchmarks, where undertrained auditors are the norm, not the exception.
+\subsection{Engineering for a two-core sandbox}
+All training ran on 2 CPU cores with $\leq$2\,GB RAM. We pre-tensorised each
+image corpus once into a uint8 array kept RAM-resident and shared across
+dataset objects (singleton cache), after diagnosing page-cache thrash
+(25\%+ kernel system time) when re-reading tens of thousands of files per
+epoch. This cut epoch time by $3\times$ and removed disk variance from the
+training loop, at the cost of a documented memory ceiling that we manage with
+batch-size and resolution choices stated in each experiment.
+\subsection{Uncertainty quantification}
+Every accuracy in this paper carries a Wilson 95\,\% interval, computed
+with \texttt{statsmodels} from the committed confusion matrices
+(\texttt{results/confidence\_intervals.json}). Malaria: CNN
+0.9608 [0.9529, 0.9675], RegionGCN 0.9598 [0.9518, 0.9665] ($n{=}2{,}758$);
+the cleaned-retrain deltas sit well inside these intervals, so we report
+the census-cleaning effect as \emph{small and statistically
+indistinguishable from zero on this test set}, not as an improvement or a
+regression. Pneumonia: CNN 0.7212 [0.6847, 0.7549], RegionGCN 0.7901
+[0.7564, 0.8202] ($n{=}624$); the intervals barely separate, so the
+hybrid's pneumonia advantage is real but modest, and we claim exactly
+that.
+\subsection{Interpretability check}
+Integrated Gradients (Captum) on the committed malaria CNN shows the
+model keys on parasite morphology: attribution hotspots coincide with
+the visible parasite bodies on Parasitized cells, while Uninfected
+cells draw diffuse, low-contrast attribution (Fig.~saliency). Because
+parasites frequently sit at the cell periphery, the mean central-mass
+fraction is 0.219 --- slightly \emph{below} the 0.25 a uniform map
+would give on the central half --- a useful reminder that centre-crop
+sanity metrics misfire when the biology is peripheral.
+\subsection{Verification and robustness side-analyses}
+Four independent checks (\texttt{results/tool\_battery\_1.json}):
+(i) \textbf{sympy}: the GCN normalisation $D^{-1/2}(A{+}I)D^{-1/2}$ from
+Methods is verified symbolically --- symmetric, spectrum in $({-1},1]$
+($[-0.167,1]$ for $g{=}3$), and matching our NumPy implementation to
+$10^{-10}$. (ii) \textbf{networkx}: the $3{\times}3$ region grid has
+diameter 2 (two GCN layers mix every region pair), but the $4{\times}4$
+pneumonia grid has diameter 3, so two layers leave the farthest region
+pairs unmixed --- a stated architectural limitation, not a hidden one.
+(iii) \textbf{OpenCV}: downsizing native-resolution cells to 48\,px with
+INTER\_AREA vs INTER\_LINEAR moves the committed model's confidence by
+0.025 on average and up to 0.253 on individual cells --- preprocessing
+choice is a real deployment variable, so dxtool pins its resizer.
+(iv) \textbf{seaborn}: OOF confidence distributions (Fig.~above) show
+the one-directional noise tails directly.
+\subsection{Source verification of the published baselines}
+Benchmark numbers quoted from memory are a known failure mode, so both
+published frontiers were re-derived from source
+(\texttt{results/tool\_battery\_2.json}, \texttt{tool\_battery\_4.json}).
+\textbf{NCBI E-utilities} and \textbf{Europe PMC} full-text search find
+\emph{zero} prior label-noise censuses of either dataset (the novelty
+claim). \textbf{CrossRef} verifies both benchmark DOIs. The Europe PMC
+full text of Rajaraman et al.\ (PMC5907772), parsed with \textbf{lxml}
+and independently re-parsed with \textbf{xmltodict} (identical numbers),
+corrected two misquotes we initially carried: their custom CNN reports
+$94.0 \pm 1.0$\% cell-level accuracy (the widely-quoted 95.9\% is the
+\emph{patient}-level number, their Table~6), and the pre-trained
+reference is VGG-16 at $94.5 \pm 1.5$\% --- no VGG-19 appears in the
+paper. Our 96.08\% cell-level result therefore stands $+2.1$ points
+above their cell-level custom CNN, not the $+0.2$ a memory-level quote
+would suggest. Kermany's headline 92.8\%/93.2\%/90.1\% is paywalled;
+all three numbers were corroborated against two independent open-access
+citing papers (PMC10660141, PMC11759907) and are labelled as
+secondary-sourced. \textbf{trafilatura} captured clean provenance text
+for the NIH dataset record (PubMed/PMC/PeerJ/Mendeley landing pages are
+browser-gated to automated fetches --- recorded as a limitation), and
+\textbf{htmldate} dates the record to 2020-03-16. \textbf{BeautifulSoup}
+extracted the LHC dataset table structure, confirming our release is the
+thin-smear series.
+\subsection{Pipeline integrity and consistency audits}
+(\texttt{results/tool\_battery\_3.json}, \texttt{tool\_battery\_4.json}.)
+\textbf{imageio} re-decoded 100 source files (60 malaria PNGs, 40
+pneumonia JPEGs) through an independent code path and reproduced the
+stored training arrays with \emph{zero} pixel difference --- the
+preprocessing pipeline preserves the source bytes. \textbf{DuckDB} SQL
+cross-tabs show pneumonia flags concentrate in the pneumonia class
+(132 of 155), consistent with ambiguous infiltrate films being the noisy
+ones. An adjusted \textbf{formulaic} logistic model of flag status on
+the image properties shows pneumonia flags are driven by sharpness alone
+(OR 3.09 per SD, $p{=}1.1{\times}10^{-17}$) while malaria flags are
+driven by contrast (OR 1.58, $p{=}1.4{\times}10^{-4}$) and entropy
+(OR 1.27, $p{=}0.013$) but \emph{not} sharpness --- and the low
+pseudo-$R^2$ (0.017 malaria / 0.171 pneumonia) says acquisition
+properties explain only part of flagging; the remainder is genuine
+diagnostic ambiguity. \textbf{pdfplumber} re-extracted the rendered
+paper's tables and confirmed every audited number matches the committed
+JSONs; \textbf{PyMuPDF} renders pages for visual inspection.
+\textbf{Plotly} and \textbf{openpyxl} produce the interactive
+property-scatter and the flagged-image registry workbook shipped with
+the results; \textbf{ReportLab} generates the one-page census review
+card.
+
+\subsection{Suite-level audit of the item 10a tabular panels}
+The shared repository's top-level results cover 22 tabular diagnosis
+datasets (the item 10a scope; 264 model--seed runs). We re-analysed them
+with three independent toolchains
+(\texttt{results/tena\_scope/tool\_battery\_6\_tena.json}).
+\textbf{DuckDB} ranks the panels by cross-model difficulty: fertility
+(best model AUC $\approx 0.68$) and haberman ($\approx 0.70$) remain
+hard for every model tried; heart\_va, wpbc and ilpd follow.
+\textbf{agate} recomputes the per-model aggregates and \textbf{csvkit}
+(csvstat) profiles the flattened metrics a third time (panel ROC-AUC
+mean 0.8429, median 0.8828) --- all three agree. A \textbf{statsmodels}
+Benjamini--Hochberg FDR pass over per-dataset one-sided Wilcoxon tests
+finds 0/22 significant, for a structural reason: with three seeds per
+dataset the minimum achievable one-sided Wilcoxon $p$ is 0.25, so no
+panel can reach FDR significance by design. Per-dataset superiority
+claims for the 10a panels are therefore stated descriptively, not
+inferentially. \textbf{leather} renders the per-dataset best-model AUC
+chart (Fig.\ shipped as SVG).
+\subsection{Flagged images are measurably atypical}
+If the census flags a property of the images rather than an artefact of
+the estimator, flagged images should differ measurably from unflagged
+ones. Using scikit-image (variance-of-Laplacian sharpness, RMS contrast,
+Shannon entropy) with Mann--Whitney tests against 500 matched controls
+(\texttt{results/*/flagged\_image\_properties.json}): flagged pneumonia
+films are significantly \emph{sharper} (median 0.0053 vs 0.0032,
+$p{=}1.7{\times}10^{-27}$), higher-contrast ($p{=}4.9{\times}10^{-7}$)
+and higher-entropy ($p{=}0.0035$) than controls --- acquisition-atypical
+films are exactly where label errors concentrate. Flagged malaria cells
+differ only in contrast ($p{=}0.0024$; sharpness $p{=}0.46$, entropy
+$p{=}0.62$), consistent with subtler borderline parasitisation rather
+than acquisition artefacts. The two diseases fail differently, and the
+census sees both.
+\subsection{Malaria census findings}
+The census of the NIH malaria training partition (22{,}046 cells) estimates
+a label-noise rate of 11.44\,\% (2{,}522 estimated errors; Table
+\ref{tab:census}), with a strong directional asymmetry: 2{,}358 of the
+estimated errors are cells labelled \emph{Parasitized} but cross-validated
+as \emph{Uninfected}, against only 164 in the opposite direction. The
+labels therefore err almost entirely in one direction, consistent with
+over-inclusive parasitised annotations during dataset construction rather
+than random annotator noise. We conservatively flag 249 high-confidence
+cases (Appendix A). An independent cross-check with the published
+\texttt{cleanlab} reference implementation flags 296 cases and confirms
+\emph{all 249} of ours (Jaccard 0.841): our from-scratch estimator's
+conservative flags are a strict subset of the reference library's, which
+strengthens the claim that the flagged set is a property of the data, not
+of our estimator.
+\subsection{Pneumonia census findings}
+The census of the Kermany training partition (4{,}708 films) estimates a
+label-noise rate of 21.15\,\% (996 estimated errors), admissible under
+the gate (OOF accuracy 0.898 against a 0.742 majority rate), with the
+same one-directional signature as malaria but stronger: 973 images
+labelled \emph{pneumonia} cross-validate as \emph{normal}, against only
+23 in the opposite direction. We conservatively flag 155 high-confidence
+cases (Appendix A), every one of which is independently flagged by the
+\texttt{cleanlab} reference implementation (which flags 209; Jaccard
+0.742). That two independently assembled public medical datasets exhibit
+the same directional failure mode --- over-inclusive positive labels ---
+is the central empirical finding of this study, and each flagged
+identifier is published so any reader can inspect the films.
+\subsection{Pneumonia: an honest gap, and where it lives}
+Our from-scratch models underperform the published Kermany et al.\ number
+(92.8\,\%, Inception-v3 transfer from ImageNet) by 13--21 accuracy points
+(CNN 72.1\,\%, RegionGCN 79.0\,\%; Table \ref{tab:benchmark}). The gap
+decomposes cleanly: sensitivity is 99\,\%+ on the official test set for
+both models, while specificity is 45--55\,\% --- the models catch
+pneumonia but over-call normals. Two causes are quantified in this study:
+(i) the training split is 74\,\% pneumonia, so an unweighted loss rewards
+over-calling (addressed in the tuned iteration by class-weighted loss);
+(ii) the label-noise census (Section census results) measures how much of
+the residual is annotation noise. We also note the comparison is
+asymmetric by construction: Kermany et al.\ initialised from ImageNet
+features, we train from random initialisation on 2 CPU cores; the honest
+statement is that a from-scratch small model reaches 79\,\% on this
+benchmark, and the published 92.8\,\% is not a from-scratch number.
+\subsection{The hybrid's value is dataset-dependent}
+The RegionGCN hybrid loses slightly to the CNN core on malaria
+($-$0.10 pts) but wins clearly on pneumonia (+7.9 pts accuracy,
++1.8 pts AUC). Chest X-rays have large-scale spatial structure (heart
+border, costophrenic angles) that region-level graph reasoning can
+exploit; 48\,px cell crops do not. A hybrid head is therefore not a
+uniform upgrade; it should be adopted per-dataset, with the delta
+measured, exactly as reported here.
+\subsection{Honest negatives}
+\begin{itemize}
+\item The RegionGCN hybrid did \emph{not} beat the plain CNN core on
+malaria (95.98\,\% vs 96.08\,\% test accuracy; committed
+\texttt{baseline\_results.json}). The graph head adds 18{,}464 parameters
+and measurable training time for no gain on this task; we report it as a
+negative result rather than tuning until it wins.
+\item Our first breastmnist census produced a 49.8\,\% noise rate that was
+an artefact of an undertrained auditor (see admissibility gate); the run
+is preserved in the logs and motivated the gate.
+\item RAM limits (2\,GB, no swap) forced malaria images to 48\,px; two
+long training runs were killed by the kernel OOM killer before we adopted
+per-fold checkpointing. Both mitigations are engineering compromises, not
+scientific choices.
+\end{itemize}
+

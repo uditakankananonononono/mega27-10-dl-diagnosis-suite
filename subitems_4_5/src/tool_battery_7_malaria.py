@@ -18,7 +18,10 @@ res = {}
 X = np.load(ROOT / "data" / "malaria" / "malaria48_x.npy", mmap_mode="r")
 y = np.load(ROOT / "data" / "malaria" / "malaria48_y.npy")
 split = json.load(open(OUT / "split.json"))
-te_i = np.array(split["test"]); tr_i = np.array(split["train"])[:4000]
+te_i = np.array(split["test"])
+rng = np.random.default_rng(0)
+tr_all = np.array(split["train"]); rng.shuffle(tr_all)
+tr_i = tr_all[:4000]  # shuffled: raw split is class-ordered
 
 # 1) timm pretrained ResNet18 features + sklearn linear probe
 t0 = time.time()

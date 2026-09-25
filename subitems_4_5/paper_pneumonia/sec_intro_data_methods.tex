@@ -1,0 +1,69 @@
+
+\section{Introduction}
+Pneumonia is the single largest infectious cause of death in children
+worldwide, and chest radiography is its workhorse imaging modality. The
+Kermany et al.\ \texttt{ChestXRay2017} collection \cite{kermany2018}
+(Mendeley Data \texttt{rscbjbr9sj} v2) is the standard public benchmark for
+paediatric pneumonia detection in chest X-rays. This paper is the
+pneumonia half (item 10.5) of a two-disease deep-learning diagnosis
+program; the malaria half (item 10.4) appears in a companion paper.
+We pursue four goals, in priority order. (1)~\textbf{Benchmark honesty}:
+train a compact CNN core and a CNN--graph hybrid (RegionGCN) under the
+official patient-level train/test split, and position the result against
+the published Kermany reference and against the strongest external tool we
+could run on the \emph{same} test films --- a TorchXRayVision DenseNet-121
+evaluated head-to-head on our 624-film official test set.
+(2)~\textbf{Census the label noise} with a three-fold out-of-fold
+confident-learning census, publish every flagged identifier, and
+cross-validate with an independent library. (3)~\textbf{Quantify the
+cleaning effect} by retraining on census-cleaned data, reporting the delta
+whatever its sign. (4)~\textbf{Ship a working tool}: the \texttt{dxtool}
+CLI, benchmarked against the external tool under identical conditions.
+
+\section{Data provenance and integrity}
+\subsection{Source and verification}
+Mendeley Data \texttt{rscbjbr9sj} v2, \texttt{ChestXRay2017.zip},
+SHA-256 \texttt{13efc055\dots ce36} verified against the publisher API.
+The official patient-level train/test split is preserved exactly
+(5{,}232 train / 624 test); validation is carved stratified from train
+(10\%, seed 42) and never touches the test set. Films were decoded once
+into $(N, 1, 128, 128)$ \texttt{uint8} NCHW arrays
+(\texttt{data/pneumonia/cxr\_train\_x.npy}, \texttt{cxr\_test\_x.npy}).
+\subsection{Accession-level dataset ledger}
+Under the uniform program rule --- each unique identifier-backed record
+individually fetched and used counts as one dataset --- the pneumonia
+project uses \textbf{161 datasets}: the Mendeley archive, two atlas panels
+used in the suite-level cross-panel audit, and 158 PubMed records
+individually fetched and screened in the literature audit
+(\texttt{results/lit\_audit\_pneumonia.json}, unioned with the shared
+audit's pneumonia subset and deduplicated by PMID). The full ledger
+appears in the appendix.
+
+\section{Methods}
+\subsection{Models}
+CNN core (140{,}322 parameters) and RegionGCN hybrid (158{,}786
+parameters), grid $g{=}4$ on the $8{\times}8$ final feature map of the
+128-pixel trunk, hidden $d{=}64$, two GCN layers.
+\subsection{Training protocol}
+Adam $\alpha{=}10^{-3}$, batch 32, early stopping on validation loss,
+deterministic seeds, 2 CPU threads; augmentation is flips plus
+$k\cdot90^\circ$ rotations seeded per sample. A class-weighted variant
+(weights inversely proportional to class frequency) addresses the
+normal/pneumonia imbalance and is reported separately as the tuned
+configuration (\texttt{results/pneumonia/tuned\_results.json}).
+\subsection{Census protocol}
+Three-fold out-of-fold probabilities on the training partition with the
+CNN core; confident joint and thresholds per Definition~\ref{def:cj}; the
+same admissibility gate as the malaria study (OOF accuracy
+$\ge \max(0.60, \text{majority}+0.05)$, $\ge 250$ steps per fold). Flagged
+identifiers are exact relative paths inside the public archive.
+\subsection{External head-to-head protocol}
+TorchXRayVision \texttt{densenet121-res224-all} was run in its published
+form (weights untouched, official preprocessing) over the identical 624
+official test films; its probability vector was argmax-mapped to the
+binary task. Scores are committed in
+\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}. This is the
+strongest external tool comparison we could execute on identical data and
+split; the published Kermany number (92.8\% accuracy) is cross-regime
+(different model class, input resolution, and training data scale) and is
+treated as the published-benchmark gap, not a same-split defeat.

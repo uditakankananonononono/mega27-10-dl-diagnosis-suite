@@ -1,0 +1,32 @@
+\section{External tools and datasets}
+\begin{longtable}{p{0.28\textwidth}p{0.62\textwidth}}
+\caption{External research tools genuinely used (honest count; each
+with its role). Infrastructure is used but deliberately \emph{not} counted,
+per program convention: git, GitHub, pytest, TeX Live, pandoc, curl and
+sha256sum move and verify artefacts but answer no research
+question.}\label{tab:tools}\\
+\hline Tool & Role in this study \\ \hline \endhead
+\input{tools_table_body}\end{longtable}
+\begin{longtable}{p{0.30\textwidth}p{0.60\textwidth}}
+\caption{Datasets and data sources (accession-level, per program counting rule).}\label{tab:datasets}\\
+\hline Dataset & Use \\ \hline \endhead
+\input{datasets_table_body}\end{longtable}
+\section{Reproducibility}
+Commit-pinned code, hermetic pytest suite (13 tests, no network), fixed
+seeds, committed splits and probability files. Every headline metric is
+computed twice with independent implementations (scikit-learn and
+torchmetrics) over the committed probability files; all eight agree
+exactly (\texttt{results/metrics\_crossverify.json}). Layer-level
+architecture dumps (torchinfo) are committed as
+\texttt{results/model\_architectures.txt}.
+\appendix
+\section{Flagged identifiers}
+% generated list of census-flagged image IDs (both datasets)
+\input{flagged_ids_body}
+\begin{thebibliography}{9}
+\bibitem{rajaraman2018} Rajaraman S.\ et al.\ Pre-trained convolutional
+neural networks as feature extractors toward improved malaria parasite
+detection in thin blood smear images. \emph{PeerJ} 6:e4568, 2018.
+\bibitem{kermany2018} Kermany D.\ et al.\ Identifying medical diagnoses and
+treatable diseases by image-based deep learning. \emph{Cell} 172(5):1122--1131, 2018.
+\bibitem{kipf2017} Kipf T., Welling M.\ Semi-supervised classification with

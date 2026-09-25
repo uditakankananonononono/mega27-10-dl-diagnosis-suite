@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}             % Times-compatible math
+% Real Times New Roman text: Microsoft Core Fonts TTFs (EULA-permitted use),
+% converted with ttf2tfm to T1/ec metrics, embedded by pdflatex.
+\pdfmapfile{+tnr-ec.map}
+\DeclareFontFamily{T1}{tnr}{}
+\DeclareFontShape{T1}{tnr}{m}{n}{<-> tnr-ec}{}
+\DeclareFontShape{T1}{tnr}{m}{it}{<-> tnri-ec}{}
+\DeclareFontShape{T1}{tnr}{m}{sl}{<-> tnri-ec}{}
+\DeclareFontShape{T1}{tnr}{b}{n}{<-> tnrbd-ec}{}
+\DeclareFontShape{T1}{tnr}{b}{it}{<-> tnrbi-ec}{}
+\DeclareFontShape{T1}{tnr}{bx}{n}{<-> tnrbd-ec}{}
+\DeclareFontShape{T1}{tnr}{bx}{it}{<-> tnrbi-ec}{}
+\renewcommand{\rmdefault}{tnr}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,amsmath,amsthm,amsfonts,longtable,array}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newcommand{\R}{\mathbb{R}}
+\title{\textbf{Deep-Learning Diagnosis Across Diseases:\\
+A CNN--GNN Hybrid Benchmark and a Confident-Learning\\Label-Noise Census of Two Public Medical Image Datasets}\\[6pt]
+\large MEGA-PROGRAM-27, Item 10 (tools 4--5): malaria parasite detection and pneumonia detection}
+\author{MEGA27-10b build lane \quad (computational study; no wet lab)}
+\date{September 24, 2026}
+
+\title{\textbf{Malaria Parasite Detection with a CNN--GNN Hybrid: Benchmark Win, Label-Noise Census, and a Verified Diagnostic Tool}\\
+\large MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\_images)}
+\author{MEGA27-10b build lane \quad (computational study; no wet lab)}
+\date{September 26, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We train a compact CNN core and a CNN--graph hybrid (RegionGCN) on the 27,558-cell NIH malaria benchmark, beating the source-verified published cell-level reference (94.0\%) with 96.08\% test accuracy and ROC-AUC 0.9929 on 2,758 held-out cells. A three-fold out-of-fold confident-learning census estimates 11.44\% label noise and publishes 249 falsifiable per-image flags, cross-validated against an independent library; cleaned retraining is reported honestly. The study uses 240 accession-level datasets and its tool ledger is evidence-gated per tool.
+\end{abstract}
+\tableofcontents
+\newpage
+\input{sec_intro_data_methods}
+\input{../paper_shared/math_foundations}
+\input{sec_results}
+\input{lit_survey_malaria}
+\input{sec_fig_interp_disc_lim}
+\input{sec_tables}
+\input{sec_batteries}
+\input{sec_eng_formulas}
+\input{sec_ledgers}
+\input{sec_flagged}
+\input{sec_refs}
+\end{document}

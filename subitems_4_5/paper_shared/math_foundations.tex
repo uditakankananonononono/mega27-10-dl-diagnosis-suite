@@ -1,0 +1,105 @@
+\section{Mathematical foundations}
+\subsection{Convolutional feature extraction}
+Given an input image $x \in \R^{C_0 \times H_0 \times W_0}$, a convolutional
+layer computes
+\begin{equation}
+f^{(l)}_{c,i,j} = \phi\!\Big(b^{(l)}_c + \sum_{c'=1}^{C_{l-1}} \sum_{u=0}^{k-1}\sum_{v=0}^{k-1} W^{(l)}_{c,c',u,v}\, f^{(l-1)}_{c',\, i+u,\, j+v}\Big),
+\label{eq:conv}
+\end{equation}
+with $\phi$ the ReLU nonlinearity, $k=3$ kernels, and batch normalisation
+$\hat f = \gamma (f-\mu_B)/\sqrt{\sigma_B^2+\epsilon}+\beta$ between layers.
+Max pooling halves spatial resolution three times, so a $64\times64$ input
+yields an $8\times8$ feature map with $C{=}128$ channels.
+
+\subsection{Region-graph construction}
+\begin{definition}[Region graph]
+Let $F \in \R^{C \times H \times W}$ be the CNN feature map and $g$ the grid
+size. Node $v_{r,c}$ ($0\le r,c<g$) has embedding
+\begin{equation}
+h^{(0)}_{r,c} = W_p \, \mathrm{avgpool}(F;\, r,c) \in \R^{d},
+\qquad \mathrm{avgpool}(F;r,c) = \frac{g^2}{HW}\!\!\sum_{i \in R_r}\sum_{j \in R_c} F_{:,i,j},
+\end{equation}
+and edge set $E$ joins all 8-neighbour grid pairs (king moves on the grid).
+\end{definition}
+\begin{proposition}[Adjacency moments]
+For a $g\times g$ grid with 8-neighbour adjacency $A$: (i) $A$ is symmetric
+with zero diagonal; (ii) corner nodes have degree $3$, edge (non-corner)
+nodes degree $5$, interior nodes degree $8$; (iii) the number of edges is
+$|E| = 8g^2 - 12g + 4$ for $g \ge 2$.
+\end{proposition}
+\begin{proof}
+(i)--(ii) follow from the bijection $(r,c)\leftrightarrow(r',c')$ of king
+moves and boundary counting. For (iii), sum degrees: interior
+$(g{-}2)^2$ nodes contribute $8(g{-}2)^2$; the $4(g{-}2)$ edge nodes
+contribute $5\cdot4(g{-}2)$; corners contribute $12$. Handshaking gives
+$|E|=\tfrac12[8(g{-}2)^2+20(g{-}2)+12]=8g^2-12g+4$.
+\end{proof}
+
+\subsection{GCN propagation and spectrum}
+\begin{definition}[Normalised propagation]
+With $\tilde A = A + I$, $\tilde D_{ii}=\sum_j \tilde A_{ij}$,
+\begin{equation}
+\hat A = \tilde D^{-1/2}\,\tilde A\,\tilde D^{-1/2},
+\qquad H^{(l+1)} = \phi\!\big(\hat A\, H^{(l)}\, W^{(l)}\big).
+\label{eq:gcn}
+\end{equation}
+\end{definition}
+\begin{lemma}[Spectral bound]
+The eigenvalues of $\hat A$ lie in $(-1, 1]$.
+\end{lemma}
+\begin{proof}[Proof sketch]
+$\hat A = I - \tilde D^{-1/2} \tilde L\, \tilde D^{-1/2}$ where
+$\tilde L = \tilde D - \tilde A$ is positive semidefinite; the normalised
+Laplacian of a connected non-bipartite weighted graph with self loops has
+spectrum in $[0, 2)$, hence $\lambda(\hat A) \in (-1, 1]$. Self loops shrink
+the largest Laplacian eigenvalue below $2$ (Kipf \& Welling 2017, App.\ A).
+\end{proof}
+Repeated application of \eqref{eq:gcn} contracts high-frequency components,
+which is why two layers suffice at our graph scale ($g{=}4$, $16$ nodes,
+$|E|=100$ by Proposition 2.2).
+
+\subsection{Objective and optimisation}
+We minimise the cross-entropy
+\begin{equation}
+\mathcal L = -\frac{1}{N}\sum_{n=1}^N \log \frac{\exp(z_{n,y_n})}{\sum_{c}\exp(z_{n,c})},
+\qquad
+\frac{\partial \mathcal L}{\partial z_{n,c}} = \frac{1}{N}\big(\mathrm{softmax}(z_n)_c - \mathbb 1[c = y_n]\big),
+\label{eq:xent}
+\end{equation}
+with Adam: $m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$,
+$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$,
+$\theta_t = \theta_{t-1} - \alpha\, \hat m_t/(\sqrt{\hat v_t}+\epsilon)$,
+$\hat m_t = m_t/(1-\beta_1^t)$, $\hat v_t = v_t/(1-\beta_2^t)$.
+
+\subsection{Confident learning for label noise}
+\begin{definition}[Confident joint; Northcutt et al.\ 2021]\label{def:cj}
+Given out-of-fold probabilities $P \in [0,1]^{N \times K}$ and given labels
+$y$, define per-class thresholds $t_j = \frac{1}{|\{n: y_n=j\}|}\sum_{n: y_n=j} P_{n,j}$
+and the confident prediction $\tilde y_n = \arg\max_j \{P_{n,j} : P_{n,j} \ge t_j\}$.
+The confident joint is $C_{i,j} = \sum_n \mathbb 1[y_n = i \,\wedge\, \tilde y_n = j]$.
+\end{definition}
+Off-diagonal mass $C_{i,j}$ ($i\neq j$) counts samples whose given label
+disagrees with confident out-of-fold evidence; the estimator
+$\hat\rho = \sum_{i\neq j} C_{i,j} / N$ estimates the noise rate.
+\begin{proposition}[Consistency, informal statement]
+If class-conditional predicted probabilities are rank-preserving for true
+labels and errors are class-conditional, the normalised confident joint
+converges to the true joint distribution of noisy and latent true labels as
+$N \to \infty$ (Northcutt et al.\ 2021, Thm.\ 2).
+\end{proposition}
+We validate the estimator before use: on 2{,}000 synthetic samples with 10\%
+planted flips it recovers $>$90\% of flips at $<$1\% false-positive rate
+(committed test \texttt{tests/test\_core.py::TestLabelNoise}).
+
+\subsection{Evaluation metrics}
+With TP, FP, TN, FN from the test confusion matrix,
+\begin{align}
+\mathrm{acc} &= \tfrac{TP+TN}{TP+TN+FP+FN}, &
+\mathrm{prec} &= \tfrac{TP}{TP+FP}, &
+\mathrm{rec} &= \tfrac{TP}{TP+FN}, &
+\mathrm{spec} &= \tfrac{TN}{TN+FP}, &
+F_1 &= \tfrac{2\,\mathrm{prec}\,\mathrm{rec}}{\mathrm{prec}+\mathrm{rec}},
+\end{align}
+and $\mathrm{AUC} = \int_0^1 \mathrm{TPR}(u)\, d(\mathrm{FPR}(u))$, computed
+by the trapezoidal rule over the empirical ROC.
+

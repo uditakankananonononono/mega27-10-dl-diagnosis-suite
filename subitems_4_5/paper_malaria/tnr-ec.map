@@ -1,0 +1,4 @@
+tnr-ec Times-Roman " ecEncoding ReEncodeFont " </usr/share/texlive/texmf-dist/fonts/enc/dvips/base/ec.enc <Times.TTF
+tnrbd-ec Times-Bold " ecEncoding ReEncodeFont " </usr/share/texlive/texmf-dist/fonts/enc/dvips/base/ec.enc <Timesbd.TTF
+tnri-ec Times-Italic " ecEncoding ReEncodeFont " </usr/share/texlive/texmf-dist/fonts/enc/dvips/base/ec.enc <Timesi.TTF
+tnrbi-ec Times-BoldItalic " ecEncoding ReEncodeFont " </usr/share/texlive/texmf-dist/fonts/enc/dvips/base/ec.enc <Timesbi.TTF

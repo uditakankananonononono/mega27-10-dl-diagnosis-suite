@@ -1,0 +1,34 @@
+\section{Introduction}
+\subsection{Scope and items 10.4--10.5}
+This report covers tools 4 and 5 of item 10 of the MEGA-PROGRAM-27
+computational-biology program: deep-learning diagnosis across diseases. Lane
+10a covers tools 1--3 on tabular cohorts (WDBC, Cleveland, Pima) and a
+22-dataset panel; the present lane deliberately selects \emph{disjoint}
+diseases and data modalities --- microscopy cell images (malaria) and
+radiographs (pneumonia) --- so the two lanes together span tabular and image
+diagnosis without duplication.
+
+\subsection{Claims audited}
+For malaria, Rajaraman et al.\ (2018) report $94.0 \pm 1.0$\% cell-level
+accuracy for their custom CNN and $95.9$\% at patient level, with pre-trained
+VGG-16 at $94.5 \pm 1.5$\% and ResNet-50 top-ranked on mean ranks (numbers
+source-verified against the PMC full text, Table~2 and Table~6 of the paper).
+For pneumonia, Kermany et al.\ (2018) report 92.8\% test accuracy
+(sensitivity 93.2\%, specificity 90.1\%) for a transfer Inception-v3 on the
+624-image official test set (primary full text paywalled; all three numbers
+corroborated against two independent open-access citing papers, PMC10660141
+and PMC11759907, and the DOI CrossRef-verified). We treat these as the published frontier and
+report head-to-head numbers on the same official splits.
+
+\subsection{Contribution}
+\begin{enumerate}
+\item A verified benchmark reproduction on integrity-checked data
+(SHA-verified downloads; splits committed).
+\item A compact CNN + region-GNN hybrid ($\approx$159k parameters) whose
+propagation rule we derive; it runs on 2 CPU cores.
+\item A \textbf{label-noise census} of both datasets: named, individually checkable
+image identifiers flagged by a from-scratch confident-learning estimator,
+with quantified noise rates and measured retraining deltas. To our knowledge
+no published census of these label errors exists.
+\end{enumerate}
+

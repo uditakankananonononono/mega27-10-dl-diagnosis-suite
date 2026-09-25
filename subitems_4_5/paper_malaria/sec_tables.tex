@@ -1,0 +1,49 @@
+
+\section{Confidence intervals and cross-verification}
+\subsection{Wilson 95\% intervals for every reported accuracy}
+statsmodels score intervals (\texttt{results/confidence\_intervals.json}),
+so every accuracy in this paper carries its uncertainty:
+\begin{longtable}{l c c c}
+\hline Configuration & Correct/$n$ & Acc\% & Wilson 95\% \\ \hline \endhead
+baseline\_results/cnn & 2650/2758 & 96.08 & [95.29, 96.75] \\
+baseline\_results/gcn & 2647/2758 & 95.98 & [95.18, 96.65] \\
+cleaned\_results/cnn & 2634/2758 & 95.50 & [94.67, 96.22] \\
+cleaned\_results/gcn & 2632/2758 & 95.43 & [94.59, 96.15] \\
+\hline
+\end{longtable}
+\subsection{Independent metric recomputation}
+Every headline metric was recomputed with torchmetrics independently of
+sklearn (\texttt{results/metrics\_crossverify.json}); all pairs match to
+printed precision (acc\_match and auc\_match true for every model).
+
+\subsection{Census cross-validation against cleanlab}
+The from-scratch confident-learning estimator flagged 249
+images; the independent \texttt{cleanlab} library flagged
+296 on identical out-of-fold probabilities. The
+intersection is 249 --- our flag set is a strict subset of
+cleanlab's (Jaccard 0.841) --- so our census is the
+conservative estimator of the two, and the disagreement mass is published
+as samples in \texttt{results/malaria/census\_crosscheck.json}.
+The cleanlab confident joint is
+[[0.4914, 0.0086],
+ [0.0049, 0.4951]].
+
+\subsection{Optuna search, full trial log}
+All 8 TPE trials (2 epochs each,
+2660s total; \texttt{results/malaria/optuna\_gcn.json}):
+\begin{longtable}{r c c c c}
+\hline Trial & Hidden & Grid & LR & Val AUC \\ \hline \endhead
+1 & 64 & 3 & 9.00e-04 & 0.9883 \\
+2 & 128 & 6 & 6.04e-04 & 0.9892 \\
+3 & 64 & 3 & 1.70e-03 & 0.9872 \\
+4 & 128 & 3 & 1.42e-03 & 0.9862 \\
+5 & 64 & 3 & 4.10e-04 & 0.9900 \\
+6 & 64 & 3 & 8.17e-04 & 0.9880 \\
+7 & 128 & 3 & 4.42e-04 & 0.9897 \\
+8 & 32 & 3 & 1.55e-04 & 0.9898 \\
+\hline
+\end{longtable}
+Best validation AUC 0.9900 at
+hidden=64, grid=3,
+lr=4.10e-04; shipped-configuration test AUC
+0.9918.

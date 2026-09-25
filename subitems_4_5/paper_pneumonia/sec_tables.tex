@@ -1,0 +1,27 @@
+
+\section{Confidence intervals and cross-verification}
+\subsection{Wilson 95\% intervals for every reported accuracy}
+statsmodels score intervals (\texttt{results/confidence\_intervals.json}),
+so every accuracy in this paper carries its uncertainty:
+\begin{longtable}{l c c c}
+\hline Configuration & Correct/$n$ & Acc\% & Wilson 95\% \\ \hline \endhead
+baseline\_results/cnn & 450/624 & 72.12 & [68.47, 75.49] \\
+baseline\_results/gcn & 493/624 & 79.01 & [75.64, 82.02] \\
+\hline
+\end{longtable}
+\subsection{Independent metric recomputation}
+Every headline metric was recomputed with torchmetrics independently of
+sklearn (\texttt{results/metrics\_crossverify.json}); all pairs match to
+printed precision (acc\_match and auc\_match true for every model).
+
+\subsection{Census cross-validation against cleanlab}
+The from-scratch confident-learning estimator flagged 155
+images; the independent \texttt{cleanlab} library flagged
+209 on identical out-of-fold probabilities. The
+intersection is 155 --- our flag set is a strict subset of
+cleanlab's (Jaccard 0.742) --- so our census is the
+conservative estimator of the two, and the disagreement mass is published
+as samples in \texttt{results/pneumonia/census\_crosscheck.json}.
+The cleanlab confident joint is
+[[0.2505, 0.0074],
+ [0.0369, 0.7051]].

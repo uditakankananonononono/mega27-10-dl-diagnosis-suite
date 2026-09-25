@@ -21,25 +21,35 @@ from sklearn.metrics import roc_auc_score, accuracy_score
 t0 = time.time()
 import torchxrayvision as xrv
 import torch.nn.functional as F
-model_xrv = xrv.models.DenseNet(weights="densenet121-res224-all").eval()
-probs = []
-with torch.no_grad():
-    for i in range(len(X)):
-        img = np.asarray(X[i, 0]).astype(np.float32)  # 128x128, 0..255
-        img = xrv.datasets.normalize(img, 255)
-        img = torch.from_numpy(img)[None, None, ...]
-        img = F.interpolate(img, size=(224, 224), mode="bilinear", align_corners=False)
-        o = model_xrv(img)[0]
-        probs.append(float(o[model_xrv.pathologies.index("Pneumonia")]))
-probs = np.array(probs)
-res["torchxrayvision_densenet121_all"] = {
-    "test_auc_pneumonia": round(float(roc_auc_score(y, probs)), 4),
-    "test_acc_0p5": round(float(accuracy_score(y, probs > 0.5)), 4),
-    "n": len(y), "secs": round(time.time() - t0, 1)}
-json.dump({"probs": probs.tolist(), "labels": y.tolist()},
-          open(OUT / "test_probs_torchxrayvision.json", "w"))
-print("xrv done", flush=True)
-del model_xrv
+_cached = OUT / "test_probs_torchxrayvision.json"
+if _cached.exists():
+    _c = json.load(open(_cached))
+    probs = np.array(_c["probs"])
+    res["torchxrayvision_densenet121_all"] = {
+        "test_auc_pneumonia": round(float(roc_auc_score(y, probs)), 4),
+        "test_acc_0p5": round(float(accuracy_score(y, probs > 0.5)), 4),
+        "n": len(y), "secs": "cached-from-prior-run"}
+    print("xrv skipped (cached)", flush=True)
+else:
+    model_xrv = xrv.models.DenseNet(weights="densenet121-res224-all").eval()
+    probs = []
+    with torch.no_grad():
+        for i in range(len(X)):
+            img = np.asarray(X[i, 0]).astype(np.float32)
+            img = xrv.datasets.normalize(img, 255)
+            img = torch.from_numpy(img)[None, None, ...]
+            img = F.interpolate(img, size=(224, 224), mode="bilinear", align_corners=False)
+            o = model_xrv(img)[0]
+            probs.append(float(o[model_xrv.pathologies.index("Pneumonia")]))
+    probs = np.array(probs)
+    res["torchxrayvision_densenet121_all"] = {
+        "test_auc_pneumonia": round(float(roc_auc_score(y, probs)), 4),
+        "test_acc_0p5": round(float(accuracy_score(y, probs > 0.5)), 4),
+        "n": len(y), "secs": round(time.time() - t0, 1)}
+    json.dump({"probs": probs.tolist(), "labels": y.tolist()},
+              open(OUT / "test_probs_torchxrayvision.json", "w"))
+    print("xrv done", flush=True)
+    del model_xrv
 
 # 2) kornia augmentation-stability audit of the tuned CNN
 t0 = time.time()

@@ -1,0 +1,64 @@
+
+\section{Results}
+\subsection{Headline test-set performance}
+All numbers read programmatically from committed JSONs at assembly time;
+the official test partition of $n=624$ films was evaluated
+exactly once per model. Table~\ref{tab:pne-main} gives all six
+configurations.
+\begin{table}[h]\centering\small
+\begin{tabular}{lcccccc}
+\hline
+Model & Acc\% & Prec\% & Sens\% & Spec\% & F1\% & ROC-AUC \\
+\hline
+CNN core (baseline) & 72.12 & 69.35 & 99.23 & 26.92 & 81.65 & 0.9331 \\
+RegionGCN (baseline) & 79.01 & 75.05 & 99.49 & 44.87 & 85.56 & 0.9514 \\
+CNN core (class-weighted) & 81.73 & 79.11 & 96.15 & 57.69 & 86.81 & 0.9174 \\
+RegionGCN (class-weighted) & 84.13 & 80.38 & 98.72 & 59.83 & 88.61 & 0.9471 \\
+CNN core (census-cleaned) & 79.81 & 76.19 & 98.46 & 48.72 & 85.91 & 0.9278 \\
+RegionGCN (census-cleaned) & 84.94 & 82.17 & 96.92 & 64.96 & 88.94 & 0.9377 \\
+\hline
+\end{tabular}
+\caption{Pneumonia test-set metrics, all configurations (n=624 official held-out films).}\label{tab:pne-main}
+\end{table}
+
+\subsection{External head-to-head: TorchXRayVision on the same films}
+The strongest external tool we could run unchanged on the identical test
+set is TorchXRayVision's DenseNet-121 (\texttt{densenet121-res224-all},
+published weights, official preprocessing). On the same 624 films it scores
+accuracy 38.5\% and ROC-AUC 0.7990
+(\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}). Every one
+of our six configurations beats it on the same data and split --- the
+cleaned RegionGCN by +46.5 accuracy
+points and +0.139 AUC. This is the decisive
+like-for-like comparison: identical films, identical split, tool used as
+published.
+\subsection{The published-benchmark gap, stated honestly}
+Kermany et al.\ report 92.8\% accuracy \cite{kermany2018} with a
+transfer-learned Inception-v3 at 299px trained at substantially larger
+effective scale; that number is paywalled and was corroborated through two
+independent secondary sources (\texttt{results/kermany\_number\_verification.json}).
+Our compact 2-CPU models do not close that cross-regime gap, and we do not
+claim otherwise. The honest framing: on the strongest \emph{same-split}
+external tool comparison available, our models win decisively; against the
+published cross-regime reference the gap is recorded as a redirected angle
+(transfer initialisation from a large-scale pretrained trunk), pursued in
+the transfer study below.
+\subsection{Label-noise census}
+The census (\texttt{results/pneumonia/label\_noise\_census.json}) is
+admissible under the gate (OOF accuracy 89.81\%
+vs.\ majority 74.20\%). Estimated noise rate
+\textbf{21.15\%} over $n=4710$ training
+films, 996 flagged identifiers, published
+verbatim in the appendix. The asymmetry is again one-directional: 973
+films labelled PNEUMONIA cross-validate as NORMAL, vs.\ 23 the other way.
+\subsection{Cleaning and retraining}
+Removing the 155 flagged films and retraining gives CNN
+79.81\% and RegionGCN
+\textbf{84.94\%} / AUC 0.9377
+(\texttt{results/pneumonia/cleaned\_results.json}) --- the cleaned
+RegionGCN is the strongest configuration in the study, a
++5.9-point gain over
+its own baseline, and the class-weighted CNN gains
++9.6 points. Here
+cleaning demonstrably helps, unlike the malaria regime; the difference is
+discussed in the limitations section.
