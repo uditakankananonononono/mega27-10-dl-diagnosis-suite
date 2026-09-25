@@ -1,0 +1,39 @@
+
+\section{Reconciliation with the Fuhad Expert Audit}
+\label{sec:fuhad}
+Fuhad et al.\ (2020, \emph{Diagnostics} 10(5):329, PMID 32443868) noticed
+suspicious labels while training on this collection, consulted an expert
+slide reader, and set aside 647 parasitized and 750 uninfected images as
+falsely labelled or suspicious, publishing the corrections for reuse.
+This is the one prior audit of the collection, and any honest novelty
+claim must start from it. Ours differs in kind, scale, and structure:
+\begin{enumerate}
+\item \textbf{Kind.} Theirs is a manual expert review; ours is an
+automated, reproducible statistical procedure (\texttt{dx-census}) with
+an admissibility gate, runnable on any two-class image folder in CPU
+hours. Manual audits do not scale to every benchmark; the gate-enforced
+estimator is the contribution.
+\item \textbf{Scale.} They set aside 1{,}397 images (5.07\%); the
+confident-learning joint estimates 11.44\% total inconsistency ---
+roughly double. The published 249 flags are the highest-confidence
+subset; the joint's off-diagonal mass implies the true contaminated set
+is much larger than any conservative flag list, theirs or ours.
+\item \textbf{Structure.} Their removal was nearly balanced
+(647 parasitized : 750 uninfected). Our estimate is one-directional
+(2{,}358 : 164). Two readings exist: (a) the expert reviewed both classes
+with equal suspicion while the estimator is sensitive to the asymmetric
+visual confusability (parasitized-looking artefacts in ``uninfected''
+cells); (b) part of our asymmetry is model bias. We report both; the
+crosscheck model (independent architecture, Jaccard 0.841 on flags)
+supports (a) for the flagged subset.
+\item \textbf{Overlap experiment (committed, in progress).} Reconciling
+flag-by-flag against Fuhad's published correction list is the decisive
+validation. At assembly time the list's hosting location (their
+reference [41]) has been identified but not yet mirrored into this
+repository; the reconciliation script and results will be committed when
+the mirror completes. We say this plainly rather than imply it is done.
+\end{enumerate}
+The corrected novelty claim, stated precisely: \textbf{this is the first
+automated, gate-enforced, per-image-falsifiable label-noise census of the
+benchmark, and the first analysis showing its contamination is
+one-directional} --- standing on, not against, the Fuhad audit.

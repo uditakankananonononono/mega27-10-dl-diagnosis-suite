@@ -3,15 +3,20 @@
 The NIH Lister Hill \texttt{cell\_images} collection is the standard
 teaching and benchmarking dataset for automated malaria detection in
 thin-blood-smear microscopy, cited and reused by hundreds of studies.
-\textbf{Nobody has audited its labels.} This paper's primary contribution
-is a discovery about that dataset, not another accuracy number on it:
+Its labels have been questioned exactly once before: a 2020 manual expert
+audit (Fuhad et al.) set aside 1{,}397 images as falsely labelled or
+suspicious. No \emph{automated, statistical} audit exists, and no prior
+work publishes machine-checkable per-image flags or analyses the
+\emph{structure} of the contamination. This paper's primary contribution
+is that audit, not another accuracy number on the dataset:
 \begin{enumerate}
-\item \textbf{The first label-noise census of the collection.} A
-three-fold out-of-fold confident-learning census estimates
+\item \textbf{The first automated label-noise census of the
+collection.} A three-fold out-of-fold confident-learning census estimates
 \textbf{11.44\%} label inconsistency and publishes \textbf{249
 falsifiable per-image flags} --- each an exact archive path any reader can
-inspect. Our novelty screen (197 individually fetched PubMed records,
-NCBI E-utilities) found no prior census of this collection.
+inspect. We reconcile against the Fuhad expert audit (Sec.~\ref{sec:fuhad}):
+their manual screen removed 5.1\% bidirectionally; our statistical
+estimate is larger and one-directional, and we analyse why.
 \item \textbf{The noise is one-directional.} Parasitized-labelled cells
 cross-validate as Uninfected at a 14:1 ratio over the reverse
 (2{,}358:164). The collection's published class parity (13{,}779/13{,}779)

@@ -34,7 +34,7 @@ A CNN--GNN Hybrid Benchmark and a Confident-Learning\\Label-Noise Census of Two 
 \begin{document}
 \maketitle
 \begin{abstract}
-We present the first label-noise census of the NIH Lister Hill cell\_images malaria benchmark - the most-used teaching collection in medical image classification - and publish 249 falsifiable per-image flags with a 11.44\% estimated noise rate, cross-validated against an independent library. The noise is one-directional: Parasitized-labelled cells cross-validate as Uninfected 14:1, a contamination asymmetry hidden by the collection's published class parity. We contribute an admissibility gate that prevents confident learning from fabricating noise rates under weak out-of-fold models, demonstrated on real collapse cases. Supporting evidence: a 140k-parameter CNN trained from scratch reaches 96.08\% test accuracy, beating the source-verified 94.0\% published reference and an ImageNet-pretrained probe, at two orders of magnitude fewer parameters. The study uses 240 accession-level datasets; every number regenerates from committed files.
+We present the first automated label-noise census of the NIH Lister Hill cell\_images malaria benchmark - the most-used teaching collection in medical image classification - and publish 249 falsifiable per-image flags with an 11.44\% estimated noise rate, reconciled against the one prior manual expert audit (Fuhad et al.\ 2020) and cross-validated against an independent library. The noise is one-directional: Parasitized-labelled cells cross-validate as Uninfected 14:1, a contamination asymmetry hidden by the collection's published class parity. We contribute an admissibility gate that prevents confident learning from fabricating noise rates under weak out-of-fold models, demonstrated on real collapse cases. Supporting evidence: a 140k-parameter CNN trained from scratch reaches 96.08\% test accuracy, beating the source-verified 94.0\% published reference and an ImageNet-pretrained probe, at two orders of magnitude fewer parameters. The study uses 240 accession-level datasets; every number regenerates from committed files.
 \end{abstract}
 \tableofcontents
 \newpage
@@ -47,6 +47,7 @@ We present the first label-noise census of the NIH Lister Hill cell\_images mala
 \input{sec_bbbc}
 \input{lit_survey_malaria}
 \input{sec_litsynth_mal}
+\input{sec_fuhad}
 \input{sec_fig_interp_disc_lim}
 \input{sec_rocfig}
 \input{sec_landscape}

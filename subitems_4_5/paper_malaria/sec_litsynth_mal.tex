@@ -1,19 +1,29 @@
 
 \section{Synthesis of the 197-Record Literature Audit}
 \label{sec:litsynth}
-The novelty claim is quantitative. We fetched and parsed 197 PubMed
-records on malaria diagnosis and imaging (NCBI E-utilities; full list in
-the appendix). Classifying every record by title and metadata:
+We fetched and parsed 197 PubMed records on malaria diagnosis and imaging
+(NCBI E-utilities; full list in the appendix). Classifying every record by
+title and metadata:
 \begin{itemize}
 \item \textbf{43/197} propose or evaluate a deep-learning model ---
-the field's centre of gravity is architectures and scores.
+architectures and scores are a large share of the field.
 \item \textbf{5/197} address transfer or generalization across
 microscopes, stains, or sites.
-\item \textbf{0/197} --- zero --- mention label noise, mislabeling,
-confident learning, annotation audit, or inter-rater analysis of the
-benchmark collection's labels.
+\item \textbf{0/197} state label auditing, label noise, or annotation
+quality as a \emph{topic in their title or metadata}.
 \end{itemize}
-Publication years span 2019: 7; 2020: 9; 2021: 11; 2022: 21; 2023: 15; 2024: 24; 2025: 25; 2026: 17. Every mid-90s accuracy ever reported on
-\texttt{cell\_images} sits on top of an unaudited label set, and the
-one-directional contamination our census measures (Sec.~2) bounds every
-one of those numbers. That is why the census leads this paper.
+The third point requires an honest correction, discovered during external
+review of this work: one record in our own screen --- Fuhad et al.\ 2020
+(PMID 32443868), titled \emph{Deep Learning Based Automatic Malaria
+Parasite Detection from Blood Smear and its Smartphone Based Application}
+--- contains a manual expert label audit as a \emph{secondary
+contribution}, invisible to a title-based screen. Its expert consultant
+set aside 647 parasitized and 750 uninfected images as falsely labelled
+or suspicious (27{,}558 $\to$ 26{,}161). A title/metadata screen
+therefore cannot support the claim ``no prior audit exists''; the
+defensible claim is narrower and, we argue, still novel: no prior
+\emph{automated, estimator-based} census exists, no prior work publishes
+machine-checkable per-image flags for this collection, and no prior work
+analyses the \emph{directional structure} of the contamination. We state
+the claim in exactly that form throughout, and we reconcile our estimate
+against Fuhad's numbers in Sec.~\ref{sec:fuhad}.

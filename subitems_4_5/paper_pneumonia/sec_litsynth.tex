@@ -12,10 +12,17 @@ the field's centre of gravity is architectures and scores.
 as a label source or NLP target --- the label-generation process is
 infrastructure to these papers, not an object of study.
 \item \textbf{9/150} address transfer/generalization.
-\item \textbf{0/150} --- zero --- mention label noise, mislabeling,
-confident learning, annotation audit, or inter-rater analysis of a
-benchmark's labels.
+\item \textbf{0/150} --- zero --- state label noise, mislabeling,
+confident learning, annotation audit, or inter-rater analysis as a topic
+in their title or metadata.
 \end{itemize}
+Caveat, learned the hard way on the malaria side of this suite: a
+title-based screen can miss a label audit buried as a secondary
+contribution inside an architecture paper (Fuhad et al.\ 2020 did
+exactly that). We therefore state the pneumonia novelty claim in the
+narrow defensible form: no prior \emph{automated, per-image-falsifiable}
+census of this training set is known to us, and none was findable by
+title screen or by targeted full-text queries for this collection.
 Publication years span 2019: 1; 2020: 12; 2021: 30; 2022: 45; 2023: 21; 2024: 22; 2025: 12; 2026: 5. The pattern is unambiguous: a decade of
 scoring work on report-parsed chest-radiograph collections, and no
 published audit of what the labels actually say. That is the gap this

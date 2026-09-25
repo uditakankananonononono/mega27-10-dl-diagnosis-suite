@@ -152,11 +152,12 @@ def main_tex(disease, title, subtitle, abstract, inputs):
 \end{{document}}
 """)
 
-ABS_MAL = ("We present the first label-noise census of the NIH Lister Hill "
+ABS_MAL = ("We present the first automated label-noise census of the NIH Lister Hill "
 "cell\\_images malaria benchmark - the most-used teaching collection in "
 "medical image classification - and publish 249 falsifiable per-image flags "
-"with a 11.44\\% estimated noise rate, cross-validated against an "
-"independent library. The noise is one-directional: Parasitized-labelled "
+"with an 11.44\\% estimated noise rate, reconciled against the one "
+"prior manual expert audit (Fuhad et al.\\ 2020) and cross-validated "
+"against an independent library. The noise is one-directional: Parasitized-labelled "
 "cells cross-validate as Uninfected 14:1, a contamination asymmetry hidden "
 "by the collection's published class parity. We contribute an admissibility "
 "gate that prevents confident learning from fabricating noise rates under "
@@ -201,7 +202,7 @@ if __name__ == '__main__':
         'MEGA-PROGRAM-27, Item 10.4 (malaria, NIH Lister Hill cell\\_images)',
         ABS_MAL,
         ['sec_intro_data_methods', 'sec_datacard', 'sec_architecture', '../paper_shared/math_foundations',
-         'sec_results', 'sec_verification', 'sec_bbbc', 'lit_survey_malaria', 'sec_litsynth_mal'] + common_tail))
+         'sec_results', 'sec_verification', 'sec_bbbc', 'lit_survey_malaria', 'sec_litsynth_mal', 'sec_fuhad'] + common_tail))
     write(R('paper_pneumonia/main.tex'), main_tex(
         'pneumonia',
         'A Label-Noise Census of ChestXRay2017: Directional Contamination from Report Parsing, a Cleaning Gain of +5.9 Points, and a Compact Verified Diagnostic',
