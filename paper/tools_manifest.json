@@ -1,112 +1,132 @@
 [
-  {
-    "tool": "PyTorch",
-    "version": "2.14.0+cpu",
-    "used_for": "MLP/CNN1D/GCN/GAT model implementations and training loops"
-  },
-  {
-    "tool": "scikit-learn",
-    "version": "1.7.2",
-    "used_for": "logistic regression + random forest baselines, metric implementations (roc_auc, brier, f1)"
-  },
-  {
-    "tool": "NumPy",
-    "version": "2.2.6",
-    "used_for": "all numerical computation, kNN graph construction"
-  },
-  {
-    "tool": "SciPy",
-    "version": "1.15.3",
-    "used_for": "statistical utilities"
-  },
-  {
-    "tool": "NetworkX",
-    "version": "latest",
-    "used_for": "graph inspection/validation of patient-similarity graphs"
-  },
-  {
-    "tool": "Matplotlib",
-    "version": "3.10.9",
-    "used_for": "figures for the paper"
-  },
-  {
-    "tool": "Biopython",
-    "version": "latest",
-    "used_for": "NCBI/Entrez citation and dataset verification"
-  },
-  {
-    "tool": "pytest",
-    "version": "latest",
-    "used_for": "hermetic test suites (28 tests)"
-  },
-  {
-    "tool": "UCI ML Repository",
-    "version": "live",
-    "used_for": "25 clinical datasets, direct-download verified"
-  },
-  {
-    "tool": "GitHub (jbrownlee/Datasets)",
-    "version": "live",
-    "used_for": "Pima diabetes dataset mirror"
-  },
-  {
-    "tool": "python-docx",
-    "version": "1.2.0",
-    "used_for": "paper DOCX generation (Times New Roman)"
-  },
-  {
-    "tool": "git/GitHub",
-    "version": "2.34.1",
-    "used_for": "reproducible artifact versioning"
-  },
-  {
-    "tool": "NCBI GEO FTP archive",
-    "version": "live",
-    "used_for": "GEO series-matrix downloads for 25-accession transcriptomic arm"
-  },
-  {
-    "tool": "OpenML REST API",
-    "version": "v1",
-    "used_for": "dataset catalogue query (6000-entry list) and accession-level curation for the OpenML arm"
-  },
-  {
-    "tool": "scikit-learn fetch_openml",
-    "version": "1.7.2",
-    "used_for": "programmatic fetch of 30 OpenML datasets with caching"
-  },
-  {
-    "tool": "OpenML file download endpoint",
-    "version": "v1",
-    "used_for": "direct ARFF retrieval + manual parse for heart-failure (did 43008) when default-target metadata was missing"
-  },
-  {
-    "tool": "Zenodo",
-    "version": "record 10519652",
-    "used_for": "MedMNIST v2 npz direct downloads with resume/integrity validation"
-  },
-  {
-    "tool": "MedMNIST package",
-    "version": "latest",
-    "used_for": "subset task metadata (INFO) for the 12-subset image arm"
-  },
-  {
-    "tool": "pandas",
-    "version": "latest",
-    "used_for": "categorical/mixed-type encoding in the OpenML ARFF loader"
-  },
-  {
-    "tool": "curl",
-    "version": "system",
-    "used_for": "resumable dataset downloads (Zenodo stall recovery, OpenML ARFF)"
-  },
-  {
-    "tool": "pdfinfo (poppler)",
-    "version": "system",
-    "used_for": "rendered page-count verification of the paper PDF"
-  },
-  {
-    "tool": "pdfLaTeX",
-    "version": "texlive",
-    "used_for": "LaTeX source-of-record paper build (paper/main.tex)"
-  }
+ {
+  "tool": "PyTorch",
+  "version": "2.14.0+cpu",
+  "used_for": "MLP/CNN1D/GCN/GAT model implementations and training loops"
+ },
+ {
+  "tool": "scikit-learn",
+  "version": "1.7.2",
+  "used_for": "logistic regression + random forest baselines, metric implementations (roc_auc, brier, f1)"
+ },
+ {
+  "tool": "NumPy",
+  "version": "2.2.6",
+  "used_for": "all numerical computation, kNN graph construction"
+ },
+ {
+  "tool": "SciPy",
+  "version": "1.15.3",
+  "used_for": "statistical utilities"
+ },
+ {
+  "tool": "NetworkX",
+  "version": "latest",
+  "used_for": "graph inspection/validation of patient-similarity graphs"
+ },
+ {
+  "tool": "Matplotlib",
+  "version": "3.10.9",
+  "used_for": "figures for the paper"
+ },
+ {
+  "tool": "Biopython",
+  "version": "latest",
+  "used_for": "NCBI/Entrez citation and dataset verification"
+ },
+ {
+  "tool": "pytest",
+  "version": "latest",
+  "used_for": "hermetic test suites (28 tests)"
+ },
+ {
+  "tool": "UCI ML Repository",
+  "version": "live",
+  "used_for": "25 clinical datasets, direct-download verified"
+ },
+ {
+  "tool": "GitHub (jbrownlee/Datasets)",
+  "version": "live",
+  "used_for": "Pima diabetes dataset mirror"
+ },
+ {
+  "tool": "python-docx",
+  "version": "1.2.0",
+  "used_for": "paper DOCX generation (Times New Roman)"
+ },
+ {
+  "tool": "git/GitHub",
+  "version": "2.34.1",
+  "used_for": "reproducible artifact versioning"
+ },
+ {
+  "tool": "NCBI GEO FTP archive",
+  "version": "live",
+  "used_for": "GEO series-matrix downloads for 25-accession transcriptomic arm"
+ },
+ {
+  "tool": "OpenML REST API",
+  "version": "v1",
+  "used_for": "dataset catalogue query (6000-entry list) and accession-level curation for the OpenML arm"
+ },
+ {
+  "tool": "scikit-learn fetch_openml",
+  "version": "1.7.2",
+  "used_for": "programmatic fetch of 30 OpenML datasets with caching"
+ },
+ {
+  "tool": "OpenML file download endpoint",
+  "version": "v1",
+  "used_for": "direct ARFF retrieval + manual parse for heart-failure (did 43008) when default-target metadata was missing"
+ },
+ {
+  "tool": "Zenodo",
+  "version": "record 10519652",
+  "used_for": "MedMNIST v2 npz direct downloads with resume/integrity validation"
+ },
+ {
+  "tool": "MedMNIST package",
+  "version": "latest",
+  "used_for": "subset task metadata (INFO) for the 12-subset image arm"
+ },
+ {
+  "tool": "pandas",
+  "version": "latest",
+  "used_for": "categorical/mixed-type encoding in the OpenML ARFF loader"
+ },
+ {
+  "tool": "curl",
+  "version": "system",
+  "used_for": "resumable dataset downloads (Zenodo stall recovery, OpenML ARFF)"
+ },
+ {
+  "tool": "pdfinfo (poppler)",
+  "version": "system",
+  "used_for": "rendered page-count verification of the paper PDF"
+ },
+ {
+  "tool": "pdfLaTeX",
+  "version": "texlive",
+  "used_for": "LaTeX source-of-record paper build (paper/main.tex)"
+ },
+ {
+  "tool": "NCBI E-utilities API (esearch/esummary, GDS db)",
+  "version": "v3 (eutils.ncbi.nlm.nih.gov)",
+  "used_for": "GEO candidate discovery: esearch paging over human tumor+normal array studies, esummary accession/n_samples resolution (run_geo2.py --esearch)"
+ },
+ {
+  "tool": "UCSC Xena platform (GDC hub)",
+  "version": "gdc.xenahubs.net (accessed 2026-09-25)",
+  "used_for": "per-cohort TCGA STAR-count expression matrix access for the 18-cohort tumor-vs-normal arm (run_xena.py)"
+ },
+ {
+  "tool": "NCI Genomic Data Commons harmonized matrices",
+  "version": "STAR counts pipeline (via Xena GDC hub)",
+  "used_for": "data origin of the 18 TCGA cohort matrices; barcode sample-type codes used as labels"
+ },
+ {
+  "tool": "AWS S3 (gdc-hub download endpoint)",
+  "version": "s3.dualstack.us-east-1 (accessed 2026-09-25)",
+  "used_for": "actual file transport for all 33 TCGA cohort downloads (302-redirect target of the Xena hub)"
+ }
 ]
