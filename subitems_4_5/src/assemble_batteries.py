@@ -47,9 +47,12 @@ def bat2(disease):
 NCBI E-utilities novelty probes (\texttt{{tool\_battery\_2.json}}): the query
 \texttt{{malaria\_cell\_images label noise}} returns {e.get('malaria_cell_images_label_noise','0')}
 prior hits and \texttt{{chestxray2017 label noise}} returns
-{e.get('chestxray2017_label_noise','0')} --- as of the audit date, no prior
-published label-noise census of either benchmark exists, which establishes
-the novelty of the census contributions. Europe PMC cross-checks concur
+{e.get('chestxray2017_label_noise','0')} --- as of the audit date, no \emph{census-titled}
+prior work appears for either benchmark. Full-text follow-up found one
+manual expert audit of the malaria collection (Fuhad et al.\ 2020;
+Sec.~\ref{sec:fuhad}), so the novelty claim is stated narrowly: first
+\emph{automated, per-image-falsifiable} census, not first audit of any
+kind. Europe PMC cross-checks concur
 ({ep['malaria_label_noise']['hitCount']} tangential hits, none a census of
 these collections). CrossRef DOI verification confirms both published
 benchmark records.

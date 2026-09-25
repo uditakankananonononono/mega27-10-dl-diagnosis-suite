@@ -5,11 +5,17 @@ We individually fetched and classified 197 PubMed records (NCBI E-utilities, rel
 \subsection*{Deep learning for diagnosis (44 records)}
 Representative records in this cluster include: \emph{Deep learning method for malaria parasite evaluation from microscopic blood smear} (2025 May, PMID 40107120); \emph{Deep Learning for Smartphone-Based Malaria Parasite Detection in Thick Blood Smears} (2020 May, PMID 31545747); \emph{Deep Learning Based Automatic Malaria Parasite Detection from Blood Smear and its Smartphone Based Application} (2020 May 20, PMID 32443868); \emph{Efficient deep learning-based approach for malaria detection using red blood cell smears} (2024 Jun 10, PMID 38858481); \emph{An automated malaria cells detection from thin blood smear images using deep learning} (2023 Jun 1, PMID 37650409); \emph{An Efficient Deep Learning Approach for Malaria Parasite Detection in Microscopic Images} (2024 Dec 5, PMID 39682645).\par
 
-Synthesis. This cluster has grown monotonically since 2018 and is now dominated by incremental architecture swaps --- YOLO variants, MobileNet variants, transformer backbones --- evaluated on the same NIH collection with near-identical protocols. Two observations matter for positioning. First, reported accuracies cluster tightly around the mid-90s, which is consistent with our finding of 11.44\% label noise: a contaminated ceiling sits under any clean-model gain, and most papers neither measure nor discuss it. Second, none of the 44 records performs a label-noise census or publishes per-image flags; our census is, to the extent this screen can establish, the first for this collection.
+Synthesis. This cluster has grown monotonically since 2018 and is now dominated by incremental architecture swaps --- YOLO variants, MobileNet variants, transformer backbones --- evaluated on the same NIH collection with near-identical protocols. Two observations matter for positioning. First, reported accuracies cluster tightly around the mid-90s, which is consistent with our finding of 11.44\% label noise: a contaminated ceiling sits under any clean-model gain, and most papers neither measure nor discuss it. Second, no record in this cluster performs an \emph{automated} label-noise census or publishes machine-checkable per-image flags; the one prior \emph{manual} expert audit (Fuhad et al.\ 2020, itself inside this screen) is reconciled in the reconciliation section.
+
+
+Synthesis. This cluster has grown monotonically since 2018 and is now dominated by incremental architecture swaps --- YOLO variants, MobileNet variants, transformer backbones --- evaluated on the same NIH collection with near-identical protocols. Two observations matter for positioning. First, reported accuracies cluster tightly around the mid-90s, which is consistent with our finding of 11.44\% label noise: a contaminated ceiling sits under any clean-model gain, and most papers neither measure nor discuss it. Second, no record in this cluster performs an \emph{automated} label-noise census or publishes machine-checkable per-image flags; the one prior \emph{manual} expert audit (Fuhad et al.\ 2020, itself inside this screen) is reconciled in the reconciliation section.
 
 
 \subsection*{Computer-aided detection and segmentation (121 records)}
 Representative records in this cluster include: \emph{Deep Learning for Smartphone-Based Malaria Parasite Detection in Thick Blood Smears} (2020 May, PMID 31545747); \emph{Deep Learning Based Automatic Malaria Parasite Detection from Blood Smear and its Smartphone Based Application} (2020 May 20, PMID 32443868); \emph{Efficient deep learning-based approach for malaria detection using red blood cell smears} (2024 Jun 10, PMID 38858481); \emph{An automated malaria cells detection from thin blood smear images using deep learning} (2023 Jun 1, PMID 37650409); \emph{An Efficient Deep Learning Approach for Malaria Parasite Detection in Microscopic Images} (2024 Dec 5, PMID 39682645); \emph{Malaria Detection Using Advanced Deep Learning Architecture} (2023 Jan 29, PMID 36772541).\par
+
+Synthesis. The largest cluster covers the detection-and-segmentation pipeline literature: cell localization, watershed and learned segmentation, patch extraction, and counting for parasitemia estimation. These systems operate upstream of the per-cell classification task this paper studies, and their errors compound into exactly the kind of label-side inconsistency our census quantifies --- a cell cropped at the boundary of two erythrocytes is a natural mislabel candidate. The cluster's scale (121 records) against the label-noise cluster's two records is the literature's blind spot in one ratio.
+
 
 Synthesis. The largest cluster covers the detection-and-segmentation pipeline literature: cell localization, watershed and learned segmentation, patch extraction, and counting for parasitemia estimation. These systems operate upstream of the per-cell classification task this paper studies, and their errors compound into exactly the kind of label-side inconsistency our census quantifies --- a cell cropped at the boundary of two erythrocytes is a natural mislabel candidate. The cluster's scale (121 records) against the label-noise cluster's two records is the literature's blind spot in one ratio.
 
@@ -20,8 +26,14 @@ Representative records in this cluster include: \emph{Image analysis and machine
 Synthesis. The classical cluster is small but contains the collection's reference study (Rajaraman et al., PMID 29682411), whose cell-level 94.0\% is the benchmark this paper beats. Its feature-extractor framing --- pretrained networks as fixed embedders with shallow classifiers --- is the regime our compact end-to-end models are compared against in the benchmark chapter.
 
 
+Synthesis. The classical cluster is small but contains the collection's reference study (Rajaraman et al., PMID 29682411), whose cell-level 94.0\% is the benchmark this paper beats. Its feature-extractor framing --- pretrained networks as fixed embedders with shallow classifiers --- is the regime our compact end-to-end models are compared against in the benchmark chapter.
+
+
 \subsection*{Dataset and benchmark studies (1 records)}
 Representative records in this cluster include: \emph{Microscopic malaria parasitemia diagnosis and grading on benchmark datasets} (2018 Sep, PMID 30207623).\par
+
+Synthesis. A single record studies the benchmark itself. That the standard collection has one benchmark-analysis paper and zero label-noise audits after eight years of use is the gap this paper's census and verification chapters address.
+
 
 Synthesis. A single record studies the benchmark itself. That the standard collection has one benchmark-analysis paper and zero label-noise audits after eight years of use is the gap this paper's census and verification chapters address.
 
@@ -32,14 +44,20 @@ Representative records in this cluster include: \emph{Deep Learning-Based Cell D
 Synthesis. The clinical cluster frames deployment: smartphone microscopy, field diagnostics, point-of-care triage. Its constraint profile --- cheap hardware, no connectivity, operator variability --- is precisely the regime our 2-CPU-budget models are designed for, and the dxtool engineering chapter borrows its requirements from this literature rather than from datacenter assumptions.
 
 
+Synthesis. The clinical cluster frames deployment: smartphone microscopy, field diagnostics, point-of-care triage. Its constraint profile --- cheap hardware, no connectivity, operator variability --- is precisely the regime our 2-CPU-budget models are designed for, and the dxtool engineering chapter borrows its requirements from this literature rather than from datacenter assumptions.
+
+
 \subsection*{Label noise and robustness (2 records)}
 Representative records in this cluster include: \emph{Autokeras Approach: A Robust Automated Deep Learning Network for Diagnosis Disease Cases in Medical Images} (2023 Mar 8, PMID 36976115); \emph{A Robust Malaria Cell Detection Framework Using Adaptive and Atrous Convolution-Based Recurrent Mobilenetv2 with Trans-MobileUNet + + -Based Abnormality Segmentation} (2025 Aug, PMID 39633208).\par
 
-Synthesis. Two records, and neither performs a label-noise census of the standard collection; both use `robust' in the architectural sense. The confident-learning literature (Northcutt et al.) has not been applied to this benchmark in any record our screen found --- the novelty claim of the census rests on this absence, stated with the screen's own limits (title-keyword clustering, PubMed coverage).
+Synthesis. Two records, and neither performs an automated label-noise census of the standard collection; both use `robust' in the architectural sense. Confident learning (Northcutt et al.) has not been applied to this benchmark in any record our screen found; the narrowed novelty claim (first automated, per-image-falsifiable census) rests on this absence plus the Fuhad reconciliation, stated with the screen's own limits (title-keyword clustering, PubMed coverage, and the demonstrated invisibility of audits buried in architecture papers).
+
+
+Synthesis. Two records, and neither performs an automated label-noise census of the standard collection; both use `robust' in the architectural sense. Confident learning (Northcutt et al.) has not been applied to this benchmark in any record our screen found; the narrowed novelty claim (first automated, per-image-falsifiable census) rests on this absence plus the Fuhad reconciliation, stated with the screen's own limits (title-keyword clustering, PubMed coverage, and the demonstrated invisibility of audits buried in architecture papers).
 
 
 \subsection*{Positioning of this work}
-Against 197 screened records, this study is (to the screen's knowledge) the first label-noise census of the NIH malaria collection, the first publication of per-image falsifiable flags for it, and --- at 96.08\% cell-level accuracy with a 140k-parameter model --- above the source-verified 94.0\% reference at two orders of magnitude fewer parameters than the reference's feature-extractor regime. The screen's limits: title-keyword clustering, PubMed coverage as of the audit date, and no full-text screening of every record.
+Against 197 screened records and the Fuhad reconciliation, this study is the first \emph{automated} label-noise census of the NIH malaria collection, the first publication of per-image falsifiable flags for it, and --- at 96.08\% cell-level accuracy with a 140k-parameter model --- above the source-verified 94.0\% reference at two orders of magnitude fewer parameters than the reference's feature-extractor regime. The screen's limits: title-keyword clustering, PubMed coverage as of the audit date, and no full-text screening of every record.
 
 \subsection*{Publication-year trend}
 \begin{tabular}{lr}
@@ -76,6 +94,9 @@ Year & Records \\
 \end{tabular}
 
 The malaria literature is old (first record 1999), accelerated sharply after the 2018 benchmark reference, and peaked in 2025 with 25 screened records; 102 of 197 records are from 2022 onward --- the collection is still actively used, which makes the absence of a label-noise audit a live gap, not a historical one.\par
+
+\subsection*{Positioning of this work}
+Against 197 screened records and the Fuhad reconciliation, this study is the first \emph{automated} label-noise census of the NIH malaria collection, the first publication of per-image falsifiable flags for it, and --- at 96.08\% cell-level accuracy with a 140k-parameter model --- above the source-verified 94.0\% reference at two orders of magnitude fewer parameters than the reference's feature-extractor regime. The screen's limits: title-keyword clustering, PubMed coverage as of the audit date, and no full-text screening of every record.
 
 \subsection*{Complete record list (197 accessions)}
 \begin{longtable}{llp{9.5cm}}

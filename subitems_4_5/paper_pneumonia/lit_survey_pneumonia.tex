@@ -5,11 +5,17 @@ We individually fetched and classified 150 PubMed records (NCBI E-utilities, rel
 \subsection*{Deep learning for diagnosis (112 records)}
 Representative records in this cluster include: \emph{Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists} (2018 Nov, PMID 30457988); \emph{Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning} (2018 Feb 22, PMID 29474911); \emph{Deep Learning Models to Predict Fatal Pneumonia Using Chest X-Ray Images} (2022, PMID 36465274); \emph{Pneumonia detection in chest X-ray images using an ensemble of deep learning models} (2021, PMID 34492046); \emph{Deep Learning-Based System Combining Chest X-Ray and Computerized Tomography Images for COVID-19 Diagnosis} (2024 Aug 30, PMID 39212565); \emph{Accuracy of deep learning for automated detection of pneumonia using chest X-Ray images: A systematic review and meta-analysis} (2020 Aug, PMID 32768045).\par
 
-Synthesis. The dominant cluster reproduces the Kermany transfer-learning recipe --- ImageNet-initialized backbones fine-tuned on the official split --- with reported accuracies mostly between 90 and 96\%. Two positioning observations. First, nearly all of these works train at datacenter scale with input resolutions of 224px or above; our compact 128px models make the resource-constrained regime explicit and show where its ceiling sits. Second, none of the 112 records audits the training labels, despite the collection being assembled by automated report parsing --- a known contamination path our 21.15\% census estimate quantifies directly.
+Synthesis. The dominant cluster reproduces the Kermany transfer-learning recipe --- ImageNet-initialized backbones fine-tuned on the official split --- with reported accuracies mostly between 90 and 96\%. Two positioning observations. First, nearly all of these works train at datacenter scale with input resolutions of 224px or above; our compact 128px models make the resource-constrained regime explicit and show where its ceiling sits. Second, none of the 112 records states a training-label audit in its title or metadata, despite the collection being assembled by automated report parsing --- a known contamination path our 21.15\% estimate quantifies directly (title-screen caveat: audits buried in architecture papers are invisible to this screen).
+
+
+Synthesis. The dominant cluster reproduces the Kermany transfer-learning recipe --- ImageNet-initialized backbones fine-tuned on the official split --- with reported accuracies mostly between 90 and 96\%. Two positioning observations. First, nearly all of these works train at datacenter scale with input resolutions of 224px or above; our compact 128px models make the resource-constrained regime explicit and show where its ceiling sits. Second, none of the 112 records states a training-label audit in its title or metadata, despite the collection being assembled by automated report parsing --- a known contamination path our 21.15\% estimate quantifies directly (title-screen caveat: audits buried in architecture papers are invisible to this screen).
 
 
 \subsection*{Computer-aided detection and segmentation (53 records)}
 Representative records in this cluster include: \emph{Pneumonia detection in chest X-ray images using an ensemble of deep learning models} (2021, PMID 34492046); \emph{Accuracy of deep learning for automated detection of pneumonia using chest X-Ray images: A systematic review and meta-analysis} (2020 Aug, PMID 32768045); \emph{Pneumonia Detection from Chest X-Ray Images Using Deep Learning and Transfer Learning for Imbalanced Datasets} (2025 Aug, PMID 39557737); \emph{Trustworthy pneumonia detection in chest X-ray imaging through attention-guided deep learning} (2025 Nov 14, PMID 41238604); \emph{Automated diagnosis and prognosis of COVID-19 pneumonia from initial ER chest X-rays using deep learning} (2022 Jul 21, PMID 35864468); \emph{A comprehensive segmentation of chest X-ray improves deep learning-based WHO radiologically confirmed pneumonia diagnosis in children} (2024 May, PMID 37930411).\par
+
+Synthesis. The CAD cluster covers lung-field segmentation, ROI extraction, and multi-view fusion. These methods are orthogonal to the classification head but shape input quality; our flagged-film forensics (blurry, low-contrast acquisitions concentrate in the flagged set) is the label-noise shadow of this cluster's concerns.
+
 
 Synthesis. The CAD cluster covers lung-field segmentation, ROI extraction, and multi-view fusion. These methods are orthogonal to the classification head but shape input quality; our flagged-film forensics (blurry, low-contrast acquisitions concentrate in the flagged set) is the label-noise shadow of this cluster's concerns.
 
@@ -20,8 +26,14 @@ Representative records in this cluster include: \emph{A deep learning feature ex
 Synthesis. Hand-crafted texture and shape features with SVM or ensemble classifiers; mostly pre-2018 or small-scale. Useful as a floor: our from-scratch compact CNN exceeds this regime by a wide margin, as expected, and the comparison is included for completeness in the benchmark framing.
 
 
+Synthesis. Hand-crafted texture and shape features with SVM or ensemble classifiers; mostly pre-2018 or small-scale. Useful as a floor: our from-scratch compact CNN exceeds this regime by a wide margin, as expected, and the comparison is included for completeness in the benchmark framing.
+
+
 \subsection*{Dataset and benchmark studies (7 records)}
 Representative records in this cluster include: \emph{Computer-aided diagnosis of chest X-ray for COVID-19 diagnosis in external validation study by radiologists with and without deep learning system} (2023 Oct 16, PMID 37845348); \emph{Deep Learning Algorithms with LIME and Similarity Distance Analysis on COVID-19 Chest X-ray Dataset} (2023 Feb 28, PMID 36901338); \emph{Classification of Pneumonia via a Hybrid ZFNet-Quantum Neural Network Using a Chest X-ray Dataset} (2024, PMID 39177127); \emph{Wasserstein GAN based Chest X-Ray Dataset Augmentation for Deep Learning Models: COVID-19 Detection Use-Case} (2022 Jul, PMID 36085636); \emph{BS-Net: Learning COVID-19 pneumonia severity on a large chest X-ray dataset} (2021 Jul, PMID 33862337); \emph{CX-DaGAN: Domain Adaptation for Pneumonia Diagnosis on a Small Chest X-Ray Dataset} (2022 Nov, PMID 35687646).\par
+
+Synthesis. Seven records examine the collection or its splits, including discussions of patient-level leakage when the official split is ignored. Our protocol preserves the official patient-level split exactly for this reason, and the TorchXRayVision head-to-head is conducted on the identical films.
+
 
 Synthesis. Seven records examine the collection or its splits, including discussions of patient-level leakage when the official split is ignored. Our protocol preserves the official patient-level split exactly for this reason, and the TorchXRayVision head-to-head is conducted on the identical films.
 
@@ -32,8 +44,14 @@ Representative records in this cluster include: \emph{Deep learning for chest ra
 Synthesis. The clinical cluster covers paediatric triage, antibiotic stewardship, and radiologist-workload framing. Its operating point preference --- high sensitivity even at specificity cost --- matches the behaviour of our class-weighted tuned configuration, which we report with its full sensitivity/specificity trade-off rather than a single accuracy.
 
 
+Synthesis. The clinical cluster covers paediatric triage, antibiotic stewardship, and radiologist-workload framing. Its operating point preference --- high sensitivity even at specificity cost --- matches the behaviour of our class-weighted tuned configuration, which we report with its full sensitivity/specificity trade-off rather than a single accuracy.
+
+
 \subsection*{Label noise and robustness (1 records)}
 Representative records in this cluster include: \emph{Validating the accuracy of deep learning for the diagnosis of pneumonia on chest x-ray against a robust multimodal reference diagnosis: a post hoc analysis of two prospective studies} (2024 Feb 2, PMID 38302850).\par
+
+Synthesis. One record, architectural-robustness sense only. No record in the screen performs a confident-learning census of ChestXRay2017; the pneumonia label-noise literature concentrates on the much larger NIH ChestX-ray14 (a different collection with its own mining-noise discussion), leaving this paediatric benchmark unaudited.
+
 
 Synthesis. One record, architectural-robustness sense only. No record in the screen performs a confident-learning census of ChestXRay2017; the pneumonia label-noise literature concentrates on the much larger NIH ChestX-ray14 (a different collection with its own mining-noise discussion), leaving this paediatric benchmark unaudited.
 
@@ -59,6 +77,9 @@ Year & Records \\
 \end{tabular}
 
 The pneumonia literature is entirely post-2018 (the collection's publication year), peaked in 2022 with 45 screened records, and remains active; 105 of 150 records are from 2022 onward.\par
+
+\subsection*{Positioning of this work}
+Against 150 screened records, this study contributes the first confident-learning census of the ChestXRay2017 training set (21.15\% estimated noise, 155 published flags), a demonstration that cleaning improves the strongest configuration by +5.9 points, and a same-split head-to-head against the strongest runnable external tool (TorchXRayVision DenseNet-121), which our models beat decisively on the identical 624 official test films. The screen's limits: title-keyword clustering and PubMed coverage as of the audit date.
 
 \subsection*{Complete record list (150 accessions)}
 \begin{longtable}{llp{9.5cm}}
