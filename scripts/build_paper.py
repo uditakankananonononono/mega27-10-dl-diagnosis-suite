@@ -182,7 +182,7 @@ def main():
             para(doc,
                  f"{g}: {v['n_case']} case and {v['n_ctrl']} control samples "
                  f"retained after ambiguous-label discard, {v['n_probes']} "
-                 f"probe features; labeling by {v['labeling']}; five-fold CV "
+                 f"probe features; labeling by {v.get('labeling', 'combined-text keyword heuristic')}; five-fold CV "
                  f"AUC {v['auc']:.3f}. Source matrix: {v['url']}.")
     h(doc, "Medical image arm (MedMNIST)")
     for pgh in pc.MEDMNIST_ARM.strip().split("\n\n"):
