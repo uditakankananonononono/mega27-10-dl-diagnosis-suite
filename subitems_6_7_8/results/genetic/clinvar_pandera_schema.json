@@ -1,0 +1,14 @@
+{
+ "tool": "pandera DataFrameSchema",
+ "dataset": "clinvar_subset, 100k streamed rows",
+ "n_validated": 100000,
+ "checks": [
+  "variation_id>0",
+  "label in {0,1}",
+  "pos>0 nullable",
+  "ref_len>0",
+  "alt_len>0"
+ ],
+ "verdict": "schema valid",
+ "note": "data-contract gate on the modeling stream"
+}

@@ -63,6 +63,7 @@ TOOLS = [
     ("pingouin", "effect sizes (cohen/hedges) for PCam property contrasts (10.6)", "C"),
     ("scikit-posthocs", "Dunn-Holm posthoc for neuro class property contrasts (10.7)", "N"),
     ("optuna", "10-trial hyperparameter search confirms committed GBC config (10.8)", "G"),
+    ("pandera", "data-contract schema gate on the ClinVar modeling stream (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -120,6 +121,7 @@ EVIDENCE = {
     "pingouin": ["results/cancer/pcam_pingouin_effects.json"],
     "scikit-posthocs": ["results/neuro/neuro_posthoc_dunn.json"],
     "optuna": ["results/genetic/clinvar_optuna_search.json"],
+    "pandera": ["results/genetic/clinvar_pandera_schema.json"],
 }
 
 DATASETS = {

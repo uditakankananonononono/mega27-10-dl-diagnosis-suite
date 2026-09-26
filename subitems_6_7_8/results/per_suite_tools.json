@@ -1,7 +1,7 @@
 {
  "cancer_tools": 33,
  "neuro_tools": 28,
- "genetic_tools": 36,
+ "genetic_tools": 37,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -279,6 +279,11 @@
   {
    "name": "optuna",
    "use": "10-trial hyperparameter search confirms committed GBC config (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "pandera",
+   "use": "data-contract schema gate on the ClinVar modeling stream (10.8)",
    "tag": "G"
   }
  ]
