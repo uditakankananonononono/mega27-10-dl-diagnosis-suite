@@ -64,15 +64,19 @@ def main(fold):
         model.train()
         # deterministic per-epoch batch order (resume-safe)
         gen = torch.Generator().manual_seed(1000 * fold + ep)
-        loader = DataLoader(Subset(ds_tr_full, tr_idx), batch_size=64, shuffle=True,
-                            num_workers=0, generator=gen)
-        tot, nl = 0.0, 0
+        order = torch.randperm(len(tr_idx), generator=gen).tolist()
         b0 = start_b if ep == start_ep else 0
-        for bi, (xb, yb) in enumerate(loader):
-            if bi < b0:
-                if (bi + 1) % 50 == 0:
-                    print("ffwd", bi + 1, flush=True)
-                continue
+        batches = [order[i:i + 64] for i in range(0, len(order), 64)]
+        from torch.utils.data import Sampler
+        class BatchSampler_(Sampler):
+            def __iter__(self):
+                yield from batches[b0:]
+            def __len__(self):
+                return len(batches) - b0
+        loader = DataLoader(Subset(ds_tr_full, tr_idx), batch_sampler=BatchSampler_(),
+                            num_workers=0)
+        tot, nl = 0.0, 0
+        for bi, (xb, yb) in enumerate(loader, start=b0):
             opt.zero_grad()
             out = model(xb)
             loss = lossf(out, yb)
