@@ -3,16 +3,16 @@
 \usepackage{mathptmx}             % Times-compatible math
 % Real Times New Roman text: Microsoft Core Fonts TTFs (EULA-permitted use),
 % converted with ttf2tfm to T1/ec metrics, embedded by pdflatex.
-\pdfmapfile{+tnr-ec.map}
-\DeclareFontFamily{T1}{tnr}{}
-\DeclareFontShape{T1}{tnr}{m}{n}{<-> tnr-ec}{}
-\DeclareFontShape{T1}{tnr}{m}{it}{<-> tnri-ec}{}
-\DeclareFontShape{T1}{tnr}{m}{sl}{<-> tnri-ec}{}
-\DeclareFontShape{T1}{tnr}{b}{n}{<-> tnrbd-ec}{}
-\DeclareFontShape{T1}{tnr}{b}{it}{<-> tnrbi-ec}{}
-\DeclareFontShape{T1}{tnr}{bx}{n}{<-> tnrbd-ec}{}
-\DeclareFontShape{T1}{tnr}{bx}{it}{<-> tnrbi-ec}{}
-\renewcommand{\rmdefault}{tnr}
+% TNR fallback build: custom map disabled (fonts exe absent)
+%
+%{m}{n}{<-> tnr-ec}{}
+%{m}{it}{<-> tnri-ec}{}
+%{m}{sl}{<-> tnri-ec}{}
+%{b}{n}{<-> tnrbd-ec}{}
+%{b}{it}{<-> tnrbi-ec}{}
+%{bx}{n}{<-> tnrbd-ec}{}
+%{bx}{it}{<-> tnrbi-ec}{}
+\renewcommand{\rmdefault}{ptm}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx,amsmath,amsthm,amsfonts,longtable,array}
 \newtheorem{theorem}{Theorem}

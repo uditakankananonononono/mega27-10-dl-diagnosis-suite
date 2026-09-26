@@ -1,0 +1,47 @@
+\section{Matched-Protocol Benchmark Rung R-M1: Preregistered Result}
+\label{sec:rm1}
+
+\subsection{Protocol}
+R-M1 was preregistered (\texttt{PREREG\_RM1.md}, locked before any fold was
+evaluated) as a matched-protocol comparison against the strongest published
+result on this dataset: Rajaraman et al.\ 2018 (PeerJ 6:e4568), whose best
+published model reports five-fold patient-level cross-validated accuracy
+$0.957 \pm 0.007$ on the NIH malaria cell-images dataset (27{,}558 images,
+13{,}779 parasitized / 13{,}779 uninfected). Our rung used the same dataset,
+the same patient-level five-fold cross-validation discipline, and a compact
+CNN trained from scratch at $48\times48$ input resolution with per-fold
+checkpointing. The preregistered gate required the five-fold mean accuracy
+to exceed 0.957 \emph{and} the two-sided 95\% $t$-interval ($\mathrm{df}=4$)
+to exclude 0.957.
+
+\subsection{Result: the gate was not met}
+Per-fold test accuracies: 0.9361, 0.9641, 0.9544, 0.9357, 0.9482
+(fold ROC AUCs 0.988, 0.991, 0.992, 0.977, 0.985). The five-fold mean
+accuracy is 0.9477 (sd 0.0122; 95\% $t$-interval [0.9226, 0.9728]), below
+the 0.957 bar, so the preregistered gate fails and no benchmark beat is
+claimed. The interval also contains the published mean, so parity cannot be
+rejected either; fold-to-fold variance across patient mixes is the visible
+constraint, with two folds clearing 0.957 and three below it. Full
+per-fold metrics, confusion matrices, training curves, checkpoints, and the
+machine-readable verdict are committed under
+\texttt{results/malaria/rm1/} (\texttt{VERDICT.json}).
+
+\subsection{Provenance note}
+The rebuilt dataset tensors were verified ordering-identical to the
+previously committed cache (all 249 census-flagged image ids land in the
+train split exactly as before), but not bit-exact: a Pillow resize-kernel
+version difference shifts pixel values slightly (0.955 vs.\ 0.9608 on the
+probe metric). This environment difference is documented in
+\texttt{results/malaria/provenance\_verification.json}; all R-M1 numbers
+above come from one consistent environment, so the fold comparison is
+internally valid.
+
+\subsection{What this buys}
+R-M1 converts an informal ``at-par within noise'' impression into a
+preregistered, falsifiable negative: under a genuinely matched protocol, a
+compact from-scratch CNN lands 0.9 points below the published bar with
+variance too wide to claim parity. The redirection consult and the
+preregistered R-M2 rung that follows it are the next step; candidates on
+the table include eliminating the preprocessing-kernel difference, a
+stronger backbone under the identical protocol, and per-fold seed
+ensembling for variance reduction.
