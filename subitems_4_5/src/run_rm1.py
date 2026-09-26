@@ -107,7 +107,7 @@ def main(fold):
         for xb, yb in tloader:
             probs.append(torch.softmax(model(xb), dim=1).numpy())
     p = np.concatenate(probs)
-    m = full_metrics(y[te_idx], p)
+    m = full_metrics(p, y[te_idx])
     res = {"fold": fold, "n_test": int(len(te_idx)), "n_train": int(len(tr_idx)),
            "metrics": m, "hist": hist}
     json.dump(res, open(res_p, "w"), indent=1)
