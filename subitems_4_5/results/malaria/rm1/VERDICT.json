@@ -1,0 +1,28 @@
+{
+  "rung": "R-M1 matched-protocol beat attempt vs Rajaraman 2018 (PeerJ 6:e4568, best published 5-fold patient-level acc 0.957+/-0.007)",
+  "prereg": "PREREG_RM1.md gate: 5-fold mean acc > 0.957 AND t-CI df=4 excludes 0.957",
+  "fold_accuracies": [
+    0.936111,
+    0.964131,
+    0.95441,
+    0.935689,
+    0.948215
+  ],
+  "fold_aucs": [
+    0.987957,
+    0.990754,
+    0.991795,
+    0.976692,
+    0.98523
+  ],
+  "mean_accuracy": 0.947711,
+  "sd": 0.012184,
+  "t_ci_95_df4": [
+    0.922624,
+    0.972798
+  ],
+  "gate_mean_pass": false,
+  "gate_ci_excludes_0p957": false,
+  "verdict": "FAIL - preregistered gate not met: mean 0.94771 < 0.957. Honest negative; no beat claimed. AUCs recorded for context, not as the gate metric.",
+  "next": "RULE 6 redirection consult (ChatGPT) -> R-M2 rung, preregistered before any evaluation"
+}
