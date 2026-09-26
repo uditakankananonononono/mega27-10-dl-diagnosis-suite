@@ -23,9 +23,14 @@
    "value": 0.7115
   },
   {
-   "suite": "BrainMRI CNN",
+   "suite": "BrainMRI CNN (leaky mirror)",
    "metric": "acc",
    "value": 0.9117
+  },
+  {
+   "suite": "BrainMRI CNN DEDUP",
+   "metric": "acc",
+   "value": 0.8719
   },
   {
    "suite": "ClinVar GBC",

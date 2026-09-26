@@ -1,6 +1,6 @@
 {
  "cancer_tools": 32,
- "neuro_tools": 24,
+ "neuro_tools": 26,
  "genetic_tools": 32,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
@@ -153,8 +153,8 @@
   },
   {
    "name": "torchmetrics",
-   "use": "cross-verification of every reported CNN metric + ECE (10.6)",
-   "tag": "C"
+   "use": "cross-verification of every reported CNN metric + ECE (10.6/10.7)",
+   "tag": "CN"
   },
   {
    "name": "torchinfo",
@@ -208,8 +208,8 @@
   },
   {
    "name": "pycm",
-   "use": "full confusion-matrix statistics on PCam held-out probs (10.6)",
-   "tag": "C"
+   "use": "full confusion-matrix statistics, PCam + neuro dedup held-out probs (10.6/10.7)",
+   "tag": "CN"
   },
   {
    "name": "upsetplot",

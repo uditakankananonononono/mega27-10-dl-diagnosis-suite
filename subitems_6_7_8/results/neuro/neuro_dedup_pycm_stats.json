@@ -1,0 +1,29 @@
+{
+ "tool": "pycm ConfusionMatrix (multiclass)",
+ "dataset": "neuro dedup held-out probs",
+ "overall_acc": 0.8719,
+ "kappa": 0.8287,
+ "per_class": {
+  "glioma": {
+   "TPR": 0.8638,
+   "PPV": 0.8904,
+   "F1": 0.8769
+  },
+  "meningioma": {
+   "TPR": 0.8909,
+   "PPV": 0.7139,
+   "F1": 0.7927
+  },
+  "notumor": {
+   "TPR": 0.8696,
+   "PPV": 0.9449,
+   "F1": 0.9057
+  },
+  "pituitary": {
+   "TPR": 0.8632,
+   "PPV": 0.9806,
+   "F1": 0.9182
+  }
+ },
+ "note": "per-class recall/precision on the leakage-controlled model"
+}

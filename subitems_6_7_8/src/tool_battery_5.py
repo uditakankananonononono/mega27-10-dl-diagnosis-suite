@@ -174,7 +174,8 @@ def plotly_dashboard():
     for f, suite, metric_keys in [
         ("cancer/pcam_cnn_train.json", "PCam CNN", ("acc", "auc")),
         ("cancer/breakhis_cnn_train.json", "BreakHis CNN", ("acc", "auc")),
-        ("neuro/brain_mri_cnn_train.json", "BrainMRI CNN", ("acc",)),
+        ("neuro/brain_mri_cnn_train.json", "BrainMRI CNN (leaky mirror)", ("acc",)),
+        ("neuro/brain_mri_cnn_dedup_train.json", "BrainMRI CNN DEDUP", ("acc",)),
         ("genetic/clinvar_gbc_results.json", "ClinVar GBC", ("test_acc", "test_auc")),
     ]:
         d = json.load(open(OUT / f))

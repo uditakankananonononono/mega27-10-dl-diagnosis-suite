@@ -1,0 +1,8 @@
+{
+ "tool": "torchmetrics (multiclass)",
+ "auroc_ovr_torchmetrics": 0.9808,
+ "acc_torchmetrics": 0.8719,
+ "acc_train_json": 0.8719,
+ "ece_15bin": 0.0132,
+ "verdict": "metrics cross-verified"
+}
