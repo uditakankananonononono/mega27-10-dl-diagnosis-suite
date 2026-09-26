@@ -26,6 +26,7 @@ def pandera_clinvar():
         if len(rows) >= 100000:
             break
     df = pd.DataFrame(rows)
+    df["pos"] = df["pos"].astype("Int64")  # nullable integer; raw frame infers float64
     schema = pa.DataFrameSchema({
         "variation_id": pa.Column(int, pa.Check.gt(0)),
         "label": pa.Column(int, pa.Check.isin([0, 1])),

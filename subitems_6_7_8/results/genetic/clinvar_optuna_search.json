@@ -1,0 +1,13 @@
+{
+ "tool": "optuna",
+ "dataset": "clinvar_subset, 120k cap",
+ "n_trials": 10,
+ "best_params": {
+  "max_iter": 433,
+  "learning_rate": 0.15015120475050187,
+  "max_leaf_nodes": 61
+ },
+ "best_auc": 0.9492,
+ "committed_model_auc": 0.9536,
+ "note": "hyperparameter search confirms the committed GBC config is near-optimal at this scale"
+}
