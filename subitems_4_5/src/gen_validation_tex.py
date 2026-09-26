@@ -214,7 +214,7 @@ refuses an inadmissible case.
 \textbf{{Not established:}} that any individual flagged image is
 biologically mislabelled; that 11.44\% is the exact biological
 mislabelling fraction; universal generalisation to all biomedical
-datasets; or a causal claim about \emph{why} the asymmetry is
+datasets; or a causal claim about \emph{{why}} the asymmetry is
 directional. Confirming individual candidates requires blinded expert
 adjudication, scoped as follow-up.
 """

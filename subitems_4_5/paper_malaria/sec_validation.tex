@@ -115,3 +115,50 @@ by the GCN auditor (no CNN input) make up
 suspects genuinely give the other architecture trouble: the flags track a
 real, representation-independent difficult stratum, which is what
 directional label contamination looks like before expert adjudication.
+
+\subsection{The estimand, stated precisely}
+\label{sec:estimand}
+The headline 11.44\% is not ``the fraction of wrong labels''. It is the
+confident-learning estimator's estimate of the fraction of training
+examples whose observed label disagrees with the latent-label posterior
+under the specified three-fold out-of-fold probability model:
+\begin{equation}
+\hat{\pi}_{\mathrm{noise}} \;=\;
+\frac{1}{N}\sum_{c\ne c'} \hat{Q}_{c,c'} ,
+\end{equation}
+where $\hat{Q}$ is the calibrated confident joint over observed class
+$c$ and latent class $c'$ estimated from the OOF probabilities
+(\texttt{results/malaria/label\_noise\_census.json}). It is an
+estimator-derived quantity, not independently verified biological ground
+truth; the dose-response experiment bounds its behaviour under known
+corruption, and the band bounds its protocol sensitivity.
+
+\subsection{Patient-clustered uncertainty}
+\label{sec:clusterboot}
+Cells from the same smear are not independent, so image-level intervals
+understate uncertainty. Recomputing the headline accuracy intervals with
+a percentile cluster bootstrap (resampling unit: smear/patient code, the
+filename prefix before \texttt{\_IMG}; 201 clusters, median 9 cells, $B=10{,}000$)
+widens the intervals exactly as it should: CNN [95.22, 96.89]\%
+vs Wilson [95.29, 96.75]\%, GCN [95.01, 96.81]\%
+vs Wilson [95.18, 96.65]\%
+(\texttt{results/malaria/cluster\_bootstrap.json}). Both constructions
+are reported; the clustered interval is the conservative one.
+
+\subsection{What the method proves, and what it does not}
+\label{sec:proves}
+\textbf{Supported by the evidence in this paper:} the estimator responds
+monotonically to known injected noise; the gate refuses to report under
+model collapse; the population estimate is stable across tested protocol
+configurations; a similar noise magnitude appears under an independent
+auditor architecture; individual candidate identity is
+representation-dependent while an 85-image consensus core reproduces;
+candidates are cross-architecturally enriched in out-of-fold loss; the
+same gated pipeline ports to two further biomedical collections and
+refuses an inadmissible case.
+\textbf{Not established:} that any individual flagged image is
+biologically mislabelled; that 11.44\% is the exact biological
+mislabelling fraction; universal generalisation to all biomedical
+datasets; or a causal claim about \emph{why} the asymmetry is
+directional. Confirming individual candidates requires blinded expert
+adjudication, scoped as follow-up.
