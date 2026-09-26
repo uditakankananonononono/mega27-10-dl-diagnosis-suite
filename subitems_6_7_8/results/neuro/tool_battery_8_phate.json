@@ -1,0 +1,6 @@
+{
+ "tool": "phate",
+ "figure": "fig_neuro_phate.png",
+ "n": 1200,
+ "note": "second, diffusion-based embedding; cross-checks the umap structure; leakage caveat from neuro_imagehash_leakage.json applies"
+}

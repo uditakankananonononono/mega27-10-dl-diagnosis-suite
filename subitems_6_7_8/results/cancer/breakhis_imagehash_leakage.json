@@ -1,0 +1,11 @@
+{
+ "tool": "imagehash (phash, 64-bit)",
+ "dataset": "breakhis train vs test (patient-level split)",
+ "n_a": 3000,
+ "n_b": 2323,
+ "n_a_with_near_dup_in_b": 0,
+ "near_dup_rate_pct": 0.0,
+ "min_hamming_observed": 10,
+ "elapsed_s": 2.6,
+ "note": "patient-level split should block same-patient leakage; near-dups would indicate split failure"
+}

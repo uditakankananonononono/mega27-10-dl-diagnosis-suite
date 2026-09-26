@@ -1,0 +1,9 @@
+{
+ "tool": "imagehash dedup filter",
+ "dataset": "neuro train vs test",
+ "n_train_full": 5618,
+ "n_train_dedup": 4380,
+ "n_removed": 1238,
+ "removed_pct": 22.04,
+ "note": "train rows with any test near-duplicate (Hamming <= 5) removed; feeds the dedup CNN retrain"
+}

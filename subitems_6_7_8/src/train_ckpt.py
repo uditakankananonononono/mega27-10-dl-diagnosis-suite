@@ -165,6 +165,13 @@ if __name__ == "__main__":
         run("breakhis patient-level", lambda: harvest_breakhis(64),
             2, 64, 4, budget, OUT / "cancer" / "breakhis_cnn_train.json",
             "published BreakHis image-level ~83-90% by mag (Spanhol 2016; ours 224px mirror -> 64px, caveat)")
+    elif which == "neuro_dedup":
+        def _dedup():
+            d = np.load(NP / "neuro_64_dedup.npz")
+            return d["Xtr"], d["ytr"], d["Xte"], d["yte"]
+        run("brain MRI dedup 4-class", _dedup,
+            4, 64, 4, budget, OUT / "neuro" / "brain_mri_cnn_dedup_train.json",
+            "self-reference: leaky-run acc 0.9117 bacc 0.9108; dedup run is the honest leakage-controlled number")
     elif which == "neuro":
         run("brain tumor MRI 4-class", lambda: harvest_neuro(64),
             4, 64, 4, budget, OUT / "neuro" / "brain_mri_cnn_train.json",

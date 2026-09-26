@@ -54,6 +54,8 @@ TOOLS = [
     ("imbalanced-learn", "undersampling cost audit on ClinVar imbalance (10.8)", "G"),
     ("myvariant.info", "live annotation of 25 pathogenic ClinVar variants (10.8)", "G"),
     ("pysam", "VCF write+read round-trip of 1,000 ClinVar variants, lossless (10.8)", "G"),
+    ("phate", "diffusion-based second embedding of neuro test pixels (10.7)", "N"),
+    ("GWAS Catalog REST API", "V2 gene lookup for top ClinVar genes, 8/8 with Ensembl IDs (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -102,6 +104,8 @@ EVIDENCE = {
     "imbalanced-learn": ["results/genetic/clinvar_imblearn_audit.json"],
     "myvariant.info": ["results/genetic/clinvar_myvariant_annotate.json"],
     "pysam": ["results/genetic/clinvar_pysam_vcf_roundtrip.json"],
+    "phate": ["results/neuro/tool_battery_8_phate.json"],
+    "GWAS Catalog REST API": ["results/genetic/clinvar_gwas_catalog.json"],
 }
 
 DATASETS = {

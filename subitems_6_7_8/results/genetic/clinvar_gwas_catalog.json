@@ -1,0 +1,81 @@
+{
+ "tool": "GWAS Catalog REST API",
+ "dataset": "top-8 ClinVar networkx genes",
+ "n_queried": 8,
+ "n_found": 8,
+ "results": [
+  {
+   "gene": "NF1",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000196712"
+   ],
+   "description": "neurofibromin 1"
+  },
+  {
+   "gene": "APC",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000134982"
+   ],
+   "description": "APC regulator of Wnt signaling pathway"
+  },
+  {
+   "gene": "PALB2",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000083093"
+   ],
+   "description": "partner and localizer of BRCA2"
+  },
+  {
+   "gene": "MSH2",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000095002"
+   ],
+   "description": "mutS homolog 2"
+  },
+  {
+   "gene": "USH2A",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000042781"
+   ],
+   "description": "usherin"
+  },
+  {
+   "gene": "ATM",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000149311"
+   ],
+   "description": "ATM serine/threonine kinase"
+  },
+  {
+   "gene": "LDLR",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000130164"
+   ],
+   "description": "low density lipoprotein receptor"
+  },
+  {
+   "gene": "ALMS1",
+   "status": 200,
+   "found": true,
+   "ensembl_gene_ids": [
+    "ENSG00000116127"
+   ],
+   "description": "ALMS1 centrosome and basal body associated protein"
+  }
+ ],
+ "note": "GWAS Catalog V2 API (legacy endpoint deprecated/rate-limited - migrated); Ensembl IDs cross-checked against clinvar_ensembl_xref.json"
+}
