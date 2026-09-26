@@ -1,0 +1,22 @@
+{
+ "dataset": "brain tumor MRI 4-class",
+ "n_train": 5618,
+ "n_test": 1405,
+ "benchmark_to_beat": "Kaggle-mirror CNN reports ~95%+ record-level (source-verify before claiming win)",
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.5674,
+   "acc": 0.8128,
+   "bacc": 0.8103,
+   "elapsed_s": 35.7
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.3656,
+   "acc": 0.8705,
+   "bacc": 0.8585,
+   "elapsed_s": 1212.6
+  }
+ ]
+}
