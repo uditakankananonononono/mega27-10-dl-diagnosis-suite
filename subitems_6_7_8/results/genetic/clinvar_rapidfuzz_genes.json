@@ -1,0 +1,158 @@
+{
+ "tool": "rapidfuzz",
+ "dataset": "ClinVar subset gene symbols (400k unique VariationIDs)",
+ "n_unique_genes": 10916,
+ "near_identical_symbol_pairs": [
+  {
+   "a": "ADAMTS1",
+   "b": "ADAMTS10",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS1",
+   "b": "ADAMTS12",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS10",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS12",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS12",
+   "b": "ADAMTS2",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS13",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS13",
+   "b": "ADAMTS3",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS14",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS14",
+   "b": "ADAMTS4",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS15",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS15",
+   "b": "ADAMTS5",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS16",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS16",
+   "b": "ADAMTS6",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS17",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS17",
+   "b": "ADAMTS7",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS18",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS19",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS19",
+   "b": "ADAMTS9",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS2",
+   "b": "ADAMTS12",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS2",
+   "b": "ADAMTS20",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS20",
+   "b": "ADAMTS2",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS3",
+   "b": "ADAMTS13",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS3",
+   "b": "ADAMTSL3",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS4",
+   "b": "ADAMTS14",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS4",
+   "b": "ADAMTSL4",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS5",
+   "b": "ADAMTS15",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS6",
+   "b": "ADAMTS16",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS7",
+   "b": "ADAMTS17",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTS9",
+   "b": "ADAMTS19",
+   "ratio": 93.3
+  },
+  {
+   "a": "ADAMTSL1",
+   "b": "ADAMTS1",
+   "ratio": 93.3
+  }
+ ],
+ "note": "symbol-level near-duplicates (alias/formatting variants) that would fragment the gene target encoding"
+}
