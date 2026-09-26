@@ -72,6 +72,7 @@ TOOLS = [
     ("altair", "second interactive dashboard engine (vega-lite)", "A"),
     ("mahotas", "Haralick texture contrasts, PCam + neuro (10.6/10.7)", "CN"),
     ("hdbscan", "unsupervised cluster-vs-label agreement on neuro embeddings (10.7)", "N"),
+    ("xgboost", "third independent boosting cross-check of the ClinVar GBC, AUC 0.9461 (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -138,6 +139,7 @@ EVIDENCE = {
     "altair": ["results/tool_battery_13_altair.json"],
     "mahotas": ["results/cancer/pcam_mahotas_texture.json", "results/neuro/neuro_mahotas_texture.json"],
     "hdbscan": ["results/neuro/neuro_hdbscan_clusters.json"],
+    "xgboost": ["results/genetic/clinvar_xgboost_crosscheck.json"],
 }
 
 DATASETS = {

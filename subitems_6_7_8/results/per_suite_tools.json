@@ -1,7 +1,7 @@
 {
  "cancer_tools": 38,
  "neuro_tools": 34,
- "genetic_tools": 39,
+ "genetic_tools": 40,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -325,6 +325,11 @@
    "name": "hdbscan",
    "use": "unsupervised cluster-vs-label agreement on neuro embeddings (10.7)",
    "tag": "N"
+  },
+  {
+   "name": "xgboost",
+   "use": "third independent boosting cross-check of the ClinVar GBC, AUC 0.9461 (10.8)",
+   "tag": "G"
   }
  ]
 }
