@@ -1,0 +1,22 @@
+{
+ "dataset": "brain MRI dedup 4-class",
+ "n_train": 4380,
+ "n_test": 1405,
+ "benchmark_to_beat": "self-reference: leaky-run acc 0.9117 bacc 0.9108; dedup run is the honest leakage-controlled number",
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.719,
+   "acc": 0.5865,
+   "bacc": 0.6041,
+   "elapsed_s": 36.6
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.4692,
+   "acc": 0.7345,
+   "bacc": 0.7441,
+   "elapsed_s": 73.1
+  }
+ ]
+}

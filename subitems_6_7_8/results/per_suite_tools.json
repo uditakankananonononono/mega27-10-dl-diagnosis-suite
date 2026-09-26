@@ -1,7 +1,7 @@
 {
  "cancer_tools": 32,
  "neuro_tools": 24,
- "genetic_tools": 31,
+ "genetic_tools": 32,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -244,6 +244,11 @@
   {
    "name": "GWAS Catalog REST API",
    "use": "V2 gene lookup for top ClinVar genes, 8/8 with Ensembl IDs (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "mlxtend",
+   "use": "sequential feature selection cross-check of the shap ranking (10.8)",
    "tag": "G"
   }
  ]

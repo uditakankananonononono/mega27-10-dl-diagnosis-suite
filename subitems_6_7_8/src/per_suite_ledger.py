@@ -56,6 +56,7 @@ TOOLS = [
     ("pysam", "VCF write+read round-trip of 1,000 ClinVar variants, lossless (10.8)", "G"),
     ("phate", "diffusion-based second embedding of neuro test pixels (10.7)", "N"),
     ("GWAS Catalog REST API", "V2 gene lookup for top ClinVar genes, 8/8 with Ensembl IDs (10.8)", "G"),
+    ("mlxtend", "sequential feature selection cross-check of the shap ranking (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -106,6 +107,7 @@ EVIDENCE = {
     "pysam": ["results/genetic/clinvar_pysam_vcf_roundtrip.json"],
     "phate": ["results/neuro/tool_battery_8_phate.json"],
     "GWAS Catalog REST API": ["results/genetic/clinvar_gwas_catalog.json"],
+    "mlxtend": ["results/genetic/clinvar_mlxtend_sfs.json"],
 }
 
 DATASETS = {

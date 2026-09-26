@@ -1,0 +1,14 @@
+{
+ "tool": "mlxtend SequentialFeatureSelector",
+ "dataset": "clinvar_subset logistic, 20k-train subset, cv=2",
+ "selected_features": [
+  "alt",
+  "missense",
+  "nonsense",
+  "synonymous",
+  "prot_pos",
+  "gene_target_enc"
+ ],
+ "cv_score": 0.8839,
+ "note": "greedy forward selection cross-checks the shap ranking"
+}
