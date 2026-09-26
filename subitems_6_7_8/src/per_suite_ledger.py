@@ -73,6 +73,7 @@ TOOLS = [
     ("mahotas", "Haralick texture contrasts, PCam + neuro (10.6/10.7)", "CN"),
     ("hdbscan", "unsupervised cluster-vs-label agreement on neuro embeddings (10.7)", "N"),
     ("xgboost", "third independent boosting cross-check of the ClinVar GBC, AUC 0.9461 (10.8)", "G"),
+    ("torchvision", "pretrained ResNet18 transfer baseline for neuro (10.7)", "N"),
 ]
 
 EVIDENCE = {
@@ -140,6 +141,7 @@ EVIDENCE = {
     "mahotas": ["results/cancer/pcam_mahotas_texture.json", "results/neuro/neuro_mahotas_texture.json"],
     "hdbscan": ["results/neuro/neuro_hdbscan_clusters.json"],
     "xgboost": ["results/genetic/clinvar_xgboost_crosscheck.json"],
+    "torchvision": ["results/neuro/neuro_torchvision_transfer.json"],
 }
 
 DATASETS = {

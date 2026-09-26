@@ -1,0 +1,10 @@
+{
+ "tool": "torchvision (pretrained ResNet18, ImageNet1K_V1)",
+ "dataset": "neuro, 2000-train/1000-test features, logistic head",
+ "transfer_bacc": 0.8721,
+ "scratch_dedup_cnn_reference": {
+  "acc": 0.8719,
+  "bacc": 0.8719
+ },
+ "note": "ImageNet transfer reference point for the from-scratch dedup CNN"
+}

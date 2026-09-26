@@ -1,6 +1,6 @@
 {
  "cancer_tools": 38,
- "neuro_tools": 34,
+ "neuro_tools": 35,
  "genetic_tools": 40,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
@@ -330,6 +330,11 @@
    "name": "xgboost",
    "use": "third independent boosting cross-check of the ClinVar GBC, AUC 0.9461 (10.8)",
    "tag": "G"
+  },
+  {
+   "name": "torchvision",
+   "use": "pretrained ResNet18 transfer baseline for neuro (10.7)",
+   "tag": "N"
   }
  ]
 }
