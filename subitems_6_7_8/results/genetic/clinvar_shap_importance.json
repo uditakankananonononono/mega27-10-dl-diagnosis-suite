@@ -1,0 +1,45 @@
+{
+ "tool": "shap 0.49 PermutationExplainer",
+ "dataset": "clinvar_subset GBC (retrained, same recipe as clinvar_model.py)",
+ "n_explain_rows": 500,
+ "class_explained": "pathogenic probability",
+ "ranking": [
+  {
+   "feature": "synonymous",
+   "mean_abs_shap": 0.17887
+  },
+  {
+   "feature": "gene_target_enc",
+   "mean_abs_shap": 0.10835
+  },
+  {
+   "feature": "prot_pos",
+   "mean_abs_shap": 0.09081
+  },
+  {
+   "feature": "nonsense",
+   "mean_abs_shap": 0.06802
+  },
+  {
+   "feature": "missense",
+   "mean_abs_shap": 0.03065
+  },
+  {
+   "feature": "transition",
+   "mean_abs_shap": 0.01285
+  },
+  {
+   "feature": "chrom",
+   "mean_abs_shap": 0.00833
+  },
+  {
+   "feature": "ref",
+   "mean_abs_shap": 0.00429
+  },
+  {
+   "feature": "alt",
+   "mean_abs_shap": 0.00234
+  }
+ ],
+ "note": "permutation importance on 500 held-out rows; ranking, not causal attribution"
+}

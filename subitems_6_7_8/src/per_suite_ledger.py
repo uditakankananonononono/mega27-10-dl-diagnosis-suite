@@ -44,6 +44,8 @@ TOOLS = [
     ("networkx", "gene-consequence co-occurrence graph, top-30 ClinVar genes (10.8)", "G"),
     ("biopython", "IUPAC allele validation + transition/transversion census, 400k ClinVar variants (10.8)", "G"),
     ("plotly", "interactive cross-suite metrics dashboard (HTML deliverable)", "A"),
+    ("shap", "permutation importance on the ClinVar GBC, 500 held-out rows (10.8)", "G"),
+    ("umap-learn", "2D embedding figure of neuro test pixels with leakage caveat (10.7)", "N"),
 ]
 
 EVIDENCE = {
@@ -82,6 +84,8 @@ EVIDENCE = {
     "networkx": ["results/genetic/clinvar_networkx_graph.json"],
     "biopython": ["results/genetic/clinvar_biopython_titv.json"],
     "plotly": ["results/tool_battery_5_plotly.json"],
+    "shap": ["results/genetic/clinvar_shap_importance.json"],
+    "umap-learn": ["results/neuro/tool_battery_6_umap.json"],
 }
 
 DATASETS = {

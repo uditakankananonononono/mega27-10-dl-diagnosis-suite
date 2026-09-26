@@ -1,7 +1,7 @@
 {
  "cancer_tools": 29,
- "neuro_tools": 21,
- "genetic_tools": 24,
+ "neuro_tools": 22,
+ "genetic_tools": 25,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -185,6 +185,16 @@
    "name": "plotly",
    "use": "interactive cross-suite metrics dashboard (HTML deliverable)",
    "tag": "A"
+  },
+  {
+   "name": "shap",
+   "use": "permutation importance on the ClinVar GBC, 500 held-out rows (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "umap-learn",
+   "use": "2D embedding figure of neuro test pixels with leakage caveat (10.7)",
+   "tag": "N"
   }
  ]
 }

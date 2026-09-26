@@ -1,0 +1,6 @@
+{
+ "tool": "umap-learn",
+ "figure": "fig_neuro_umap.png",
+ "n": 1200,
+ "note": "2D embedding of raw test pixels; cluster separation is partly leakage-aided (see neuro_imagehash_leakage.json)"
+}
