@@ -1,0 +1,102 @@
+{
+ "tool": "networkx",
+ "dataset": "clinvar_subset, top-30 genes x consequence types",
+ "nodes": 34,
+ "edges": 119,
+ "density": 0.2121,
+ "top_gene_degrees": [
+  {
+   "gene": "NF1",
+   "degree": 4
+  },
+  {
+   "gene": "APC",
+   "degree": 4
+  },
+  {
+   "gene": "PALB2",
+   "degree": 4
+  },
+  {
+   "gene": "MSH2",
+   "degree": 4
+  },
+  {
+   "gene": "USH2A",
+   "degree": 4
+  },
+  {
+   "gene": "ATM",
+   "degree": 4
+  },
+  {
+   "gene": "LDLR",
+   "degree": 4
+  },
+  {
+   "gene": "ALMS1",
+   "degree": 4
+  },
+  {
+   "gene": "DICER1",
+   "degree": 4
+  },
+  {
+   "gene": "CDH23",
+   "degree": 4
+  }
+ ],
+ "edge_weights_sample": [
+  {
+   "gene": "TTN",
+   "consequence": "synonymous",
+   "variants": 3586
+  },
+  {
+   "gene": "BRCA2",
+   "consequence": "synonymous",
+   "variants": 1821
+  },
+  {
+   "gene": "ATM",
+   "consequence": "synonymous",
+   "variants": 1501
+  },
+  {
+   "gene": "APC",
+   "consequence": "synonymous",
+   "variants": 1302
+  },
+  {
+   "gene": "BRCA1",
+   "consequence": "other",
+   "variants": 1267
+  },
+  {
+   "gene": "NEB",
+   "consequence": "synonymous",
+   "variants": 1245
+  },
+  {
+   "gene": "NF1",
+   "consequence": "synonymous",
+   "variants": 1185
+  },
+  {
+   "gene": "TSC2",
+   "consequence": "synonymous",
+   "variants": 1125
+  },
+  {
+   "gene": "BRCA2",
+   "consequence": "other",
+   "variants": 1115
+  },
+  {
+   "gene": "BRCA1",
+   "consequence": "synonymous",
+   "variants": 1078
+  }
+ ],
+ "note": "bipartite-ish gene-consequence co-occurrence over 400k unique VariationIDs"
+}

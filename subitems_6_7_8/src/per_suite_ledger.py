@@ -40,6 +40,10 @@ TOOLS = [
     ("torchmetrics", "cross-verification of every reported CNN metric + ECE (10.6)", "C"),
     ("torchinfo", "architecture audit of the CNN (params, trainable) (10.6)", "C"),
     ("seaborn", "held-out probability distribution figures (10.6)", "C"),
+    ("imagehash", "cross-split phash near-duplicate leakage audit: PCam 0%%, neuro 14.33%% flagged (10.6/10.7)", "CN"),
+    ("networkx", "gene-consequence co-occurrence graph, top-30 ClinVar genes (10.8)", "G"),
+    ("biopython", "IUPAC allele validation + transition/transversion census, 400k ClinVar variants (10.8)", "G"),
+    ("plotly", "interactive cross-suite metrics dashboard (HTML deliverable)", "A"),
 ]
 
 EVIDENCE = {
@@ -74,6 +78,10 @@ EVIDENCE = {
     "torchmetrics": ["results/cancer/pcam_metrics_crossverify.json"],
     "torchinfo": ["results/cancer/pcam_arch_audit.json"],
     "seaborn": ["results/cancer/tool_battery_4_seaborn.json"],
+    "imagehash": ["results/cancer/pcam_imagehash_leakage.json", "results/neuro/neuro_imagehash_leakage.json"],
+    "networkx": ["results/genetic/clinvar_networkx_graph.json"],
+    "biopython": ["results/genetic/clinvar_biopython_titv.json"],
+    "plotly": ["results/tool_battery_5_plotly.json"],
 }
 
 DATASETS = {
@@ -92,7 +100,7 @@ def counts():
             pending.append(n)
             continue
         for tag in ("C", "N", "G"):
-            if t == "A" or t == tag:
+            if t == "A" or tag in t:
                 per[tag] += 1
     return per, pending
 

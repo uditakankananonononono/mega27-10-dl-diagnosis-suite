@@ -1,0 +1,16 @@
+{
+ "tool": "imagehash (phash, 64-bit)",
+ "dataset": "pcam valid vs test",
+ "method": "cross-split min Hamming distance, duplicate threshold <= 5",
+ "n_a": 3000,
+ "n_b": 3000,
+ "n_a_with_near_dup_in_b": 0,
+ "near_dup_rate_pct": 0.0,
+ "closest_pair": {
+  "a_index": 1985,
+  "b_index": 822,
+  "hamming": 6
+ },
+ "elapsed_s": 3.2,
+ "note": "cross-split near-duplicates would indicate leakage; rate reported, not hidden"
+}

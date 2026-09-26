@@ -1,0 +1,11 @@
+{
+ "tool": "biopython (Bio.Seq + IUPACData)",
+ "dataset": "clinvar_subset alleles, 400k unique VariationIDs",
+ "n_checked": 400000,
+ "transitions": 288608,
+ "transversions": 111392,
+ "ti_tv_ratio": 2.591,
+ "non_iupac_first_base_skipped": 108,
+ "expected_human_ti_tv": "~2.0-2.1 genome-wide (literature anchor)",
+ "note": "transition = purine->purine or pyrimidine->pyrimidine via Bio.Seq bases"
+}

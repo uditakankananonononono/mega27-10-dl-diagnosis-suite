@@ -1,7 +1,7 @@
 {
- "cancer_tools": 27,
- "neuro_tools": 19,
- "genetic_tools": 21,
+ "cancer_tools": 29,
+ "neuro_tools": 21,
+ "genetic_tools": 24,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -165,6 +165,26 @@
    "name": "seaborn",
    "use": "held-out probability distribution figures (10.6)",
    "tag": "C"
+  },
+  {
+   "name": "imagehash",
+   "use": "cross-split phash near-duplicate leakage audit: PCam 0%%, neuro 14.33%% flagged (10.6/10.7)",
+   "tag": "CN"
+  },
+  {
+   "name": "networkx",
+   "use": "gene-consequence co-occurrence graph, top-30 ClinVar genes (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "biopython",
+   "use": "IUPAC allele validation + transition/transversion census, 400k ClinVar variants (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "plotly",
+   "use": "interactive cross-suite metrics dashboard (HTML deliverable)",
+   "tag": "A"
   }
  ]
 }

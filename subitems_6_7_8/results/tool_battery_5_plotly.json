@@ -1,0 +1,42 @@
+{
+ "tool": "plotly",
+ "figure": "fig_suite_metrics_dashboard.html",
+ "rows": [
+  {
+   "suite": "PCam CNN",
+   "metric": "acc",
+   "value": 0.7366
+  },
+  {
+   "suite": "PCam CNN",
+   "metric": "auc",
+   "value": 0.847
+  },
+  {
+   "suite": "BreakHis CNN",
+   "metric": "acc",
+   "value": 0.684
+  },
+  {
+   "suite": "BreakHis CNN",
+   "metric": "auc",
+   "value": 0.7115
+  },
+  {
+   "suite": "BrainMRI CNN",
+   "metric": "acc",
+   "value": 0.9117
+  },
+  {
+   "suite": "ClinVar GBC",
+   "metric": "test_acc",
+   "value": 0.9122
+  },
+  {
+   "suite": "ClinVar GBC",
+   "metric": "test_auc",
+   "value": 0.9536
+  }
+ ],
+ "note": "interactive cross-suite metrics dashboard"
+}

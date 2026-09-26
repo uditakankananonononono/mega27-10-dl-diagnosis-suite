@@ -1,0 +1,16 @@
+{
+ "tool": "imagehash (phash, 64-bit)",
+ "dataset": "neuro train vs test",
+ "method": "cross-split min Hamming distance, duplicate threshold <= 5",
+ "n_a": 3000,
+ "n_b": 1405,
+ "n_a_with_near_dup_in_b": 430,
+ "near_dup_rate_pct": 14.33,
+ "closest_pair": {
+  "a_index": 272,
+  "b_index": 68,
+  "hamming": 0
+ },
+ "elapsed_s": 1.7,
+ "note": "cross-split near-duplicates would indicate leakage; rate reported, not hidden"
+}
