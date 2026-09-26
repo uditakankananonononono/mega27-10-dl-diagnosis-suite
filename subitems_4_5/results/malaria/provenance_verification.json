@@ -1,0 +1,15 @@
+{
+ "date": "2026-09-26",
+ "dataset": "NIH malaria cell images (data.lhncbc.nlm.nih.gov cell_images.zip, 353,452,851 bytes)",
+ "verified": [
+  "27,558 PNGs, class counts exactly 13,779/13,779 (paper claim)",
+  "rebuilt npy ordering identical: all 249 census flagged_ids resolve and land inside the committed train split; boundary at 13,779",
+  "split.json sums to 27,558"
+ ],
+ "not_bit_exact": {
+  "observation": "model_cnn.pt on rebuilt tensors: acc 0.955 vs committed 0.9608, probs max abs diff 0.83",
+  "cause": "pixel-level resize differences across Pillow versions (ordering and data proven identical by census/split checks)",
+  "consequence": "committed 0.9608 was produced under the previous builder's Pillow build; all FUTURE results (incl. R-M1 5-fold patient CV) will be trained and evaluated in THIS environment - internally consistent, documented in the paper methods",
+  "action": "paper methods must state library versions with results produced here; old committed numbers preserved as-is with this note"
+ }
+}
