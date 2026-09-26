@@ -1,0 +1,33 @@
+{
+ "cnn": {
+  "point_accuracy": 0.9608,
+  "cluster_bootstrap_ci95": [
+   0.9522,
+   0.9689
+  ],
+  "n_clusters": 201,
+  "n_images": 2758,
+  "B": 10000
+ },
+ "gcn": {
+  "point_accuracy": 0.9598,
+  "cluster_bootstrap_ci95": [
+   0.9501,
+   0.9681
+  ],
+  "n_clusters": 201,
+  "n_images": 2758,
+  "B": 10000
+ },
+ "protocol": "percentile cluster bootstrap; resampling unit = smear/patient code (filename prefix before _IMG, e.g. C100P61ThinF, C12NThinF, C205ThinF), preserving within-smear correlation of cells; B=10000, seed 42. Wilson image-level intervals remain reported alongside as the narrower independence-assuming intervals.",
+ "comparison_wilson": {
+  "cnn": [
+   0.9529,
+   0.9675
+  ],
+  "gcn": [
+   0.9518,
+   0.9665
+  ]
+ }
+}

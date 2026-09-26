@@ -166,3 +166,57 @@ directional label contamination looks like before expert adjudication.
 """)
 open(os.path.join(ROOT, 'paper_malaria', 'sec_validation.tex'), 'w').write(tex3)
 print("enrichment subsection appended;", len(tex3), "chars")
+
+# --- R6 cleanups: estimand, cluster bootstrap, proves/does-not-prove box ---
+cb = json.load(open(os.path.join(ROOT, 'results', 'malaria', 'cluster_bootstrap.json')))
+def ci(x): return f"[{x[0]*100:.2f}, {x[1]*100:.2f}]"
+tex4 = tex3 + rf"""
+\subsection{{The estimand, stated precisely}}
+\label{{sec:estimand}}
+The headline 11.44\% is not ``the fraction of wrong labels''. It is the
+confident-learning estimator's estimate of the fraction of training
+examples whose observed label disagrees with the latent-label posterior
+under the specified three-fold out-of-fold probability model:
+\begin{{equation}}
+\hat{{\pi}}_{{\mathrm{{noise}}}} \;=\;
+\frac{{1}}{{N}}\sum_{{c\ne c'}} \hat{{Q}}_{{c,c'}} ,
+\end{{equation}}
+where $\hat{{Q}}$ is the calibrated confident joint over observed class
+$c$ and latent class $c'$ estimated from the OOF probabilities
+(\texttt{{results/malaria/label\_noise\_census.json}}). It is an
+estimator-derived quantity, not independently verified biological ground
+truth; the dose-response experiment bounds its behaviour under known
+corruption, and the band bounds its protocol sensitivity.
+
+\subsection{{Patient-clustered uncertainty}}
+\label{{sec:clusterboot}}
+Cells from the same smear are not independent, so image-level intervals
+understate uncertainty. Recomputing the headline accuracy intervals with
+a percentile cluster bootstrap (resampling unit: smear/patient code, the
+filename prefix before \texttt{{\_IMG}}; {cb['cnn']['n_clusters']} clusters, median 9 cells, $B=10{{,}}000$)
+widens the intervals exactly as it should: CNN {ci(cb['cnn']['cluster_bootstrap_ci95'])}\%
+vs Wilson {ci(cb['comparison_wilson']['cnn'])}\%, GCN {ci(cb['gcn']['cluster_bootstrap_ci95'])}\%
+vs Wilson {ci(cb['comparison_wilson']['gcn'])}\%
+(\texttt{{results/malaria/cluster\_bootstrap.json}}). Both constructions
+are reported; the clustered interval is the conservative one.
+
+\subsection{{What the method proves, and what it does not}}
+\label{{sec:proves}}
+\textbf{{Supported by the evidence in this paper:}} the estimator responds
+monotonically to known injected noise; the gate refuses to report under
+model collapse; the population estimate is stable across tested protocol
+configurations; a similar noise magnitude appears under an independent
+auditor architecture; individual candidate identity is
+representation-dependent while an 85-image consensus core reproduces;
+candidates are cross-architecturally enriched in out-of-fold loss; the
+same gated pipeline ports to two further biomedical collections and
+refuses an inadmissible case.
+\textbf{{Not established:}} that any individual flagged image is
+biologically mislabelled; that 11.44\% is the exact biological
+mislabelling fraction; universal generalisation to all biomedical
+datasets; or a causal claim about \emph{why} the asymmetry is
+directional. Confirming individual candidates requires blinded expert
+adjudication, scoped as follow-up.
+"""
+open(os.path.join(ROOT, 'paper_malaria', 'sec_validation.tex'), 'w').write(tex4)
+print("R6 cleanups appended;", len(tex4), "chars total")
