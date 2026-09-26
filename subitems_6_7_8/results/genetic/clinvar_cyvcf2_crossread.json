@@ -1,0 +1,9 @@
+{
+ "tool": "cyvcf2 (second VCF engine)",
+ "dataset": "500 ClinVar variants, VCF written by pysam",
+ "n_pysam_read": 500,
+ "n_cyvcf2_read": 500,
+ "vid_sets_match": true,
+ "verdict": "two independent VCF engines agree",
+ "note": "engine-independence check for the committed pysam round-trip"
+}

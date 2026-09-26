@@ -1,0 +1,5 @@
+{
+ "tool": "yellowbrick",
+ "figure": "fig_clinvar_yellowbrick.png",
+ "note": "ROC + PR visual diagnostics on the committed held-out GBC probs"
+}
