@@ -77,8 +77,9 @@ def fit_linear(F, y, seed, steps=1500, lr=0.05):
     return w, b, mu, sd
 
 def predict(F, w, b, mu, sd):
-    Xn = (torch.from_numpy(F).float() - mu) / sd
-    return torch.sigmoid(Xn @ w + b).numpy()
+    with torch.no_grad():
+        Xn = (torch.from_numpy(F).float() - mu) / sd
+        return torch.sigmoid(Xn @ w + b).numpy()
 
 def main():
     ap = argparse.ArgumentParser()
