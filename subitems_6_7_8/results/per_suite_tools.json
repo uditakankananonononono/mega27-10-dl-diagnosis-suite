@@ -1,7 +1,7 @@
 {
- "cancer_tools": 22,
- "neuro_tools": 18,
- "genetic_tools": 20,
+ "cancer_tools": 27,
+ "neuro_tools": 19,
+ "genetic_tools": 21,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -140,6 +140,31 @@
    "name": "openpyxl",
    "use": "accession registry workbook across suites",
    "tag": "A"
+  },
+  {
+   "name": "PyTorch",
+   "use": "checkpointed CNN trainers: PCam + BreakHis + brain-MRI (10.6/10.7)",
+   "tag": "A"
+  },
+  {
+   "name": "cleanlab",
+   "use": "label-issue census on held-out CNN probs, PCam test (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "torchmetrics",
+   "use": "cross-verification of every reported CNN metric + ECE (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "torchinfo",
+   "use": "architecture audit of the CNN (params, trainable) (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "seaborn",
+   "use": "held-out probability distribution figures (10.6)",
+   "tag": "C"
   }
  ]
 }

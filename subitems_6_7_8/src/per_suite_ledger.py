@@ -35,6 +35,11 @@ TOOLS = [
     ("requests", "HTTP fetches for provenance/verification calls", "A"),
     ("DuckDB", "SQL cross-tabs over the 3.02M-row ClinVar subset (10.8)", "G"),
     ("openpyxl", "accession registry workbook across suites", "A"),
+    ("PyTorch", "checkpointed CNN trainers: PCam + BreakHis + brain-MRI (10.6/10.7)", "A"),
+    ("cleanlab", "label-issue census on held-out CNN probs, PCam test (10.6)", "C"),
+    ("torchmetrics", "cross-verification of every reported CNN metric + ECE (10.6)", "C"),
+    ("torchinfo", "architecture audit of the CNN (params, trainable) (10.6)", "C"),
+    ("seaborn", "held-out probability distribution figures (10.6)", "C"),
 ]
 
 EVIDENCE = {
@@ -64,6 +69,11 @@ EVIDENCE = {
     "requests": ["results/cancer/tool_battery_3_zenodo_bs4.json"],
     "DuckDB": ["results/genetic/tool_battery_3_duckdb.json"],
     "openpyxl": ["results/tool_battery_3_registry.json"],
+    "PyTorch": ["results/cancer/pcam_cnn_train.json", "results/cancer/breakhis_cnn_train.json", "results/neuro/brain_mri_cnn_train.json"],
+    "cleanlab": ["results/cancer/pcam_label_census.json"],
+    "torchmetrics": ["results/cancer/pcam_metrics_crossverify.json"],
+    "torchinfo": ["results/cancer/pcam_arch_audit.json"],
+    "seaborn": ["results/cancer/tool_battery_4_seaborn.json"],
 }
 
 DATASETS = {

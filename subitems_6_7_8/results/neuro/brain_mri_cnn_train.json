@@ -24,6 +24,13 @@
    "acc": 0.9089,
    "bacc": 0.9029,
    "elapsed_s": 43.4
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.1833,
+   "acc": 0.9117,
+   "bacc": 0.9108,
+   "elapsed_s": 13.8
   }
  ]
 }
