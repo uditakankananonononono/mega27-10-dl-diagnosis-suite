@@ -1,0 +1,11 @@
+{
+ "tool": "xgboost XGBClassifier",
+ "dataset": "clinvar_subset, 120k cap",
+ "test_auc": 0.9461,
+ "test_acc": 0.8877,
+ "reference": {
+  "sklearn_histgb": 0.9536,
+  "lightgbm": 0.9508
+ },
+ "verdict": "third independent boosting implementation concurs (all AUC >= 0.94)"
+}

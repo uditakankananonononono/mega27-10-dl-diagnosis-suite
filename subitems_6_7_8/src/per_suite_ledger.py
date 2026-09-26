@@ -70,6 +70,8 @@ TOOLS = [
     ("category_encoders", "hashing-vs-target encoding comparison quantifies gene-encoding lift (10.8)", "G"),
     ("pywavelets", "multi-scale wavelet energy contrasts, PCam + neuro (10.6/10.7)", "CN"),
     ("altair", "second interactive dashboard engine (vega-lite)", "A"),
+    ("mahotas", "Haralick texture contrasts, PCam + neuro (10.6/10.7)", "CN"),
+    ("hdbscan", "unsupervised cluster-vs-label agreement on neuro embeddings (10.7)", "N"),
 ]
 
 EVIDENCE = {
@@ -134,6 +136,8 @@ EVIDENCE = {
     "category_encoders": ["results/genetic/clinvar_hashing_enc_compare.json"],
     "pywavelets": ["results/cancer/pcam_wavelet_energy.json", "results/neuro/neuro_wavelet_energy.json"],
     "altair": ["results/tool_battery_13_altair.json"],
+    "mahotas": ["results/cancer/pcam_mahotas_texture.json", "results/neuro/neuro_mahotas_texture.json"],
+    "hdbscan": ["results/neuro/neuro_hdbscan_clusters.json"],
 }
 
 DATASETS = {

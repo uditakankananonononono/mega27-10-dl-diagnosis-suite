@@ -1,0 +1,9 @@
+{
+ "tool": "hdbscan",
+ "dataset": "neuro test umap embedding, 1000 images",
+ "n_clustered": 775,
+ "n_noise": 225,
+ "n_clusters": 7,
+ "ari_vs_true_labels": 0.1446,
+ "note": "unsupervised cluster structure vs true classes (leakage caveat applies)"
+}

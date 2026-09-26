@@ -1,6 +1,6 @@
 {
- "cancer_tools": 37,
- "neuro_tools": 32,
+ "cancer_tools": 38,
+ "neuro_tools": 34,
  "genetic_tools": 39,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
@@ -315,6 +315,16 @@
    "name": "altair",
    "use": "second interactive dashboard engine (vega-lite)",
    "tag": "A"
+  },
+  {
+   "name": "mahotas",
+   "use": "Haralick texture contrasts, PCam + neuro (10.6/10.7)",
+   "tag": "CN"
+  },
+  {
+   "name": "hdbscan",
+   "use": "unsupervised cluster-vs-label agreement on neuro embeddings (10.7)",
+   "tag": "N"
   }
  ]
 }

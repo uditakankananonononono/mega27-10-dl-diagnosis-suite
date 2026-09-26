@@ -1,0 +1,8 @@
+{
+ "tool": "mahotas (Haralick texture)",
+ "dataset": "pcam test 800 patches",
+ "mean_contrast_tumor": 1717.2,
+ "mean_contrast_nontumor": 1981.1,
+ "mwu_p": 0.34859908048763133,
+ "note": "Haralick texture contrast complements the wavelet/sharpness audits"
+}

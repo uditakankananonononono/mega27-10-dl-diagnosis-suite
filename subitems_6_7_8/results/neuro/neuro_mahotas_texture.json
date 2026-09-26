@@ -1,0 +1,6 @@
+{
+ "tool": "mahotas (Haralick texture)",
+ "dataset": "neuro test 800 images",
+ "kruskal_p": 2.6479078884266743e-55,
+ "note": "texture contrast across the four classes"
+}
