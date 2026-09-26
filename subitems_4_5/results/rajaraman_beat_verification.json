@@ -1,0 +1,40 @@
+{
+ "verification_date": "2026-09-26",
+ "comparator_source": "Rajaraman et al. 2018, PeerJ 6:e4568, https://peerj.com/articles/4568/ (Table 2 fetched live today)",
+ "their_protocol": "5-fold PATIENT-LEVEL cross-validation on all 27,558 images; mean +/- std over folds",
+ "their_best": {
+  "model": "ResNet-50 feature extractor + FC head",
+  "accuracy": 0.957,
+  "acc_std": 0.007,
+  "auc": 0.99,
+  "sensitivity": 0.945,
+  "specificity": 0.969,
+  "mcc": 0.912
+ },
+ "their_others": {
+  "VGG-16": 0.945,
+  "customized CNN": 0.94,
+  "AlexNet": 0.937
+ },
+ "ours": {
+  "model": "from-scratch CNN (committed)",
+  "test_accuracy": 0.9608,
+  "cluster_bootstrap_ci95": [
+   0.9522,
+   0.9689
+  ],
+  "auc": 0.9929,
+  "protocol": "single held-out 10% test (2,758 images), cluster bootstrap by patient/smear code (201 clusters)"
+ },
+ "verdict": "AT-PAR, NOT A CLEAN BEAT",
+ "reasoning": [
+  "Point accuracy 0.9608 vs 0.957 is +0.38pp, but our CI95 lower bound (0.9522) sits below their mean (0.957): intervals overlap -> no statistically defensible beat.",
+  "Protocols differ (single held-out test vs 5-fold patient CV) - cross-protocol number comparison is indicative only, not a matched beat.",
+  "AUC 0.9929 vs 0.990 likewise within noise."
+ ],
+ "next_rung_preregistered_before_running": [
+  "R-M1: matched-protocol comparison - our CNN under 5-fold patient-level CV (patient code from filename), fold-mean accuracy vs 0.957 with paired fold stats; clean beat = our fold-mean > theirs AND paired bootstrap CI of the fold-level diff excludes 0.",
+  "R-M2 (if R-M1 short): ImageNet-transfer arm (same-distribution here, unlike pneumonia) + ensemble; same gate.",
+  "Dataset needed locally: NIH 27,558 cell images (download next run)."
+ ]
+}
