@@ -1,0 +1,5 @@
+{
+ "tool": "altair (vega-lite)",
+ "figure": "fig_suite_metrics_altair.html",
+ "note": "second interactive dashboard engine, same committed metric rows"
+}

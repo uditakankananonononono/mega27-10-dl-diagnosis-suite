@@ -1,0 +1,12 @@
+{
+ "tool": "pywavelets (wavedec2, haar)",
+ "dataset": "neuro test 1200 images",
+ "per_class_mean_energy": {
+  "glioma": 526.45,
+  "meningioma": 863.48,
+  "notumor": 1252.36,
+  "pituitary": 789.12
+ },
+ "kruskal_p": 6.585197716462918e-75,
+ "note": "multi-scale energy by tumor class"
+}

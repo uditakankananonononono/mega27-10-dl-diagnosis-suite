@@ -1,7 +1,7 @@
 {
- "cancer_tools": 35,
- "neuro_tools": 30,
- "genetic_tools": 38,
+ "cancer_tools": 37,
+ "neuro_tools": 32,
+ "genetic_tools": 39,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -305,6 +305,16 @@
    "name": "category_encoders",
    "use": "hashing-vs-target encoding comparison quantifies gene-encoding lift (10.8)",
    "tag": "G"
+  },
+  {
+   "name": "pywavelets",
+   "use": "multi-scale wavelet energy contrasts, PCam + neuro (10.6/10.7)",
+   "tag": "CN"
+  },
+  {
+   "name": "altair",
+   "use": "second interactive dashboard engine (vega-lite)",
+   "tag": "A"
   }
  ]
 }

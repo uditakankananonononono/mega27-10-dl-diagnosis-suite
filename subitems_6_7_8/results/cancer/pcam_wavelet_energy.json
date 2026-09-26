@@ -1,0 +1,8 @@
+{
+ "tool": "pywavelets (wavedec2, haar)",
+ "dataset": "pcam test 1500 patches",
+ "mean_detail_energy_tumor": 1833.25,
+ "mean_detail_energy_nontumor": 2197.0,
+ "mwu_p": 0.015051740892881766,
+ "note": "multi-scale wavelet energy contrast, extends the battery-1 frequency audits"
+}

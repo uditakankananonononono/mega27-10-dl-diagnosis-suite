@@ -68,6 +68,8 @@ TOOLS = [
     ("lime", "superpixel explanations for the PCam CNN (10.6)", "C"),
     ("polars", "second parquet engine cross-read of the neuro dataset, agrees 7023 (10.7)", "N"),
     ("category_encoders", "hashing-vs-target encoding comparison quantifies gene-encoding lift (10.8)", "G"),
+    ("pywavelets", "multi-scale wavelet energy contrasts, PCam + neuro (10.6/10.7)", "CN"),
+    ("altair", "second interactive dashboard engine (vega-lite)", "A"),
 ]
 
 EVIDENCE = {
@@ -130,6 +132,8 @@ EVIDENCE = {
     "lime": ["results/cancer/pcam_lime.json"],
     "polars": ["results/neuro/neuro_polars_stats.json"],
     "category_encoders": ["results/genetic/clinvar_hashing_enc_compare.json"],
+    "pywavelets": ["results/cancer/pcam_wavelet_energy.json", "results/neuro/neuro_wavelet_energy.json"],
+    "altair": ["results/tool_battery_13_altair.json"],
 }
 
 DATASETS = {
