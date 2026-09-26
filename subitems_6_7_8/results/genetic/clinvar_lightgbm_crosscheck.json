@@ -1,0 +1,13 @@
+{
+ "tool": "lightgbm LGBMClassifier",
+ "dataset": "clinvar_subset, same build recipe as clinvar_model.py (200k cap)",
+ "test_acc": 0.8938,
+ "test_auc": 0.9508,
+ "test_bacc": 0.8544,
+ "sklearn_histgb_reference": {
+  "acc": 0.9122,
+  "auc": 0.9536
+ },
+ "verdict": "independent-gradient-boosting cross-check within 0.02 AUC of sklearn GBC",
+ "train_seconds": 3.0
+}

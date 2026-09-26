@@ -1,7 +1,7 @@
 {
- "cancer_tools": 29,
- "neuro_tools": 22,
- "genetic_tools": 25,
+ "cancer_tools": 32,
+ "neuro_tools": 23,
+ "genetic_tools": 27,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -195,6 +195,31 @@
    "name": "umap-learn",
    "use": "2D embedding figure of neuro test pixels with leakage caveat (10.7)",
    "tag": "N"
+  },
+  {
+   "name": "lightgbm",
+   "use": "independent gradient-boosting cross-check of the ClinVar GBC (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "captum",
+   "use": "saliency attribution maps for the PCam + neuro CNNs (10.6/10.7)",
+   "tag": "CN"
+  },
+  {
+   "name": "pycm",
+   "use": "full confusion-matrix statistics on PCam held-out probs (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "upsetplot",
+   "use": "intersection structure of independent PCam flag sets (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "Ensembl REST API",
+   "use": "gene identity cross-verification for top ClinVar genes (10.8)",
+   "tag": "G"
   }
  ]
 }

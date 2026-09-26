@@ -1,0 +1,11 @@
+{
+ "tool": "upsetplot",
+ "figure": "fig_pcam_flag_upset.png",
+ "universe": "4096 pcam test patches",
+ "sets": [
+  "cleanlab_top50",
+  "low_confidence",
+  "misclassified"
+ ],
+ "note": "intersection structure of the three independent flag sets"
+}

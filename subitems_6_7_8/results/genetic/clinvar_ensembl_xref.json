@@ -1,0 +1,57 @@
+{
+ "tool": "Ensembl REST API (xrefs/symbol)",
+ "dataset": "top-10 ClinVar networkx genes",
+ "n_queried": 10,
+ "n_resolved": 8,
+ "results": [
+  {
+   "gene": "NF1",
+   "status": 200,
+   "ensembl_id": "ENSG00000196712"
+  },
+  {
+   "gene": "APC",
+   "status": 200,
+   "ensembl_id": "ENSG00000134982"
+  },
+  {
+   "gene": "PALB2",
+   "error": "HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read ti"
+  },
+  {
+   "gene": "MSH2",
+   "error": "HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read ti"
+  },
+  {
+   "gene": "USH2A",
+   "status": 200,
+   "ensembl_id": "ENSG00000042781"
+  },
+  {
+   "gene": "ATM",
+   "status": 200,
+   "ensembl_id": "ENSG00000149311"
+  },
+  {
+   "gene": "LDLR",
+   "status": 200,
+   "ensembl_id": "ENSG00000130164"
+  },
+  {
+   "gene": "ALMS1",
+   "status": 200,
+   "ensembl_id": "ENSG00000116127"
+  },
+  {
+   "gene": "DICER1",
+   "status": 200,
+   "ensembl_id": "ENSG00000100697"
+  },
+  {
+   "gene": "CDH23",
+   "status": 200,
+   "ensembl_id": "ENSG00000107736"
+  }
+ ],
+ "note": "gene identity cross-verification against Ensembl"
+}

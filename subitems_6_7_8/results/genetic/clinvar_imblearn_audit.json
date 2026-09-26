@@ -1,0 +1,10 @@
+{
+ "tool": "imbalanced-learn RandomUnderSampler",
+ "dataset": "clinvar_subset logistic baseline, 200k cap",
+ "train_prev_pathogenic": 0.2971,
+ "n_train_full": 160000,
+ "n_train_undersampled": 95074,
+ "bacc_full_train": 0.8384,
+ "bacc_undersampled": 0.8573,
+ "note": "quantifies what naive undersampling costs vs full-data training on this suite"
+}

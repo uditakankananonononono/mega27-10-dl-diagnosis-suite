@@ -1,0 +1,64 @@
+{
+ "tool": "captum Saliency (input gradients)",
+ "model_ckpt": "pcam_cnn_ckpt.pt",
+ "n_images": 8,
+ "per_image": [
+  {
+   "index": 0,
+   "true": 0,
+   "saliency_mean": 0.00095,
+   "saliency_max": 0.00801,
+   "center_share": 0.776
+  },
+  {
+   "index": 1,
+   "true": 1,
+   "saliency_mean": 0.00454,
+   "saliency_max": 0.05562,
+   "center_share": 1.031
+  },
+  {
+   "index": 2,
+   "true": 0,
+   "saliency_mean": 0.00203,
+   "saliency_max": 0.02509,
+   "center_share": 0.741
+  },
+  {
+   "index": 3,
+   "true": 1,
+   "saliency_mean": 0.00337,
+   "saliency_max": 0.02645,
+   "center_share": 0.817
+  },
+  {
+   "index": 4,
+   "true": 1,
+   "saliency_mean": 0.00362,
+   "saliency_max": 0.04363,
+   "center_share": 0.868
+  },
+  {
+   "index": 5,
+   "true": 0,
+   "saliency_mean": 0.00655,
+   "saliency_max": 0.0889,
+   "center_share": 1.062
+  },
+  {
+   "index": 6,
+   "true": 1,
+   "saliency_mean": 0.00371,
+   "saliency_max": 0.03737,
+   "center_share": 0.93
+  },
+  {
+   "index": 7,
+   "true": 1,
+   "saliency_mean": 0.00356,
+   "saliency_max": 0.03721,
+   "center_share": 0.75
+  }
+ ],
+ "note": "center_share > 1 means attribution concentrates in the informative center region"
+}

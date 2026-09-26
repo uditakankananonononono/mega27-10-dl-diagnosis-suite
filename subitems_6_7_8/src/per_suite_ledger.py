@@ -46,6 +46,11 @@ TOOLS = [
     ("plotly", "interactive cross-suite metrics dashboard (HTML deliverable)", "A"),
     ("shap", "permutation importance on the ClinVar GBC, 500 held-out rows (10.8)", "G"),
     ("umap-learn", "2D embedding figure of neuro test pixels with leakage caveat (10.7)", "N"),
+    ("lightgbm", "independent gradient-boosting cross-check of the ClinVar GBC (10.8)", "G"),
+    ("captum", "saliency attribution maps for the PCam + neuro CNNs (10.6/10.7)", "CN"),
+    ("pycm", "full confusion-matrix statistics on PCam held-out probs (10.6)", "C"),
+    ("upsetplot", "intersection structure of independent PCam flag sets (10.6)", "C"),
+    ("Ensembl REST API", "gene identity cross-verification for top ClinVar genes (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -86,6 +91,11 @@ EVIDENCE = {
     "plotly": ["results/tool_battery_5_plotly.json"],
     "shap": ["results/genetic/clinvar_shap_importance.json"],
     "umap-learn": ["results/neuro/tool_battery_6_umap.json"],
+    "lightgbm": ["results/genetic/clinvar_lightgbm_crosscheck.json"],
+    "captum": ["results/cancer/pcam_captum_saliency.json", "results/neuro/neuro_captum_saliency.json"],
+    "pycm": ["results/cancer/pcam_pycm_stats.json"],
+    "upsetplot": ["results/cancer/tool_battery_7_upset.json"],
+    "Ensembl REST API": ["results/genetic/clinvar_ensembl_xref.json"],
 }
 
 DATASETS = {

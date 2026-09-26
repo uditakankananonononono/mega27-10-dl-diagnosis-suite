@@ -1,0 +1,64 @@
+{
+ "tool": "captum Saliency (input gradients)",
+ "model_ckpt": "brain_mri_cnn_ckpt.pt",
+ "n_images": 8,
+ "per_image": [
+  {
+   "index": 0,
+   "true": 0,
+   "saliency_mean": 0.05241,
+   "saliency_max": 0.36914,
+   "center_share": 1.708
+  },
+  {
+   "index": 1,
+   "true": 0,
+   "saliency_mean": 0.06055,
+   "saliency_max": 0.48114,
+   "center_share": 1.876
+  },
+  {
+   "index": 2,
+   "true": 0,
+   "saliency_mean": 0.04463,
+   "saliency_max": 0.37554,
+   "center_share": 1.91
+  },
+  {
+   "index": 3,
+   "true": 0,
+   "saliency_mean": 0.04843,
+   "saliency_max": 0.46551,
+   "center_share": 1.743
+  },
+  {
+   "index": 4,
+   "true": 0,
+   "saliency_mean": 0.04864,
+   "saliency_max": 0.41971,
+   "center_share": 1.687
+  },
+  {
+   "index": 5,
+   "true": 0,
+   "saliency_mean": 0.04828,
+   "saliency_max": 0.45786,
+   "center_share": 1.807
+  },
+  {
+   "index": 6,
+   "true": 0,
+   "saliency_mean": 0.05256,
+   "saliency_max": 0.52186,
+   "center_share": 1.71
+  },
+  {
+   "index": 7,
+   "true": 0,
+   "saliency_mean": 0.03789,
+   "saliency_max": 0.37746,
+   "center_share": 1.647
+  }
+ ],
+ "note": "center_share > 1 means attribution concentrates in the informative center region"
+}

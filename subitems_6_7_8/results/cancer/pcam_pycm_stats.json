@@ -1,0 +1,22 @@
+{
+ "tool": "pycm ConfusionMatrix",
+ "dataset": "pcam_test held-out probs",
+ "matrix": {
+  "TP": 1047,
+  "FP": 110,
+  "TN": 1970,
+  "FN": 969
+ },
+ "stats": {
+  "acc": 0.7366,
+  "kappa": 0.4695,
+  "mcc": 0.518,
+  "f1_macro": 0.7225,
+  "tpr_macro": 0.7332,
+  "tnr_macro": 0.7332,
+  "ppv_macro": 0.7876,
+  "npv_macro": 0.7876,
+  "fnr_macro": 0.2668
+ },
+ "note": "full confusion-matrix statistics cross-check of the CNN"
+}
