@@ -100,6 +100,7 @@ def test_manifests_schema():
     import json
     for m in man:
         d = json.load(open(m))
-        assert d["n_records"] > 0, m
+        n = d.get("n_records", d.get("n_rows"))  # image manifests: n_records; clinvar tabular: n_rows
+        assert n and n > 0, m
         assert "source" in d and "suite" in d, m
 
