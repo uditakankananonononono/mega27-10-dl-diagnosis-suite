@@ -104,10 +104,11 @@ if os.path.exists(stab_path):
     core_all = core & canon
     tex += rf"""
 \subsection{{Seed-stability of the candidate flags}}
-Re-running the full census at different seeds (same folds, epochs and
-gate) yields the flag sets in Table~\ref{{tab:stab}}. The
-{len(core_all)}-image intersection across all seeds including the
-canonical run is a high-confidence consensus core; flags outside the core
+Re-running the census at a second seed (same 3-fold assignment logic
+and admissibility gate; reduced 4-epoch OOF protocol vs the canonical
+8-epoch run, honestly recorded) yields the flag set in
+Table~\ref{{tab:stab}}. The {len(core_all)} images flagged in both runs
+(canonical seed 42 and rerun seed 7) form a high-confidence consensus core; flags outside the core
 are published as lower-confidence candidates, tiered in the artifact ---
 the honest reading is that the noise \emph{{rate}} is seed-stable while
 marginal flag \emph{{identity}} is representation-dependent, exactly the
