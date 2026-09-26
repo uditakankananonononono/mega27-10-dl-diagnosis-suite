@@ -8,7 +8,7 @@ audit of its training labels is known}. This paper's primary contribution is a d
 that dataset, with a method contribution and a regime finding attached:
 \begin{enumerate}
 \item \textbf{A reproducible automated annotation-consistency audit of the training set.}
-Three-fold out-of-fold confident-learning estimation gives \textbf{21.15\%} estimated label noise with \textbf{155 published, falsifiable candidate annotation-quality issues} (screen-supported: no prior automated census among 150 individually fetched PubMed records; we report absence of prior art, not a ``first''). Flags are estimator candidates for expert adjudication, not confirmed mislabels.
+Three-fold out-of-fold confident-learning estimation gives a \textbf{21.15\% confident-joint disagreement estimate under the specified model} (996 of 4{,}710 training films) with \textbf{155 published, falsifiable candidate annotation-quality issues} (screen-supported: no prior automated census among 150 individually fetched PubMed records; we report absence of prior art, not a ``first''). Flags are estimator candidates for expert adjudication, not confirmed mislabels. Three tiers are kept distinct throughout: the 996/4{,}710 disagreement estimate, the 155 high-confidence published candidates, and the 91-image multi-run consensus core (Sec.~\ref{sec:validation}).
 \item \textbf{The contamination is one-directional and co-varies with
 acquisition quality.} PNEUMONIA-labelled films cross-validate as NORMAL
 at a 42:1 ratio (973:23), and flagged films are measurably blurrier and
@@ -17,7 +17,7 @@ report-parsing label generation meeting borderline acquisitions.
 \item \textbf{Cleaning helps here, and the contrast with malaria is a
 finding.} Retraining without the candidate flags improves the strongest model by \textbf{+5.9 points} --- and removing the same number of \emph{random} films matches it (CNN 83.25$\pm$3.74\%, GCN 82.77$\pm$1.93\% vs 79.81/84.94\%, identical protocol), so we report the gain as unattributable to label quality at this scale. The demotion criterion was pre-registered by us before the ablation ran.
 \end{enumerate}
-Supporting these, compact models trained under the official patient-level
+Framed as a question, the study asks: can automated auditing identify reproducible annotation-consistency candidates, and what are the limits of translating those candidates into model gains? The evidence below answers both halves. Supporting these, compact models trained under the official patient-level
 split outperform zero-shot adult-domain transfer from the strongest runnable external tool (TorchXRayVision
 DenseNet-121) on the identical 624 test films under this paediatric evaluation; the
 cross-regime gap to the published 92.8\% reference is stated honestly

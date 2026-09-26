@@ -48,7 +48,7 @@ expert-readability judgements; borderline films are expected to concentrate
 in the flagged set.
 \subsection{Removal helped pneumonia but not malaria - unattributed to labels}
 Here the flag-removed RegionGCN gains +5.9 points over its own baseline, in contrast to the malaria regime --- but the random-removal control (GCN 82.77$\pm$1.93\% vs flagged 84.94\%) matches it, so the divergence cannot be credited to label quality; the regime analysis below is kept as hypothesis, explicitly not as conclusion. Two regime differences plausibly explain
-the divergence: (i) the pneumonia census flags 21.15\% of training films
+the divergence: (i) the pneumonia census's disagreement estimate covers 21.15\% of training films
 --- a far heavier contamination --- so removal eliminates genuinely
 conflicting gradient signal rather than hard-but-correct examples; (ii)
 the official test split is patient-level and was curated separately from

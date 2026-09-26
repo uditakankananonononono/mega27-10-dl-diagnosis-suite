@@ -26,7 +26,7 @@ The strongest external tool we could run unchanged on the identical test
 set is TorchXRayVision's DenseNet-121 (\texttt{densenet121-res224-all},
 published weights, official preprocessing). On the same 624 films it scores
 accuracy 38.5\% and ROC-AUC 0.7990
-(\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}). Every one of our six configurations outperforms it on the same data and split --- the cleaned RegionGCN by +0.139 AUC and +46.5 threshold-accuracy points (threshold accuracy at 0.5 understates the transfer model's ranking ability, as its AUC shows, so we lead with AUC). We read this as a domain-shift finding --- adult-pretrained CXR models do not transfer zero-shot to this paediatric benchmark --- not as a general ``small beats big'' claim. The comparison stays like-for-like: identical films, identical split, tool used as published.
+(\texttt{results/pneumonia/test\_probs\_torchxrayvision.json}). The headline is calibration: the transfer model's probabilities are worse than the base-rate prior on these paediatric films (ECE 0.6126, Brier skill $-1.58$) while our tuned models score ECE 0.125/0.141 with Brier skill 0.43/0.48 (\texttt{results/calibration.json}) - its scores cannot be trusted here at any threshold. Accuracy confirms the same story: every one of our six configurations outperforms it on the same data and split --- the cleaned RegionGCN by +0.139 AUC and +46.5 threshold-accuracy points (threshold accuracy at 0.5 understates the transfer model's ranking ability, as its AUC shows). We read this as a domain-shift finding --- adult-pretrained CXR models do not transfer zero-shot to this paediatric benchmark --- not as a general ``small beats big'' claim. The comparison stays like-for-like: identical films, identical split, tool used as published.
 \subsection{The published-benchmark gap, stated honestly}
 Kermany et al.\ report 92.8\% accuracy \cite{kermany2018} with a
 transfer-learned Inception-v3 at 299px trained at substantially larger
@@ -37,22 +37,28 @@ claim otherwise. The honest framing: on the strongest \emph{same-split} external
 published cross-regime reference the gap is recorded as a redirected angle
 (transfer initialisation from a large-scale pretrained trunk), pursued in
 the transfer study below.
-\subsection{Label-noise census}
+\subsection{Annotation-consistency census}
 The census (\texttt{results/pneumonia/label\_noise\_census.json}) is
 admissible under the gate (OOF accuracy 89.81\%
-vs.\ majority 74.20\%). Estimated noise rate
-\textbf{21.15\%} over $n=4710$ training
-films, 996 flagged identifiers, published
-verbatim in the appendix. The asymmetry is again one-directional: 973
+vs.\ majority 74.20\%). The confident-joint disagreement estimate under
+the specified model is \textbf{21.15\%} (996 of $n=4710$ training
+films); the published artifact is the \textbf{155} high-confidence
+candidate flags, verbatim in the appendix, with the 91-image multi-run
+consensus core as the highest-confidence tier. The asymmetry is again one-directional: 973
 films labelled PNEUMONIA cross-validate as NORMAL, vs.\ 23 the other way.
 \subsection{Cleaning and retraining}
 Removing the 155 flagged films and retraining gives CNN
 79.81\% and RegionGCN
 \textbf{84.94\%} / AUC 0.9377
 (\texttt{results/pneumonia/cleaned\_results.json}) --- the cleaned
-RegionGCN is the strongest configuration in the study, a
+RegionGCN is the strongest flag-removed configuration, a
 +5.9-point gain over
-its own baseline, and the class-weighted CNN gains
-+9.6 points. Here
-cleaning demonstrably helps, unlike the malaria regime; the difference is
-discussed in the limitations section.
+its own baseline. The pre-registered random-removal control, however,
+matches this gain under identical protocol
+(Sec.~\ref{sec:validation}), so the improvement is reported as
+unattributable to label quality rather than as evidence that cleaning
+helps; unlike the malaria regime, where removal never helped at all,
+the regime difference is discussed in the limitations section as
+hypothesis, not conclusion. (The class-weighted tuned CNN at 81.73\%
+is a tuning result over the 72.12\% baseline, not a flag-removal
+result, and is reported as such.)
