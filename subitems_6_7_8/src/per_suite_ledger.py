@@ -67,6 +67,7 @@ TOOLS = [
     ("pytorch-grad-cam", "GradCAM attribution for the PCam + neuro dedup CNNs (10.6/10.7)", "CN"),
     ("lime", "superpixel explanations for the PCam CNN (10.6)", "C"),
     ("polars", "second parquet engine cross-read of the neuro dataset, agrees 7023 (10.7)", "N"),
+    ("category_encoders", "hashing-vs-target encoding comparison quantifies gene-encoding lift (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -128,6 +129,7 @@ EVIDENCE = {
     "pytorch-grad-cam": ["results/cancer/pcam_gradcam.json", "results/neuro/neuro_gradcam.json"],
     "lime": ["results/cancer/pcam_lime.json"],
     "polars": ["results/neuro/neuro_polars_stats.json"],
+    "category_encoders": ["results/genetic/clinvar_hashing_enc_compare.json"],
 }
 
 DATASETS = {

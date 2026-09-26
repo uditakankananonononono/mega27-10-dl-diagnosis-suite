@@ -1,0 +1,7 @@
+{
+ "tool": "category_encoders HashingEncoder",
+ "dataset": "clinvar_subset, 120k cap",
+ "hashing_enc_auc": 0.91,
+ "target_enc_reference_auc": 0.9536,
+ "note": "quantifies how much of the model comes from the leakage-safe gene target encoding vs a generic encoding"
+}
