@@ -1,0 +1,15 @@
+{
+  "rung": "L1",
+  "threshold": 0.3,
+  "oof_acc": 0.9668789808917198,
+  "oof_grid_best": [
+    0.9668789808917198,
+    0.3
+  ],
+  "val_acc": 0.9616858237547893,
+  "test_acc": 0.782051282051282,
+  "target": 0.928,
+  "success": false,
+  "n_test": 624,
+  "note": "frozen resnet18 features + logistic head, preregistered single eval"
+}
