@@ -1,0 +1,91 @@
+{
+  "runs": {
+    "7": {
+      "cnn": {
+        "accuracy": 0.8589743589743589,
+        "precision": 0.9171270718232044,
+        "recall_sensitivity": 0.8512820512820513,
+        "specificity": 0.8717948717948718,
+        "f1": 0.8829787234042553,
+        "roc_auc": 0.9382862152092922,
+        "confusion_matrix": [
+          [
+            204,
+            30
+          ],
+          [
+            58,
+            332
+          ]
+        ],
+        "n": 624,
+        "train_secs": 2575.2
+      },
+      "gcn": {
+        "accuracy": 0.8413461538461539,
+        "precision": 0.8284424379232506,
+        "recall_sensitivity": 0.941025641025641,
+        "specificity": 0.6752136752136753,
+        "f1": 0.8811524609843937,
+        "roc_auc": 0.9236028928336621,
+        "confusion_matrix": [
+          [
+            158,
+            76
+          ],
+          [
+            23,
+            367
+          ]
+        ],
+        "n": 624,
+        "train_secs": 2057.0
+      },
+      "removed": 155
+    },
+    "123": {
+      "cnn": {
+        "accuracy": 0.8060897435897436,
+        "precision": 0.7717171717171717,
+        "recall_sensitivity": 0.9794871794871794,
+        "specificity": 0.5170940170940171,
+        "f1": 0.8632768361581921,
+        "roc_auc": 0.938308130615823,
+        "confusion_matrix": [
+          [
+            121,
+            113
+          ],
+          [
+            8,
+            382
+          ]
+        ],
+        "n": 624,
+        "train_secs": 5696.8
+      },
+      "gcn": {
+        "accuracy": 0.8141025641025641,
+        "precision": 0.7773279352226721,
+        "recall_sensitivity": 0.9846153846153847,
+        "specificity": 0.5299145299145299,
+        "f1": 0.8687782805429864,
+        "roc_auc": 0.930221345605961,
+        "confusion_matrix": [
+          [
+            124,
+            110
+          ],
+          [
+            6,
+            384
+          ]
+        ],
+        "n": 624,
+        "train_secs": 3782.0
+      },
+      "removed": 155
+    }
+  },
+  "protocol": "remove 155 RANDOM train images (seed per run) vs flagged removal; identical split (seed 42), training config (8 epochs, batch 32, train seed 42, patience 2) and untouched official 624-image test as cleaned_results.json"
+}
