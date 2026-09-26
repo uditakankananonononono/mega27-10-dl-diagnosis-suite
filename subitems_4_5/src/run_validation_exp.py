@@ -41,7 +41,7 @@ def oof(sub_idx, labels_all, *, kind, folds, epochs, seed, tag, batch=64):
         tr = sorted_idx[fold_of != f]; va = sorted_idx[fold_of == f]
         tr_ds = Subset(NpyDataset(str(ROOT/'data'/'malaria'/'malaria48'), train=True, seed=seed+f), tr)
         va_ds = Subset(NpyDataset(str(ROOT/'data'/'malaria'/'malaria48'), train=False), va)
-        model = GlobalCNNClassifier(3) if kind == "cnn" else RegionGCNClassifier(3)
+        model = GlobalCNNClassifier(3) if kind == "cnn" else RegionGCNClassifier(3, grid=3)
         model, hist, best = train_model(model, tr_ds, va_ds, epochs=epochs, batch=batch, seed=seed+f, patience=3)
         p, _ = predict_proba(model, va_ds)
         np.save(ck, p); probs[pos] = p
