@@ -1,7 +1,7 @@
 {
  "cancer_tools": 32,
  "neuro_tools": 23,
- "genetic_tools": 27,
+ "genetic_tools": 30,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
  "genetic_datasets": 9224097,
@@ -219,6 +219,21 @@
   {
    "name": "Ensembl REST API",
    "use": "gene identity cross-verification for top ClinVar genes (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "imbalanced-learn",
+   "use": "undersampling cost audit on ClinVar imbalance (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "myvariant.info",
+   "use": "live annotation of 25 pathogenic ClinVar variants (10.8)",
+   "tag": "G"
+  },
+  {
+   "name": "pysam",
+   "use": "VCF write+read round-trip of 1,000 ClinVar variants, lossless (10.8)",
    "tag": "G"
   }
  ]

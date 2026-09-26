@@ -51,6 +51,9 @@ TOOLS = [
     ("pycm", "full confusion-matrix statistics on PCam held-out probs (10.6)", "C"),
     ("upsetplot", "intersection structure of independent PCam flag sets (10.6)", "C"),
     ("Ensembl REST API", "gene identity cross-verification for top ClinVar genes (10.8)", "G"),
+    ("imbalanced-learn", "undersampling cost audit on ClinVar imbalance (10.8)", "G"),
+    ("myvariant.info", "live annotation of 25 pathogenic ClinVar variants (10.8)", "G"),
+    ("pysam", "VCF write+read round-trip of 1,000 ClinVar variants, lossless (10.8)", "G"),
 ]
 
 EVIDENCE = {
@@ -96,6 +99,9 @@ EVIDENCE = {
     "pycm": ["results/cancer/pcam_pycm_stats.json"],
     "upsetplot": ["results/cancer/tool_battery_7_upset.json"],
     "Ensembl REST API": ["results/genetic/clinvar_ensembl_xref.json"],
+    "imbalanced-learn": ["results/genetic/clinvar_imblearn_audit.json"],
+    "myvariant.info": ["results/genetic/clinvar_myvariant_annotate.json"],
+    "pysam": ["results/genetic/clinvar_pysam_vcf_roundtrip.json"],
 }
 
 DATASETS = {

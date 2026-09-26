@@ -1,0 +1,57 @@
+{
+ "tool": "myvariant.info Python client (live API)",
+ "dataset": "25 pathogenic ClinVar variants, genomic HGVS queries",
+ "n_queried": 25,
+ "n_annotated": 25,
+ "sample": [
+  {
+   "variation_id": "5",
+   "gene": "FOXRED1",
+   "found": true,
+   "rsid": "rs267606829"
+  },
+  {
+   "variation_id": "6",
+   "gene": "FOXRED1",
+   "found": true,
+   "rsid": "rs267606830"
+  },
+  {
+   "variation_id": "18",
+   "gene": "HFE",
+   "found": true,
+   "rsid": "rs111033558"
+  },
+  {
+   "variation_id": "19",
+   "gene": "HFE",
+   "found": true,
+   "rsid": "rs111033563"
+  },
+  {
+   "variation_id": "20",
+   "gene": "WDR35",
+   "found": true,
+   "rsid": "rs397515534"
+  },
+  {
+   "variation_id": "21",
+   "gene": "WDR35",
+   "found": true,
+   "rsid": "rs267607174"
+  },
+  {
+   "variation_id": "23",
+   "gene": "WDR35",
+   "found": true,
+   "rsid": "rs267607175"
+  },
+  {
+   "variation_id": "27",
+   "gene": "ABHD12",
+   "found": true,
+   "rsid": "rs267606624"
+  }
+ ],
+ "note": "external annotation cross-check of the accession-level ClinVar records"
+}

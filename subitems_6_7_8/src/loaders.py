@@ -94,6 +94,7 @@ def iter_clinvar_subset(path=None):
                 "ref": parts[idx["ReferenceAlleleVCF"]],
                 "alt": parts[idx["AlternateAlleleVCF"]],
                 "chrom": parts[idx["Chromosome"]],
+                "pos": parts[idx["Start"]],
                 "name": parts[idx["Name"]],
             }
 

@@ -1,0 +1,9 @@
+{
+ "tool": "pysam VariantFile VCF write+read round-trip",
+ "dataset": "1000 ClinVar subset variants",
+ "n_written": 1000,
+ "n_read_back": 1000,
+ "n_pathogenic_read_back": 968,
+ "verdict": "lossless",
+ "note": "VCF is the interchange format for variant pipelines; round-trip proves field integrity"
+}
