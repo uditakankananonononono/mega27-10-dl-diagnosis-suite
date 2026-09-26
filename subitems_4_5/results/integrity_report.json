@@ -1,0 +1,32 @@
+{
+  "scanner_version": "0.1",
+  "question": "Should this benchmark's labels be trusted before they judge diagnostic AI?",
+  "datasets": [
+    {
+      "dataset": "kermany_cxr_pneumonia",
+      "source_artifact": "results/pneumonia/flag_tiers.json",
+      "estimated_inconsistent_labels": "tiered candidate release: tier1_core = flagged in BOTH canonical seed-42 census (8-epoch OOF) and seed-7 rerun (reduced 4-epoch OOF); tier2_canonical_only = canonical flags not reproduced at seed 7; tier2_rerun_only = seed-7 flags not in canonical (reduced-protocol run; lower confidence by construction)",
+      "review_tiers": {
+        "high_confidence": 91,
+        "medium_confidence": 194
+      },
+      "validation_status": "computational candidates only; blinded expert adjudication NOT yet done (judge weakness #1, open)"
+    },
+    {
+      "dataset": "nih_malaria_cells",
+      "source_artifact": "results/malaria/census_crosscheck.json",
+      "cross_method_agreement": {
+        "ours_flagged": 249,
+        "cleanlab_flagged": 296,
+        "intersection": 249,
+        "jaccard": 0.8412162162162162
+      },
+      "agreed_ids": 249,
+      "validation_status": "computational candidates only"
+    }
+  ],
+  "planned_demos": [
+    "MedMNIST panels (free)",
+    "one non-medical image benchmark"
+  ]
+}
