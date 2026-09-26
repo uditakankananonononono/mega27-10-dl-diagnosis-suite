@@ -17,3 +17,7 @@ python src/run_malaria.py --phase baseline     # then census, then cleaned
 python src/run_pneumonia.py --phase baseline   # then census, then cleaned
 ```
 Results land in `results/<disease>/*.json` (committed).
+
+## Status
+
+- 2026-09-26 13:03 IST (user decision): items 10.4 (malaria) and 10.5 (pneumonia) are CLOSED as AI-judged. No blinded human expert review was performed; verification consisted of the converged ChatGPT judge loops (malaria 6 rounds, pneumonia 2 rounds, verbatim on record in `isef_judge/`). Both papers carry this as an explicit limitation ("Limitations and redirected angles", item 4). Final PDFs: malaria 56pp (v7), pneumonia 57pp (v5), uploaded to the Drive results folder; earlier finals superseded.
