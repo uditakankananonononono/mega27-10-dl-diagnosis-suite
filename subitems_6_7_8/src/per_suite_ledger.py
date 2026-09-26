@@ -36,7 +36,7 @@ TOOLS = [
     ("DuckDB", "SQL cross-tabs over the 3.02M-row ClinVar subset (10.8)", "G"),
     ("openpyxl", "accession registry workbook across suites", "A"),
     ("PyTorch", "checkpointed CNN trainers: PCam + BreakHis + brain-MRI (10.6/10.7)", "A"),
-    ("cleanlab", "label-issue census on held-out CNN probs, PCam test (10.6)", "C"),
+    ("cleanlab", "label-issue census on held-out CNN probs, PCam + neuro dedup (10.6/10.7)", "CN"),
     ("torchmetrics", "cross-verification of every reported CNN metric + ECE (10.6/10.7)", "CN"),
     ("torchinfo", "architecture audit of the CNN (params, trainable) (10.6)", "C"),
     ("seaborn", "held-out probability distribution figures (10.6)", "C"),
@@ -57,6 +57,11 @@ TOOLS = [
     ("phate", "diffusion-based second embedding of neuro test pixels (10.7)", "N"),
     ("GWAS Catalog REST API", "V2 gene lookup for top ClinVar genes, 8/8 with Ensembl IDs (10.8)", "G"),
     ("mlxtend", "sequential feature selection cross-check of the shap ranking (10.8)", "G"),
+    ("rapidfuzz", "gene-symbol near-duplicate audit over 10,916 unique ClinVar genes (10.8)", "G"),
+    ("cyvcf2", "second VCF engine cross-read, agrees with pysam 500/500 (10.8)", "G"),
+    ("yellowbrick", "ROC/PR visual diagnostics on committed GBC probs (10.8)", "G"),
+    ("pingouin", "effect sizes (cohen/hedges) for PCam property contrasts (10.6)", "C"),
+    ("scikit-posthocs", "Dunn-Holm posthoc for neuro class property contrasts (10.7)", "N"),
 ]
 
 EVIDENCE = {
@@ -87,7 +92,7 @@ EVIDENCE = {
     "DuckDB": ["results/genetic/tool_battery_3_duckdb.json"],
     "openpyxl": ["results/tool_battery_3_registry.json"],
     "PyTorch": ["results/cancer/pcam_cnn_train.json", "results/cancer/breakhis_cnn_train.json", "results/neuro/brain_mri_cnn_train.json"],
-    "cleanlab": ["results/cancer/pcam_label_census.json"],
+    "cleanlab": ["results/cancer/pcam_label_census.json", "results/neuro/neuro_dedup_label_census.json"],
     "torchmetrics": ["results/cancer/pcam_metrics_crossverify.json", "results/neuro/neuro_dedup_metrics_crossverify.json"],
     "torchinfo": ["results/cancer/pcam_arch_audit.json"],
     "seaborn": ["results/cancer/tool_battery_4_seaborn.json"],
@@ -108,6 +113,11 @@ EVIDENCE = {
     "phate": ["results/neuro/tool_battery_8_phate.json"],
     "GWAS Catalog REST API": ["results/genetic/clinvar_gwas_catalog.json"],
     "mlxtend": ["results/genetic/clinvar_mlxtend_sfs.json"],
+    "rapidfuzz": ["results/genetic/clinvar_rapidfuzz_genes.json"],
+    "cyvcf2": ["results/genetic/clinvar_cyvcf2_crossread.json"],
+    "yellowbrick": ["results/genetic/tool_battery_10_yellowbrick.json"],
+    "pingouin": ["results/cancer/pcam_pingouin_effects.json"],
+    "scikit-posthocs": ["results/neuro/neuro_posthoc_dunn.json"],
 }
 
 DATASETS = {

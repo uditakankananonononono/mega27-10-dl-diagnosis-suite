@@ -1,0 +1,14 @@
+{
+ "tool": "pycm ConfusionMatrix",
+ "dataset": "breakhis held-out probs (patient-level split)",
+ "matrix": {
+  "TP": 1395,
+  "FP": 677,
+  "TN": 194,
+  "FN": 57
+ },
+ "acc": 0.684,
+ "kappa": 0.2139,
+ "f1_macro": 0.5688,
+ "note": "confusion stats for the split-verified BreakHis model"
+}

@@ -1,0 +1,38 @@
+{
+ "tool": "scikit-posthocs (Dunn, Holm-adjusted)",
+ "dataset": "neuro test sharpness by class",
+ "pairs": [
+  {
+   "a": "glioma",
+   "b": "meningioma",
+   "p_holm": 8.596656720336704e-19
+  },
+  {
+   "a": "glioma",
+   "b": "notumor",
+   "p_holm": 1.4736735042984802e-126
+  },
+  {
+   "a": "glioma",
+   "b": "pituitary",
+   "p_holm": 1.890874029509982e-33
+  },
+  {
+   "a": "meningioma",
+   "b": "notumor",
+   "p_holm": 2.7867980572659274e-51
+  },
+  {
+   "a": "meningioma",
+   "b": "pituitary",
+   "p_holm": 0.0010978939138966547
+  },
+  {
+   "a": "notumor",
+   "b": "pituitary",
+   "p_holm": 4.052640517213243e-32
+  }
+ ],
+ "n_significant_05": 6,
+ "note": "posthoc follow-up to the battery-1 Kruskal-Wallis class contrast"
+}

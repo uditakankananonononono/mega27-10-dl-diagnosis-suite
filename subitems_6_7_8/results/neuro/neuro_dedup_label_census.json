@@ -1,0 +1,90 @@
+{
+ "tool": "cleanlab (multiclass)",
+ "dataset": "neuro dedup held-out probs",
+ "n_test": 1405,
+ "n_flagged": 59,
+ "noise_rate_pct": 4.2,
+ "top20_flags": [
+  {
+   "index": 854,
+   "given": 2
+  },
+  {
+   "index": 1387,
+   "given": 3
+  },
+  {
+   "index": 826,
+   "given": 2
+  },
+  {
+   "index": 791,
+   "given": 2
+  },
+  {
+   "index": 780,
+   "given": 2
+  },
+  {
+   "index": 453,
+   "given": 0
+  },
+  {
+   "index": 1336,
+   "given": 3
+  },
+  {
+   "index": 1317,
+   "given": 3
+  },
+  {
+   "index": 487,
+   "given": 0
+  },
+  {
+   "index": 753,
+   "given": 1
+  },
+  {
+   "index": 251,
+   "given": 0
+  },
+  {
+   "index": 2,
+   "given": 0
+  },
+  {
+   "index": 65,
+   "given": 1
+  },
+  {
+   "index": 473,
+   "given": 0
+  },
+  {
+   "index": 400,
+   "given": 0
+  },
+  {
+   "index": 101,
+   "given": 2
+  },
+  {
+   "index": 834,
+   "given": 2
+  },
+  {
+   "index": 266,
+   "given": 0
+  },
+  {
+   "index": 1208,
+   "given": 3
+  },
+  {
+   "index": 572,
+   "given": 1
+  }
+ ],
+ "note": "model-conditional label-issue candidates on the leakage-controlled model"
+}

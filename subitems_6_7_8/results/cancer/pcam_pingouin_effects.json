@@ -1,0 +1,8 @@
+{
+ "tool": "pingouin",
+ "dataset": "pcam test, 2000 patches, Laplace-variance sharpness",
+ "cohens_d": -0.2079,
+ "hedges_g": -0.2079,
+ "mwu_p": 0.040494783709064106,
+ "note": "effect sizes complement the battery-1 Mann-Whitney contrast"
+}
