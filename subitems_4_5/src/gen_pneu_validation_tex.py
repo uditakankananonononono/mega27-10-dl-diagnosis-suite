@@ -16,7 +16,7 @@ tex = rf"""
 \section{{Validation: is the cleaning gain real, and do the flags hold up?}}
 \label{{sec:validation}}
 The audit's value rests on two questions a skeptic should ask: is the
-+cleaning gain caused by better labels rather than an easier dataset, and
+cleaning gain caused by better labels rather than an easier dataset, and
 would the same flags appear under a different run? Three experiments
 answer both, plus a calibration check on the deployed scores. All use the
 untouched official 624-film test set and committed probability dumps.

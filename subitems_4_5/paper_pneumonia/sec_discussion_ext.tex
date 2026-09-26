@@ -2,18 +2,14 @@
 \label{sec:discext}
 Taken separately, each of this paper's findings has a mundane reading.
 A 21.15\% training-label noise estimate could be an artefact of a weak
-probe --- the gate exists to answer that. A +5.9-point cleaning gain
-could be a seed fluke --- we flag the multi-seed replication as the top
-follow-up. A 45.7-point head-to-head win could mean the external tool
+probe --- the gate exists to answer that. A +5.9-point cleaning gain could be a seed fluke --- the pre-registered multi-seed replication says worse: random removal matches flagged removal, so we claim no causal reading at all. A 45.7-point head-to-head win could mean the external tool
 was never meant for paediatric JPEGs --- the deep dive says exactly
 that. The case for the findings is that they \emph{converge}:
 \begin{enumerate}
 \item The census says the training labels are one-directionally
 contaminated (973:23), concentrated on acquisition-degraded films
 ($p=1.7\times10^{-27}$).
-\item Cleaning that stratum improves a compact model more than any
-hyperparameter or augmentation change we tested (+5.9 points vs
-+0.4 for Optuna's best).
+\item Removing candidate flags improves a compact model more than any hyperparameter change we tested (+5.9 points vs +0.4 for Optuna's best) --- but random removal matches it, so this item stands as an unattributed regime observation, not convergent evidence.
 \item The failure surface of the strongest external tool is the mirror
 image of the same stratum: it misses 384 of 390 pneumonias while never
 crying wolf on normals --- a model calibrated away from exactly the

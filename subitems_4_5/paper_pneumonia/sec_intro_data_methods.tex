@@ -15,10 +15,7 @@ at a 42:1 ratio (973:23), and flagged films are measurably blurrier and
 flatter than controls ($p<10^{-6}$) --- the statistical signature of
 report-parsing label generation meeting borderline acquisitions.
 \item \textbf{Cleaning helps here, and the contrast with malaria is a
-finding.} Retraining on the census-cleaned data improves the strongest
-model by \textbf{+5.9 points}; on malaria it does not. The regime
-variables --- contamination mass and test-set curation process --- are
-measurable, and we name them.
+finding.} Retraining without the candidate flags improves the strongest model by \textbf{+5.9 points} --- and removing the same number of \emph{random} films matches it (CNN 83.25$\pm$3.74\%, GCN 82.77$\pm$1.93\% vs 79.81/84.94\%, identical protocol), so we report the gain as unattributable to label quality at this scale. The demotion criterion was pre-registered by us before the ablation ran.
 \end{enumerate}
 Supporting these, compact models trained under the official patient-level
 split outperform zero-shot adult-domain transfer from the strongest runnable external tool (TorchXRayVision

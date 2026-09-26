@@ -43,10 +43,7 @@ films are blurrier and flatter (verified here, $p<10^{-6}$). A larger
 acquisition-metadata study showing flagged films are \emph{not}
 acquisition-degraded would refute the mechanism, though not the census
 rate.
-\item \textbf{Cleaning gain.} The +5.9-point gain was measured on one
-seed and one architecture pair; a multi-seed replication showing the
-gain within noise would demote it from finding to anecdote. We flag this
-as the highest-priority follow-up experiment.
+\item \textbf{Cleaning gain - demoted as pre-registered.} The +5.9-point gain was measured on one seed and one architecture pair; we pre-registered here that a multi-seed replication showing the gain within noise would demote it from finding to anecdote. That replication now exists (Sec.~\ref{sec:validation}): random removal is indistinguishable from flagged removal, so the demotion fires. The gain is an anecdote about small-sample removal, not evidence about labels.
 \end{enumerate}
 
 \section{Discussion}
@@ -58,10 +55,7 @@ reads as PNEUMONIA --- the 42:1 asymmetry we measure. The same borderline
 films that strain report parsing are disproportionately the blurred,
 low-dynamic-range acquisitions (the property stratification), which is
 why the contamination is not a random sample of the dataset but a
-structured, measurable stratum. Cleaning the stratum improves a compact
-model by +5.9 points because the removed labels were actively misleading
-gradients; on malaria, where the expert-audited test set shares no
-contamination with training, the same procedure does not transfer.
+structured, measurable stratum. Removing the stratum improves a compact model by +5.9 points over baseline; however, our random-removal control (identical protocol, 155 random films, two seeds) lands at CNN 83.25$\pm$3.74\% / GCN 82.77$\pm$1.93\%, indistinguishable from flagged removal - the ``misleading gradients'' mechanism is NOT supported at this scale and we withdraw it. On malaria, where the expert-audited test set shares no contamination with training, the same procedure does not transfer.
 The broader implication for medical-imaging benchmarks: a published
 accuracy on a web-mined or report-parsed dataset is a property of the
 label process as much as of the model, and an annotation-consistency audit with an admissibility gate is a cheap prerequisite ($\sim$2 CPU-hours here) for

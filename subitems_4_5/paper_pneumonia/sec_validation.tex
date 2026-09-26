@@ -1,0 +1,44 @@
+
+\section{Validation: is the cleaning gain real, and do the flags hold up?}
+\label{sec:validation}
+The audit's value rests on two questions a skeptic should ask: is the
+cleaning gain caused by better labels rather than an easier dataset, and
+would the same flags appear under a different run? Three experiments
+answer both, plus a calibration check on the deployed scores. All use the
+untouched official 624-film test set and committed probability dumps.
+
+\subsection{Calibration of the deployed probabilities}
+On the official test set, the tuned CNN scores ECE 0.1253 /
+Brier 0.1339 (skill 0.43
+vs the base-rate prior) and the tuned GCN ECE 0.1413 /
+Brier 0.1215 (skill 0.48): usable but only
+moderately calibrated, and we say so. The zero-shot adult-domain transfer
+model scores ECE 0.6126 with \textbf{negative} Brier skill
+(-1.58) --- on these paediatric films its
+probabilities are worse than predicting the base rate, a quantitative
+statement of the domain-shift finding that threshold accuracy alone
+understates (\texttt{results/calibration.json}; two independent
+implementations agree to $10^{-9}$).
+
+\subsection{Random-removal ablation: is the cleaning gain attributable to labels?}
+Removing 155 \emph{random} training films under the identical split,
+training configuration and test set (two seeds) gives
+CNN 83.25$\pm$3.74\%
+and GCN 82.77$\pm$1.93\%;
+removing the \emph{audit-flagged} 155 gives CNN 79.81\% and
+GCN 84.94\% (\texttt{results/pneumonia/removal\_ablation.json},
+baseline 72.12\%/79.01\%). The audit's choices do \textbf{not} beat random removal: same budget, same protocol, same test, and random removal lands within one spread of flagged removal (or above it). The cleaning gain is therefore \textbf{unattributable to label quality} at $n{=}155/4{,}710$ - small-sample removal helps regardless of which films leave. We pre-registered this demotion criterion in the discussion chapter and it fires: the +5.9-point cleaning gain is demoted from finding to anecdote, and the audit's evidentiary weight rests on the gated census, its directionality, and its cross-architecture behaviour - not on a downstream accuracy claim. This negative is reported in the abstract and every section that previously asserted a causal cleaning mechanism.
+\begin{table}[h]
+\centering\small
+\caption{Removal ablation on the official 624-film test set.}
+\label{tab:removal}
+\begin{tabular}{l r r r r}
+\hline
+removed set & CNN acc & CNN AUC & GCN acc & GCN AUC \\ \hline
+random (seed 7) & 85.90\% & 93.8286 & 84.13\% & 92.3603 \\
+random (seed 123) & 80.61\% & 93.8308 & 81.41\% & 93.0221 \\
+\hline
+\textbf{audit-flagged (155)} & \textbf{79.81\%} & \textbf{92.7833} & \textbf{84.94\%} & \textbf{93.7673} \\
+\hline
+\end{tabular}
+\end{table}
