@@ -27,6 +27,14 @@
    "bacc": 0.5,
    "auc": 0.507,
    "elapsed_s": 1217.3
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.2136,
+   "acc": 0.684,
+   "bacc": 0.5917,
+   "auc": 0.7115,
+   "elapsed_s": 43.6
   }
  ]
 }
