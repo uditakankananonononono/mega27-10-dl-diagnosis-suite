@@ -1,0 +1,33 @@
+{
+ "tool": "lime LimeImageExplainer",
+ "model": "pcam small_cnn",
+ "n_images": 4,
+ "num_samples_per_image": 200,
+ "per_image": [
+  {
+   "index": 0,
+   "true": 0,
+   "lime_top_label": 0,
+   "top_superpixel_center_share": 0.0
+  },
+  {
+   "index": 1,
+   "true": 1,
+   "lime_top_label": 0,
+   "top_superpixel_center_share": 0.304
+  },
+  {
+   "index": 2,
+   "true": 0,
+   "lime_top_label": 0,
+   "top_superpixel_center_share": 0.111
+  },
+  {
+   "index": 3,
+   "true": 1,
+   "lime_top_label": 1,
+   "top_superpixel_center_share": 0.0
+  }
+ ],
+ "note": "superpixel-level explanations; third attribution method on the PCam CNN"
+}

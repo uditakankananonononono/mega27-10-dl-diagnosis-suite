@@ -64,6 +64,9 @@ TOOLS = [
     ("scikit-posthocs", "Dunn-Holm posthoc for neuro class property contrasts (10.7)", "N"),
     ("optuna", "10-trial hyperparameter search confirms committed GBC config (10.8)", "G"),
     ("pandera", "data-contract schema gate on the ClinVar modeling stream (10.8)", "G"),
+    ("pytorch-grad-cam", "GradCAM attribution for the PCam + neuro dedup CNNs (10.6/10.7)", "CN"),
+    ("lime", "superpixel explanations for the PCam CNN (10.6)", "C"),
+    ("polars", "second parquet engine cross-read of the neuro dataset, agrees 7023 (10.7)", "N"),
 ]
 
 EVIDENCE = {
@@ -122,6 +125,9 @@ EVIDENCE = {
     "scikit-posthocs": ["results/neuro/neuro_posthoc_dunn.json"],
     "optuna": ["results/genetic/clinvar_optuna_search.json"],
     "pandera": ["results/genetic/clinvar_pandera_schema.json"],
+    "pytorch-grad-cam": ["results/cancer/pcam_gradcam.json", "results/neuro/neuro_gradcam.json"],
+    "lime": ["results/cancer/pcam_lime.json"],
+    "polars": ["results/neuro/neuro_polars_stats.json"],
 }
 
 DATASETS = {

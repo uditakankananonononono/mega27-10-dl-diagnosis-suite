@@ -1,6 +1,6 @@
 {
- "cancer_tools": 33,
- "neuro_tools": 28,
+ "cancer_tools": 35,
+ "neuro_tools": 30,
  "genetic_tools": 37,
  "cancer_datasets": 73445,
  "neuro_datasets": 7023,
@@ -285,6 +285,21 @@
    "name": "pandera",
    "use": "data-contract schema gate on the ClinVar modeling stream (10.8)",
    "tag": "G"
+  },
+  {
+   "name": "pytorch-grad-cam",
+   "use": "GradCAM attribution for the PCam + neuro dedup CNNs (10.6/10.7)",
+   "tag": "CN"
+  },
+  {
+   "name": "lime",
+   "use": "superpixel explanations for the PCam CNN (10.6)",
+   "tag": "C"
+  },
+  {
+   "name": "polars",
+   "use": "second parquet engine cross-read of the neuro dataset, agrees 7023 (10.7)",
+   "tag": "N"
   }
  ]
 }

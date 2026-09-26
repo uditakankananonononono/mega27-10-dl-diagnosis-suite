@@ -1,0 +1,13 @@
+{
+ "tool": "polars (second parquet engine)",
+ "dataset": "brain tumor MRI parquet",
+ "n_rows": 7023,
+ "label_distribution": {
+  "glioma": 1621,
+  "meningioma": 1645,
+  "notumor": 2000,
+  "pituitary": 1757
+ },
+ "crosscheck": "matches pyarrow-read manifest n_records 7023",
+ "verdict": "two parquet engines agree"
+}

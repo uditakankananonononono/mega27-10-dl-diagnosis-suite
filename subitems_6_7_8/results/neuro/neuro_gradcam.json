@@ -1,0 +1,44 @@
+{
+ "tool": "pytorch-grad-cam GradCAM",
+ "model": "neuro dedup small_cnn",
+ "n_images": 6,
+ "per_image": [
+  {
+   "index": 0,
+   "true": 0,
+   "cam_energy": 0.4361,
+   "cam_max": 1.0
+  },
+  {
+   "index": 1,
+   "true": 0,
+   "cam_energy": 0.0,
+   "cam_max": 0.0
+  },
+  {
+   "index": 2,
+   "true": 0,
+   "cam_energy": 0.2564,
+   "cam_max": 1.0
+  },
+  {
+   "index": 3,
+   "true": 0,
+   "cam_energy": 0.0,
+   "cam_max": 0.0
+  },
+  {
+   "index": 4,
+   "true": 0,
+   "cam_energy": 0.0402,
+   "cam_max": 1.0
+  },
+  {
+   "index": 5,
+   "true": 0,
+   "cam_energy": 0.0,
+   "cam_max": 0.0
+  }
+ ],
+ "note": "second attribution method (complements captum saliency) on the leakage-controlled model"
+}
