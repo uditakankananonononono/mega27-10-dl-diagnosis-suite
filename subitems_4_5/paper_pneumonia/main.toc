@@ -1,0 +1,172 @@
+\contentsline {section}{\numberline {1}Introduction}{7}{}%
+\contentsline {section}{\numberline {2}Data provenance and integrity}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Source and verification}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Accession-level dataset ledger}{7}{}%
+\contentsline {section}{\numberline {3}Methods}{8}{}%
+\contentsline {subsection}{\numberline {3.1}Models}{8}{}%
+\contentsline {subsection}{\numberline {3.2}Training protocol}{8}{}%
+\contentsline {subsection}{\numberline {3.3}Census protocol}{8}{}%
+\contentsline {subsection}{\numberline {3.4}External head-to-head protocol}{8}{}%
+\contentsline {section}{\numberline {4}Dataset card: ChestXRay2017}{8}{}%
+\contentsline {subsection}{\numberline {4.1}Anatomy}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Tensorisation}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Known contamination}{9}{}%
+\contentsline {section}{\numberline {5}Architecture specification}{9}{}%
+\contentsline {subsection}{\numberline {5.1}CNN core trunk}{9}{}%
+\contentsline {subsection}{\numberline {5.2}Global CNN classifier (baseline head)}{9}{}%
+\contentsline {subsection}{\numberline {5.3}RegionGCN classifier (hybrid head)}{9}{}%
+\contentsline {subsection}{\numberline {5.4}Design rationale}{9}{}%
+\contentsline {section}{\numberline {6}Mathematical foundations}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Convolutional feature extraction}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Region-graph construction}{10}{}%
+\contentsline {subsection}{\numberline {6.3}GCN propagation and spectrum}{10}{}%
+\contentsline {subsection}{\numberline {6.4}Objective and optimisation}{11}{}%
+\contentsline {subsection}{\numberline {6.5}Confident learning for label noise}{11}{}%
+\contentsline {subsection}{\numberline {6.6}Evaluation metrics}{11}{}%
+\contentsline {section}{\numberline {7}Results}{11}{}%
+\contentsline {subsection}{\numberline {7.1}Headline test-set performance}{11}{}%
+\contentsline {subsection}{\numberline {7.2}External head-to-head: TorchXRayVision on the same films}{12}{}%
+\contentsline {subsection}{\numberline {7.3}The published-benchmark gap, stated honestly}{12}{}%
+\contentsline {subsection}{\numberline {7.4}Annotation-consistency census}{12}{}%
+\contentsline {subsection}{\numberline {7.5}Cleaning and retraining}{12}{}%
+\contentsline {section}{\numberline {8}Source verification of the Kermany benchmark}{13}{}%
+\contentsline {subsection}{\numberline {8.1}Bibliographic verification}{13}{}%
+\contentsline {subsection}{\numberline {8.2}The 92.8\% number, corroborated}{13}{}%
+\contentsline {subsection}{\numberline {8.3}What the number is and is not}{13}{}%
+\contentsline {section}{\numberline {9}Related Work Survey}{13}{}%
+\contentsline {section}{\numberline {10}Cross-panel label-noise atlas (MedMNIST)}{24}{}%
+\contentsline {section}{\numberline {11}Worked Numerical Examples}{24}{}%
+\contentsline {subsection}{\numberline {11.1}Census rate from the confident joint}{24}{}%
+\contentsline {subsection}{\numberline {11.2}Cleaning gain in counts, not points}{24}{}%
+\contentsline {subsection}{\numberline {11.3}Graph size at $g=4$}{25}{}%
+\contentsline {section}{\numberline {12}Training Dynamics of the Tuned Runs}{25}{}%
+\contentsline {subsection}{\numberline {12.1}CNN core (tuned)}{25}{}%
+\contentsline {subsection}{\numberline {12.2}RegionGCN (tuned)}{25}{}%
+\contentsline {section}{\numberline {13}Extended Discussion: Reading the Three Findings Together}{26}{}%
+\contentsline {subsection}{\numberline {13.1}Medical relevance, stated carefully}{26}{}%
+\contentsline {subsection}{\numberline {13.2}What we would do with more compute}{26}{}%
+\contentsline {section}{\numberline {14}Error Analysis of the Tuned Models}{26}{}%
+\contentsline {subsection}{\numberline {14.1}Where the remaining errors live}{27}{}%
+\contentsline {section}{\numberline {15}Synthesis of the 150-Record Literature Audit}{27}{}%
+\contentsline {subsection}{\numberline {15.1}What the closest neighbors do instead}{28}{}%
+\contentsline {section}{\numberline {16}Deep Dive: Why the Strongest External Tool Fails on This Benchmark}{28}{}%
+\contentsline {subsection}{\numberline {16.1}The confusion structure}{28}{}%
+\contentsline {subsection}{\numberline {16.2}Why}{28}{}%
+\contentsline {subsection}{\numberline {16.3}What would change the verdict}{29}{}%
+\contentsline {section}{\numberline {17}End-to-End Reproduction Walkthrough}{29}{}%
+\contentsline {subsection}{\numberline {17.1}Inference on a real film}{29}{}%
+\contentsline {subsection}{\numberline {17.2}The census}{29}{}%
+\contentsline {subsection}{\numberline {17.3}Cleaning and retraining}{29}{}%
+\contentsline {subsection}{\numberline {17.4}Verification}{29}{}%
+\contentsline {section}{\numberline {18}Case Study: What the Flags Actually Look Like}{30}{}%
+\contentsline {section}{\numberline {19}Why the Gate is Necessary: A Failure Mode and Its Operational Fix}{30}{}%
+\contentsline {section}{\numberline {20}Census as a Runnable Tool: \texttt {dx-census}}{31}{}%
+\contentsline {section}{\numberline {21}What Would Falsify Our Claims}{31}{}%
+\contentsline {section}{\numberline {22}Discussion}{31}{}%
+\contentsline {section}{\numberline {23}Figures and visual evidence}{32}{}%
+\contentsline {section}{\numberline {24}Interpretability}{32}{}%
+\contentsline {subsection}{\numberline {24.1}Flagged-image forensics}{32}{}%
+\contentsline {subsection}{\numberline {24.2}Calibration}{32}{}%
+\contentsline {section}{\numberline {25}Discussion}{33}{}%
+\contentsline {subsection}{\numberline {25.1}What the census is and is not}{33}{}%
+\contentsline {subsection}{\numberline {25.2}Removal helped pneumonia but not malaria - unattributed to labels}{33}{}%
+\contentsline {subsection}{\numberline {25.3}Cross-regime benchmark positioning}{33}{}%
+\contentsline {subsection}{\numberline {25.4}The admissibility gate}{33}{}%
+\contentsline {section}{\numberline {26}Limitations and redirected angles}{34}{}%
+\contentsline {section}{\numberline {27}Methods landscape and positioning}{34}{}%
+\contentsline {section}{\numberline {28}Further formulas}{35}{}%
+\contentsline {subsection}{\numberline {28.1}Matthews correlation coefficient}{35}{}%
+\contentsline {subsection}{\numberline {28.2}Precision--recall AUC}{35}{}%
+\contentsline {subsection}{\numberline {28.3}Calibration (expected calibration error)}{36}{}%
+\contentsline {subsection}{\numberline {28.4}Bayes error under label noise}{36}{}%
+\contentsline {subsection}{\numberline {28.5}Bootstrap confidence interval}{36}{}%
+\contentsline {section}{\numberline {29}Threats to validity}{37}{}%
+\contentsline {subsection}{\numberline {29.1}Internal validity}{37}{}%
+\contentsline {subsection}{\numberline {29.2}Construct validity}{37}{}%
+\contentsline {subsection}{\numberline {29.3}External validity}{37}{}%
+\contentsline {subsection}{\numberline {29.4}Reliability}{37}{}%
+\contentsline {section}{\numberline {30}Census methodology in detail}{37}{}%
+\contentsline {subsection}{\numberline {30.1}Fold protocol}{37}{}%
+\contentsline {subsection}{\numberline {30.2}Admissibility, enforced}{37}{}%
+\contentsline {subsection}{\numberline {30.3}Threshold computation and cross-check}{37}{}%
+\contentsline {section}{\numberline {31}Validation: is the cleaning gain real, and do the flags hold up?}{38}{}%
+\contentsline {subsection}{\numberline {31.1}Calibration of the deployed probabilities}{38}{}%
+\contentsline {subsection}{\numberline {31.2}Random-removal ablation: is the cleaning gain attributable to labels?}{38}{}%
+\contentsline {subsection}{\numberline {31.3}Seed-stability of the candidate flags}{38}{}%
+\contentsline {section}{\numberline {32}Error analysis}{39}{}%
+\contentsline {subsection}{\numberline {32.1}Confusion structure, CNN core}{39}{}%
+\contentsline {subsection}{\numberline {32.2}Confusion structure, RegionGCN}{39}{}%
+\contentsline {subsection}{\numberline {32.3}Head-to-head: global pooling vs region-graph reasoning}{39}{}%
+\contentsline {section}{\numberline {33}Flagged-image forensics}{39}{}%
+\contentsline {subsection}{\numberline {33.1}Verdict}{39}{}%
+\contentsline {section}{\numberline {34}Engineering, uncertainty, and integrity analyses}{39}{}%
+\contentsline {subsection}{\numberline {34.1}Uncertainty quantification}{40}{}%
+\contentsline {subsection}{\numberline {34.2}Interpretability check}{40}{}%
+\contentsline {subsection}{\numberline {34.3}Verification and robustness side-analyses}{40}{}%
+\contentsline {subsection}{\numberline {34.4}Pipeline integrity and consistency audits}{40}{}%
+\contentsline {section}{\numberline {35}Confidence intervals and cross-verification}{41}{}%
+\contentsline {subsection}{\numberline {35.1}Wilson 95\% intervals for every reported accuracy}{41}{}%
+\contentsline {subsection}{\numberline {35.2}Independent metric recomputation}{41}{}%
+\contentsline {subsection}{\numberline {35.3}Census cross-validation against cleanlab}{41}{}%
+\contentsline {section}{\numberline {36}Training dynamics}{41}{}%
+\contentsline {subsection}{\numberline {36.1}CNN core baseline training log}{41}{}%
+\contentsline {subsection}{\numberline {36.2}RegionGCN baseline training log}{42}{}%
+\contentsline {section}{\numberline {37}Reproducing every number in this paper}{42}{}%
+\contentsline {subsection}{\numberline {37.1}From archive to array}{42}{}%
+\contentsline {subsection}{\numberline {37.2}From array to headline}{42}{}%
+\contentsline {subsection}{\numberline {37.3}External head-to-head}{42}{}%
+\contentsline {subsection}{\numberline {37.4}Expected runtime}{42}{}%
+\contentsline {section}{\numberline {38}Configuration-by-configuration analysis}{42}{}%
+\contentsline {subsection}{\numberline {38.1}CNN core, baseline (72.12\% / 0.9331)}{42}{}%
+\contentsline {subsection}{\numberline {38.2}RegionGCN, baseline (79.01\% / 0.9514)}{42}{}%
+\contentsline {subsection}{\numberline {38.3}CNN core, class-weighted (81.73\% / 0.9174)}{43}{}%
+\contentsline {subsection}{\numberline {38.4}RegionGCN, class-weighted (84.13\% / 0.9471)}{43}{}%
+\contentsline {subsection}{\numberline {38.5}CNN core, census-cleaned (79.81\%)}{43}{}%
+\contentsline {subsection}{\numberline {38.6}RegionGCN, census-cleaned (84.94\% / 0.9514)}{43}{}%
+\contentsline {section}{\numberline {39}Symbolic and structural verification battery}{43}{}%
+\contentsline {subsection}{\numberline {39.1}GCN normalised adjacency, symbolically}{43}{}%
+\contentsline {subsection}{\numberline {39.2}Grid-graph topology}{43}{}%
+\contentsline {subsection}{\numberline {39.3}Resize-backend robustness}{43}{}%
+\contentsline {subsection}{\numberline {39.4}Out-of-fold distribution figures}{43}{}%
+\contentsline {section}{\numberline {40}Literature-discovery battery}{43}{}%
+\contentsline {section}{\numberline {41}Data-integrity and statistical battery}{44}{}%
+\contentsline {subsection}{\numberline {41.1}Independent decode cross-check}{44}{}%
+\contentsline {subsection}{\numberline {41.2}SQL cross-tabs}{44}{}%
+\contentsline {subsection}{\numberline {41.3}Adjusted logistic model}{44}{}%
+\contentsline {subsection}{\numberline {41.4}Interactive and workbook artifacts}{44}{}%
+\contentsline {subsection}{\numberline {41.5}Provenance capture}{44}{}%
+\contentsline {section}{\numberline {42}Source-verification and rendering battery}{44}{}%
+\contentsline {subsection}{\numberline {42.1}Independent JATS re-parse}{44}{}%
+\contentsline {subsection}{\numberline {42.2}NIH record structured extraction}{44}{}%
+\contentsline {subsection}{\numberline {42.3}Paper-vs-data audit}{44}{}%
+\contentsline {section}{\numberline {43}Robustness and search battery}{45}{}%
+\contentsline {subsection}{\numberline {43.1}SimpleITK resampling robustness}{45}{}%
+\contentsline {subsection}{\numberline {43.2}Grad-CAM explanations}{45}{}%
+\contentsline {subsection}{\numberline {43.3}scikit-optimize cross-check}{45}{}%
+\contentsline {section}{\numberline {44}The dxtool diagnostic CLI}{45}{}%
+\contentsline {subsection}{\numberline {44.1}Design}{45}{}%
+\contentsline {subsection}{\numberline {44.2}Inference path}{45}{}%
+\contentsline {subsection}{\numberline {44.3}Live verification transcript}{45}{}%
+\contentsline {subsection}{\numberline {44.4}Census path}{46}{}%
+\contentsline {subsection}{\numberline {44.5}Audit path}{46}{}%
+\contentsline {section}{\numberline {45}Reproducibility}{46}{}%
+\contentsline {section}{\numberline {46}Formulas and derivations appendix}{46}{}%
+\contentsline {subsection}{\numberline {46.1}Softmax and cross-entropy}{46}{}%
+\contentsline {subsection}{\numberline {46.2}Adam update}{46}{}%
+\contentsline {subsection}{\numberline {46.3}ROC-AUC as a rank statistic}{46}{}%
+\contentsline {subsection}{\numberline {46.4}Wilson interval}{47}{}%
+\contentsline {subsection}{\numberline {46.5}Census thresholds}{47}{}%
+\contentsline {subsection}{\numberline {46.6}Integrated Gradients}{47}{}%
+\contentsline {subsection}{\numberline {46.7}Dihedral augmentation group}{47}{}%
+\contentsline {subsection}{\numberline {46.8}Class-weighted loss (tuned configuration)}{47}{}%
+\contentsline {subsection}{\numberline {46.9}Grad-CAM}{47}{}%
+\contentsline {section}{\numberline {47}Compute environment and package versions}{48}{}%
+\contentsline {section}{\numberline {48}Notation}{49}{}%
+\contentsline {section}{\numberline {49}GCN behaviour at our graph scale}{49}{}%
+\contentsline {subsection}{\numberline {49.1}Receptive field}{49}{}%
+\contentsline {subsection}{\numberline {49.2}Over-smoothing bound}{49}{}%
+\contentsline {subsection}{\numberline {49.3}Why a graph head at all}{49}{}%
+\contentsline {section}{\numberline {50}External tools ledger (pneumonia)}{50}{}%
+\contentsline {section}{\numberline {51}Dataset ledger (pneumonia): 161 accession-level datasets}{51}{}%
+\contentsline {section}{\numberline {52}Flagged identifiers (pneumonia, 155 images)}{51}{}%
+\contentsline {section}{Appendix: Published Census Flags}{56}{}%

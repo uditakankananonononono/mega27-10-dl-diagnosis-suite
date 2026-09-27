@@ -1,0 +1,739 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  27 SEP 2026 11:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen149
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks19
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks20
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count274
+\LTcapwidth=\dimen158
+\LT@head=\box52
+\LT@firsthead=\box53
+\LT@foot=\box54
+\LT@lastfoot=\box55
+\LT@gbox=\box56
+\LT@cols=\count275
+\LT@rows=\count276
+\c@LT@tables=\count277
+\c@LT@chunks=\count278
+\LT@p@ftn=\toks29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen159
+\ar@mcellbox=\box57
+\extrarowheight=\dimen160
+\NC@list=\toks30
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box58
+)
+\c@theorem=\count279
+\c@proposition=\count280
+\c@lemma=\count281
+\c@definition=\count282
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 34
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count283
+\l__pdf_internal_box=\box59
+)
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count284
+\scratchdimen=\dimen161
+\scratchbox=\box60
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count287
+\MPscratchDim=\dimen162
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks32
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
+ 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
+ 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
+ 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
+ 35.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+ (./main.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
+3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 63.
+ [3] [4] [5])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [6]
+(./sec_intro_data_methods.tex [7]
+Overfull \hbox (2.44711pt too wide) in paragraph at lines 59--64
+\T1/ptm/m/n/10.95 olds per Def-i-ni-tion 3[]; the same ad-mis-si-bil-ity gate a
+s the malaria study (OOF ac-cu-racy $\OMS/ztmcm/m/n/10.95 ^^U []\OT1/ztmcm/m/n/
+10.95 (0\OML/ztmcm/m/it/10.95 :\OT1/ztmcm/m/n/10.95 60\OML/ztmcm/m/it/10.95 ; [
+] \OT1/ztmcm/m/n/10.95 +
+ []
+
+) (./sec_datacard.tex
+Overfull \hbox (27.41743pt too wide) in paragraph at lines 8--12
+\T1/ptm/m/n/10.95 Decoded once to $\OT1/ztmcm/m/n/10.95 (\OML/ztmcm/m/it/10.95 
+N; \OT1/ztmcm/m/n/10.95 1\OML/ztmcm/m/it/10.95 ; \OT1/ztmcm/m/n/10.95 128\OML/z
+tmcm/m/it/10.95 ; \OT1/ztmcm/m/n/10.95 128)$ \T1/ptm/m/n/10.95 uint8 NCHW ar-ra
+ys (\T1/cmtt/m/n/10.95 data/pneumonia/cxr_train_x.npy\T1/ptm/m/n/10.95 , \T1/cm
+tt/m/n/10.95 cxr_test_x.npy\T1/ptm/m/n/10.95 );
+ []
+
+) (./sec_architecture.tex [8]) (../paper_shared/math_foundations.tex [9]
+[10]
+Overfull \hbox (1.17392pt too wide) in paragraph at lines 77--81
+\T1/ptm/m/n/10.95 la-bels $\OML/ztmcm/m/it/10.95 y$\T1/ptm/m/n/10.95 , de-fine 
+per-class thresh-olds $\OML/ztmcm/m/it/10.95 t[] \OT1/ztmcm/m/n/10.95 = [] [][]
+ \OML/ztmcm/m/it/10.95 P[]$ \T1/ptm/m/n/10.95 and the con-fi-dent pre-dic-tion 
+$[] \OT1/ztmcm/m/n/10.95 = [] [][]\OMS/ztmcm/m/n/10.95 f\OML/ztmcm/m/it/10.95 P
+[] \OT1/ztmcm/m/n/10.95 :
+ []
+
+) (./sec_results.tex
+Overfull \hbox (18.56436pt too wide) in paragraph at lines 25--30
+\T1/ptm/m/n/10.95 scores ac-cu-racy 38.5% and ROC-AUC 0.7990 (\T1/cmtt/m/n/10.9
+5 results/pneumonia/test_probs_torchxrayvision.json\T1/ptm/m/n/10.95 ).
+ []
+
+[11]) (./sec_verification.tex [12]) (./lit_survey_pneumonia.tex
+Overfull \hbox (4.24861pt too wide) in paragraph at lines 8--9
+[]\T1/ptm/m/n/10.95 Synthesis. The dom-i-nant clus-ter re-pro-duces the Ker-man
+y transfer-learning recipe --- ImageNet-initialized
+ []
+
+
+Overfull \hbox (4.24861pt too wide) in paragraph at lines 11--12
+[]\T1/ptm/m/n/10.95 Synthesis. The dom-i-nant clus-ter re-pro-duces the Ker-man
+y transfer-learning recipe --- ImageNet-initialized
+ []
+
+[13] [14] [15]
+Underfull \hbox (badness 1888) in paragraph at lines 145--146
+[]|\T1/ptm/m/n/10.95 Deep Learning-Based Computer-Aided De-tec-tion Sys-tem
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 154--155
+[]|\T1/ptm/m/n/10.95 COVID-19 Clas-si-fi-ca-tion from Chest X-Ray Im-ages: A
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 160--161
+[]|\T1/ptm/m/n/10.95 Ensemble of Deep Learn-ing Ar-chi-tec-tures with Ma-chine
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 180--181
+[]|\T1/ptm/m/n/10.95 Bayesian-based op-ti-mized deep learn-ing model to de-tect
+
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 184--185
+[]|\T1/ptm/m/n/10.95 A ma-chine learning-based frame-work for di-ag-no-sis of
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 213--214
+[]|\T1/ptm/m/n/10.95 Deep Learning-Based Computer-Aided Di-ag-no-sis (CAD):
+ []
+
+
+Underfull \hbox (badness 4266) in paragraph at lines 220--221
+[]|\T1/ptm/m/n/10.95 Interpretable CNN-Multilevel At-ten-tion Trans-former for
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 221--222
+[]|\T1/ptm/m/n/10.95 Automatic di-ag-no-sis of COVID-19 with MCA-inspired
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 235--236
+[]|\T1/ptm/m/n/10.95 Fully au-to-mated uni-fied prog-no-sis of Covid-19 chest X
+-
+ []
+
+[16] [17] [18] [19] [20] [21] [22]) (./sec_atlas.tex
+Overfull \hbox (64.87238pt too wide) in paragraph at lines 3--9
+\T1/ptm/m/n/10.95 The suite-level at-las ran the same cen-sus pro-to-col across
+ 12 MedM-NIST pan-els (\T1/cmtt/m/n/10.95 results/panel/atlas_summary.json\T1/p
+tm/m/n/10.95 );
+ []
+
+[23]) (./sec_worked.tex) (./sec_tuneddyn.tex [24]) (./sec_discussion_ext.tex
+[25]) (./sec_erroran2.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]) (./sec_litsynth.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+))
+(./sec_tooldeepdive.tex [27]
+Overfull \hbox (66.78102pt too wide) in paragraph at lines 3--10
+\T1/ptm/m/n/10.95 whole bench-mark land-scape, and it is fully vis-i-ble in the
+ com-mit-ted prob-a-bil-ity file \T1/cmtt/m/n/10.95 test_probs_torchxrayvision.
+json\T1/ptm/m/n/10.95 . 
+ []
+
+) (./sec_walkthrough.tex [28]
+Overfull \hbox (10.23906pt too wide) in paragraph at lines 31--38
+\T1/cmtt/m/n/10.95 --transfer \T1/ptm/m/n/10.95 re-pro-duces the external-datas
+et eval-u-a-tion, and \T1/cmtt/m/n/10.95 python3 src/per_disease_ledger.py \T1/
+ptm/m/n/10.95 reprints
+ []
+
+) (./sec_flagcases_gate.tex
+Overfull \hbox (77.57257pt too wide) in paragraph at lines 4--35
+\T1/ptm/m/n/10.95 prop-er-ties against size-matched ran-dom con-trols (Mann--Wh
+itney U, ex-act val-ues from \T1/cmtt/m/n/10.95 flagged_image_properties.json\T
+1/ptm/m/n/10.95 ).
+ []
+
+
+Overfull \hbox (33.97092pt too wide) in paragraph at lines 4--35
+\T1/ptm/m/n/10.95 Read-ing the first pub-lished flags --- \T1/cmtt/m/n/10.95 NO
+RMAL/IM-0621-0001.jpeg\T1/ptm/m/n/10.95 , \T1/cmtt/m/n/10.95 NORMAL/NORMAL2-IM-
+0587-0001-0002.jpeg
+ []
+
+[29]) (./sec_census_tool_falsify_discussion.tex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+ [30])
+(./sec_fig_interp_disc_lim.tex [31]
+<../figures/pneumonia_training_curves.png, id=114, 433.62pt x 289.08pt>
+File: ../figures/pneumonia_training_curves.png Graphic file (type png)
+<use ../figures/pneumonia_training_curves.png>
+Package pdftex.def Info: ../figures/pneumonia_training_curves.png  used on inpu
+t line 4.
+(pdftex.def)             Requested size: 338.22418pt x 225.49472pt.
+<../figures/pneumonia_confusion.png, id=116, 578.16pt x 260.172pt>
+File: ../figures/pneumonia_confusion.png Graphic file (type png)
+<use ../figures/pneumonia_confusion.png>
+Package pdftex.def Info: ../figures/pneumonia_confusion.png  used on input line
+ 10.
+(pdftex.def)             Requested size: 281.85587pt x 126.83432pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../figures/pneumonia_confident_joint.png, id=117, 289.08pt x 260.172pt>
+File: ../figures/pneumonia_confident_joint.png Graphic file (type png)
+<use ../figures/pneumonia_confident_joint.png>
+Package pdftex.def Info: ../figures/pneumonia_confident_joint.png  used on inpu
+t line 16.
+(pdftex.def)             Requested size: 291.2458pt x 262.13246pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../figures/pneumonia_oof_distributions.png, id=118, 469.755pt x 260.172pt>
+File: ../figures/pneumonia_oof_distributions.png Graphic file (type png)
+<use ../figures/pneumonia_oof_distributions.png>
+Package pdftex.def Info: ../figures/pneumonia_oof_distributions.png  used on in
+put line 23.
+(pdftex.def)             Requested size: 291.2458pt x 161.30495pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (120.04169pt too wide) in paragraph at lines 31--36
+\T1/ptm/m/n/10.95 Flagged films are mea-sur-ably atyp-i-cal in sharp-ness, con-
+trast, and en-tropy (\T1/cmtt/m/n/10.95 results/pneumonia/flagged_image_propert
+ies.json\T1/ptm/m/n/10.95 ;
+ []
+
+[32 <../figures/pneumonia_training_curves.png>] [33 <../figures/pneumonia_confu
+sion.png>]
+Overfull \hbox (1.55989pt too wide) in paragraph at lines 79--82
+[]\T1/ptm/b/n/10.95 Paediatric-only dis-tri-bu-tion. \T1/ptm/m/n/10.95 The col-
+lec-tion is pae-di-atric; adult pneu-mo-nia gen-er-al-i-sa-tion is untested.
+ []
+
+
+Overfull \hbox (76.91891pt too wide) in paragraph at lines 84--90
+\T1/ptm/m/n/10.95 ca-tion con-sisted of the con-verged Chat-GPT judge loop (2 r
+ounds, ver-ba-tim on record in \T1/cmtt/m/n/10.95 subitems_4_5/isef_judge/\T1/p
+tm/m/n/10.95 ).
+ []
+
+) (./sec_rocfig.tex
+<../figures/pneumonia_roc_curves.png, id=127, 375.804pt x 332.442pt>
+File: ../figures/pneumonia_roc_curves.png Graphic file (type png)
+<use ../figures/pneumonia_roc_curves.png>
+Package pdftex.def Info: ../figures/pneumonia_roc_curves.png  used on input lin
+e 2.
+(pdftex.def)             Requested size: 291.2458pt x 257.65509pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./sec_landscape.tex
+Underfull \hbox (badness 1515) in paragraph at lines 8--8
+[]|\T1/ptm/m/n/10 Kermany Inception-v3 trans-fer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+[]|\T1/ptm/m/n/10 TorchXRayVision DenseNet-
+ []
+
+
+Overfull \hbox (25.83243pt too wide) in paragraph at lines 4--16
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34 <../figures/pneumonia_confident_joint.png>] [35 <../figures/pneumonia_oof_d
+istributions.png>]) (./sec_validity.tex [36 <../figures/pneumonia_roc_curves.pn
+g>]
+Overfull \hbox (76.52971pt too wide) in paragraph at lines 27--31
+\T1/ptm/m/n/10.95 early stop-ping). The of-fi-cial test films never en-ter any 
+fold. Fold check-points re-tained un-der \T1/cmtt/m/n/10.95 results/pneumonia/o
+of_ckpt\T1/ptm/m/n/10.95 . 
+ []
+
+) (./sec_validation.tex [37]) (./sec_error_analysis.tex [38])
+(./sec_forensics.tex
+Underfull \hbox (badness 2012) in paragraph at lines 13--13
+[]\T1/ptm/m/n/10.95 Table 10: Flagged vs con-trol im-age prop-er-ties (pneu-mo-
+nia; Mann--Whitney, pin-gouin). Data:
+ []
+
+) (../paper_shared/discussion_extra.tex [39]
+Overfull \hbox (39.55336pt too wide) in paragraph at lines 32--46
+\T1/ptm/m/n/10.95 Four in-de-pen-dent checks (\T1/cmtt/m/n/10.95 results/tool_b
+attery_1.json\T1/ptm/m/n/10.95 ): (i) \T1/ptm/b/n/10.95 sympy\T1/ptm/m/n/10.95 
+: the GCN nor-mal-i-sa-tion $\OML/ztmcm/m/it/10.95 D[]\OT1/ztmcm/m/n/10.95 (\OM
+L/ztmcm/m/it/10.95 A[]I\OT1/ztmcm/m/n/10.95 )\OML/ztmcm/m/it/10.95 D[]$
+ []
+
+) (./sec_tables.tex [40]
+Overfull \hbox (79.11906pt too wide) in paragraph at lines 13--16
+\T1/ptm/m/n/10.95 Every head-line met-ric was re-com-puted with torch-metrics i
+n-de-pen-dently of sklearn (\T1/cmtt/m/n/10.95 results/metrics_crossverify.json
+\T1/ptm/m/n/10.95 );
+ []
+
+) (./sec_dynamics.tex
+Overfull \hbox (3.68506pt too wide) in paragraph at lines 18--1
+\T1/ptm/m/n/10.95 The from-scratch confident-learning es-ti-ma-tor flagged 155 
+im-ages; the in-de-pen-dent \T1/cmtt/m/n/10.95 cleanlab \T1/ptm/m/n/10.95 li-br
+ary flagged
+ []
+
+
+Overfull \hbox (65.52867pt too wide) in paragraph at lines 5--19
+\T1/ptm/m/n/10.95 Per-epoch com-mit-ted his-tory (\T1/cmtt/m/n/10.95 results/pn
+eumonia/baseline_results.json\T1/ptm/m/n/10.95 ): []
+ []
+
+) (./sec_repro_config.tex
+Overfull \hbox (65.52867pt too wide) in paragraph at lines 22--1
+\T1/ptm/m/n/10.95 Per-epoch com-mit-ted his-tory (\T1/cmtt/m/n/10.95 results/pn
+eumonia/baseline_results.json\T1/ptm/m/n/10.95 ): []
+ []
+
+[41] [42]) (./sec_batteries.tex
+Overfull \hbox (8.43207pt too wide) in paragraph at lines 28--38
+\T1/ptm/m/n/10.95 NCBI E-utilities nov-elty probes (\T1/cmtt/m/n/10.95 tool_bat
+tery_2.json\T1/ptm/m/n/10.95 ): the query \T1/cmtt/m/n/10.95 malaria_cell_image
+s label noise
+ []
+
+[43]
+Overfull \hbox (25.05162pt too wide) in paragraph at lines 54--57
+\T1/ptm/m/n/10.95 Plotly pro-duced the in-ter-ac-tive property-scatter ex-plore
+r (\T1/cmtt/m/n/10.95 figures/flagged_properties_interactive.html\T1/ptm/m/n/10
+.95 )
+ []
+
+
+Overfull \hbox (48.12141pt too wide) in paragraph at lines 62--69
+\T1/ptm/m/n/10.95 xmltodict re-parsed the Ra-jara-man JATS ta-bles in-de-pen-de
+ntly of the pri-mary lxml ex-trac-tion (\T1/cmtt/m/n/10.95 tool_battery_4.json\
+T1/ptm/m/n/10.95 ):
+ []
+
+) (./sec_batteries_late.tex [44]) (./sec_eng_formulas.tex
+Overfull \hbox (23.4389pt too wide) in paragraph at lines 4--11
+\T1/cmtt/m/n/10.95 dxtool \T1/ptm/m/n/10.95 is the shipped command-line tool: o
+ne bi-nary en-try point with sub-com-mands for in-fer-ence (\T1/cmtt/m/n/10.95 
+dx-predict\T1/ptm/m/n/10.95 ),
+ []
+
+[45]
+Overfull \hbox (3.48567pt too wide) in paragraph at lines 41--45
+\T1/cmtt/m/n/10.95 dx-audit \T1/ptm/m/n/10.95 re-com-putes ev-ery head-line num
+-ber from the com-mit-ted prob-a-bil-ity dumps (\T1/cmtt/m/n/10.95 test_probs_*
+.json\T1/ptm/m/n/10.95 )
+ []
+
+[46]) (./sec_env_notation_theory.tex [47] [48]) (./sec_ledgers.tex [49]
+Underfull \hbox (badness 3118) in paragraph at lines 19--20
+[]|\T1/ptm/m/n/10.95 independent cross-validation of both annotation-
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 26--27
+[]|\T1/ptm/m/n/10.95 resize-backend ro-bust-ness au-dit (max prob-a-bil-ity
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 49--50
+[]|\T1/ptm/m/n/10.95 independent GP search cross-check (pneu-mo-nia
+ []
+
+[50]) (./sec_flagged.tex [51] [52] [53] [54]) (./sec_refs.tex)
+(./sec_flags_appendix.tex [55]
+Overfull \hbox (118.93506pt too wide) in alignment at lines 11--13
+ [] [] [] 
+ []
+
+
+Overfull \hbox (118.93506pt too wide) in alignment at lines 13--67
+ [] [] [] 
+ []
+
+[56
+
+]) [57] (./main.aux) ) 
+Here is how much of TeX's memory you used:
+ 3725 strings out of 480247
+ 57996 string characters out of 5896151
+ 448337 words of memory out of 5000000
+ 21460 multiletter control sequences out of 15000+600000
+ 548509 words of font info for 162 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 55i,11n,62p,1925b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/sandbox/.texlive2021/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ectt0900.600pk> </home/sandbox/.texlive2021/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ectt1440.600pk> </home/sandbox/.texlive2021/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ectt1095.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (57 pages, 463476 bytes).
+PDF statistics:
+ 386 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+
