@@ -28,3 +28,15 @@ Pneumonia ledger state (10:02 IST): previously 3/10 counted rounds - ALL
 agent-initiated in her account, reclassified supplementary (preserved).
 Gate: 0 of 1 - NO courier paste staged yet; one must be prepared and queued
 behind the existing three (lane-16 R1, lane-20 R1, malaria R7).
+
+---
+
+## MALARIA PROVIDED ROUND 1 LANDED - GATE MET (2026-09-27 11:17 IST)
+
+Her provided malaria verdict arrived 11:17:23 IST (wamid...RkQxOQA=,
+author=user, verified in channel record): 25 weaknesses + 20 additions,
+table format. Archived verbatim: MALARIA_PROVIDED_ROUND_1_VERDICT.txt.
+Wrapper: MALARIA_PROVIDED_ROUND_1.md. Queue: MALARIA_AMENDMENT_QUEUE_R1.md
+(locked before execution; PRIOR-PLANNED marked honestly).
+STATUS: malaria judge gate = 1 of 1 provided - MET.
+Pneumonia remains 0 of 1 (courier paste to be staged, queue position 4).

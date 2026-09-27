@@ -1,0 +1,48 @@
+#	Weakness	Why It Matters
+1	The 96.08% vs 94.0% benchmark comparison is confounded	The R-M1 matched-protocol test FAILED (mean 0.9477, below the 0.957 bar). The headline "beats published reference" is from a different protocol (different resize kernel, different split). This is a serious issue.
+2	The R-M1 failure undermines the main accuracy claim	The paper honestly reports R-M1 failing, but still leads with 96.08%. A judge will ask: "Which number is the real one?"
+3	The 11.44% noise estimate is estimator-derived, not ground truth	The paper says this repeatedly, but the headline still reads as "11.44% of labels are wrong." It is not. It is the confident-learning estimate under a specific model.
+4	No expert adjudication of any flagged image	The 249 flags are statistical candidates. The paper says "any reader can inspect" but no expert has verified them. The Fuhad audit had an expert; this does not.
+5	The one-directional asymmetry could be model bias	2,358:164 is striking, but the paper acknowledges this could reflect asymmetric visual confusability or model bias. The asymmetry is the headline finding, but its cause is not established.
+6	Cleaning did not improve accuracy	95.50% after cleaning vs. 96.08% baseline. The practical value of the census is unclear if removing flagged labels makes the model worse.
+7	Flag identity is unstable across seeds	Only 67-78 of 249 flags overlap across protocol variations. The "consensus core" is only 85 images (from GCN cross-check). The marginal flags are not robust.
+8	Cross-architecture agreement is low	Jaccard 0.268 between CNN and GCN flags. The two architectures disagree on most flagged images.
+9	Patient-level stratification was not used	Cells from the same patient can appear in train and test. This inflates accuracy estimates and undermines the census (same-patient cells may share label noise).
+10	The GCN hybrid adds nothing	95.98% vs 96.08% (CNN). The region-graph head is within noise and costs 18k extra parameters. The "hybrid" framing is not justified by the results.
+11	The admissibility gate is ad hoc	OOF accuracy ≥ max(0.60, majority + 0.05) and ≥ 250 optimizer steps. These thresholds are not theoretically derived. A judge will ask: why 0.05? why 250?
+12	The "first automated" claim rests on absence	The literature screen found no prior automated census, but absence of evidence is not evidence of absence. The claim is defensible but not strongly supported.
+13	The Fuhad reconciliation is incomplete	The overlap experiment was blocked (dead GitHub link). The paper cannot compare flag-by-flag against the prior manual audit. This is a significant limitation.
+14	The BBBC battery (42 accessions) is padding	It does not directly support the malaria census. It demonstrates method portability but adds length without core scientific value.
+15	The 197-record literature audit is excessive	It demonstrates diligence but is not necessary for the scientific question. It adds 10+ pages and distracts from the core finding.
+16	The dxtool CLI is useful but not a scientific contribution	The paper is about the audit, not the tool. The CLI is engineering, not science.
+17	Calibration is good but not validating	ECE 0.0204 shows the model is well-calibrated, but this does not validate the census. A model can be well-calibrated and still wrong about label noise.
+18	The "label-noise-bound ceiling" argument is speculative	The paper suggests mid-90s accuracy is consistent with 11.44% noise, but does not prove causation. The Bayes error calculation is illustrative, not conclusive.
+19	The dose-response validation uses a subsample	n=11023 (every second image), not the full training set. The rates are protocol-internal comparisons, not replacements for headline numbers.
+20	The GCN census rate (9.59%) is below the CNN band (9.90-11.48%)	This is a 0.31 percentage point discrepancy. The paper says "close to the band floor" but this is a real disagreement.
+21	No external validation cohort	The census is run on one collection. There is no independent malaria dataset to test whether the 11.44% estimate generalizes.
+22	The "forensics" chapter is underpowered	Only contrast separates flagged from control (p=2.39e-03). The effect size is small (r=0.136). This does not strongly support the "label-side inconsistency" interpretation.
+23	The R-M1 provenance issue (resize kernel) is not fully resolved	The paper says the fold comparison is "internally valid" but the 0.955 vs 0.9608 discrepancy is not explained.
+24	No clinical validation	The paper is about dataset hygiene, not clinical diagnosis. This limits translational impact.
+25	The paper is too long for ISEF	55 pages, 44 sections, 11 figures, 20+ tables. Judges will not read this. The signal-to-noise ratio is poor.
+20 Additions / Improvements
+#	Addition	How It Strengthens the Project
+1	Lead with the label-noise census, not the accuracy number	The census is the novel contribution. The 96.08% is confounded and should be secondary.
+2	Drop the "beats published benchmark" claim	The R-M1 failure means this is not robust. Replace with "at parity under matched protocol" or "competitive at 140k parameters."
+3	Add expert adjudication of a sample of flags	Even 20-30 images reviewed by a pathologist or expert would transform the census from statistical to validated.
+4	Patient-stratified re-split	This is the single most important robustness check. It addresses the biggest internal validity threat.
+5	Stabilize the flag set	Use the 85-image consensus core as the primary deliverable, with architecture-specific flags as secondary. This is more honest.
+6	Resolve the R-M1 resize kernel discrepancy	Pin the kernel version, rerun, and report whether the fold comparison changes.
+7	Simplify the presentation	12-slide story: Question → Why it matters → Method → Main result (one-directional noise) → Validation → Limitations → Conclusion.
+8	Add a decision tree for dataset users	"If you use this benchmark, here is what to do about the 249 flags." This is actionable.
+9	Quantify the impact of label noise on reported accuracies	Simulate: if 11.44% of labels are wrong, what is the expected reported accuracy? Show that mid-90s numbers are consistent with this.
+10	Compare to other label-noise estimators	Beyond cleanlab, try other methods (e.g., Co-teaching, MentorNet, or simple cross-validation disagreement). Show robustness.
+11	Add a confusion matrix of flag types	Are flagged Parasitized cells early-stage, late-stage, or ambiguous? This would strengthen the biological interpretation.
+12	Test whether flagged images are enriched for specific patients	If flags cluster by patient, this suggests acquisition or annotation batch effects.
+13	Add a simple visual summary	One figure showing: (a) class parity, (b) one-directional noise, (c) flag distribution. This is what judges will remember.
+14	Reduce the literature audit to a table	Put the 197 records in an appendix. Summarize in one paragraph.
+15	Remove the BBBC battery from the main paper	Put it in an appendix as method portability evidence.
+16	Add a "what this means for the field" section	If 11.44% of this benchmark is noisy, what does that say about 200+ papers reporting mid-90s accuracy? This is the impact.
+17	Report the census on the test split as well	If the test split has similar noise, this explains why cleaning didn't help.
+18	Add a sensitivity analysis for the admissibility gate	Vary the thresholds (0.55, 0.60, 0.65) and show how the noise estimate changes.
+19	Create a one-page summary card	For judges: Question, Method, Key Finding, Limitation, Impact.
+20	Submit the flags as a standalone resource	A CSV with the 249 paths and confidence scores is a community contribution.
