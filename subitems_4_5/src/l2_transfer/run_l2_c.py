@@ -76,6 +76,11 @@ def train(seed, phase, max_batches):
     else:
         start_ep, start_b = 0, 0
     set_trainable(m, phase)
+    # Phase 3 full-model backward does not fit sandbox RAM (1.9GB) at batch 16:
+    # gradient accumulation, micro-batch 4 x 4 steps = effective batch 16.
+    # Identical effective protocol (data order, LR, epochs, effective batch).
+    MICRO = 4 if phase >= 3 else BATCH
+    ACCUM = BATCH // MICRO
     opt = torch.optim.AdamW([p for p in m.parameters() if p.requires_grad], lr=LR[phase])
     if cp.exists() and "opt" in st:
         try: opt.load_state_dict(st["opt"])
@@ -90,11 +95,17 @@ def train(seed, phase, max_batches):
         order = torch.randperm(n, generator=g).tolist()
         while b < n_batches:
             idx = order[b * BATCH:(b + 1) * BATCH]
-            x = load_batch(paths, idx)
-            yb = torch.from_numpy(y[idx])
-            logit = m(x).squeeze(1)
-            loss = torch.nn.functional.binary_cross_entropy_with_logits(logit, yb)
-            opt.zero_grad(); loss.backward(); opt.step()
+            opt.zero_grad()
+            for mb in range(ACCUM):
+                sub = idx[mb * MICRO:(mb + 1) * MICRO]
+                if not sub:
+                    continue
+                x = load_batch(paths, sub)
+                yb = torch.from_numpy(y[sub])
+                logit = m(x).squeeze(1)
+                loss = torch.nn.functional.binary_cross_entropy_with_logits(logit, yb) / ACCUM
+                loss.backward()
+            opt.step()
             b += 1; done += 1
             if done % 5 == 0:
                 print(f"s{seed} p{phase} ep{ep} b{b}/{n_batches} loss={loss.item():.4f} ({time.time()-t0:.0f}s)", flush=True)
