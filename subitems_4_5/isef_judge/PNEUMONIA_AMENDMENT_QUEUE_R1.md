@@ -56,6 +56,18 @@ A3/W5 expert adjudication of 20-30 flags -> PENDING HER RULING (pneumonia
    no radiologist available to us - if declined: future work + multi-model
    consensus substitute).
 
+
+
+## A3 EXPERT ADJUDICATION - WAIVED BY OWNER (2026-09-27 11:46 IST)
+
+Owner ruling via WhatsApp 11:46:16 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDczNzU1OEJBNDcxOENGNTUwNQA=,
+author=user, verified in channel record): "SKIP CENSUS ..." - the human-expert
+adjudication requirement is WAIVED. Proceed without it.
+PAPER REQUIREMENT (locked): document in the paper that expert adjudication was
+considered and explicitly waived by the owner, and state the residual
+label-noise risk honestly (flags remain statistical candidates, not
+expert-verified ground truth).
+
 ## Execution order (locked)
 1. A20 flags CSV + A6 consensus core (with malaria equivalents, one commit).
 2. A5 blurred-NORMAL control + A4 report-text availability check.

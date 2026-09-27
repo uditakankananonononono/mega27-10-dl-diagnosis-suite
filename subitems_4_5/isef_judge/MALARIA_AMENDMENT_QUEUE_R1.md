@@ -64,6 +64,18 @@ A3/W4 expert adjudication of 20-30 flags -> PENDING HER RULING (census
    results/census_review_card.pdf staged). If no expert available: document
    as future work + strengthen blind-substitute (multi-model consensus).
 
+
+
+## A3 EXPERT ADJUDICATION - WAIVED BY OWNER (2026-09-27 11:46 IST)
+
+Owner ruling via WhatsApp 11:46:16 IST (wamid.HBgMOTE4MTM0MDk4NTcxFQIAEhgWM0VCMDczNzU1OEJBNDcxOENGNTUwNQA=,
+author=user, verified in channel record): "SKIP CENSUS ..." - the human-expert
+adjudication requirement is WAIVED. Proceed without it.
+PAPER REQUIREMENT (locked): document in the paper that expert adjudication was
+considered and explicitly waived by the owner, and state the residual
+label-noise risk honestly (flags remain statistical candidates, not
+expert-verified ground truth).
+
 ## Execution order (locked)
 1. A20 flags CSV + A5 consensus core recompute (cheap, landed fast).
 2. Resize diagnostic completes -> A6/W23 verdict -> R-M2 prereg decision.
