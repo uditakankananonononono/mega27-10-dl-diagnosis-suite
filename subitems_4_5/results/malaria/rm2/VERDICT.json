@@ -1,0 +1,50 @@
+{
+ "rung": "R-M2",
+ "model": "torchvision resnet18 from scratch (weights=None), exact R-M1 protocol, V0 kernel",
+ "prereg": "PREREG_R-M2.md",
+ "fold_accuracies": [
+  0.9482356598787502,
+  0.9633754955635265,
+  0.9536679536679536,
+  0.940737489025461,
+  0.9294843543411194
+ ],
+ "fold_aucs": [
+  0.9834437450490607,
+  0.9925172107151065,
+  0.9894413852665868,
+  0.9775671544136935,
+  0.9804406658833781
+ ],
+ "mean_accuracy": 0.9471001904953621,
+ "sd": 0.01284632255046056,
+ "t95_ci": [
+  0.931149374275142,
+  0.9630510067155822
+ ],
+ "gate": {
+  "mean_gt_0.957": false,
+  "ci_excludes_0.957": false,
+  "MET": false
+ },
+ "rm1_fold_accuracies": [
+  0.9361,
+  0.9641,
+  0.9544,
+  0.9357,
+  0.9482
+ ],
+ "paired_deltas": [
+  0.012135659878750205,
+  -0.0007245044364734277,
+  -0.0007320463320463766,
+  0.005037489025460973,
+  -0.01871564565888062
+ ],
+ "mean_paired_delta": -0.0005998095046378493,
+ "paired_delta_bootstrap95_ci": [
+  -0.010368298856645452,
+  0.0069915941526607515
+ ],
+ "verdict": "FAILED GATE - honest negative. ResNet-18-class backbone from scratch under exact R-M1 matched protocol does not beat 0.957 (mean 0.94710, 95% CI excludes nothing above it); paired mean delta vs R-M1 GlobalCNN is -0.00061 (bootstrap CI includes 0): the stronger backbone is NOT the bottleneck-breaker either."
+}
