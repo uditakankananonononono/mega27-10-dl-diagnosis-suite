@@ -10,7 +10,7 @@ A1/A2/W1/W2 LEAD WITH CENSUS, DROP "beats published benchmark" -> replace with
    census-first; this verdict EXTENDS it: the accuracy headline itself moves
    to secondary status. Paper restructure = the R6 novelty-change landing.
 A7/A19/W25 12-slide story + one-page summary card -> NEW deliverables
-   (results/judge_summary_card.pdf, slides outline).
+   -> DROPPED per header directive 12:02 IST.
 A16 impact section: "what 11.44% noise means for 200+ mid-90s papers" -> NEW.
 A14/W15 move 197-record lit audit to appendix (one-paragraph summary in main).
 A15/W14 move BBBC 42-accession battery to appendix (portability evidence).
@@ -75,6 +75,15 @@ PAPER REQUIREMENT (locked): document in the paper that expert adjudication was
 considered and explicitly waived by the owner, and state the residual
 label-noise risk honestly (flags remain statistical candidates, not
 expert-verified ground truth).
+
+
+
+## HEADER DIRECTIVE APPLIED (2026-09-27 12:02 IST)
+
+Fleet-wide, same mega-verdict message (wamid...RURGRAA=, author=user):
+"IGNORE ABOUT ISEF DELIVERABLES, IMPROVE PAGE COUNT" - the 12-slide story
+and one-page summary card items (A7/A19) are DROPPED. Page count grows with
+substance (replication arms, robustness analyses, methods detail) instead.
 
 ## Execution order (locked)
 1. A20 flags CSV + A5 consensus core recompute (cheap, landed fast).

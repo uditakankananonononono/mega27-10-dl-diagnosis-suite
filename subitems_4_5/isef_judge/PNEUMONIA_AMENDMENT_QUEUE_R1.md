@@ -68,6 +68,15 @@ considered and explicitly waived by the owner, and state the residual
 label-noise risk honestly (flags remain statistical candidates, not
 expert-verified ground truth).
 
+
+
+## HEADER DIRECTIVE APPLIED (2026-09-27 12:02 IST)
+
+Fleet-wide, same mega-verdict message (wamid...RURGRAA=, author=user):
+"IGNORE ABOUT ISEF DELIVERABLES, IMPROVE PAGE COUNT" - the 12-slide story
+and one-page summary card items (A7/A19) are DROPPED. Page count grows with
+substance (replication arms, robustness analyses, methods detail) instead.
+
 ## Execution order (locked)
 1. A20 flags CSV + A6 consensus core (with malaria equivalents, one commit).
 2. A5 blurred-NORMAL control + A4 report-text availability check.
