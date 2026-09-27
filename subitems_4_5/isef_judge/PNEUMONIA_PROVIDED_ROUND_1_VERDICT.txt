@@ -1,0 +1,43 @@
+#	Weakness	Why It Matters
+1	The +5.9-point cleaning gain is self-demoted	The abstract leads with "+5.9 points" then immediately says random removal matches it. A judge will ask: "So does cleaning help or not?" The answer—"unattributable to label quality"—undermines the practical value of the census.
+2	The external tool comparison is a straw man	TorchXRayVision was trained on adult films, tested on paediatric. Of course it fails (38.5%). This is a domain-shift finding, not a model-quality finding. The paper acknowledges this but still leads with "+46.5 accuracy points."
+3	The 92.8% published reference is cross-regime and paywalled	The paper cannot verify the number directly (corroborated through secondary sources). The comparison is apples-to-oranges (Inception-v3 at 299px vs compact CNN at 128px).
+4	The 21.15% estimate is estimator-derived, not ground truth	Same problem as malaria. The paper says this repeatedly, but the headline still reads as "21% of labels are wrong." No expert has adjudicated any flag.
+5	No expert adjudication of any flagged film	The 155 flags are statistical candidates. The paper says "any reader can inspect" but no radiologist has verified them. This is the single biggest gap.
+6	The one-directional asymmetry could be model bias	973:23 is striking, but the paper acknowledges this could reflect asymmetric visual confusability. The mechanism (report parsing) is hypothesized, not proven.
+7	The acquisition-quality stratification has two readings	Flagged films are blurrier (p = 1.74e-27). This could mean (a) mislabeled films are technically substandard, or (b) hard-to-acquire films are also hard-to-label. The paper acknowledges both but does not distinguish.
+8	The cleaning gain is unattributable at n=155/4710	The random-removal control (two seeds) matches flagged removal. The paper honestly demotes the finding, but this means the census does not translate into a model improvement.
+9	The GCN hybrid advantage is not cleanly isolated	RegionGCN beats CNN by +6.89 points on pneumonia, but the CNN baseline (72.12%) has a severe threshold imbalance (specificity 26.92%). The GCN's advantage may be threshold calibration, not spatial reasoning.
+10	The cross-panel atlas shows a 2.4x discrepancy	PneumoniaMNIST shows 8.96% noise vs ChestXRay2017's 21.15%. The paper calls this "independently consistent" but a 2.4x difference is large. The explanation (different collection, same pathology) is weak.
+11	The patient-level split is preserved but the census uses cell-level folds	Cells from the same patient can appear in different census folds. This could inflate the noise estimate if same-patient films share label errors.
+12	The "first automated census" claim relies on absence of evidence	The literature screen found no prior automated census, but absence of evidence is not evidence of absence. The claim is defensible but not strongly supported.
+13	The admissibility gate thresholds are ad hoc	OOF accuracy ≥ max(0.60, majority + 0.05) and ≥ 250 optimizer steps. These are not theoretically derived. A judge will ask: why 0.05? why 250?
+14	The paper is too long for ISEF	57 pages, 52 sections, 10+ figures, 20+ tables. Judges have 12 minutes. The signal-to-noise ratio is poor.
+15	The TorchXRayVision comparison uses untuned thresholds	Recalibrating on the test prior would substantially change the result. The paper says this is "not a fair comparison" but still reports it as a headline.
+16	No independent validation cohort	The census is run on one collection. There is no independent pneumonia dataset to test whether the 21.15% estimate generalizes.
+17	The calibration of deployed models is moderate	ECE 0.125/0.141 is usable but not great. The paper says "usable but only moderately calibrated" but does not explore recalibration.
+18	The "label-noise-bound ceiling" argument is speculative	The paper suggests mid-80s accuracy is consistent with 21.15% noise, but does not prove causation. The Bayes error calculation is illustrative, not conclusive.
+19	The MedMNIST atlas panels are very different	PneumoniaMNIST is 28x28, ChestXRay2017 is 128x128. The comparison is method-level, not data-level. The paper acknowledges this but still uses it for triangulation.
+20	The paper's strongest claim (directionality) has no mechanistic test	The 42:1 asymmetry is striking, but the report-parsing hypothesis is not directly tested. A simple experiment (compare flagged films to their reports) would strengthen this enormously.
+20 Additions / Improvements
+#	Addition	How It Strengthens the Project
+1	Lead with the directionality, not the cleaning gain	The 42:1 asymmetry is the most striking finding. The cleaning gain is self-demoted. Reorder the abstract: "We found one-directional contamination (42:1) that co-varies with acquisition quality."
+2	Drop the "beats external tool" framing	The TorchXRayVision comparison is a domain-shift finding, not a model-quality finding. Replace with: "Adult-pretrained CXR models fail zero-shot on paediatric films (38.5% vs 84.9%)."
+3	Add expert adjudication of a sample of flags	Even 20-30 films reviewed by a paediatric radiologist would transform the census from statistical to validated. This is the single highest-value addition.
+4	Test the report-parsing hypothesis directly	If reports are available, compare flagged films to their parsed reports. Show that flagged PNEUMONIA films have equivocal or absent report text. This would prove the mechanism.
+5	Distinguish the two readings of acquisition stratification	Blurrier films could be mislabeled OR hard-to-label. Add a control: are blurred NORMAL films also flagged? If not, the "mislabeled" reading is stronger.
+6	Stabilize the flag set	Use the 91-image consensus core as the primary deliverable, with lower-confidence flags as secondary. This is more honest and more robust.
+7	Simplify the presentation	12-slide story: Question → Why it matters → Method → Main result (42:1 asymmetry) → Stratification → Validation → Limitations → Conclusion.
+8	Add a decision tree for dataset users	"If you use ChestXRay2017, here is what to do about the 155 flags." This is actionable.
+9	Quantify the impact of label noise on reported accuracies	Simulate: if 21.15% of labels are wrong, what is the expected reported accuracy? Show that mid-80s numbers are consistent with this.
+10	Compare to other label-noise estimators	Beyond cleanlab, try other methods (e.g., Co-teaching, MentorNet, or simple cross-validation disagreement). Show robustness.
+11	Add a confusion matrix of flag types	Are flagged PNEUMONIA films bacterial or viral? Early or late stage? This would strengthen the biological interpretation.
+12	Test whether flagged films cluster by patient	If flags cluster by patient, this suggests acquisition or annotation batch effects.
+13	Add a simple visual summary	One figure showing: (a) class distribution, (b) one-directional noise, (c) flag distribution, (d) sharpness stratification. This is what judges will remember.
+14	Reduce the literature audit to a table	Put the 150 records in an appendix. Summarize in one paragraph.
+15	Remove the MedMNIST atlas from the main paper	Put it in an appendix as method portability evidence.
+16	Add a "what this means for the field" section	If 21% of this benchmark is noisy, what does that say about 150+ papers reporting mid-90s accuracy? This is the impact.
+17	Report the census on the test split as well	If the test split has similar noise, this explains why cleaning didn't help.
+18	Add a sensitivity analysis for the admissibility gate	Vary the thresholds (0.55, 0.60, 0.65) and show how the noise estimate changes.
+19	Create a one-page summary card	For judges: Question, Method, Key Finding, Limitation, Impact.
+20	Submit the flags as a standalone resource	A CSV with the 155 paths and confidence scores is a community contribution.
