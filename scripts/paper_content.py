@@ -221,13 +221,7 @@ trunk therefore receives the sum of disease-specific descent directions; a
 conflict between diseases appears as gradient cancellation, which the
 bridge ablation measures indirectly through Eq. 9.
 
-Derivation 8 (Fingerprint comparability). For any invertible affine
-reparametrization of a dataset's feature space x -> Mx + b with diagonal
-M, the per-patient standardized moments m_r = mean_j ((x_j - mu)/sigma)^r
-are invariant, because mu and sigma transform covariantly. The fingerprint
-(Eq. 4) is therefore a property of the patient's distributional shape, not
-of the feature units, which is precisely what makes cross-disease edges
-well-defined.
+Derivation 8 (Fingerprint comparability boundary). Standardized moments of a patient's feature vector are invariant to a common positive scalar rescaling and common shift of all coordinates. They are not generally invariant to independently scaling or shifting each feature. For example, coordinatewise scaling changes relative feature magnitudes and therefore the within-vector mean and spread. Feature order may be discarded, but this does not make mixed units, feature sets or disease cohorts commensurate. Cross-disease fingerprint geometry is an empirical design choice, not a proof of shared biological meaning.
 
 Derivation 9 (Bootstrap CI validity). The percentile bootstrap interval of
 Eq. 8 is first-order accurate: P(theta in CI_95) = 0.95 + O(n^{-1/2}) under
