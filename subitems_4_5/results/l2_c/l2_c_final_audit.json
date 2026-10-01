@@ -1,0 +1,25 @@
+{
+  "seeds": [
+    11,
+    23,
+    37
+  ],
+  "mean_acc": 0.8958333333333334,
+  "sd_acc": 0.03119859348386499,
+  "two_sided_95_t_ci": [
+    0.8183317307074567,
+    0.9733349359592101
+  ],
+  "H2_mean_acc_ge_0.90": false,
+  "mean_acc_gt_0.928": false,
+  "CI_excludes_0.928": false,
+  "beat_accuracy_gate": false,
+  "ECE_reported": false,
+  "overall_benchmark_beat": false,
+  "open_gaps": [
+    "ECE missing from original evaluator; no rerun or calibration tuning performed",
+    "Model D census-cleaning ablation remains separate unfinished work",
+    "Published comparator protocol matching remains an audit gap"
+  ],
+  "recovery": "one frozen recovery sequence authorized by parent message at Sep30 14:09:15 IST; threshold0.59 frozen before test; all624 test predictions saved batchwise"
+}

@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{mathptmx}   % Times text + math
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,hyperref,longtable}
+\usepackage{amsmath,amssymb,amsthm,graphicx,longtable}
 \newtheorem{proposition}{Proposition}
 \newtheorem{theorem}{Theorem}
 \title{Cross-Disease Graph Diagnosis: A 26-Dataset Benchmark of CNN and GNN
@@ -113,6 +113,14 @@ enter only through split and initialization randomness.
 \section{Discovery experiment: cross-disease bridges}
 % xgraph results, ablation delta, stable bridges, verdict
 \section{Negative results}
+
+\subsection{Locked pneumonia Model C: three-seed negative}
+The progressive CXR transfer experiment completed the three fixed seeds. Test accuracies for seeds 11, 23 and 37 were respectively $0.8605769231$, $0.9070512821$ and $0.9198717949$. Mean accuracy was $0.8958333333$ with sample standard deviation $0.0311985935$. The two-sided 95\% Student-$t$ interval across three seeds was $[0.8183317307,0.9733349360]$. The mean did not reach the Model C hypothesis threshold $0.90$, and neither the mean-above-$0.928$ condition nor the interval-excluding-$0.928$ condition held. There is no benchmark beat.
+
+Seed 37 used a validation-only threshold of $0.59$, fixed before recovery test inference. Its test AUC was $0.9628205128$ and Brier score $0.0679723889$. An original evaluation process was killed at its 120-second execution limit without recovered output; one recovery sequence retained the identical frozen checkpoint and evaluation rule, persisted batch predictions and left seeds 11 and 23 unchanged. This technical interruption is disclosed separately from the measured result. AUC does not replace the accuracy gate.
+
+The original evaluator omitted preregistered ECE; that reporting gap remains explicit. Model D's census-cleaning ablation is separate unfinished work. This three-seed result closes Model C, not all diagnosis-suite requirements, and does not justify changing a locked threshold or tuning on test data.
+
 % preserved honest negatives
 \section{Conclusion}
 \bibliographystyle{plain}

@@ -1,0 +1,7 @@
+{
+  "checkpoint_sha": "b2257e3f414f55c5f0274eec304d17f34fe27c1e54656563e8efa35588a9af7b",
+  "stage": "done",
+  "next_i": 624,
+  "val_thr": 0.59,
+  "recovery_sequence": 1
+}

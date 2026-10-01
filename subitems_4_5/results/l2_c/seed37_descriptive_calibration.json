@@ -1,0 +1,110 @@
+{
+  "scope": "post-hoc descriptive reporting on already evaluated seed37 predictions; not a new confirmatory test or three-seed ECE",
+  "n": 624,
+  "fixed_bins": 10,
+  "ece": 0.04686065357870971,
+  "threshold": 0.59,
+  "confusion": {
+    "tp": 377,
+    "tn": 197,
+    "fp": 37,
+    "fn": 13
+  },
+  "sensitivity": 0.9666666666666667,
+  "specificity": 0.8418803418803419,
+  "alert_rate": 0.6634615384615384,
+  "bins": [
+    {
+      "bin": [
+        0.0,
+        0.1
+      ],
+      "n": 113,
+      "mean_pneumonia_probability": 0.041141409426927567,
+      "pneumonia_fraction": 0.0
+    },
+    {
+      "bin": [
+        0.1,
+        0.2
+      ],
+      "n": 44,
+      "mean_pneumonia_probability": 0.14202022552490234,
+      "pneumonia_fraction": 0.06818181818181818
+    },
+    {
+      "bin": [
+        0.2,
+        0.30000000000000004
+      ],
+      "n": 15,
+      "mean_pneumonia_probability": 0.24581460654735565,
+      "pneumonia_fraction": 0.2
+    },
+    {
+      "bin": [
+        0.30000000000000004,
+        0.4
+      ],
+      "n": 13,
+      "mean_pneumonia_probability": 0.33265697956085205,
+      "pneumonia_fraction": 0.0
+    },
+    {
+      "bin": [
+        0.4,
+        0.5
+      ],
+      "n": 13,
+      "mean_pneumonia_probability": 0.44812101125717163,
+      "pneumonia_fraction": 0.23076923076923078
+    },
+    {
+      "bin": [
+        0.5,
+        0.6000000000000001
+      ],
+      "n": 12,
+      "mean_pneumonia_probability": 0.537286639213562,
+      "pneumonia_fraction": 0.3333333333333333
+    },
+    {
+      "bin": [
+        0.6000000000000001,
+        0.7000000000000001
+      ],
+      "n": 16,
+      "mean_pneumonia_probability": 0.65537428855896,
+      "pneumonia_fraction": 0.5
+    },
+    {
+      "bin": [
+        0.7000000000000001,
+        0.8
+      ],
+      "n": 17,
+      "mean_pneumonia_probability": 0.7517329454421997,
+      "pneumonia_fraction": 0.8235294117647058
+    },
+    {
+      "bin": [
+        0.8,
+        0.9
+      ],
+      "n": 39,
+      "mean_pneumonia_probability": 0.8582688570022583,
+      "pneumonia_fraction": 0.7435897435897436
+    },
+    {
+      "bin": [
+        0.9,
+        1.0
+      ],
+      "n": 342,
+      "mean_pneumonia_probability": 0.9616356492042542,
+      "pneumonia_fraction": 0.9532163742690059
+    }
+  ],
+  "prediction_sha256": "1e101ce374e08e19ee7cb5a4029cb0cd4cba1ec26d41fb797bcd57d4bd837431",
+  "remaining_gap": "No archived predictions for seeds11/23; no new inference performed. ECE binning selected post hoc for reporting, not preregistered."
+}
