@@ -72,7 +72,7 @@ Evaluation. Every run reports ROC AUC (Mann-Whitney form, Eq. 10),
 balanced accuracy, Brier score, and expected calibration error (Eq. 7),
 with percentile bootstrap 95 percent confidence intervals (Eq. 8). The
 bridge effect per disease is the paired per-seed AUC difference between the
-full and ablated graphs (Eq. 9); significance uses the exact sign test
+full and ablated graphs (Eq. 9); significance uses the conditional sign test
 (Proposition 1). Label-efficiency experiments subsample training labels at
 10, 25, 50 and 100 percent, five seeds, comparing transductive GCN against
 MLP trained on the same labeled subset.
@@ -86,7 +86,7 @@ every hyperparameter are recorded in the committed result JSONs.
 DISCOVERY = """
 The bridge hypothesis survives - weakly, and exactly where theory predicts
 it should. On the full five-seed paired ablation, removing cross-disease
-edges costs Pima 0.0066 AUC with all five seeds positive (exact sign-test
+edges costs Pima 0.0066 AUC with all five seeds positive (unverified sign-test
 p = 0.031), Parkinson's 0.0140 AUC (three of five seeds positive, largest
 single-seed effect +0.047), and Cleveland 0.0102 (four of five positive),
 while WDBC is unaffected (+0.0004). Six cross-disease bridge pairs recur in
@@ -194,15 +194,7 @@ shift inside the loss requires weighting the positive term by w_1 =
 c_+/c_-; under prevalence correction c_+/c_- = n_-/n_+, which recovers the
 weights of Eq. 5 exactly.
 
-Derivation 4 (Exactness of the sign test for bridge ablation). Under the
-null that cross-disease edges carry no signal for disease d, the paired
-differences D_s = AUC_full,s - AUC_abl,s are symmetric about zero, so
-S+ = #{s : D_s > 0} ~ Binomial(S, 1/2), because seeds enter only through
-independent split and initialization randomness and the two variants share
-all other randomness by construction (paired design). The exact two-sided
-p-value 2^{-S} sum_{k>=k0} C(S,k) needs no normality assumption, which is
-what makes the bridge claim falsifiable at S = 5: five of five positive
-seeds give p = 0.031 < 0.05, four of five give p = 0.188.
+Derivation 4 (Sign-test assumptions). A binomial sign test needs independent nonzero paired differences and null sign probability one-half. Sharing cohorts, overlapping splits and graph construction across seeds does not establish those assumptions. The former exact significance claim is withdrawn. Under hypothetical valid assumptions, five positive differences give one-sided p=0.03125 and two-sided p=0.0625; the earlier formula mislabeled one-sided as two-sided. Recorded bridge deltas remain descriptive, not established transferable biology.
 
 Derivation 5 (Brier decomposition and calibration). The Brier score
 decomposes as B = reliability - resolution + uncertainty (Murphy 1973).

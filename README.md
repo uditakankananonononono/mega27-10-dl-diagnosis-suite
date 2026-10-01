@@ -27,7 +27,7 @@ a cross-disease discovery experiment, and a label-efficiency benchmark.
   ECE, percentile bootstrap 95% CIs, 5 seeded splits.
 - **Discovery experiments** (`diagbench.xgraph`): a unified cross-disease
   patient graph with disease-agnostic distributional fingerprints; paired
-  bridge ablation with exact sign-test falsification; stable-bridge mining.
+  bridge ablation with descriptive seed contrasts (sign-test assumptions unverified); stable-bridge mining.
 - **Label-efficiency benchmark**: transductive GCN at 10-100% labels vs
   full-label tabular models.
 - **30 hermetic tests** (no network): `python -m pytest`.

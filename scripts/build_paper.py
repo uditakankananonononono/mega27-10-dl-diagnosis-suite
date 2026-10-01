@@ -76,7 +76,7 @@ def main():
         "(6) Multi-task transductive objective: L_MT = sum_d L^{(d)}(T_d); grad L_MT = sum_d grad L^{(d)}.",
         "(7) ECE = sum_b (|S_b|/n) |acc(S_b) - conf(S_b)| over 10 equal-width bins.",
         "(8) Percentile bootstrap CI_95 = [Q_0.025(theta*_b), Q_0.975(theta*_b)], B = 1000 resamples.",
-        "(9) Bridge ablation: Delta^{(d)} = (1/S) sum_s (AUC_full - AUC_no-bridge); sign-test p = 2^{-S} sum_{k>=k0} C(S,k) under the no-signal null (Proposition 1).",
+        "(9) Bridge ablation: Delta^{(d)} = (1/S) sum_s (AUC_full - AUC_no-bridge); conditional one-sided sign-test p = 2^{-S} sum_{k>=k0} C(S,k); independence and sign symmetry are unverified.",
         "(10) Mann-Whitney AUC: AUC = P(f(x+) > f(x-)) + 0.5 P(f(x+) = f(x-)).",
         "(11) Bridge homophily h = |{(i,j) in E_cross : y_i = y_j}| / |E_cross|.",
     ]
@@ -361,6 +361,10 @@ def main():
         doc.add_picture(fig, width=Inches(6))
         para(doc, os.path.basename(fig).replace("_", " ").replace(".png", ""))
 
+    h(doc, "October 1 evidence correction and completion boundary")
+    para(doc, "Locked Model C accuracy mean0.8958333333,95% t interval[0.8183317307,0.9733349360], fails0.90 hypothesis and0.928 comparator gates. Seed37 AUC0.9628205128 and Brier0.0679723889 do not substitute for accuracy. Post-hoc seed37 ECE0.0468606536 is descriptive only; seeds11/23 ECE unavailable. Malaria R-M2 from-scratch ResNet18 mean0.9471001905, interval[0.9311493743,0.9630510067], fails>0.957. No locked thresholds were changed. All prior bridge significance language is exploratory: independent fair signs were not established, and five of five positive is two-sided0.0625, not0.031. The50-page length does not certify dataset/tool census, novelty, or a benchmark win. Main.tex is a separate short draft, not the sole paper artifact.")
+    doc.core_properties.author = ""
+    doc.core_properties.last_modified_by = ""
     doc.save("paper/MEGA27-10-paper.docx")
     print("saved paper/MEGA27-10-paper.docx")
 
