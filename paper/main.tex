@@ -91,19 +91,15 @@ Bridge homophily (label agreement across a bridge):
 h=\frac{|\{(i,j)\in E_{\mathrm{cross}}: y_i^{(d_i)}=y_j^{(d_j)}\}|}{|E_{\mathrm{cross}}|}.
 \label{eq:homophily}
 \end{equation}
-\begin{proposition}[Bridge ablation is a valid falsifier]
-If cross-disease edges carry no diagnostic signal for disease $d$, then
-$\Delta^{(d)}$ in Eq.~\ref{eq:delta} is distributed around $0$ across seeds;
-a paired seed-level sign test on
-$\{\mathrm{AUC}^{(d)}_{s,\mathrm{full}}-\mathrm{AUC}^{(d)}_{s,\mathrm{no\text{-}bridge}}\}$
-rejects the no-signal null at level $\alpha=2^{-S}\sum_{k\ge k_0}\binom{S}{k}$.
-\end{proposition}
-\begin{proof}[Proof sketch]
-Under the null the per-seed differences are symmetric about $0$, so the sign
-of each difference is an independent fair coin; the stated binomial tail is
-the exact $p$-value of the sign test. Exchangeability holds because seeds
-enter only through split and initialization randomness.
-\end{proof}
+\paragraph{Assumptions for a sign test.}
+An exact binomial sign test is valid only when the nonzero paired differences
+are independent and their signs have probability one-half under the null.
+Repeated seeds sharing a cohort, overlapping train sets and graph construction
+do not automatically satisfy independence or symmetry. Neither a no-signal
+hypothesis nor seed randomness proves these assumptions. A bridge-ablation
+contrast is descriptive until its dependence structure and null construction
+are justified; the previously asserted unconditional falsifier is withdrawn.
+
 \section{Datasets}
 % auto-generated manifest table: 26 datasets with n, p, prevalence, citation, verified URL
 \section{External tools}
@@ -119,9 +115,14 @@ The progressive CXR transfer experiment completed the three fixed seeds. Test ac
 
 Seed 37 used a validation-only threshold of $0.59$, fixed before recovery test inference. Its test AUC was $0.9628205128$ and Brier score $0.0679723889$. An original evaluation process was killed at its 120-second execution limit without recovered output; one recovery sequence retained the identical frozen checkpoint and evaluation rule, persisted batch predictions and left seeds 11 and 23 unchanged. This technical interruption is disclosed separately from the measured result. AUC does not replace the accuracy gate.
 
-The original evaluator omitted preregistered ECE; that reporting gap remains explicit. Model D's census-cleaning ablation is separate unfinished work. This three-seed result closes Model C, not all diagnosis-suite requirements, and does not justify changing a locked threshold or tuning on test data.
+The original evaluator omitted preregistered ECE; the three-seed reporting gap remains explicit. A post-hoc description of already evaluated seed37 predictions gives ten-fixed-bin ECE $0.0468606536$. At its frozen threshold the confusion counts are TP377, TN197, FP37 and FN13 on 624 images; sensitivity is $0.9666666667$, specificity $0.8418803419$ and alert rate $0.6634615385$. These figures are descriptive, not new inference, a three-seed calibration result or a preregistered ECE test. Seed11/23 prediction archives were not found. Model D's census-cleaning ablation is separate unfinished work. This three-seed result closes Model C, not all diagnosis-suite requirements, and does not justify changing a locked threshold or tuning on test data.
 
-% preserved honest negatives
+\subsection{Malaria R-M2: stronger backbone does not pass}
+A ResNet18 trained from scratch (weights=None), under the fixed matched R-M1 protocol, reached mean fold accuracy $0.9471001905$, SD $0.0128463226$, and 95\% $t$ interval $[0.9311493743,0.9630510067]$. The gate requiring mean accuracy strictly greater than $0.957$ and an interval excluding that comparator failed. Its paired mean change from R-M1 was $-0.0005998095$; the recorded paired bootstrap interval $[-0.0103682989,0.0069915942]$ includes zero. This is not a pretrained-backbone experiment and not evidence that backbone size is the cause of failure. Source: \texttt{subitems\_4\_5/results/}\\\texttt{malaria/rm2/VERDICT.json}.
+
+\subsection{Completion boundary}
+This paper remains a short working draft. The dataset and tool census, full comparator verification, bridge-discovery evidence and the 50-page final artifact gates are open. Empty section headings do not constitute measured results or counted datasets. The negative pneumonia and malaria arms are closed without threshold changes; they do not establish a suite-level benchmark win.
+
 \section{Conclusion}
 \bibliographystyle{plain}
 \begin{thebibliography}{9}
