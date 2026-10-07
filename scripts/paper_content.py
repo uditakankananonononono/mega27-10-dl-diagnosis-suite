@@ -382,8 +382,9 @@ analysis tool and each committed as a machine-readable artifact under
 analyses/. (i) A gradient-boosted baseline (XGBoost) was evaluated on all
 22 UCI panel datasets under the same five-fold protocol: it beats the best
 committed model on 5 of 22 datasets, and the per-dataset comparison is
-reported in full - the deep models' wins are not artifacts of a weak
-classical baseline, and where boosting wins, that is said. (ii) The
+reported in full. Boosting wins on 5 of 22; this comparison does not by
+itself show the deep models' wins on the other 17 are free of baseline
+weakness, and where boosting wins, that is said. (ii) The
 cross-disease bridge discovery was subjected to a Benjamini-Hochberg FDR
 correction across diseases (statsmodels), with per-disease effect sizes
 (pingouin Cohen's d) for the label-efficiency experiments. (iii) GCN and
