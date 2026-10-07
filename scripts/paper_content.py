@@ -139,9 +139,8 @@ recorded here with the same rigor as the positive results.
 three of four core datasets (e.g. 0.8613 +- 0.1061 on Parkinson's) - on
 small cohorts the attention parameters buy variance, not signal.
 
-2. The 1D-CNN over the feature axis never wins a core dataset; feature
-order carries no spatial structure for it to exploit, and it is strictly
-dominated by the MLP it generalizes.
+2. The 1D-CNN over the feature axis did not have the top mean ROC AUC on any of the four core datasets (cleveland, parkinsons, pima, wdbc); feature
+order carries no spatial structure for it to exploit, and it did not beat the MLP in the recorded runs.
 
 3. Cross-disease bridges add nothing on WDBC (+0.0004 mean delta,
 sign-changing across seeds): transfer cannot lift a cohort already at its
@@ -297,8 +296,8 @@ logistic regression evaluated by five-fold stratified cross-validation.
 Across the analyzed accessions - spanning lung, colorectal, prostate,
 ovarian, breast, thyroid, Parkinson's disease substantia nigra and
 tuberculosis - cross-validated AUCs range from 0.84 to 1.000. The near-
-perfect scores on several oncology cohorts are expected rather than
-suspicious: bulk tumor-versus-adjacent-normal expression separation is one
+perfect scores on several oncology cohorts are consistent with
+prior reports, not verified here as leak-free: bulk tumor-versus-adjacent-normal expression separation is one
 of the strongest signals in transcriptomics, and the small control arms of
 some series widen confidence intervals accordingly. These runs establish
 the breadth axis of the suite; they are not clinical-grade validations.
@@ -405,8 +404,8 @@ GEO series matrices, confirming the custom parser's sample rosters.
 on the same cleveland graph and split (PyG 0.724 vs diagbench 0.672 AUC -
 agreement within 0.052, recorded as measured). (ix) A per-gene
 Mann-Whitney differential-expression screen (BH-FDR) over TCGA-BRCA
-confirms the biological basis of the tumor/normal signal the classifier
-exploits. (x) A 15-trial TPE
+is consistent with a tumor/normal expression signal of the kind the classifier
+may exploit; it does not confirm the mechanism. (x) A 15-trial TPE
 hyperparameter search (optuna) bounds how much the wdbc MLP could gain
 from tuning. Two derivations in the mathematical section were verified
 symbolically with sympy.
