@@ -5,11 +5,11 @@ Computer-aided diagnosis is one of the oldest promises of machine learning,
 yet the published benchmark culture around small clinical datasets is
 methodologically fragile. The Wisconsin Diagnostic Breast Cancer (WDBC),
 Cleveland heart disease, Pima diabetes and Parkinson's vocal-measurement
-cohorts have each accumulated hundreds of classification papers, with
-reported accuracies climbing from the mid-80s to above 99 percent over three
-decades. A substantial fraction of those numbers were produced with
-non-nested feature selection, single random splits, or test-set peeking,
-which inflates estimates in ways that are invisible in the headline metric.
+cohorts are widely reused benchmarks. This paper does not establish a
+systematic prevalence estimate for leakage or headline-score inflation in
+the literature. Non-nested selection and test-set peeking are risks to
+check in a matched comparator, rather than accusations inferred from a
+high reported score.
 This project asks three questions under a deliberately strict protocol
 (held-out 25 percent test set, five seeds, bootstrap confidence intervals,
 calibration metrics, hermetic tests for every computation):
@@ -34,10 +34,11 @@ preserved in the project repository.
 """
 
 METHODS = """
-Datasets. Twenty-six accession-level clinical datasets are used, all
-downloaded from the UCI Machine Learning Repository or a cited public
-mirror; every URL was verified live (HTTP 200) on the day of the
-experiments. The four core cohorts (WDBC, Cleveland heart disease, Pima
+Datasets. Twenty-six named core/panel result entries are recorded (four core and
+twenty-two panel files). Their source routes are UCI or cited public
+mirrors. These files are not an independently deduplicated dataset census.
+HTTP success alone does not verify source identity, labels, independence
+or current availability; the historical URL-check claim is not certified. The four core cohorts (WDBC, Cleveland heart disease, Pima
 diabetes, Parkinson's) receive the full six-model, five-seed treatment; a
 further twenty-two datasets (four heart-disease sites, two thyroid cohorts,
 two breast-cancer cohorts, hepatitis, SPECTF cardiac scintigraphy, Haberman
@@ -62,8 +63,10 @@ Unified cross-disease graph. Each disease's encoder maps its native feature
 space into a shared 16-dimensional latent space. Every patient is
 additionally described by a 10-dimensional distributional fingerprint
 (Eq. 4) - moments and quantiles of the patient's own feature vector - which
-is comparable across diseases by construction because it does not reference
-any specific native feature. The unified graph is the union of the latent
+discards feature identity but is not thereby comparable across diseases.
+Raw moments and quantiles still depend on units, feature sets and cohort
+composition. Only the standardized moments have the restricted common
+rescaling invariance stated in Derivation 8. The unified graph is the union of the latent
 kNN graph and the fingerprint kNN graph; a two-layer GCN trunk with one
 output head per disease is trained on the summed per-disease losses
 (Eq. 6). The ablated variant removes exactly the cross-disease edges.
@@ -72,8 +75,9 @@ Evaluation. Every run reports ROC AUC (Mann-Whitney form, Eq. 10),
 balanced accuracy, Brier score, and expected calibration error (Eq. 7),
 with percentile bootstrap 95 percent confidence intervals (Eq. 8). The
 bridge effect per disease is the paired per-seed AUC difference between the
-full and ablated graphs (Eq. 9); significance uses the conditional sign test
-(Proposition 1). Label-efficiency experiments subsample training labels at
+full and ablated graphs (Eq. 9); a hypothetical conditional sign-test formula is supplied
+(Proposition 1), but its independence and fair-sign assumptions are not
+established for seeds sharing patients. Bridge differences are descriptive. Label-efficiency experiments subsample training labels at
 10, 25, 50 and 100 percent, five seeds, comparing transductive GCN against
 MLP trained on the same labeled subset.
 

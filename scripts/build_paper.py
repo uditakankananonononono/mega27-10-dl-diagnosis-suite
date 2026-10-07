@@ -47,10 +47,13 @@ def main():
                             "September 24, 2026.")
     sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
+    para(doc, "Udita Phookan")
+    para(doc, "Working revision, October 7, 2026. Locked predictive gates failed. Dataset independence, scientific-tool breadth, novelty and matched benchmark superiority remain open. The PDF uses Liberation Serif because actual Times New Roman is unavailable. Page length includes tables and appendices, not an equivalent amount of new research.")
+
     h(doc, "Abstract")
     para(doc, "We benchmark MLP, 1D-CNN, GCN and GAT diagnosis models against "
               "strong classical baselines on real clinical datasets "
-              "(accession-level, URLs verified), with bootstrap confidence "
+              "(recorded sources, independent census unverified), with bootstrap confidence "
               "intervals and calibration metrics, and we test a falsifiable "
               "discovery claim: cross-disease patient bridges - edges of a "
               "unified patient-similarity graph spanning diseases, built on "
@@ -71,7 +74,7 @@ def main():
         "(1) Gaussian kNN kernel, self-tuned bandwidth: A_ij = exp(-||x_i - x_j||^2 / (2 sigma^2)), sigma^2 = median kNN squared distance (Zelnik-Manor & Perona).",
         "(2) Symmetric GCN normalization: A_hat = D~^{-1/2} (A + I) D~^{-1/2} (Kipf & Welling 2017).",
         "(3) GCN layer: H^{l+1} = tanh(A_hat H^l W^l). Derivation: first-order Chebyshev approximation of spectral graph convolution with lambda_max ~= 2 and renormalization trick.",
-        "(4) Distributional fingerprint phi(x) = (mu, sigma, min, max, q25, q50, q75, m3, m4, |z|_1/d), m_r = mean z_j^r, z_j = (x_j - mu)/sigma - disease-agnostic by construction.",
+        "(4) Distributional fingerprint phi(x) = (mu, sigma, min, max, q25, q50, q75, m3, m4, |z|_1/d), m_r = mean z_j^r, z_j = (x_j - mu)/sigma - feature identities discarded; cross-disease comparability unproven.",
         "(5) Class-weighted BCE: L = -(1/n) sum_i w_{y_i}[y_i log s(f_i) + (1 - y_i) log(1 - s(f_i))], w_1 = n_-/n_+.",
         "(6) Multi-task transductive objective: L_MT = sum_d L^{(d)}(T_d); grad L_MT = sum_d grad L^{(d)}.",
         "(7) ECE = sum_b (|S_b|/n) |acc(S_b) - conf(S_b)| over 10 equal-width bins.",
